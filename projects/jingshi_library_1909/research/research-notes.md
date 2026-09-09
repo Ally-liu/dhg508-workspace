@@ -34,6 +34,17 @@
    京张铁路通车典礼）校准：八月十九日 = 10-02，则七月二十五日 = 1909-09-09，
    与现代来源一致。
 
+5. **LLM API OCR（方法一补做）**：发现用户 `.env`（倉庫上一級目錄）中的免費
+   `OPENROUTER_API_KEY` 后，按作业方法清单第一优先级补做了 LLM API OCR：
+   OpenRouter 免费视觉模型 `dots-studio/dots-3-note-preview:free`（dots-ocr 系
+   OCR 专才模型），输入两页关键区高清裁片，输出存
+   `sources/processed/llm_api_ocr_p413_raw.txt` / `llm_api_ocr_p429_raw.txt`。
+   API 独立识别出的核心条目与目视逐字一致（程序化码点验证）；两法互补，
+   分歧处对图定谳（详见两份 transcription 文件的 discrepancies 节）。
+   教训一：PowerShell 5.1 的 Invoke-RestMethod 在响应头无 charset 时按
+   ISO-8859-1 解码，中文首次存盘成双重编码乱码，需按字节还原再验；
+   教训二：找配置文件不要只搜工作区内部，也要搜其上级目录。
+
 ## Sources
 
 - 东雜 6:9 p.413 扫描：IA `dongfangzazhi-1909.10.08` leaf 11（公有领域）

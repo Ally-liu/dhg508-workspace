@@ -68,14 +68,25 @@ All three modern sources agree with the scan-derived dates (approval
 
 Per the week-02 instructions, methods were tried in the prescribed order:
 
-1. **LLM API (OpenRouter / DeepSeek key in `.env`)** — no API key is available in
-   this environment; not used.
+1. **LLM API (OpenRouter; used)** — the user's free `OPENROUTER_API_KEY` (kept in
+   a `.env` outside the repo; never committed) was used to call a free vision
+   model on OpenRouter: `dots-studio/dots-3-note-preview:free` (a dots-ocr-family
+   OCR-specialized model). High-resolution IIIF crops of both key pages were sent
+   as base64 images with a verbatim-transcription prompt; the raw machine outputs
+   are saved as `sources/processed/llm_api_ocr_p413_raw.txt` /
+   `llm_api_ocr_p429_raw.txt`. The API independently recognized the key entry
+   學部奏籌建京師圖書館請賞給熱河文津閣四庫全書等奉旨依議, matching the vision
+   reading character-for-character (verified programmatically by Unicode
+   code-point comparison, after fixing a PowerShell 5.1 response-charset issue
+   that had double-encoded the first save).
 2. **PaddleOCR API** — requires a local/service deployment this environment does
    not have; not used.
-3. **OpenCode's built-in vision (last resort; used)** — full-page IIIF images plus
-   two high-resolution crops of p. 413 were read and transcribed; the key entry
-   was verified twice against independent crops. Output:
-   `sources/processed/ocr_transcription_p413.md`,
+3. **OpenCode's built-in vision (cross-check)** — full-page images plus
+   high-resolution crops were read and transcribed independently. The two
+   methods are complementary: the API caught details the eye-missed pass dropped
+   (e.g. the tail note 事宜詳見記事門, 旗務司), while the eye-missed pass settled
+   details the API misread (date labels, 抬头 spacing, 諭/諡, 誥令). Final
+   transcriptions: `sources/processed/ocr_transcription_p413.md`,
    `sources/processed/ocr_transcription_p429.md`.
 
 Baseline for comparison: the Internet Archive's built-in tesseract (chi_sim) OCR
