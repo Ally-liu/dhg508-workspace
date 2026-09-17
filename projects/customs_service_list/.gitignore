@@ -1,0 +1,28 @@
+# Large generated or local-only artifacts
+artifacts/**
+!artifacts/
+!artifacts/README.md
+
+# Local databases
+*.sqlite
+*.sqlite3
+*.db
+*.duckdb
+
+# Exception: the assignment asks for the database to go in the fork, and this one
+# is small (~32 KB). It can also be rebuilt with code/build_db.py.
+!artifacts/customs.db
+
+# Large scans stay out of git (~10 MB total). Provenance and re-download notes
+# are in README.md and research/notes/source-note.md.
+sources/raw/*.jpg
+
+# Python/Notebook noise
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# OS/editor noise
+.DS_Store
+.vscode/
+.idea/

@@ -20,3 +20,8 @@ unclear (Week 1, challenge 3).
 - What exactly is an "API key" for OCR, and why must it never go into Git?
 - Why does a commit show red and green lines, and who decides what counts as
   one "change"?
+- The Week 3 instructions say "your database and skill go in your fork; keep
+  large files out of Git", and the repo's `.gitignore` ignores `artifacts/**`
+  and `*.db`. The database is only ~32 KB, but the source scans are ~10 MB.
+  Where is the line for "large"? (Working decision: commit the small database;
+  keep the scans out and record their provenance instead.)
