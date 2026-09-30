@@ -1,0 +1,8054 @@
+{
+  "_readme": "Transcribed rows, one object per row, each with source_id. v1 seed had one city; now Nanjing (1928 map) is transcribed. Labels on this 1928 map are printed right-to-left; names below are given in standard reading order, with the printed order noted where useful.",
+  "source": [
+    {
+      "id": 1,
+      "title": "南京市城市全图（上海商务印书馆，中华民国十七年三月三版）",
+      "title_en": "Map of Nanking City (Commercial Press, Shanghai, 3rd ed., March 1928)",
+      "author": "上海商务印书馆",
+      "year": "1928",
+      "publisher": "上海商务印书馆",
+      "archive": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:南京城市全图-上海商务印书馆-1928.jpg",
+      "license": "Public domain (PD-China-1996)",
+      "access_date": "2026-09-29",
+      "note": "File 9993 x 13604 px, 28 MB. Downloaded to sources/raw/nanjing_1928_2.jpg. Labels printed right-to-left."
+    },
+    {
+      "id": 2,
+      "title": "A Map of Hong-Kong, with British Kowloon (Hongkong Almanack, 1888)",
+      "title_en": "A Map of Hong-Kong, with British Kowloon",
+      "author": "proprietor of the Hongkong Almanack",
+      "year": "1888",
+      "publisher": "Hongkong Almanack",
+      "archive": "Bibliotheque nationale de France / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:A_Map_of_Hong-Kong,_with_british_Kowloon_-_btv1b530292768.jpg",
+      "license": "Public domain",
+      "access_date": "2026-09-29",
+      "note": "English-only map (8983x6881). Includes a 'Names of Villages' index (1-22+: Wongnaichung, Coffee Gardens, Taihang, Whitfield, Tsattszmui, Quarry Bay, Shuitsingwan, Wongkoktsui, Shaukiwan, Akungngam, Chaiwan, Sheko, Hoktsui, Totiwan, Taitam Tuk, Taitam, Stanley, Wongmakok, Little Hong Kong, Aberdeen, Aplichau, Pokfulam). Chinese names here are standard cross-references, not printed on the map."
+    },
+    {
+      "id": 3,
+      "title": "广州市马路图（广州市工务局，民国二十五年十二月）",
+      "title_en": "Canton City Road Map (Public Works Dept., Dec. 1936)",
+      "author": "广州市工务局",
+      "year": "1936",
+      "publisher": "广州市工务局",
+      "archive": "中华民国内政部图书馆（内政部方域司）/ Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Canton_City_Map_1936.jpg",
+      "license": "Public domain (PD China)",
+      "access_date": "2026-09-29",
+      "note": "Chinese-language city road map, 10000x8000. Section names (分局) and street names; legend at foot. Small labels read by eye — doubtful readings noted per row."
+    },
+    {
+      "id": 4,
+      "title": "China. Macao. Plan of town（War Office, 1945, 1:5000）",
+      "title_en": "China. Macao. Plan of town",
+      "author": "Great Britain. War Office",
+      "year": "1945",
+      "publisher": "War Office",
+      "archive": "Bibliotheque nationale de France / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:China._Macao._Plan_of_town_-_btv1b53266478p.jpg",
+      "license": "Public domain",
+      "access_date": "2026-09-29",
+      "note": "English/Portuguese labels, 9762x10654. Covers the Macau peninsula only (no Taipa/Coloane). Chinese names here are standard cross-references, not printed on the map."
+    },
+    {
+      "id": 5,
+      "title": "京师城内首善全图（BnF，清代）",
+      "title_en": "Jingshi chengnei shoushan quantu (Plan of the Inner City of Peking)",
+      "author": null,
+      "year": null,
+      "publisher": null,
+      "archive": "Bibliotheque nationale de France / Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Jing_shi_cheng_nei_shou_shan_quan_tu_-_btv1b8444702n.jpg",
+      "license": "Public domain",
+      "access_date": "2026-09-29",
+      "note": "Chinese Qing map of the Inner City (8848x9547); labels printed right-to-left. Beijing's inner-city name cross-references added for the modern-to-old lookup."
+    },
+    {
+      "id": 6,
+      "title": "编者补充资料（维基百科、地方志等二手资料）",
+      "title_en": "Editor's supplement (secondary sources: Wikipedia, local gazetteers, etc.)",
+      "author": null,
+      "year": null,
+      "publisher": null,
+      "archive": null,
+      "url": null,
+      "license": null,
+      "access_date": "2026-09-29",
+      "note": "非老地图原件内容。仅用于 profile 表的改名说明与小百科，回答时须标'（编者补充）'。"
+    },
+    {
+      "id": 7,
+      "title": "现代地理坐标（对照，近似）",
+      "title_en": "Modern coordinates (cross-reference, approximate)",
+      "author": null,
+      "year": null,
+      "publisher": null,
+      "archive": null,
+      "url": null,
+      "license": null,
+      "access_date": "2026-09-29",
+      "note": "非老地图原件内容；为各地名的今日位置（近似经纬度，WGS84）。回答时须标'（对照，近似）'。"
+    }
+  ],
+  "city": [
+    {
+      "id": 1,
+      "name_zh": "南京",
+      "name_en": "Nanjing (Nanking)",
+      "province": "江苏",
+      "modern_note": "Republican-era capital; 南京市",
+      "source_id": 1
+    },
+    {
+      "id": 2,
+      "name_zh": "香港",
+      "name_en": "Hong Kong",
+      "province": "广东",
+      "modern_note": "British colony 1842-1997; 香港特别行政区",
+      "source_id": 2
+    },
+    {
+      "id": 3,
+      "name_zh": "广州",
+      "name_en": "Guangzhou (Canton)",
+      "province": "广东",
+      "modern_note": "1936 map: 广州市; today 广州市, 广东省",
+      "source_id": 3
+    },
+    {
+      "id": 4,
+      "name_zh": "澳门",
+      "name_en": "Macau (Macao)",
+      "province": "广东(澳门)",
+      "modern_note": "Portuguese Macau until 1999; 澳门特别行政区",
+      "source_id": 4
+    },
+    {
+      "id": 5,
+      "name_zh": "北京",
+      "name_en": "Beijing (Peking)",
+      "province": "直隶（今河北）",
+      "modern_note": "Qing capital, Inner City (京师城内); today 北京市",
+      "source_id": 5
+    }
+  ],
+  "map": [
+    {
+      "id": 1,
+      "city_id": 1,
+      "title": "南京市城市全图 / The Map of Nanking City",
+      "map_year": "1928",
+      "map_type": "city plan",
+      "publisher": "上海商务印书馆",
+      "scale": "1:5000 (比例五千分之一)",
+      "image_file": "sources/raw/nanjing_1928_2.jpg",
+      "note": "Right-to-left labels. Legend: 城垣 城墙 / 街道 / 铁路 / 道路 / 公共汽车路 / 山形 / 河流 / 湖泊 / 桥梁 / 码头.",
+      "source_id": 1
+    },
+    {
+      "id": 2,
+      "city_id": 2,
+      "title": "A Map of Hong-Kong, with British Kowloon",
+      "map_year": "1888",
+      "map_type": "territory map",
+      "publisher": "Hongkong Almanack",
+      "scale": "2 inches to 1 statute mile",
+      "image_file": "sources/raw/hongkong_1888.jpg",
+      "note": "English labels; includes a village index. 覆盖范围（近似）：北纬22.14–22.42，东经114.03–114.34。",
+      "source_id": 2,
+      "min_lat": 22.14,
+      "max_lat": 22.42,
+      "min_lon": 114.03,
+      "max_lon": 114.34
+    },
+    {
+      "id": 3,
+      "city_id": 3,
+      "title": "广州市马路图",
+      "map_year": "1936",
+      "map_type": "city road map",
+      "publisher": "广州市工务局",
+      "scale": null,
+      "image_file": "sources/raw/guangzhou_1936.jpg",
+      "note": "Section (分局) boundaries and street names; legend at lower right.",
+      "source_id": 3
+    },
+    {
+      "id": 4,
+      "city_id": 4,
+      "title": "China. Macao. Plan of Town",
+      "map_year": "1945",
+      "map_type": "town plan",
+      "publisher": "War Office",
+      "scale": "1:5000",
+      "image_file": "sources/raw/macau_1945.jpg",
+      "note": "English/Portuguese street and building names.",
+      "source_id": 4
+    },
+    {
+      "id": 5,
+      "city_id": 5,
+      "title": "京师城内首善全图",
+      "map_year": "Qing",
+      "map_type": "city map",
+      "publisher": null,
+      "scale": null,
+      "image_file": "sources/raw/beijing_shoushan.jpg",
+      "note": "Labels right-to-left. Covers the Inner City (宫城、城门、湖山、寺庙、胡同).",
+      "source_id": 5
+    }
+  ],
+  "place": [
+    {
+      "id": 1,
+      "city_id": 1,
+      "name_zh": "定淮门",
+      "name_en": "Dinghuai Gate",
+      "place_type": "城门",
+      "modern_name": "定淮门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "GATE"
+    },
+    {
+      "id": 2,
+      "city_id": 1,
+      "name_zh": "草场门",
+      "name_en": "Caochang Gate",
+      "place_type": "城门",
+      "modern_name": "草场门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "GATE"
+    },
+    {
+      "id": 3,
+      "city_id": 1,
+      "name_zh": "清凉门",
+      "name_en": "Qingliang Gate",
+      "place_type": "城门",
+      "modern_name": "清凉门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "GATE"
+    },
+    {
+      "id": 4,
+      "city_id": 1,
+      "name_zh": "汉西门",
+      "name_en": "Hanxi Gate",
+      "place_type": "城门",
+      "modern_name": "汉西门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "GATE"
+    },
+    {
+      "id": 5,
+      "city_id": 1,
+      "name_zh": "洪武门",
+      "name_en": "Hongwu Gate",
+      "place_type": "城门",
+      "modern_name": "洪武门",
+      "modern_flag": 0,
+      "note": "map prints 门武洪",
+      "source_id": 1,
+      "type_code": "GATE"
+    },
+    {
+      "id": 6,
+      "city_id": 1,
+      "name_zh": "丰润门",
+      "name_en": "Fengrun Gate",
+      "place_type": "城门",
+      "modern_name": "丰润门",
+      "modern_flag": 0,
+      "note": "reading uncertain; map prints 门润丰; to verify",
+      "source_id": 1,
+      "type_code": "GATE"
+    },
+    {
+      "id": 7,
+      "city_id": 1,
+      "name_zh": "玄武湖",
+      "name_en": "Xuanwu Lake",
+      "place_type": "湖泊",
+      "modern_name": "玄武湖",
+      "modern_flag": 0,
+      "note": "lake NE of the wall; islets 老洲/新洲",
+      "source_id": 1,
+      "type_code": "LAKE"
+    },
+    {
+      "id": 8,
+      "city_id": 1,
+      "name_zh": "乌龙潭",
+      "name_en": "Wulong Tan",
+      "place_type": "潭",
+      "modern_name": "乌龙潭",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "POND"
+    },
+    {
+      "id": 9,
+      "city_id": 1,
+      "name_zh": "清凉山",
+      "name_en": "Qingliang Shan",
+      "place_type": "山",
+      "modern_name": "清凉山",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "MOUNTAIN"
+    },
+    {
+      "id": 10,
+      "city_id": 1,
+      "name_zh": "五台山",
+      "name_en": "Wutai Shan",
+      "place_type": "山",
+      "modern_name": "五台山",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "MOUNTAIN"
+    },
+    {
+      "id": 11,
+      "city_id": 1,
+      "name_zh": "小仓山",
+      "name_en": "Xiaocang Shan",
+      "place_type": "山",
+      "modern_name": "小仓山",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "MOUNTAIN"
+    },
+    {
+      "id": 12,
+      "city_id": 1,
+      "name_zh": "波罗山",
+      "name_en": "Boluo Shan",
+      "place_type": "山",
+      "modern_name": "波罗山",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "MOUNTAIN"
+    },
+    {
+      "id": 13,
+      "city_id": 1,
+      "name_zh": "蛇山",
+      "name_en": "She Shan",
+      "place_type": "山",
+      "modern_name": "蛇山",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "MOUNTAIN"
+    },
+    {
+      "id": 14,
+      "city_id": 1,
+      "name_zh": "北极阁",
+      "name_en": "Beiji Ge",
+      "place_type": "阁",
+      "modern_name": "北极阁",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "TOWER"
+    },
+    {
+      "id": 15,
+      "city_id": 1,
+      "name_zh": "古平冈",
+      "name_en": "Gupinggang",
+      "place_type": "冈",
+      "modern_name": "古平冈",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "MOUNTAIN"
+    },
+    {
+      "id": 16,
+      "city_id": 1,
+      "name_zh": "老虎洞",
+      "name_en": "Laohudong",
+      "place_type": "洞",
+      "modern_name": "老虎洞",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "CAVE"
+    },
+    {
+      "id": 17,
+      "city_id": 1,
+      "name_zh": "随园",
+      "name_en": "Suiyuan",
+      "place_type": "园",
+      "modern_name": "随园",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "GARDEN"
+    },
+    {
+      "id": 18,
+      "city_id": 1,
+      "name_zh": "清凉寺",
+      "name_en": "Qingliang Temple",
+      "place_type": "寺",
+      "modern_name": "清凉寺",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "TEMPLE"
+    },
+    {
+      "id": 19,
+      "city_id": 1,
+      "name_zh": "古林寺",
+      "name_en": "Gulin Temple",
+      "place_type": "寺",
+      "modern_name": "古林寺",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "TEMPLE"
+    },
+    {
+      "id": 20,
+      "city_id": 1,
+      "name_zh": "大佛寺",
+      "name_en": "Dafo Temple",
+      "place_type": "寺",
+      "modern_name": "大佛寺",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "TEMPLE"
+    },
+    {
+      "id": 21,
+      "city_id": 1,
+      "name_zh": "净界寺",
+      "name_en": "Jingjie Temple",
+      "place_type": "寺",
+      "modern_name": "净界寺",
+      "modern_flag": 0,
+      "note": "map prints 寺界净",
+      "source_id": 1,
+      "type_code": "TEMPLE"
+    },
+    {
+      "id": 22,
+      "city_id": 1,
+      "name_zh": "扫叶楼",
+      "name_en": "Saoye Lou",
+      "place_type": "楼",
+      "modern_name": "扫叶楼",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "TOWER"
+    },
+    {
+      "id": 23,
+      "city_id": 1,
+      "name_zh": "小九华",
+      "name_en": "Xiao Jiuhua",
+      "place_type": "寺",
+      "modern_name": "小九华",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "TEMPLE"
+    },
+    {
+      "id": 24,
+      "city_id": 1,
+      "name_zh": "九龙庵",
+      "name_en": "Jiulong An",
+      "place_type": "庵",
+      "modern_name": "九龙庵",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "TEMPLE"
+    },
+    {
+      "id": 25,
+      "city_id": 1,
+      "name_zh": "鼓楼医院",
+      "name_en": "Gulou Hospital",
+      "place_type": "医院",
+      "modern_name": "鼓楼医院",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "HOSPITAL"
+    },
+    {
+      "id": 26,
+      "city_id": 1,
+      "name_zh": "金陵大学",
+      "name_en": "University of Nanking",
+      "place_type": "学校",
+      "modern_name": "南京大学（原址）",
+      "modern_flag": 1,
+      "note": "modern name is a cross-reference, not on the map",
+      "source_id": 1,
+      "type_code": "SCHOOL"
+    },
+    {
+      "id": 27,
+      "city_id": 1,
+      "name_zh": "金陵女子大学",
+      "name_en": "Ginling College",
+      "place_type": "学校",
+      "modern_name": "南京师范大学（随园校区）",
+      "modern_flag": 1,
+      "note": "map prints 金陵女大; modern name is a cross-reference",
+      "source_id": 1,
+      "type_code": "SCHOOL"
+    },
+    {
+      "id": 28,
+      "city_id": 1,
+      "name_zh": "金陵中学",
+      "name_en": "Jinling Middle School",
+      "place_type": "学校",
+      "modern_name": "金陵中学",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "SCHOOL"
+    },
+    {
+      "id": 29,
+      "city_id": 1,
+      "name_zh": "汇文女学",
+      "name_en": "Huiwen Girls' School",
+      "place_type": "学校",
+      "modern_name": "汇文女学",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "SCHOOL"
+    },
+    {
+      "id": 30,
+      "city_id": 1,
+      "name_zh": "外交部",
+      "name_en": "Ministry of Foreign Affairs",
+      "place_type": "部院",
+      "modern_name": "外交部",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "GOV"
+    },
+    {
+      "id": 31,
+      "city_id": 1,
+      "name_zh": "交通部",
+      "name_en": "Ministry of Communications",
+      "place_type": "部院",
+      "modern_name": "交通部",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "GOV"
+    },
+    {
+      "id": 32,
+      "city_id": 1,
+      "name_zh": "财政部",
+      "name_en": "Ministry of Finance",
+      "place_type": "部院",
+      "modern_name": "财政部",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "GOV"
+    },
+    {
+      "id": 33,
+      "city_id": 1,
+      "name_zh": "司法院",
+      "name_en": "Judicial Yuan",
+      "place_type": "部院",
+      "modern_name": "司法院",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "GOV"
+    },
+    {
+      "id": 34,
+      "city_id": 1,
+      "name_zh": "国民政府",
+      "name_en": "National Government",
+      "place_type": "政府",
+      "modern_name": "中国近代史遗址博物馆",
+      "modern_flag": 1,
+      "note": "modern name is a cross-reference",
+      "source_id": 1,
+      "type_code": "GOV"
+    },
+    {
+      "id": 35,
+      "city_id": 1,
+      "name_zh": "中央党部",
+      "name_en": "Central Party Headquarters",
+      "place_type": "党部",
+      "modern_name": "中央党部",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "GOV"
+    },
+    {
+      "id": 36,
+      "city_id": 1,
+      "name_zh": "省议会",
+      "name_en": "Provincial Assembly",
+      "place_type": "议会",
+      "modern_name": "省议会",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "GOV"
+    },
+    {
+      "id": 37,
+      "city_id": 1,
+      "name_zh": "电报局",
+      "name_en": "Telegraph Office",
+      "place_type": "局",
+      "modern_name": "电报局",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 38,
+      "city_id": 1,
+      "name_zh": "无线电台",
+      "name_en": "Wireless Station",
+      "place_type": "台",
+      "modern_name": "无线电台",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "TOWER"
+    },
+    {
+      "id": 39,
+      "city_id": 1,
+      "name_zh": "钟鼓楼",
+      "name_en": "Zhonggulou",
+      "place_type": "楼",
+      "modern_name": "钟鼓楼",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "TOWER"
+    },
+    {
+      "id": 40,
+      "city_id": 1,
+      "name_zh": "大钟亭",
+      "name_en": "Dazhong Ting",
+      "place_type": "亭",
+      "modern_name": "大钟亭",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "TOWER"
+    },
+    {
+      "id": 41,
+      "city_id": 1,
+      "name_zh": "唱经楼",
+      "name_en": "Changjing Lou",
+      "place_type": "楼",
+      "modern_name": "唱经楼",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "TOWER"
+    },
+    {
+      "id": 42,
+      "city_id": 1,
+      "name_zh": "日领署",
+      "name_en": "Japanese Consulate",
+      "place_type": "领署",
+      "modern_name": "日领署",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "GOV"
+    },
+    {
+      "id": 43,
+      "city_id": 1,
+      "name_zh": "狮子桥",
+      "name_en": "Shizi Qiao",
+      "place_type": "桥",
+      "modern_name": "狮子桥",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "BRIDGE"
+    },
+    {
+      "id": 44,
+      "city_id": 1,
+      "name_zh": "石城桥",
+      "name_en": "Shicheng Qiao",
+      "place_type": "桥",
+      "modern_name": "石城桥",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "BRIDGE"
+    },
+    {
+      "id": 45,
+      "city_id": 1,
+      "name_zh": "红土桥",
+      "name_en": "Hongtu Qiao",
+      "place_type": "桥",
+      "modern_name": "红土桥",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "BRIDGE"
+    },
+    {
+      "id": 46,
+      "city_id": 1,
+      "name_zh": "大石桥",
+      "name_en": "Dashi Qiao",
+      "place_type": "桥",
+      "modern_name": "大石桥",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "BRIDGE"
+    },
+    {
+      "id": 47,
+      "city_id": 1,
+      "name_zh": "小石桥",
+      "name_en": "Xiaoshi Qiao",
+      "place_type": "桥",
+      "modern_name": "小石桥",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "BRIDGE"
+    },
+    {
+      "id": 48,
+      "city_id": 1,
+      "name_zh": "北门桥",
+      "name_en": "Beimen Qiao",
+      "place_type": "桥",
+      "modern_name": "北门桥",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "BRIDGE"
+    },
+    {
+      "id": 49,
+      "city_id": 1,
+      "name_zh": "通贤桥",
+      "name_en": "Tongxian Qiao",
+      "place_type": "桥",
+      "modern_name": "通贤桥",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "BRIDGE"
+    },
+    {
+      "id": 50,
+      "city_id": 1,
+      "name_zh": "浮桥",
+      "name_en": "Fuqiao",
+      "place_type": "桥",
+      "modern_name": "浮桥",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "BRIDGE"
+    },
+    {
+      "id": 51,
+      "city_id": 1,
+      "name_zh": "洪武街",
+      "name_en": "Hongwu Jie",
+      "place_type": "街",
+      "modern_name": "洪武街",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "STREET"
+    },
+    {
+      "id": 52,
+      "city_id": 1,
+      "name_zh": "同仁街",
+      "name_en": "Tongren Jie",
+      "place_type": "街",
+      "modern_name": "同仁街",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "STREET"
+    },
+    {
+      "id": 53,
+      "city_id": 1,
+      "name_zh": "牌楼街",
+      "name_en": "Pailou Jie",
+      "place_type": "街",
+      "modern_name": "牌楼街",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "STREET"
+    },
+    {
+      "id": 54,
+      "city_id": 1,
+      "name_zh": "焦状元巷",
+      "name_en": "Jiao Zhuangyuan Xiang",
+      "place_type": "巷",
+      "modern_name": "焦状元巷",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "LANE"
+    },
+    {
+      "id": 55,
+      "city_id": 1,
+      "name_zh": "石婆婆巷",
+      "name_en": "Shibopo Xiang",
+      "place_type": "巷",
+      "modern_name": "石婆婆巷",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "LANE"
+    },
+    {
+      "id": 56,
+      "city_id": 1,
+      "name_zh": "双龙巷",
+      "name_en": "Shuanglong Xiang",
+      "place_type": "巷",
+      "modern_name": "双龙巷",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "LANE"
+    },
+    {
+      "id": 57,
+      "city_id": 1,
+      "name_zh": "阴阳营",
+      "name_en": "Yinyangying",
+      "place_type": "地",
+      "modern_name": "阴阳营",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "AREA"
+    },
+    {
+      "id": 58,
+      "city_id": 1,
+      "name_zh": "百步坡",
+      "name_en": "Baibu Po",
+      "place_type": "坡",
+      "modern_name": "百步坡",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "MOUNTAIN"
+    },
+    {
+      "id": 59,
+      "city_id": 1,
+      "name_zh": "冬瓜园",
+      "name_en": "Dongguayuan",
+      "place_type": "园",
+      "modern_name": "冬瓜园",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "GARDEN"
+    },
+    {
+      "id": 60,
+      "city_id": 1,
+      "name_zh": "虎贲仓",
+      "name_en": "Huben Granary",
+      "place_type": "仓",
+      "modern_name": "虎贲仓",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 61,
+      "city_id": 1,
+      "name_zh": "丰备仓",
+      "name_en": "Fengbei Granary",
+      "place_type": "仓",
+      "modern_name": "丰备仓",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 62,
+      "city_id": 1,
+      "name_zh": "劝业会场",
+      "name_en": "Quanye Fairground",
+      "place_type": "场",
+      "modern_name": "劝业会场",
+      "modern_flag": 0,
+      "note": "map prints 场会业劝",
+      "source_id": 1,
+      "type_code": "SITE"
+    },
+    {
+      "id": 63,
+      "city_id": 1,
+      "name_zh": "跑马场",
+      "name_en": "Racecourse",
+      "place_type": "场",
+      "modern_name": "跑马场",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "SITE"
+    },
+    {
+      "id": 64,
+      "city_id": 1,
+      "name_zh": "公园",
+      "name_en": "Public Park",
+      "place_type": "园",
+      "modern_name": "公园",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 1,
+      "type_code": "GARDEN"
+    },
+    {
+      "id": 65,
+      "city_id": 2,
+      "name_zh": "维多利亚城",
+      "name_en": "Victoria City",
+      "place_type": "城区",
+      "modern_name": "中环、上环一带",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 2,
+      "type_code": "DISTRICT",
+      "lat": 22.282,
+      "lon": 114.155
+    },
+    {
+      "id": 66,
+      "city_id": 2,
+      "name_zh": "九龙",
+      "name_en": "Kowloon",
+      "place_type": "地区",
+      "modern_name": "九龙",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "AREA",
+      "lat": 22.32,
+      "lon": 114.175
+    },
+    {
+      "id": 67,
+      "city_id": 2,
+      "name_zh": "九龙城",
+      "name_en": "Kowloon City",
+      "place_type": "城池",
+      "modern_name": "九龙城",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "WALL",
+      "lat": 22.33,
+      "lon": 114.19
+    },
+    {
+      "id": 68,
+      "city_id": 2,
+      "name_zh": "旺角",
+      "name_en": "Wongkoktsui",
+      "place_type": "村/区",
+      "modern_name": "旺角",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "VILLAGE",
+      "lat": 22.319,
+      "lon": 114.169
+    },
+    {
+      "id": 69,
+      "city_id": 2,
+      "name_zh": "尖沙咀",
+      "name_en": "Tsimshatsui",
+      "place_type": "区",
+      "modern_name": "尖沙咀",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "DISTRICT",
+      "lat": 22.297,
+      "lon": 114.172
+    },
+    {
+      "id": 70,
+      "city_id": 2,
+      "name_zh": "红磡",
+      "name_en": "Hunghom",
+      "place_type": "区",
+      "modern_name": "红磡",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "DISTRICT",
+      "lat": 22.305,
+      "lon": 114.184
+    },
+    {
+      "id": 71,
+      "city_id": 2,
+      "name_zh": "坚尼地城",
+      "name_en": "Kennedy Town",
+      "place_type": "区",
+      "modern_name": "坚尼地城",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "DISTRICT",
+      "lat": 22.282,
+      "lon": 114.128
+    },
+    {
+      "id": 72,
+      "city_id": 2,
+      "name_zh": "湾仔",
+      "name_en": "Wanchai",
+      "place_type": "区",
+      "modern_name": "湾仔",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "DISTRICT",
+      "lat": 22.277,
+      "lon": 114.175
+    },
+    {
+      "id": 73,
+      "city_id": 2,
+      "name_zh": "铜锣湾",
+      "name_en": "Causeway Bay",
+      "place_type": "区/湾",
+      "modern_name": "铜锣湾",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "DISTRICT",
+      "lat": 22.28,
+      "lon": 114.185
+    },
+    {
+      "id": 74,
+      "city_id": 2,
+      "name_zh": "筲箕湾",
+      "name_en": "Shaukiwan",
+      "place_type": "村/区",
+      "modern_name": "筲箕湾",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "VILLAGE",
+      "lat": 22.279,
+      "lon": 114.229
+    },
+    {
+      "id": 75,
+      "city_id": 2,
+      "name_zh": "鲗鱼涌",
+      "name_en": "Quarry Bay",
+      "place_type": "村/区",
+      "modern_name": "鲗鱼涌",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "VILLAGE",
+      "lat": 22.287,
+      "lon": 114.21
+    },
+    {
+      "id": 76,
+      "city_id": 2,
+      "name_zh": "柴湾",
+      "name_en": "Chaiwan",
+      "place_type": "村",
+      "modern_name": "柴湾",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "VILLAGE",
+      "lat": 22.264,
+      "lon": 114.237
+    },
+    {
+      "id": 77,
+      "city_id": 2,
+      "name_zh": "香港仔",
+      "name_en": "Aberdeen",
+      "place_type": "村",
+      "modern_name": "香港仔",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "VILLAGE",
+      "lat": 22.248,
+      "lon": 114.155
+    },
+    {
+      "id": 78,
+      "city_id": 2,
+      "name_zh": "赤柱",
+      "name_en": "Stanley",
+      "place_type": "村",
+      "modern_name": "赤柱",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "VILLAGE",
+      "lat": 22.218,
+      "lon": 114.217
+    },
+    {
+      "id": 79,
+      "city_id": 2,
+      "name_zh": "薄扶林",
+      "name_en": "Pokfulam",
+      "place_type": "村",
+      "modern_name": "薄扶林",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "VILLAGE",
+      "lat": 22.267,
+      "lon": 114.13
+    },
+    {
+      "id": 80,
+      "city_id": 2,
+      "name_zh": "大潭",
+      "name_en": "Taitam",
+      "place_type": "村",
+      "modern_name": "大潭",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "VILLAGE",
+      "lat": 22.25,
+      "lon": 114.21
+    },
+    {
+      "id": 81,
+      "city_id": 2,
+      "name_zh": "黄泥涌",
+      "name_en": "Wongnaichung",
+      "place_type": "村",
+      "modern_name": "黄泥涌",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "VILLAGE",
+      "lat": 22.268,
+      "lon": 114.18
+    },
+    {
+      "id": 82,
+      "city_id": 2,
+      "name_zh": "大坑",
+      "name_en": "Taihang",
+      "place_type": "村",
+      "modern_name": "大坑",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "VILLAGE",
+      "lat": 22.277,
+      "lon": 114.191
+    },
+    {
+      "id": 83,
+      "city_id": 2,
+      "name_zh": "深水湾",
+      "name_en": "Deep Water Bay / Shamshui Wan",
+      "place_type": "湾",
+      "modern_name": "深水湾",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "BAY",
+      "lat": 22.24,
+      "lon": 114.177
+    },
+    {
+      "id": 84,
+      "city_id": 2,
+      "name_zh": "浅水湾",
+      "name_en": "Tsin Shui Wan (Repulse Bay)",
+      "place_type": "湾",
+      "modern_name": "浅水湾",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "BAY",
+      "lat": 22.233,
+      "lon": 114.193
+    },
+    {
+      "id": 85,
+      "city_id": 2,
+      "name_zh": "赤柱湾",
+      "name_en": "Stanley Bay",
+      "place_type": "湾",
+      "modern_name": "赤柱湾",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "BAY",
+      "lat": 22.215,
+      "lon": 114.215
+    },
+    {
+      "id": 86,
+      "city_id": 2,
+      "name_zh": "大潭港",
+      "name_en": "Taitam Harbour",
+      "place_type": "湾/港",
+      "modern_name": "大潭港",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "BAY",
+      "lat": 22.245,
+      "lon": 114.215
+    },
+    {
+      "id": 87,
+      "city_id": 2,
+      "name_zh": "香港仔湾",
+      "name_en": "Aberdeen Bay",
+      "place_type": "湾",
+      "modern_name": "香港仔湾",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "BAY",
+      "lat": 22.245,
+      "lon": 114.157
+    },
+    {
+      "id": 88,
+      "city_id": 2,
+      "name_zh": "沙湾",
+      "name_en": "Sandy Bay",
+      "place_type": "湾",
+      "modern_name": "沙湾",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "BAY",
+      "lat": 22.268,
+      "lon": 114.124
+    },
+    {
+      "id": 89,
+      "city_id": 2,
+      "name_zh": "瀑布湾",
+      "name_en": "Waterfall Bay",
+      "place_type": "湾",
+      "modern_name": "瀑布湾",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "BAY",
+      "lat": 22.258,
+      "lon": 114.128
+    },
+    {
+      "id": 90,
+      "city_id": 2,
+      "name_zh": "卑路乍湾",
+      "name_en": "Belchers Bay",
+      "place_type": "湾",
+      "modern_name": "卑路乍湾",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "BAY",
+      "lat": 22.285,
+      "lon": 114.124
+    },
+    {
+      "id": 91,
+      "city_id": 2,
+      "name_zh": "东角",
+      "name_en": "East Point",
+      "place_type": "角",
+      "modern_name": "东角",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "CAPE",
+      "lat": 22.288,
+      "lon": 114.185
+    },
+    {
+      "id": 92,
+      "city_id": 2,
+      "name_zh": "奇力岛",
+      "name_en": "Kellett Island",
+      "place_type": "岛",
+      "modern_name": "奇力岛",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "ISLAND",
+      "lat": 22.284,
+      "lon": 114.181
+    },
+    {
+      "id": 93,
+      "city_id": 2,
+      "name_zh": "青洲",
+      "name_en": "Green Island (Lighthouse)",
+      "place_type": "岛/灯塔",
+      "modern_name": "青洲",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "ISLAND",
+      "lat": 22.285,
+      "lon": 114.111
+    },
+    {
+      "id": 94,
+      "city_id": 2,
+      "name_zh": "一木岛",
+      "name_en": "One Tree Island",
+      "place_type": "岛",
+      "modern_name": "一木岛",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "ISLAND",
+      "lat": 22.243,
+      "lon": 114.166
+    },
+    {
+      "id": 95,
+      "city_id": 2,
+      "name_zh": "鸭脷洲",
+      "name_en": "Aplichau",
+      "place_type": "岛",
+      "modern_name": "鸭脷洲",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "ISLAND",
+      "lat": 22.242,
+      "lon": 114.156
+    },
+    {
+      "id": 96,
+      "city_id": 2,
+      "name_zh": "圆岛",
+      "name_en": "Round Island",
+      "place_type": "岛",
+      "modern_name": "圆岛",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "ISLAND",
+      "lat": 22.221,
+      "lon": 114.208
+    },
+    {
+      "id": 97,
+      "city_id": 2,
+      "name_zh": "太平山",
+      "name_en": "Victoria Peak",
+      "place_type": "山",
+      "modern_name": "太平山",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "MOUNTAIN",
+      "lat": 22.276,
+      "lon": 114.143
+    },
+    {
+      "id": 98,
+      "city_id": 2,
+      "name_zh": "摩星岭",
+      "name_en": "Mt. Davis",
+      "place_type": "山",
+      "modern_name": "摩星岭",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "MOUNTAIN",
+      "lat": 22.277,
+      "lon": 114.12
+    },
+    {
+      "id": 99,
+      "city_id": 2,
+      "name_zh": "奇力山",
+      "name_en": "Mt. Kellett",
+      "place_type": "山",
+      "modern_name": "奇力山",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "MOUNTAIN",
+      "lat": 22.26,
+      "lon": 114.135
+    },
+    {
+      "id": 100,
+      "city_id": 2,
+      "name_zh": "柏架山",
+      "name_en": "Mt. Parker",
+      "place_type": "山",
+      "modern_name": "柏架山",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "MOUNTAIN",
+      "lat": 22.28,
+      "lon": 114.21
+    },
+    {
+      "id": 101,
+      "city_id": 2,
+      "name_zh": "高西",
+      "name_en": "High West",
+      "place_type": "山",
+      "modern_name": "高西",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "MOUNTAIN",
+      "lat": 22.27,
+      "lon": 114.137
+    },
+    {
+      "id": 102,
+      "city_id": 2,
+      "name_zh": "歌赋山",
+      "name_en": "Mt. Gough",
+      "place_type": "山",
+      "modern_name": "歌赋山",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "MOUNTAIN",
+      "lat": 22.275,
+      "lon": 114.15
+    },
+    {
+      "id": 103,
+      "city_id": 2,
+      "name_zh": "魔鬼山",
+      "name_en": "Devils Peak",
+      "place_type": "山",
+      "modern_name": "魔鬼山",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "MOUNTAIN",
+      "lat": 22.294,
+      "lon": 114.237
+    },
+    {
+      "id": 104,
+      "city_id": 2,
+      "name_zh": "维多利亚港",
+      "name_en": "Victoria Harbour",
+      "place_type": "海港",
+      "modern_name": "维多利亚港",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "HARBOUR",
+      "lat": 22.293,
+      "lon": 114.17
+    },
+    {
+      "id": 105,
+      "city_id": 2,
+      "name_zh": "皇后大道",
+      "name_en": "Queen's Road",
+      "place_type": "街道",
+      "modern_name": "皇后大道",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "STREET",
+      "lat": 22.283,
+      "lon": 114.155
+    },
+    {
+      "id": 106,
+      "city_id": 2,
+      "name_zh": "般含道",
+      "name_en": "Bonham Road",
+      "place_type": "街道",
+      "modern_name": "般含道",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "STREET",
+      "lat": 22.285,
+      "lon": 114.145
+    },
+    {
+      "id": 107,
+      "city_id": 2,
+      "name_zh": "罗便臣道",
+      "name_en": "Robinson Road",
+      "place_type": "街道",
+      "modern_name": "罗便臣道",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "STREET",
+      "lat": 22.279,
+      "lon": 114.148
+    },
+    {
+      "id": 108,
+      "city_id": 2,
+      "name_zh": "坚道",
+      "name_en": "Caine Road",
+      "place_type": "街道",
+      "modern_name": "坚道",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "STREET",
+      "lat": 22.28,
+      "lon": 114.147
+    },
+    {
+      "id": 109,
+      "city_id": 2,
+      "name_zh": "坚尼地道",
+      "name_en": "Kennedy Road",
+      "place_type": "街道",
+      "modern_name": "坚尼地道",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "STREET",
+      "lat": 22.278,
+      "lon": 114.17
+    },
+    {
+      "id": 110,
+      "city_id": 2,
+      "name_zh": "宝云道",
+      "name_en": "Bowen Road",
+      "place_type": "街道",
+      "modern_name": "宝云道",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "STREET",
+      "lat": 22.27,
+      "lon": 114.17
+    },
+    {
+      "id": 111,
+      "city_id": 2,
+      "name_zh": "薄扶林道",
+      "name_en": "Pok Fu Lam Road",
+      "place_type": "道路",
+      "modern_name": "薄扶林道",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "STREET",
+      "lat": 22.27,
+      "lon": 114.135
+    },
+    {
+      "id": 112,
+      "city_id": 2,
+      "name_zh": "香港仔大道",
+      "name_en": "Aberdeen Road",
+      "place_type": "道路",
+      "modern_name": "香港仔大道",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "STREET",
+      "lat": 22.25,
+      "lon": 114.155
+    },
+    {
+      "id": 113,
+      "city_id": 2,
+      "name_zh": "大潭道",
+      "name_en": "Taitam Road",
+      "place_type": "道路",
+      "modern_name": "大潭道",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "STREET",
+      "lat": 22.258,
+      "lon": 114.2
+    },
+    {
+      "id": 114,
+      "city_id": 2,
+      "name_zh": "小香港道",
+      "name_en": "Little Hong Kong Road",
+      "place_type": "道路",
+      "modern_name": "小香港道",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "STREET",
+      "lat": 22.245,
+      "lon": 114.178
+    },
+    {
+      "id": 115,
+      "city_id": 2,
+      "name_zh": "海旁东",
+      "name_en": "Praya East",
+      "place_type": "街道",
+      "modern_name": "海旁东",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "STREET",
+      "lat": 22.277,
+      "lon": 114.177
+    },
+    {
+      "id": 116,
+      "city_id": 2,
+      "name_zh": "电车道",
+      "name_en": "Tramway",
+      "place_type": "道路",
+      "modern_name": "电车道",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "STREET",
+      "lat": 22.279,
+      "lon": 114.17
+    },
+    {
+      "id": 117,
+      "city_id": 2,
+      "name_zh": "黄泥涌谷",
+      "name_en": "Wongnaichung Valley",
+      "place_type": "谷",
+      "modern_name": "黄泥涌谷",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "VALLEY",
+      "lat": 22.268,
+      "lon": 114.18
+    },
+    {
+      "id": 118,
+      "city_id": 2,
+      "name_zh": "中峡",
+      "name_en": "Middle Gap",
+      "place_type": "峡",
+      "modern_name": "中峡",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "VALLEY",
+      "lat": 22.262,
+      "lon": 114.165
+    },
+    {
+      "id": 119,
+      "city_id": 2,
+      "name_zh": "湾仔峡",
+      "name_en": "Wanchai Gap",
+      "place_type": "峡",
+      "modern_name": "湾仔峡",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "VALLEY",
+      "lat": 22.268,
+      "lon": 114.172
+    },
+    {
+      "id": 120,
+      "city_id": 2,
+      "name_zh": "大潭隧道",
+      "name_en": "Taitam Tunnel",
+      "place_type": "隧道",
+      "modern_name": "大潭隧道",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "TUNNEL",
+      "lat": 22.255,
+      "lon": 114.19
+    },
+    {
+      "id": 121,
+      "city_id": 2,
+      "name_zh": "大潭水塘",
+      "name_en": "Taitam Reservoir",
+      "place_type": "水塘",
+      "modern_name": "大潭水塘",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "RESERVOIR",
+      "lat": 22.258,
+      "lon": 114.205
+    },
+    {
+      "id": 122,
+      "city_id": 2,
+      "name_zh": "薄扶林水塘",
+      "name_en": "Pokfulam Reservoir",
+      "place_type": "水塘",
+      "modern_name": "薄扶林水塘",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "RESERVOIR",
+      "lat": 22.268,
+      "lon": 114.13
+    },
+    {
+      "id": 123,
+      "city_id": 2,
+      "name_zh": "香港仔水塘",
+      "name_en": "Aberdeen Reservoir",
+      "place_type": "水塘",
+      "modern_name": "香港仔水塘",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "RESERVOIR",
+      "lat": 22.258,
+      "lon": 114.145
+    },
+    {
+      "id": 124,
+      "city_id": 2,
+      "name_zh": "马场",
+      "name_en": "Race Course",
+      "place_type": "场",
+      "modern_name": "马场",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "SITE",
+      "lat": 22.2728,
+      "lon": 114.1833
+    },
+    {
+      "id": 125,
+      "city_id": 2,
+      "name_zh": "咖啡园",
+      "name_en": "Coffee Gardens",
+      "place_type": "园",
+      "modern_name": "咖啡园",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "GARDEN",
+      "lat": 22.272,
+      "lon": 114.19
+    },
+    {
+      "id": 126,
+      "city_id": 2,
+      "name_zh": "督宪府",
+      "name_en": "Government House",
+      "place_type": "官署",
+      "modern_name": "督宪府",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "OFFICE",
+      "lat": 22.2787,
+      "lon": 114.159
+    },
+    {
+      "id": 127,
+      "city_id": 2,
+      "name_zh": "邮政总局",
+      "name_en": "General Post Office",
+      "place_type": "官署",
+      "modern_name": "邮政总局",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "OFFICE",
+      "lat": 22.283,
+      "lon": 114.16
+    },
+    {
+      "id": 128,
+      "city_id": 2,
+      "name_zh": "海军船坞",
+      "name_en": "Naval Yard",
+      "place_type": "船坞",
+      "modern_name": "海军船坞",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "DOCK",
+      "lat": 22.285,
+      "lon": 114.17
+    },
+    {
+      "id": 129,
+      "city_id": 2,
+      "name_zh": "军医院",
+      "name_en": "Military Sanatorium",
+      "place_type": "医院",
+      "modern_name": "军医院",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 2,
+      "type_code": "HOSPITAL",
+      "lat": 22.262,
+      "lon": 114.167
+    },
+    {
+      "id": 130,
+      "city_id": 3,
+      "name_zh": "珠江",
+      "name_en": "Pearl River (Canton River)",
+      "place_type": "河",
+      "modern_name": "珠江",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "RIVER"
+    },
+    {
+      "id": 131,
+      "city_id": 3,
+      "name_zh": "白鹅潭",
+      "name_en": "White Goose Pool",
+      "place_type": "潭",
+      "modern_name": "白鹅潭",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "POND"
+    },
+    {
+      "id": 132,
+      "city_id": 3,
+      "name_zh": "沙面",
+      "name_en": "Shamian (Shameen)",
+      "place_type": "沿江岛",
+      "modern_name": "沙面",
+      "modern_flag": 0,
+      "note": "former British/French concession",
+      "source_id": 3,
+      "type_code": "ISLAND"
+    },
+    {
+      "id": 133,
+      "city_id": 3,
+      "name_zh": "黄沙",
+      "name_en": "Huangsha",
+      "place_type": "区",
+      "modern_name": "黄沙",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "DISTRICT"
+    },
+    {
+      "id": 134,
+      "city_id": 3,
+      "name_zh": "芳村",
+      "name_en": "Fangcun",
+      "place_type": "区",
+      "modern_name": "芳村",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "DISTRICT"
+    },
+    {
+      "id": 135,
+      "city_id": 3,
+      "name_zh": "河南",
+      "name_en": "Honam (Henan)",
+      "place_type": "区",
+      "modern_name": "海珠区",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 3,
+      "type_code": "DISTRICT"
+    },
+    {
+      "id": 136,
+      "city_id": 3,
+      "name_zh": "西关",
+      "name_en": "Xiguan",
+      "place_type": "区",
+      "modern_name": "荔湾区",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 3,
+      "type_code": "DISTRICT"
+    },
+    {
+      "id": 137,
+      "city_id": 3,
+      "name_zh": "东山",
+      "name_en": "Dongshan",
+      "place_type": "区",
+      "modern_name": "东山",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "DISTRICT"
+    },
+    {
+      "id": 138,
+      "city_id": 3,
+      "name_zh": "长堤大马路",
+      "name_en": "Changdi (Long Bund)",
+      "place_type": "街道",
+      "modern_name": "长堤大马路",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 139,
+      "city_id": 3,
+      "name_zh": "海珠桥",
+      "name_en": "Haizhu Bridge",
+      "place_type": "桥",
+      "modern_name": "海珠桥",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "BRIDGE"
+    },
+    {
+      "id": 140,
+      "city_id": 3,
+      "name_zh": "海珠分局",
+      "name_en": "Haizhu Branch Bureau",
+      "place_type": "分局",
+      "modern_name": "海珠分局",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 141,
+      "city_id": 3,
+      "name_zh": "东山分局",
+      "name_en": "Dongshan Branch Bureau",
+      "place_type": "分局",
+      "modern_name": "东山分局",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 142,
+      "city_id": 3,
+      "name_zh": "小北分局",
+      "name_en": "Xiaobei Branch Bureau",
+      "place_type": "分局",
+      "modern_name": "小北分局",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 143,
+      "city_id": 3,
+      "name_zh": "中山纪念堂",
+      "name_en": "Sun Yat-sen Memorial Hall",
+      "place_type": "建筑",
+      "modern_name": "中山纪念堂",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "BUILDING"
+    },
+    {
+      "id": 144,
+      "city_id": 3,
+      "name_zh": "观音山",
+      "name_en": "Guanyin Shan (Yuexiu Shan)",
+      "place_type": "山",
+      "modern_name": "越秀山",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 3,
+      "type_code": "MOUNTAIN"
+    },
+    {
+      "id": 145,
+      "city_id": 3,
+      "name_zh": "五层楼",
+      "name_en": "Zhenhai Tower (Five-storey Tower)",
+      "place_type": "楼",
+      "modern_name": "五层楼",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "TOWER"
+    },
+    {
+      "id": 146,
+      "city_id": 3,
+      "name_zh": "越秀山",
+      "name_en": "Yuexiu Shan",
+      "place_type": "山",
+      "modern_name": "越秀山",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "MOUNTAIN"
+    },
+    {
+      "id": 147,
+      "city_id": 3,
+      "name_zh": "中央公园",
+      "name_en": "Central Park",
+      "place_type": "公园",
+      "modern_name": "人民公园",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 3,
+      "type_code": "PARK"
+    },
+    {
+      "id": 148,
+      "city_id": 3,
+      "name_zh": "市政府",
+      "name_en": "City Government",
+      "place_type": "官署",
+      "modern_name": "市政府",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 149,
+      "city_id": 3,
+      "name_zh": "光孝寺",
+      "name_en": "Guangxiao Temple",
+      "place_type": "寺",
+      "modern_name": "光孝寺",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "TEMPLE"
+    },
+    {
+      "id": 150,
+      "city_id": 3,
+      "name_zh": "六榕寺",
+      "name_en": "Liurong Temple",
+      "place_type": "寺",
+      "modern_name": "六榕寺",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "TEMPLE"
+    },
+    {
+      "id": 151,
+      "city_id": 3,
+      "name_zh": "华林寺",
+      "name_en": "Hualin Temple",
+      "place_type": "寺",
+      "modern_name": "华林寺",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "TEMPLE"
+    },
+    {
+      "id": 152,
+      "city_id": 3,
+      "name_zh": "大佛寺",
+      "name_en": "Dafo Temple",
+      "place_type": "寺",
+      "modern_name": "大佛寺",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "TEMPLE"
+    },
+    {
+      "id": 153,
+      "city_id": 3,
+      "name_zh": "陈家祠",
+      "name_en": "Chen Clan Academy",
+      "place_type": "祠",
+      "modern_name": "陈家祠",
+      "modern_flag": 0,
+      "note": "reading to verify",
+      "source_id": 3,
+      "type_code": "TEMPLE"
+    },
+    {
+      "id": 154,
+      "city_id": 3,
+      "name_zh": "怀圣寺",
+      "name_en": "Huaisheng Mosque",
+      "place_type": "寺",
+      "modern_name": "怀圣寺",
+      "modern_flag": 0,
+      "note": "reading to verify",
+      "source_id": 3,
+      "type_code": "TEMPLE"
+    },
+    {
+      "id": 155,
+      "city_id": 3,
+      "name_zh": "六榕路",
+      "name_en": "Liurong Road",
+      "place_type": "街道",
+      "modern_name": "六榕路",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 156,
+      "city_id": 3,
+      "name_zh": "惠爱中路",
+      "name_en": "Hui'ai Middle Road",
+      "place_type": "街道",
+      "modern_name": "中山路",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 157,
+      "city_id": 3,
+      "name_zh": "惠爱东路",
+      "name_en": "Hui'ai East Road",
+      "place_type": "街道",
+      "modern_name": "中山路",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 158,
+      "city_id": 3,
+      "name_zh": "惠爱西路",
+      "name_en": "Hui'ai West Road",
+      "place_type": "街道",
+      "modern_name": "中山路",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 159,
+      "city_id": 3,
+      "name_zh": "惠福路",
+      "name_en": "Huifu Road",
+      "place_type": "街道",
+      "modern_name": "惠福路",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 160,
+      "city_id": 3,
+      "name_zh": "文德路",
+      "name_en": "Wende Road",
+      "place_type": "街道",
+      "modern_name": "文德路",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 161,
+      "city_id": 3,
+      "name_zh": "永汉路",
+      "name_en": "Yonghan Road",
+      "place_type": "街道",
+      "modern_name": "北京路",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 162,
+      "city_id": 3,
+      "name_zh": "太平南路",
+      "name_en": "Taiping South Road",
+      "place_type": "街道",
+      "modern_name": "太平南路",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 163,
+      "city_id": 3,
+      "name_zh": "太平北路",
+      "name_en": "Taiping North Road",
+      "place_type": "街道",
+      "modern_name": "太平北路",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 164,
+      "city_id": 3,
+      "name_zh": "丰宁路",
+      "name_en": "Fengning Road",
+      "place_type": "街道",
+      "modern_name": "丰宁路",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 165,
+      "city_id": 3,
+      "name_zh": "长寿路",
+      "name_en": "Changshou Road",
+      "place_type": "街道",
+      "modern_name": "长寿路",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 166,
+      "city_id": 3,
+      "name_zh": "宝华路",
+      "name_en": "Baohua Road",
+      "place_type": "街道",
+      "modern_name": "宝华路",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 167,
+      "city_id": 3,
+      "name_zh": "带河路",
+      "name_en": "Daihe Road",
+      "place_type": "街道",
+      "modern_name": "带河路",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 168,
+      "city_id": 3,
+      "name_zh": "一德路",
+      "name_en": "Yide Road",
+      "place_type": "街道",
+      "modern_name": "一德路",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 169,
+      "city_id": 3,
+      "name_zh": "万福路",
+      "name_en": "Wanfu Road",
+      "place_type": "街道",
+      "modern_name": "万福路",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 170,
+      "city_id": 3,
+      "name_zh": "泰康路",
+      "name_en": "Taikang Road",
+      "place_type": "街道",
+      "modern_name": "泰康路",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 171,
+      "city_id": 3,
+      "name_zh": "教育路",
+      "name_en": "Jiaoyu Road",
+      "place_type": "街道",
+      "modern_name": "教育路",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 172,
+      "city_id": 3,
+      "name_zh": "十八甫",
+      "name_en": "Shiba Pu",
+      "place_type": "区",
+      "modern_name": "十八甫",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "DISTRICT"
+    },
+    {
+      "id": 173,
+      "city_id": 3,
+      "name_zh": "上九甫",
+      "name_en": "Shangjiu Pu",
+      "place_type": "街道",
+      "modern_name": "上九甫",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 174,
+      "city_id": 3,
+      "name_zh": "下九甫",
+      "name_en": "Xiajiu Pu",
+      "place_type": "街道",
+      "modern_name": "下九甫",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "STREET"
+    },
+    {
+      "id": 175,
+      "city_id": 3,
+      "name_zh": "荔枝湾",
+      "name_en": "Lizhiwan",
+      "place_type": "区",
+      "modern_name": "荔枝湾",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "DISTRICT"
+    },
+    {
+      "id": 176,
+      "city_id": 3,
+      "name_zh": "泮塘",
+      "name_en": "Pantang",
+      "place_type": "村",
+      "modern_name": "泮塘",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "VILLAGE"
+    },
+    {
+      "id": 177,
+      "city_id": 3,
+      "name_zh": "大北门",
+      "name_en": "Dabeimen (North Gate)",
+      "place_type": "城门",
+      "modern_name": "大北门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "GATE"
+    },
+    {
+      "id": 178,
+      "city_id": 3,
+      "name_zh": "小北门",
+      "name_en": "Xiaobeimen",
+      "place_type": "城门",
+      "modern_name": "小北门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "GATE"
+    },
+    {
+      "id": 179,
+      "city_id": 3,
+      "name_zh": "大沙头",
+      "name_en": "Dashatou",
+      "place_type": "区",
+      "modern_name": "大沙头",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "DISTRICT"
+    },
+    {
+      "id": 180,
+      "city_id": 3,
+      "name_zh": "沙河",
+      "name_en": "Shahe",
+      "place_type": "村",
+      "modern_name": "沙河",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "VILLAGE"
+    },
+    {
+      "id": 181,
+      "city_id": 3,
+      "name_zh": "石室",
+      "name_en": "Sacred Heart Cathedral",
+      "place_type": "教堂",
+      "modern_name": "石室圣心大教堂",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 3,
+      "type_code": "CHURCH"
+    },
+    {
+      "id": 182,
+      "city_id": 3,
+      "name_zh": "西堤",
+      "name_en": "West Bund",
+      "place_type": "堤",
+      "modern_name": "西堤",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "EMBANKMENT"
+    },
+    {
+      "id": 183,
+      "city_id": 3,
+      "name_zh": "东堤",
+      "name_en": "East Bund",
+      "place_type": "堤",
+      "modern_name": "东堤",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "EMBANKMENT"
+    },
+    {
+      "id": 184,
+      "city_id": 3,
+      "name_zh": "南堤",
+      "name_en": "South Bund",
+      "place_type": "堤",
+      "modern_name": "南堤",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "EMBANKMENT"
+    },
+    {
+      "id": 185,
+      "city_id": 3,
+      "name_zh": "动物园",
+      "name_en": "Zoological Garden",
+      "place_type": "园",
+      "modern_name": "动物园",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "GARDEN"
+    },
+    {
+      "id": 186,
+      "city_id": 3,
+      "name_zh": "农林试验场",
+      "name_en": "Agricultural Experiment Station",
+      "place_type": "场",
+      "modern_name": "农林试验场",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "SITE"
+    },
+    {
+      "id": 187,
+      "city_id": 3,
+      "name_zh": "东较场",
+      "name_en": "Dongjiaochang",
+      "place_type": "场",
+      "modern_name": "东较场",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 3,
+      "type_code": "SITE"
+    },
+    {
+      "id": 188,
+      "city_id": 4,
+      "name_zh": "澳门",
+      "name_en": "Macao",
+      "place_type": "地区",
+      "modern_name": "澳门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "AREA"
+    },
+    {
+      "id": 189,
+      "city_id": 4,
+      "name_zh": "内港",
+      "name_en": "Porto Interior",
+      "place_type": "港",
+      "modern_name": "内港",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "HARBOUR"
+    },
+    {
+      "id": 190,
+      "city_id": 4,
+      "name_zh": "外港",
+      "name_en": "Porto Exterior",
+      "place_type": "港",
+      "modern_name": "外港",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "HARBOUR"
+    },
+    {
+      "id": 191,
+      "city_id": 4,
+      "name_zh": "南湾",
+      "name_en": "Praia Grande",
+      "place_type": "湾",
+      "modern_name": "南湾",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "BAY"
+    },
+    {
+      "id": 192,
+      "city_id": 4,
+      "name_zh": "西湾",
+      "name_en": "Baia do Fisho",
+      "place_type": "湾",
+      "modern_name": "西湾",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "BAY"
+    },
+    {
+      "id": 193,
+      "city_id": 4,
+      "name_zh": "黑沙环",
+      "name_en": "Areia Preta",
+      "place_type": "区",
+      "modern_name": "黑沙环",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "DISTRICT"
+    },
+    {
+      "id": 194,
+      "city_id": 4,
+      "name_zh": "望厦",
+      "name_en": "Mong Ha",
+      "place_type": "区",
+      "modern_name": "望厦",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "DISTRICT"
+    },
+    {
+      "id": 195,
+      "city_id": 4,
+      "name_zh": "水塘",
+      "name_en": "Reservoir",
+      "place_type": "水塘",
+      "modern_name": "水塘",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "RESERVOIR"
+    },
+    {
+      "id": 196,
+      "city_id": 4,
+      "name_zh": "马场",
+      "name_en": "Race Course",
+      "place_type": "场",
+      "modern_name": "马场",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "SITE"
+    },
+    {
+      "id": 197,
+      "city_id": 4,
+      "name_zh": "大炮台",
+      "name_en": "Fortaleza do Monte",
+      "place_type": "炮台",
+      "modern_name": "大炮台",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "MILITARY"
+    },
+    {
+      "id": 198,
+      "city_id": 4,
+      "name_zh": "东望洋炮台",
+      "name_en": "Guia Fort",
+      "place_type": "炮台",
+      "modern_name": "东望洋炮台",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "MILITARY"
+    },
+    {
+      "id": 199,
+      "city_id": 4,
+      "name_zh": "东望洋灯塔",
+      "name_en": "Guia Lighthouse",
+      "place_type": "灯塔",
+      "modern_name": "东望洋灯塔",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "LIGHTHOUSE"
+    },
+    {
+      "id": 200,
+      "city_id": 4,
+      "name_zh": "东望洋山",
+      "name_en": "Colina da Guia",
+      "place_type": "山",
+      "modern_name": "东望洋山",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "MOUNTAIN"
+    },
+    {
+      "id": 201,
+      "city_id": 4,
+      "name_zh": "圣嘉辣修院",
+      "name_en": "Santa Clara Convent",
+      "place_type": "修院",
+      "modern_name": "圣嘉辣修院",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "CHURCH"
+    },
+    {
+      "id": 202,
+      "city_id": 4,
+      "name_zh": "主教府",
+      "name_en": "Paco Episcopal (Bishop's Palace)",
+      "place_type": "官署",
+      "modern_name": "主教府",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 203,
+      "city_id": 4,
+      "name_zh": "风顺堂",
+      "name_en": "Igreja de S. Lourenco",
+      "place_type": "教堂",
+      "modern_name": "风顺堂",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "CHURCH"
+    },
+    {
+      "id": 204,
+      "city_id": 4,
+      "name_zh": "圣方济各炮台",
+      "name_en": "Forte de S. Francisco",
+      "place_type": "炮台",
+      "modern_name": "圣方济各炮台",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "MILITARY"
+    },
+    {
+      "id": 205,
+      "city_id": 4,
+      "name_zh": "圣方济各营房",
+      "name_en": "Quartel de S. Francisco",
+      "place_type": "军营",
+      "modern_name": "圣方济各营房",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "MILITARY"
+    },
+    {
+      "id": 206,
+      "city_id": 4,
+      "name_zh": "圣若瑟修院",
+      "name_en": "Seminario de S. Jose",
+      "place_type": "修院",
+      "modern_name": "圣若瑟修院",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "CHURCH"
+    },
+    {
+      "id": 207,
+      "city_id": 4,
+      "name_zh": "议事亭",
+      "name_en": "Leal Senado",
+      "place_type": "官署",
+      "modern_name": "市政署",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 4,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 208,
+      "city_id": 4,
+      "name_zh": "大西洋银行",
+      "name_en": "Banco Nacional Ultramarino",
+      "place_type": "银行",
+      "modern_name": "大西洋银行",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "BANK"
+    },
+    {
+      "id": 209,
+      "city_id": 4,
+      "name_zh": "邮电局",
+      "name_en": "Post and Telegraphs",
+      "place_type": "官署",
+      "modern_name": "邮电局",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 210,
+      "city_id": 4,
+      "name_zh": "白鸽巢",
+      "name_en": "Gruta de Camoes",
+      "place_type": "公园",
+      "modern_name": "白鸽巢",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "PARK"
+    },
+    {
+      "id": 211,
+      "city_id": 4,
+      "name_zh": "工务局",
+      "name_en": "Obras Publicas",
+      "place_type": "官署",
+      "modern_name": "工务局",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 212,
+      "city_id": 4,
+      "name_zh": "市场",
+      "name_en": "Market",
+      "place_type": "市场",
+      "modern_name": "市场",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "MARKET"
+    },
+    {
+      "id": 213,
+      "city_id": 4,
+      "name_zh": "中央酒店",
+      "name_en": "Central Hotel",
+      "place_type": "酒店",
+      "modern_name": "中央酒店",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "HOTEL"
+    },
+    {
+      "id": 214,
+      "city_id": 4,
+      "name_zh": "利为旅酒店",
+      "name_en": "Riviera Hotel",
+      "place_type": "酒店",
+      "modern_name": "利为旅酒店",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "HOTEL"
+    },
+    {
+      "id": 215,
+      "city_id": 4,
+      "name_zh": "中国酒店",
+      "name_en": "Chinese Hotel",
+      "place_type": "酒店",
+      "modern_name": "中国酒店",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "HOTEL"
+    },
+    {
+      "id": 216,
+      "city_id": 4,
+      "name_zh": "监狱",
+      "name_en": "Cadeia (Gaol)",
+      "place_type": "官署",
+      "modern_name": "监狱",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 217,
+      "city_id": 4,
+      "name_zh": "消防局",
+      "name_en": "Estacao dos Bombeiros (Fire Brigade)",
+      "place_type": "官署",
+      "modern_name": "消防局",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 218,
+      "city_id": 4,
+      "name_zh": "医院",
+      "name_en": "Hospital",
+      "place_type": "医院",
+      "modern_name": "医院",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "HOSPITAL"
+    },
+    {
+      "id": 219,
+      "city_id": 4,
+      "name_zh": "坟场",
+      "name_en": "Cemetery",
+      "place_type": "坟场",
+      "modern_name": "坟场",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "CEMETERY"
+    },
+    {
+      "id": 220,
+      "city_id": 4,
+      "name_zh": "大三巴",
+      "name_en": "Ruins of S. Paulo",
+      "place_type": "遗址",
+      "modern_name": "大三巴",
+      "modern_flag": 0,
+      "note": "reading to verify",
+      "source_id": 4,
+      "type_code": "RELIC"
+    },
+    {
+      "id": 221,
+      "city_id": 4,
+      "name_zh": "板樟堂街",
+      "name_en": "Rua de S. Domingos",
+      "place_type": "街道",
+      "modern_name": "板樟堂街",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "STREET"
+    },
+    {
+      "id": 222,
+      "city_id": 4,
+      "name_zh": "圣安多尼堂",
+      "name_en": "Rua de S. Antonio",
+      "place_type": "街道",
+      "modern_name": "圣安多尼堂",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "STREET"
+    },
+    {
+      "id": 223,
+      "city_id": 4,
+      "name_zh": "新马路",
+      "name_en": "Avenida Almeida Ribeiro",
+      "place_type": "街道",
+      "modern_name": "新马路",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "STREET"
+    },
+    {
+      "id": 224,
+      "city_id": 4,
+      "name_zh": "荷兰园",
+      "name_en": "Rua Horta e Costa",
+      "place_type": "街道",
+      "modern_name": "荷兰园",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "STREET"
+    },
+    {
+      "id": 225,
+      "city_id": 4,
+      "name_zh": "水坑尾街",
+      "name_en": "Rua do Campo",
+      "place_type": "街道",
+      "modern_name": "水坑尾街",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "STREET"
+    },
+    {
+      "id": 226,
+      "city_id": 4,
+      "name_zh": "沙梨头",
+      "name_en": "Rua do Patane",
+      "place_type": "街道",
+      "modern_name": "沙梨头",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "STREET"
+    },
+    {
+      "id": 227,
+      "city_id": 4,
+      "name_zh": "海军上将大马路",
+      "name_en": "Avenida Almirante",
+      "place_type": "街道",
+      "modern_name": "海军上将大马路",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "STREET"
+    },
+    {
+      "id": 228,
+      "city_id": 4,
+      "name_zh": "雅廉访大马路",
+      "name_en": "Avenida Ouvidor Arriaga",
+      "place_type": "街道",
+      "modern_name": "雅廉访大马路",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "STREET"
+    },
+    {
+      "id": 229,
+      "city_id": 4,
+      "name_zh": "美副将大马路",
+      "name_en": "Avenida Coronel Mesquita",
+      "place_type": "街道",
+      "modern_name": "美副将大马路",
+      "modern_flag": 0,
+      "note": "reading to verify",
+      "source_id": 4,
+      "type_code": "STREET"
+    },
+    {
+      "id": 230,
+      "city_id": 4,
+      "name_zh": "船坞",
+      "name_en": "Dockyard",
+      "place_type": "船坞",
+      "modern_name": "船坞",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "DOCK"
+    },
+    {
+      "id": 231,
+      "city_id": 4,
+      "name_zh": "码头",
+      "name_en": "Dock / Wharf",
+      "place_type": "码头",
+      "modern_name": "码头",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "WHARF"
+    },
+    {
+      "id": 232,
+      "city_id": 4,
+      "name_zh": "筷子基",
+      "name_en": "Doca Lamau",
+      "place_type": "区",
+      "modern_name": "筷子基",
+      "modern_flag": 0,
+      "note": "reading to verify",
+      "source_id": 4,
+      "type_code": "DISTRICT"
+    },
+    {
+      "id": 233,
+      "city_id": 4,
+      "name_zh": "青洲",
+      "name_en": "Ilha Verde",
+      "place_type": "区",
+      "modern_name": "青洲",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "DISTRICT"
+    },
+    {
+      "id": 234,
+      "city_id": 4,
+      "name_zh": "妈阁",
+      "name_en": "Barra",
+      "place_type": "区",
+      "modern_name": "妈阁",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "DISTRICT"
+    },
+    {
+      "id": 235,
+      "city_id": 4,
+      "name_zh": "望德堂",
+      "name_en": "Back Port das Lazaro",
+      "place_type": "教堂",
+      "modern_name": "望德堂",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "CHURCH"
+    },
+    {
+      "id": 236,
+      "city_id": 4,
+      "name_zh": "大堂",
+      "name_en": "Se (Cathedral)",
+      "place_type": "教堂",
+      "modern_name": "大堂",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "CHURCH"
+    },
+    {
+      "id": 237,
+      "city_id": 4,
+      "name_zh": "澳门半岛",
+      "name_en": "Macau Peninsula",
+      "place_type": "半岛",
+      "modern_name": "澳门半岛",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 4,
+      "type_code": "PENINSULA"
+    },
+    {
+      "id": 238,
+      "city_id": 5,
+      "name_zh": "天安门",
+      "name_en": "Tiananmen",
+      "place_type": "城门",
+      "modern_name": "天安门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "GATE"
+    },
+    {
+      "id": 239,
+      "city_id": 5,
+      "name_zh": "端门",
+      "name_en": "Duanmen",
+      "place_type": "城门",
+      "modern_name": "端门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "GATE"
+    },
+    {
+      "id": 240,
+      "city_id": 5,
+      "name_zh": "午门",
+      "name_en": "Wumen",
+      "place_type": "城门",
+      "modern_name": "午门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "GATE"
+    },
+    {
+      "id": 241,
+      "city_id": 5,
+      "name_zh": "太和门",
+      "name_en": "Taihe Gate",
+      "place_type": "城门",
+      "modern_name": "太和门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "GATE"
+    },
+    {
+      "id": 242,
+      "city_id": 5,
+      "name_zh": "太和殿",
+      "name_en": "Hall of Supreme Harmony",
+      "place_type": "宫殿",
+      "modern_name": "太和殿",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "PALACE"
+    },
+    {
+      "id": 243,
+      "city_id": 5,
+      "name_zh": "保和殿",
+      "name_en": "Hall of Preserving Harmony",
+      "place_type": "宫殿",
+      "modern_name": "保和殿",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "PALACE"
+    },
+    {
+      "id": 244,
+      "city_id": 5,
+      "name_zh": "乾清宫",
+      "name_en": "Palace of Heavenly Purity",
+      "place_type": "宫殿",
+      "modern_name": "乾清宫",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "PALACE"
+    },
+    {
+      "id": 245,
+      "city_id": 5,
+      "name_zh": "东华门",
+      "name_en": "Donghua Gate",
+      "place_type": "城门",
+      "modern_name": "东华门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "GATE"
+    },
+    {
+      "id": 246,
+      "city_id": 5,
+      "name_zh": "西华门",
+      "name_en": "Xihua Gate",
+      "place_type": "城门",
+      "modern_name": "西华门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "GATE"
+    },
+    {
+      "id": 247,
+      "city_id": 5,
+      "name_zh": "太庙",
+      "name_en": "Imperial Ancestral Temple",
+      "place_type": "坛庙",
+      "modern_name": "劳动人民文化宫",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 5,
+      "type_code": "TEMPLE"
+    },
+    {
+      "id": 248,
+      "city_id": 5,
+      "name_zh": "社稷坛",
+      "name_en": "Altar of Land and Grain",
+      "place_type": "坛",
+      "modern_name": "中山公园",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 5,
+      "type_code": "ALTAR"
+    },
+    {
+      "id": 249,
+      "city_id": 5,
+      "name_zh": "景山",
+      "name_en": "Jingshan",
+      "place_type": "山",
+      "modern_name": "景山公园",
+      "modern_flag": 1,
+      "note": "旧称煤山 原图核对：本条在原图相应位置未见明确标注，存疑（待核）。",
+      "source_id": 5,
+      "type_code": "MOUNTAIN"
+    },
+    {
+      "id": 250,
+      "city_id": 5,
+      "name_zh": "北海",
+      "name_en": "Beihai",
+      "place_type": "湖",
+      "modern_name": "北海公园",
+      "modern_flag": 1,
+      "note": "原图核对：本条在原图相应位置未见明确标注，存疑（待核）。",
+      "source_id": 5,
+      "type_code": "LAKE"
+    },
+    {
+      "id": 251,
+      "city_id": 5,
+      "name_zh": "中海",
+      "name_en": "Zhonghai",
+      "place_type": "湖",
+      "modern_name": "中海",
+      "modern_flag": 0,
+      "note": "原图核对：本条在原图相应位置未见明确标注，存疑（待核）。",
+      "source_id": 5,
+      "type_code": "LAKE"
+    },
+    {
+      "id": 252,
+      "city_id": 5,
+      "name_zh": "南海",
+      "name_en": "Nanhai",
+      "place_type": "湖",
+      "modern_name": "南海",
+      "modern_flag": 0,
+      "note": "原图核对：本条在原图相应位置未见明确标注，存疑（待核）。",
+      "source_id": 5,
+      "type_code": "LAKE"
+    },
+    {
+      "id": 253,
+      "city_id": 5,
+      "name_zh": "什刹海",
+      "name_en": "Shichahai",
+      "place_type": "湖",
+      "modern_name": "什刹海",
+      "modern_flag": 0,
+      "note": "原图核对：本条在原图相应位置未见明确标注，存疑（待核）。",
+      "source_id": 5,
+      "type_code": "LAKE"
+    },
+    {
+      "id": 254,
+      "city_id": 5,
+      "name_zh": "后海",
+      "name_en": "Houhai",
+      "place_type": "湖",
+      "modern_name": "后海",
+      "modern_flag": 0,
+      "note": "原图核对：本条在原图相应位置未见明确标注，存疑（待核）。",
+      "source_id": 5,
+      "type_code": "LAKE"
+    },
+    {
+      "id": 255,
+      "city_id": 5,
+      "name_zh": "积水潭",
+      "name_en": "Jishuitan",
+      "place_type": "湖",
+      "modern_name": "积水潭",
+      "modern_flag": 0,
+      "note": "原图核对：本条在原图相应位置未见明确标注，存疑（待核）。",
+      "source_id": 5,
+      "type_code": "LAKE"
+    },
+    {
+      "id": 256,
+      "city_id": 5,
+      "name_zh": "鼓楼",
+      "name_en": "Drum Tower",
+      "place_type": "楼",
+      "modern_name": "鼓楼",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "TOWER"
+    },
+    {
+      "id": 257,
+      "city_id": 5,
+      "name_zh": "钟楼",
+      "name_en": "Bell Tower",
+      "place_type": "楼",
+      "modern_name": "钟楼",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "TOWER"
+    },
+    {
+      "id": 258,
+      "city_id": 5,
+      "name_zh": "正阳门",
+      "name_en": "Zhengyangmen",
+      "place_type": "城门",
+      "modern_name": "前门",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 5,
+      "type_code": "GATE"
+    },
+    {
+      "id": 259,
+      "city_id": 5,
+      "name_zh": "崇文门",
+      "name_en": "Chongwenmen",
+      "place_type": "城门",
+      "modern_name": "崇文门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "GATE"
+    },
+    {
+      "id": 260,
+      "city_id": 5,
+      "name_zh": "宣武门",
+      "name_en": "Xuanwumen",
+      "place_type": "城门",
+      "modern_name": "宣武门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "GATE"
+    },
+    {
+      "id": 261,
+      "city_id": 5,
+      "name_zh": "东直门",
+      "name_en": "Dongzhimen",
+      "place_type": "城门",
+      "modern_name": "东直门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "GATE"
+    },
+    {
+      "id": 262,
+      "city_id": 5,
+      "name_zh": "西直门",
+      "name_en": "Xizhimen",
+      "place_type": "城门",
+      "modern_name": "西直门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "GATE"
+    },
+    {
+      "id": 263,
+      "city_id": 5,
+      "name_zh": "朝阳门",
+      "name_en": "Chaoyangmen",
+      "place_type": "城门",
+      "modern_name": "朝阳门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "GATE"
+    },
+    {
+      "id": 264,
+      "city_id": 5,
+      "name_zh": "阜成门",
+      "name_en": "Fuchengmen",
+      "place_type": "城门",
+      "modern_name": "阜成门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "GATE"
+    },
+    {
+      "id": 265,
+      "city_id": 5,
+      "name_zh": "德胜门",
+      "name_en": "Deshengmen",
+      "place_type": "城门",
+      "modern_name": "德胜门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "GATE"
+    },
+    {
+      "id": 266,
+      "city_id": 5,
+      "name_zh": "安定门",
+      "name_en": "Andingmen",
+      "place_type": "城门",
+      "modern_name": "安定门",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "GATE"
+    },
+    {
+      "id": 267,
+      "city_id": 5,
+      "name_zh": "东便门",
+      "name_en": "Dongbianmen",
+      "place_type": "城门",
+      "modern_name": "东便门",
+      "modern_flag": 0,
+      "note": "原图核对：本条在原图相应位置未见明确标注，存疑（待核）。",
+      "source_id": 5,
+      "type_code": "GATE"
+    },
+    {
+      "id": 268,
+      "city_id": 5,
+      "name_zh": "西便门",
+      "name_en": "Xibianmen",
+      "place_type": "城门",
+      "modern_name": "西便门",
+      "modern_flag": 0,
+      "note": "原图核对：本条在原图相应位置未见明确标注，存疑（待核）。",
+      "source_id": 5,
+      "type_code": "GATE"
+    },
+    {
+      "id": 269,
+      "city_id": 5,
+      "name_zh": "西单牌楼",
+      "name_en": "Xidan Pailou",
+      "place_type": "牌楼",
+      "modern_name": "西单",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 5,
+      "type_code": "PAILOU"
+    },
+    {
+      "id": 270,
+      "city_id": 5,
+      "name_zh": "西四牌楼",
+      "name_en": "Xisi Pailou",
+      "place_type": "牌楼",
+      "modern_name": "西四",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 5,
+      "type_code": "PAILOU"
+    },
+    {
+      "id": 271,
+      "city_id": 5,
+      "name_zh": "东单牌楼",
+      "name_en": "Dongdan Pailou",
+      "place_type": "牌楼",
+      "modern_name": "东单",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 5,
+      "type_code": "PAILOU"
+    },
+    {
+      "id": 272,
+      "city_id": 5,
+      "name_zh": "东四牌楼",
+      "name_en": "Dongsi Pailou",
+      "place_type": "牌楼",
+      "modern_name": "东四",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 5,
+      "type_code": "PAILOU"
+    },
+    {
+      "id": 273,
+      "city_id": 5,
+      "name_zh": "鼓楼大街",
+      "name_en": "Gulou Dajie",
+      "place_type": "街道",
+      "modern_name": "鼓楼大街",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "STREET"
+    },
+    {
+      "id": 274,
+      "city_id": 5,
+      "name_zh": "地安门外大街",
+      "name_en": "Di'anmenwai Dajie",
+      "place_type": "街道",
+      "modern_name": "地安门外大街",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "STREET"
+    },
+    {
+      "id": 275,
+      "city_id": 5,
+      "name_zh": "北新桥",
+      "name_en": "Beixinqiao",
+      "place_type": "桥",
+      "modern_name": "北新桥",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "BRIDGE"
+    },
+    {
+      "id": 276,
+      "city_id": 5,
+      "name_zh": "甘石桥",
+      "name_en": "Ganshiqiao",
+      "place_type": "桥",
+      "modern_name": "甘石桥",
+      "modern_flag": 0,
+      "note": "原图核对：本条在原图相应位置未见明确标注，存疑（待核）。",
+      "source_id": 5,
+      "type_code": "BRIDGE"
+    },
+    {
+      "id": 277,
+      "city_id": 5,
+      "name_zh": "银锭桥",
+      "name_en": "Yindingqiao",
+      "place_type": "桥",
+      "modern_name": "银锭桥",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "BRIDGE"
+    },
+    {
+      "id": 278,
+      "city_id": 5,
+      "name_zh": "护国寺",
+      "name_en": "Huguo Temple",
+      "place_type": "寺",
+      "modern_name": "护国寺",
+      "modern_flag": 0,
+      "note": "原图核对：本条在原图相应位置未见明确标注，存疑（待核）。",
+      "source_id": 5,
+      "type_code": "TEMPLE"
+    },
+    {
+      "id": 279,
+      "city_id": 5,
+      "name_zh": "隆福寺",
+      "name_en": "Longfu Temple",
+      "place_type": "寺",
+      "modern_name": "隆福寺",
+      "modern_flag": 0,
+      "note": "原图核对：本条在原图相应位置未见明确标注，存疑（待核）。",
+      "source_id": 5,
+      "type_code": "TEMPLE"
+    },
+    {
+      "id": 280,
+      "city_id": 5,
+      "name_zh": "白塔寺",
+      "name_en": "Baita Temple",
+      "place_type": "寺",
+      "modern_name": "妙应寺",
+      "modern_flag": 1,
+      "note": "原图核对：本条在原图相应位置未见明确标注，存疑（待核）。",
+      "source_id": 5,
+      "type_code": "TEMPLE"
+    },
+    {
+      "id": 281,
+      "city_id": 5,
+      "name_zh": "都城隍庙",
+      "name_en": "City God Temple",
+      "place_type": "庙",
+      "modern_name": "都城隍庙",
+      "modern_flag": 0,
+      "note": "原图核对：本条在原图相应位置未见明确标注，存疑（待核）。",
+      "source_id": 5,
+      "type_code": "TEMPLE"
+    },
+    {
+      "id": 282,
+      "city_id": 5,
+      "name_zh": "顺天府",
+      "name_en": "Shuntian Prefecture",
+      "place_type": "官署",
+      "modern_name": "顺天府",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 283,
+      "city_id": 5,
+      "name_zh": "国子监",
+      "name_en": "Imperial Academy",
+      "place_type": "官署",
+      "modern_name": "孔庙和国子监博物馆",
+      "modern_flag": 1,
+      "note": "",
+      "source_id": 5,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 284,
+      "city_id": 5,
+      "name_zh": "贡院",
+      "name_en": "Examination Hall",
+      "place_type": "官署",
+      "modern_name": "贡院",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 285,
+      "city_id": 5,
+      "name_zh": "都察院",
+      "name_en": "Censorate",
+      "place_type": "官署",
+      "modern_name": "都察院",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 286,
+      "city_id": 5,
+      "name_zh": "翰林院",
+      "name_en": "Hanlin Academy",
+      "place_type": "官署",
+      "modern_name": "翰林院",
+      "modern_flag": 0,
+      "note": "原图核对：本条在原图相应位置未见明确标注，存疑（待核）。",
+      "source_id": 5,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 287,
+      "city_id": 5,
+      "name_zh": "西什库",
+      "name_en": "Xishiku",
+      "place_type": "库",
+      "modern_name": "北堂（西什库教堂）",
+      "modern_flag": 1,
+      "note": "原图核对：本条在原图相应位置未见明确标注，存疑（待核）。",
+      "source_id": 5,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 288,
+      "city_id": 5,
+      "name_zh": "象房",
+      "name_en": "Elephant House",
+      "place_type": "官署",
+      "modern_name": "象房",
+      "modern_flag": 0,
+      "note": "",
+      "source_id": 5,
+      "type_code": "OFFICE"
+    },
+    {
+      "id": 289,
+      "city_id": 5,
+      "name_zh": "沙滩",
+      "name_en": "Shatan",
+      "place_type": "地",
+      "modern_name": "沙滩",
+      "modern_flag": 0,
+      "note": "原图核对：本条在原图相应位置未见明确标注，存疑（待核）。",
+      "source_id": 5,
+      "type_code": "AREA"
+    },
+    {
+      "id": 290,
+      "city_id": 5,
+      "name_zh": "天桥",
+      "name_en": "Tianqiao",
+      "place_type": "桥",
+      "type_code": "BRIDGE",
+      "modern_name": "天桥",
+      "modern_flag": 0,
+      "lat": null,
+      "lon": null,
+      "note": "原图核对时补录（bj_r2c1 见「天橋」）。",
+      "source_id": 5
+    },
+    {
+      "id": 291,
+      "city_id": 1,
+      "name_zh": "将军庙",
+      "name_en": "Jiangjun Temple",
+      "place_type": "庙",
+      "type_code": "TEMPLE",
+      "modern_name": "将军庙",
+      "modern_flag": 0,
+      "lat": null,
+      "lon": null,
+      "note": "原图核对时补录（南京 1928 图见「將軍廟」）。",
+      "source_id": 1
+    }
+  ],
+  "place_name": [
+    {
+      "id": 1,
+      "place_id": 7,
+      "form": "roman",
+      "name": "Xuanwu Lake",
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 2,
+      "place_id": 26,
+      "form": "roman",
+      "name": "University of Nanking",
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 3,
+      "place_id": 27,
+      "form": "roman",
+      "name": "Ginling College",
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 4,
+      "place_id": 25,
+      "form": "roman",
+      "name": "Gulou Hospital",
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 5,
+      "place_id": 30,
+      "form": "roman",
+      "name": "Ministry of Foreign Affairs",
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 6,
+      "place_id": 31,
+      "form": "roman",
+      "name": "Ministry of Communications",
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 7,
+      "place_id": 32,
+      "form": "roman",
+      "name": "Ministry of Finance",
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 8,
+      "place_id": 33,
+      "form": "roman",
+      "name": "Judicial Yuan",
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 9,
+      "place_id": 34,
+      "form": "roman",
+      "name": "National Government",
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 10,
+      "place_id": 39,
+      "form": "roman",
+      "name": "Zhonggulou (Bell and Drum Tower)",
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 11,
+      "place_id": 6,
+      "form": "variant",
+      "name": "润丰门",
+      "note": "map order; standard reading taken as 丰润门, to verify",
+      "source_id": 1
+    },
+    {
+      "id": 12,
+      "place_id": 25,
+      "form": "variant",
+      "name": "鼓楼医院",
+      "note": "map prints 院医楼鼓",
+      "source_id": 1
+    },
+    {
+      "id": 13,
+      "place_id": 77,
+      "form": "variant",
+      "name": "香港仔 (standard Chinese)",
+      "note": "map prints 'Aberdeen'",
+      "source_id": 2
+    },
+    {
+      "id": 14,
+      "place_id": 84,
+      "form": "variant",
+      "name": "Repulse Bay",
+      "note": "modern English name",
+      "source_id": 2
+    },
+    {
+      "id": 15,
+      "place_id": 83,
+      "form": "variant",
+      "name": "Shamshui Wan",
+      "note": "alternative romanisation on map",
+      "source_id": 2
+    },
+    {
+      "id": 16,
+      "place_id": 79,
+      "form": "variant",
+      "name": "Pok Fu Lam",
+      "note": "spelling variant",
+      "source_id": 2
+    },
+    {
+      "id": 17,
+      "place_id": 69,
+      "form": "variant",
+      "name": "Tsim Sha Tsui",
+      "note": "modern romanisation",
+      "source_id": 2
+    },
+    {
+      "id": 18,
+      "place_id": 68,
+      "form": "variant",
+      "name": "Mong Kok",
+      "note": "modern romanisation",
+      "source_id": 2
+    },
+    {
+      "id": 19,
+      "place_id": 74,
+      "form": "variant",
+      "name": "Shau Kei Wan",
+      "note": "modern romanisation",
+      "source_id": 2
+    },
+    {
+      "id": 20,
+      "place_id": 93,
+      "form": "variant",
+      "name": "青洲灯塔",
+      "note": "lighthouse on the island",
+      "source_id": 2
+    },
+    {
+      "id": 21,
+      "place_id": 130,
+      "form": "roman",
+      "name": "Pearl River",
+      "note": "English name",
+      "source_id": 3
+    },
+    {
+      "id": 22,
+      "place_id": 132,
+      "form": "roman",
+      "name": "Shameen",
+      "note": "old English spelling",
+      "source_id": 3
+    },
+    {
+      "id": 23,
+      "place_id": 135,
+      "form": "roman",
+      "name": "Honam",
+      "note": "English name",
+      "source_id": 3
+    },
+    {
+      "id": 24,
+      "place_id": 144,
+      "form": "variant",
+      "name": "越秀山",
+      "note": "Yuexiu Shan is the modern name",
+      "source_id": 3
+    },
+    {
+      "id": 25,
+      "place_id": 143,
+      "form": "roman",
+      "name": "Sun Yat-sen Memorial Hall",
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 26,
+      "place_id": 139,
+      "form": "roman",
+      "name": "Haizhu Bridge",
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 27,
+      "place_id": 181,
+      "form": "roman",
+      "name": "Sacred Heart Cathedral",
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 28,
+      "place_id": 188,
+      "form": "variant",
+      "name": "Macau",
+      "note": "alternative spelling",
+      "source_id": 4
+    },
+    {
+      "id": 29,
+      "place_id": 189,
+      "form": "roman",
+      "name": "Inner Harbour",
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 30,
+      "place_id": 190,
+      "form": "roman",
+      "name": "Outer Harbour",
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 31,
+      "place_id": 220,
+      "form": "variant",
+      "name": "Ruins of St. Paul",
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 32,
+      "place_id": 223,
+      "form": "roman",
+      "name": "Avenida Almeida Ribeiro",
+      "note": "the 'New Road' 新马路",
+      "source_id": 4
+    },
+    {
+      "id": 33,
+      "place_id": 200,
+      "form": "roman",
+      "name": "Guia Hill",
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 34,
+      "place_id": 210,
+      "form": "variant",
+      "name": "Camoens Garden",
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 35,
+      "place_id": 234,
+      "form": "roman",
+      "name": "Barra",
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 36,
+      "place_id": 249,
+      "form": "variant",
+      "name": "煤山",
+      "note": "景山的旧称",
+      "source_id": 5
+    },
+    {
+      "id": 37,
+      "place_id": 250,
+      "form": "roman",
+      "name": "Beihai Park",
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 38,
+      "place_id": 258,
+      "form": "variant",
+      "name": "前门",
+      "note": "正阳门的俗称",
+      "source_id": 5
+    },
+    {
+      "id": 39,
+      "place_id": 284,
+      "form": "roman",
+      "name": "Guozijian",
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 40,
+      "place_id": 280,
+      "form": "roman",
+      "name": "Miaoying Temple",
+      "note": "",
+      "source_id": 5
+    }
+  ],
+  "map_place": [
+    {
+      "id": 1,
+      "map_id": 1,
+      "place_id": 1,
+      "label_on_map": "定淮门",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 2,
+      "map_id": 1,
+      "place_id": 2,
+      "label_on_map": "草场门",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 3,
+      "map_id": 1,
+      "place_id": 3,
+      "label_on_map": "清凉门",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 4,
+      "map_id": 1,
+      "place_id": 4,
+      "label_on_map": "汉西门",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 5,
+      "map_id": 1,
+      "place_id": 5,
+      "label_on_map": "洪武门",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 6,
+      "map_id": 1,
+      "place_id": 6,
+      "label_on_map": "丰润门",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 7,
+      "map_id": 1,
+      "place_id": 7,
+      "label_on_map": "玄武湖",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 8,
+      "map_id": 1,
+      "place_id": 8,
+      "label_on_map": "乌龙潭",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 9,
+      "map_id": 1,
+      "place_id": 9,
+      "label_on_map": "清凉山",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 10,
+      "map_id": 1,
+      "place_id": 10,
+      "label_on_map": "五台山",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 11,
+      "map_id": 1,
+      "place_id": 11,
+      "label_on_map": "小仓山",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 12,
+      "map_id": 1,
+      "place_id": 12,
+      "label_on_map": "波罗山",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 13,
+      "map_id": 1,
+      "place_id": 13,
+      "label_on_map": "蛇山",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 14,
+      "map_id": 1,
+      "place_id": 14,
+      "label_on_map": "北极阁",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 15,
+      "map_id": 1,
+      "place_id": 15,
+      "label_on_map": "古平冈",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 16,
+      "map_id": 1,
+      "place_id": 16,
+      "label_on_map": "老虎洞",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 17,
+      "map_id": 1,
+      "place_id": 17,
+      "label_on_map": "随园",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 18,
+      "map_id": 1,
+      "place_id": 18,
+      "label_on_map": "清凉寺",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 19,
+      "map_id": 1,
+      "place_id": 19,
+      "label_on_map": "古林寺",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 20,
+      "map_id": 1,
+      "place_id": 20,
+      "label_on_map": "大佛寺",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 21,
+      "map_id": 1,
+      "place_id": 21,
+      "label_on_map": "净界寺",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 22,
+      "map_id": 1,
+      "place_id": 22,
+      "label_on_map": "扫叶楼",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 23,
+      "map_id": 1,
+      "place_id": 23,
+      "label_on_map": "小九华",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 24,
+      "map_id": 1,
+      "place_id": 24,
+      "label_on_map": "九龙庵",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 25,
+      "map_id": 1,
+      "place_id": 25,
+      "label_on_map": "鼓楼医院",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 26,
+      "map_id": 1,
+      "place_id": 26,
+      "label_on_map": "金陵大学",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 27,
+      "map_id": 1,
+      "place_id": 27,
+      "label_on_map": "金陵女子大学",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 28,
+      "map_id": 1,
+      "place_id": 28,
+      "label_on_map": "金陵中学",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 29,
+      "map_id": 1,
+      "place_id": 29,
+      "label_on_map": "汇文女学",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 30,
+      "map_id": 1,
+      "place_id": 30,
+      "label_on_map": "外交部",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 31,
+      "map_id": 1,
+      "place_id": 31,
+      "label_on_map": "交通部",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 32,
+      "map_id": 1,
+      "place_id": 32,
+      "label_on_map": "财政部",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 33,
+      "map_id": 1,
+      "place_id": 33,
+      "label_on_map": "司法院",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 34,
+      "map_id": 1,
+      "place_id": 34,
+      "label_on_map": "国民政府",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 35,
+      "map_id": 1,
+      "place_id": 35,
+      "label_on_map": "中央党部",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 36,
+      "map_id": 1,
+      "place_id": 36,
+      "label_on_map": "省议会",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 37,
+      "map_id": 1,
+      "place_id": 37,
+      "label_on_map": "电报局",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 38,
+      "map_id": 1,
+      "place_id": 38,
+      "label_on_map": "无线电台",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 39,
+      "map_id": 1,
+      "place_id": 39,
+      "label_on_map": "钟鼓楼",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 40,
+      "map_id": 1,
+      "place_id": 40,
+      "label_on_map": "大钟亭",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 41,
+      "map_id": 1,
+      "place_id": 41,
+      "label_on_map": "唱经楼",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 42,
+      "map_id": 1,
+      "place_id": 42,
+      "label_on_map": "日领署",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 43,
+      "map_id": 1,
+      "place_id": 43,
+      "label_on_map": "狮子桥",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 44,
+      "map_id": 1,
+      "place_id": 44,
+      "label_on_map": "石城桥",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 45,
+      "map_id": 1,
+      "place_id": 45,
+      "label_on_map": "红土桥",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 46,
+      "map_id": 1,
+      "place_id": 46,
+      "label_on_map": "大石桥",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 47,
+      "map_id": 1,
+      "place_id": 47,
+      "label_on_map": "小石桥",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 48,
+      "map_id": 1,
+      "place_id": 48,
+      "label_on_map": "北门桥",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 49,
+      "map_id": 1,
+      "place_id": 49,
+      "label_on_map": "通贤桥",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 50,
+      "map_id": 1,
+      "place_id": 50,
+      "label_on_map": "浮桥",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 51,
+      "map_id": 1,
+      "place_id": 51,
+      "label_on_map": "洪武街",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 52,
+      "map_id": 1,
+      "place_id": 52,
+      "label_on_map": "同仁街",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 53,
+      "map_id": 1,
+      "place_id": 53,
+      "label_on_map": "牌楼街",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 54,
+      "map_id": 1,
+      "place_id": 54,
+      "label_on_map": "焦状元巷",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 55,
+      "map_id": 1,
+      "place_id": 55,
+      "label_on_map": "石婆婆巷",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 56,
+      "map_id": 1,
+      "place_id": 56,
+      "label_on_map": "双龙巷",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 57,
+      "map_id": 1,
+      "place_id": 57,
+      "label_on_map": "阴阳营",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 58,
+      "map_id": 1,
+      "place_id": 58,
+      "label_on_map": "百步坡",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 59,
+      "map_id": 1,
+      "place_id": 59,
+      "label_on_map": "冬瓜园",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 60,
+      "map_id": 1,
+      "place_id": 60,
+      "label_on_map": "虎贲仓",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 61,
+      "map_id": 1,
+      "place_id": 61,
+      "label_on_map": "丰备仓",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 62,
+      "map_id": 1,
+      "place_id": 62,
+      "label_on_map": "劝业会场",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 63,
+      "map_id": 1,
+      "place_id": 63,
+      "label_on_map": "跑马场",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 64,
+      "map_id": 1,
+      "place_id": 64,
+      "label_on_map": "公园",
+      "sheet": null,
+      "note": "",
+      "source_id": 1
+    },
+    {
+      "id": 65,
+      "map_id": 2,
+      "place_id": 65,
+      "label_on_map": "Victoria City",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 66,
+      "map_id": 2,
+      "place_id": 66,
+      "label_on_map": "Kowloon",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 67,
+      "map_id": 2,
+      "place_id": 67,
+      "label_on_map": "Kowloon City",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 68,
+      "map_id": 2,
+      "place_id": 68,
+      "label_on_map": "Wongkoktsui",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 69,
+      "map_id": 2,
+      "place_id": 69,
+      "label_on_map": "Tsimshatsui",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 70,
+      "map_id": 2,
+      "place_id": 70,
+      "label_on_map": "Hunghom",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 71,
+      "map_id": 2,
+      "place_id": 71,
+      "label_on_map": "Kennedy Town",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 72,
+      "map_id": 2,
+      "place_id": 72,
+      "label_on_map": "Wanchai",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 73,
+      "map_id": 2,
+      "place_id": 73,
+      "label_on_map": "Causeway Bay",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 74,
+      "map_id": 2,
+      "place_id": 74,
+      "label_on_map": "Shaukiwan",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 75,
+      "map_id": 2,
+      "place_id": 75,
+      "label_on_map": "Quarry Bay",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 76,
+      "map_id": 2,
+      "place_id": 76,
+      "label_on_map": "Chaiwan",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 77,
+      "map_id": 2,
+      "place_id": 77,
+      "label_on_map": "Aberdeen",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 78,
+      "map_id": 2,
+      "place_id": 78,
+      "label_on_map": "Stanley",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 79,
+      "map_id": 2,
+      "place_id": 79,
+      "label_on_map": "Pokfulam",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 80,
+      "map_id": 2,
+      "place_id": 80,
+      "label_on_map": "Taitam",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 81,
+      "map_id": 2,
+      "place_id": 81,
+      "label_on_map": "Wongnaichung",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 82,
+      "map_id": 2,
+      "place_id": 82,
+      "label_on_map": "Taihang",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 83,
+      "map_id": 2,
+      "place_id": 83,
+      "label_on_map": "Deep Water Bay / Shamshui Wan",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 84,
+      "map_id": 2,
+      "place_id": 84,
+      "label_on_map": "Tsin Shui Wan (Repulse Bay)",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 85,
+      "map_id": 2,
+      "place_id": 85,
+      "label_on_map": "Stanley Bay",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 86,
+      "map_id": 2,
+      "place_id": 86,
+      "label_on_map": "Taitam Harbour",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 87,
+      "map_id": 2,
+      "place_id": 87,
+      "label_on_map": "Aberdeen Bay",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 88,
+      "map_id": 2,
+      "place_id": 88,
+      "label_on_map": "Sandy Bay",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 89,
+      "map_id": 2,
+      "place_id": 89,
+      "label_on_map": "Waterfall Bay",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 90,
+      "map_id": 2,
+      "place_id": 90,
+      "label_on_map": "Belchers Bay",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 91,
+      "map_id": 2,
+      "place_id": 91,
+      "label_on_map": "East Point",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 92,
+      "map_id": 2,
+      "place_id": 92,
+      "label_on_map": "Kellett Island",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 93,
+      "map_id": 2,
+      "place_id": 93,
+      "label_on_map": "Green Island (Lighthouse)",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 94,
+      "map_id": 2,
+      "place_id": 94,
+      "label_on_map": "One Tree Island",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 95,
+      "map_id": 2,
+      "place_id": 95,
+      "label_on_map": "Aplichau",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 96,
+      "map_id": 2,
+      "place_id": 96,
+      "label_on_map": "Round Island",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 97,
+      "map_id": 2,
+      "place_id": 97,
+      "label_on_map": "Victoria Peak",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 98,
+      "map_id": 2,
+      "place_id": 98,
+      "label_on_map": "Mt. Davis",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 99,
+      "map_id": 2,
+      "place_id": 99,
+      "label_on_map": "Mt. Kellett",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 100,
+      "map_id": 2,
+      "place_id": 100,
+      "label_on_map": "Mt. Parker",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 101,
+      "map_id": 2,
+      "place_id": 101,
+      "label_on_map": "High West",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 102,
+      "map_id": 2,
+      "place_id": 102,
+      "label_on_map": "Mt. Gough",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 103,
+      "map_id": 2,
+      "place_id": 103,
+      "label_on_map": "Devils Peak",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 104,
+      "map_id": 2,
+      "place_id": 104,
+      "label_on_map": "Victoria Harbour",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 105,
+      "map_id": 2,
+      "place_id": 105,
+      "label_on_map": "Queen's Road",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 106,
+      "map_id": 2,
+      "place_id": 106,
+      "label_on_map": "Bonham Road",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 107,
+      "map_id": 2,
+      "place_id": 107,
+      "label_on_map": "Robinson Road",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 108,
+      "map_id": 2,
+      "place_id": 108,
+      "label_on_map": "Caine Road",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 109,
+      "map_id": 2,
+      "place_id": 109,
+      "label_on_map": "Kennedy Road",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 110,
+      "map_id": 2,
+      "place_id": 110,
+      "label_on_map": "Bowen Road",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 111,
+      "map_id": 2,
+      "place_id": 111,
+      "label_on_map": "Pok Fu Lam Road",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 112,
+      "map_id": 2,
+      "place_id": 112,
+      "label_on_map": "Aberdeen Road",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 113,
+      "map_id": 2,
+      "place_id": 113,
+      "label_on_map": "Taitam Road",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 114,
+      "map_id": 2,
+      "place_id": 114,
+      "label_on_map": "Little Hong Kong Road",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 115,
+      "map_id": 2,
+      "place_id": 115,
+      "label_on_map": "Praya East",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 116,
+      "map_id": 2,
+      "place_id": 116,
+      "label_on_map": "Tramway",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 117,
+      "map_id": 2,
+      "place_id": 117,
+      "label_on_map": "Wongnaichung Valley",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 118,
+      "map_id": 2,
+      "place_id": 118,
+      "label_on_map": "Middle Gap",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 119,
+      "map_id": 2,
+      "place_id": 119,
+      "label_on_map": "Wanchai Gap",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 120,
+      "map_id": 2,
+      "place_id": 120,
+      "label_on_map": "Taitam Tunnel",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 121,
+      "map_id": 2,
+      "place_id": 121,
+      "label_on_map": "Taitam Reservoir",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 122,
+      "map_id": 2,
+      "place_id": 122,
+      "label_on_map": "Pokfulam Reservoir",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 123,
+      "map_id": 2,
+      "place_id": 123,
+      "label_on_map": "Aberdeen Reservoir",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 124,
+      "map_id": 2,
+      "place_id": 124,
+      "label_on_map": "Race Course",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 125,
+      "map_id": 2,
+      "place_id": 125,
+      "label_on_map": "Coffee Gardens",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 126,
+      "map_id": 2,
+      "place_id": 126,
+      "label_on_map": "Government House",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 127,
+      "map_id": 2,
+      "place_id": 127,
+      "label_on_map": "General Post Office",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 128,
+      "map_id": 2,
+      "place_id": 128,
+      "label_on_map": "Naval Yard",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 129,
+      "map_id": 2,
+      "place_id": 129,
+      "label_on_map": "Military Sanatorium",
+      "sheet": null,
+      "note": "",
+      "source_id": 2
+    },
+    {
+      "id": 130,
+      "map_id": 3,
+      "place_id": 130,
+      "label_on_map": "珠江",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 131,
+      "map_id": 3,
+      "place_id": 131,
+      "label_on_map": "白鹅潭",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 132,
+      "map_id": 3,
+      "place_id": 132,
+      "label_on_map": "沙面",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 133,
+      "map_id": 3,
+      "place_id": 133,
+      "label_on_map": "黄沙",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 134,
+      "map_id": 3,
+      "place_id": 134,
+      "label_on_map": "芳村",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 135,
+      "map_id": 3,
+      "place_id": 135,
+      "label_on_map": "河南",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 136,
+      "map_id": 3,
+      "place_id": 136,
+      "label_on_map": "西关",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 137,
+      "map_id": 3,
+      "place_id": 137,
+      "label_on_map": "东山",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 138,
+      "map_id": 3,
+      "place_id": 138,
+      "label_on_map": "长堤大马路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 139,
+      "map_id": 3,
+      "place_id": 139,
+      "label_on_map": "海珠桥",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 140,
+      "map_id": 3,
+      "place_id": 140,
+      "label_on_map": "海珠分局",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 141,
+      "map_id": 3,
+      "place_id": 141,
+      "label_on_map": "东山分局",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 142,
+      "map_id": 3,
+      "place_id": 142,
+      "label_on_map": "小北分局",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 143,
+      "map_id": 3,
+      "place_id": 143,
+      "label_on_map": "中山纪念堂",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 144,
+      "map_id": 3,
+      "place_id": 144,
+      "label_on_map": "观音山",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 145,
+      "map_id": 3,
+      "place_id": 145,
+      "label_on_map": "五层楼",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 146,
+      "map_id": 3,
+      "place_id": 146,
+      "label_on_map": "越秀山",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 147,
+      "map_id": 3,
+      "place_id": 147,
+      "label_on_map": "中央公园",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 148,
+      "map_id": 3,
+      "place_id": 148,
+      "label_on_map": "市政府",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 149,
+      "map_id": 3,
+      "place_id": 149,
+      "label_on_map": "光孝寺",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 150,
+      "map_id": 3,
+      "place_id": 150,
+      "label_on_map": "六榕寺",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 151,
+      "map_id": 3,
+      "place_id": 151,
+      "label_on_map": "华林寺",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 152,
+      "map_id": 3,
+      "place_id": 152,
+      "label_on_map": "大佛寺",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 153,
+      "map_id": 3,
+      "place_id": 153,
+      "label_on_map": "陈家祠",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 154,
+      "map_id": 3,
+      "place_id": 154,
+      "label_on_map": "怀圣寺",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 155,
+      "map_id": 3,
+      "place_id": 155,
+      "label_on_map": "六榕路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 156,
+      "map_id": 3,
+      "place_id": 156,
+      "label_on_map": "惠爱中路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 157,
+      "map_id": 3,
+      "place_id": 157,
+      "label_on_map": "惠爱东路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 158,
+      "map_id": 3,
+      "place_id": 158,
+      "label_on_map": "惠爱西路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 159,
+      "map_id": 3,
+      "place_id": 159,
+      "label_on_map": "惠福路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 160,
+      "map_id": 3,
+      "place_id": 160,
+      "label_on_map": "文德路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 161,
+      "map_id": 3,
+      "place_id": 161,
+      "label_on_map": "永汉路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 162,
+      "map_id": 3,
+      "place_id": 162,
+      "label_on_map": "太平南路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 163,
+      "map_id": 3,
+      "place_id": 163,
+      "label_on_map": "太平北路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 164,
+      "map_id": 3,
+      "place_id": 164,
+      "label_on_map": "丰宁路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 165,
+      "map_id": 3,
+      "place_id": 165,
+      "label_on_map": "长寿路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 166,
+      "map_id": 3,
+      "place_id": 166,
+      "label_on_map": "宝华路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 167,
+      "map_id": 3,
+      "place_id": 167,
+      "label_on_map": "带河路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 168,
+      "map_id": 3,
+      "place_id": 168,
+      "label_on_map": "一德路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 169,
+      "map_id": 3,
+      "place_id": 169,
+      "label_on_map": "万福路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 170,
+      "map_id": 3,
+      "place_id": 170,
+      "label_on_map": "泰康路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 171,
+      "map_id": 3,
+      "place_id": 171,
+      "label_on_map": "教育路",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 172,
+      "map_id": 3,
+      "place_id": 172,
+      "label_on_map": "十八甫",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 173,
+      "map_id": 3,
+      "place_id": 173,
+      "label_on_map": "上九甫",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 174,
+      "map_id": 3,
+      "place_id": 174,
+      "label_on_map": "下九甫",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 175,
+      "map_id": 3,
+      "place_id": 175,
+      "label_on_map": "荔枝湾",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 176,
+      "map_id": 3,
+      "place_id": 176,
+      "label_on_map": "泮塘",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 177,
+      "map_id": 3,
+      "place_id": 177,
+      "label_on_map": "大北门",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 178,
+      "map_id": 3,
+      "place_id": 178,
+      "label_on_map": "小北门",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 179,
+      "map_id": 3,
+      "place_id": 179,
+      "label_on_map": "大沙头",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 180,
+      "map_id": 3,
+      "place_id": 180,
+      "label_on_map": "沙河",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 181,
+      "map_id": 3,
+      "place_id": 181,
+      "label_on_map": "石室",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 182,
+      "map_id": 3,
+      "place_id": 182,
+      "label_on_map": "西堤",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 183,
+      "map_id": 3,
+      "place_id": 183,
+      "label_on_map": "东堤",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 184,
+      "map_id": 3,
+      "place_id": 184,
+      "label_on_map": "南堤",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 185,
+      "map_id": 3,
+      "place_id": 185,
+      "label_on_map": "动物园",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 186,
+      "map_id": 3,
+      "place_id": 186,
+      "label_on_map": "农林试验场",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 187,
+      "map_id": 3,
+      "place_id": 187,
+      "label_on_map": "东较场",
+      "sheet": null,
+      "note": "",
+      "source_id": 3
+    },
+    {
+      "id": 188,
+      "map_id": 4,
+      "place_id": 188,
+      "label_on_map": "Macao",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 189,
+      "map_id": 4,
+      "place_id": 189,
+      "label_on_map": "Porto Interior",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 190,
+      "map_id": 4,
+      "place_id": 190,
+      "label_on_map": "Porto Exterior",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 191,
+      "map_id": 4,
+      "place_id": 191,
+      "label_on_map": "Praia Grande",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 192,
+      "map_id": 4,
+      "place_id": 192,
+      "label_on_map": "Baia do Fisho",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 193,
+      "map_id": 4,
+      "place_id": 193,
+      "label_on_map": "Areia Preta",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 194,
+      "map_id": 4,
+      "place_id": 194,
+      "label_on_map": "Mong Ha",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 195,
+      "map_id": 4,
+      "place_id": 195,
+      "label_on_map": "Reservoir",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 196,
+      "map_id": 4,
+      "place_id": 196,
+      "label_on_map": "Race Course",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 197,
+      "map_id": 4,
+      "place_id": 197,
+      "label_on_map": "Fortaleza do Monte",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 198,
+      "map_id": 4,
+      "place_id": 198,
+      "label_on_map": "Guia Fort",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 199,
+      "map_id": 4,
+      "place_id": 199,
+      "label_on_map": "Guia Lighthouse",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 200,
+      "map_id": 4,
+      "place_id": 200,
+      "label_on_map": "Colina da Guia",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 201,
+      "map_id": 4,
+      "place_id": 201,
+      "label_on_map": "Santa Clara Convent",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 202,
+      "map_id": 4,
+      "place_id": 202,
+      "label_on_map": "Paco Episcopal (Bishop's Palace)",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 203,
+      "map_id": 4,
+      "place_id": 203,
+      "label_on_map": "Igreja de S. Lourenco",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 204,
+      "map_id": 4,
+      "place_id": 204,
+      "label_on_map": "Forte de S. Francisco",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 205,
+      "map_id": 4,
+      "place_id": 205,
+      "label_on_map": "Quartel de S. Francisco",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 206,
+      "map_id": 4,
+      "place_id": 206,
+      "label_on_map": "Seminario de S. Jose",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 207,
+      "map_id": 4,
+      "place_id": 207,
+      "label_on_map": "Leal Senado",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 208,
+      "map_id": 4,
+      "place_id": 208,
+      "label_on_map": "Banco Nacional Ultramarino",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 209,
+      "map_id": 4,
+      "place_id": 209,
+      "label_on_map": "Post and Telegraphs",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 210,
+      "map_id": 4,
+      "place_id": 210,
+      "label_on_map": "Gruta de Camoes",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 211,
+      "map_id": 4,
+      "place_id": 211,
+      "label_on_map": "Obras Publicas",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 212,
+      "map_id": 4,
+      "place_id": 212,
+      "label_on_map": "Market",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 213,
+      "map_id": 4,
+      "place_id": 213,
+      "label_on_map": "Central Hotel",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 214,
+      "map_id": 4,
+      "place_id": 214,
+      "label_on_map": "Riviera Hotel",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 215,
+      "map_id": 4,
+      "place_id": 215,
+      "label_on_map": "Chinese Hotel",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 216,
+      "map_id": 4,
+      "place_id": 216,
+      "label_on_map": "Cadeia (Gaol)",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 217,
+      "map_id": 4,
+      "place_id": 217,
+      "label_on_map": "Estacao dos Bombeiros (Fire Brigade)",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 218,
+      "map_id": 4,
+      "place_id": 218,
+      "label_on_map": "Hospital",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 219,
+      "map_id": 4,
+      "place_id": 219,
+      "label_on_map": "Cemetery",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 220,
+      "map_id": 4,
+      "place_id": 220,
+      "label_on_map": "Ruins of S. Paulo",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 221,
+      "map_id": 4,
+      "place_id": 221,
+      "label_on_map": "Rua de S. Domingos",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 222,
+      "map_id": 4,
+      "place_id": 222,
+      "label_on_map": "Rua de S. Antonio",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 223,
+      "map_id": 4,
+      "place_id": 223,
+      "label_on_map": "Avenida Almeida Ribeiro",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 224,
+      "map_id": 4,
+      "place_id": 224,
+      "label_on_map": "Rua Horta e Costa",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 225,
+      "map_id": 4,
+      "place_id": 225,
+      "label_on_map": "Rua do Campo",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 226,
+      "map_id": 4,
+      "place_id": 226,
+      "label_on_map": "Rua do Patane",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 227,
+      "map_id": 4,
+      "place_id": 227,
+      "label_on_map": "Avenida Almirante",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 228,
+      "map_id": 4,
+      "place_id": 228,
+      "label_on_map": "Avenida Ouvidor Arriaga",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 229,
+      "map_id": 4,
+      "place_id": 229,
+      "label_on_map": "Avenida Coronel Mesquita",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 230,
+      "map_id": 4,
+      "place_id": 230,
+      "label_on_map": "Dockyard",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 231,
+      "map_id": 4,
+      "place_id": 231,
+      "label_on_map": "Dock / Wharf",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 232,
+      "map_id": 4,
+      "place_id": 232,
+      "label_on_map": "Doca Lamau",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 233,
+      "map_id": 4,
+      "place_id": 233,
+      "label_on_map": "Ilha Verde",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 234,
+      "map_id": 4,
+      "place_id": 234,
+      "label_on_map": "Barra",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 235,
+      "map_id": 4,
+      "place_id": 235,
+      "label_on_map": "Back Port das Lazaro",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 236,
+      "map_id": 4,
+      "place_id": 236,
+      "label_on_map": "Se (Cathedral)",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 237,
+      "map_id": 4,
+      "place_id": 237,
+      "label_on_map": "Macau Peninsula",
+      "sheet": null,
+      "note": "",
+      "source_id": 4
+    },
+    {
+      "id": 238,
+      "map_id": 5,
+      "place_id": 238,
+      "label_on_map": "天安门",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 239,
+      "map_id": 5,
+      "place_id": 239,
+      "label_on_map": "端门",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 240,
+      "map_id": 5,
+      "place_id": 240,
+      "label_on_map": "午门",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 241,
+      "map_id": 5,
+      "place_id": 241,
+      "label_on_map": "太和门",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 242,
+      "map_id": 5,
+      "place_id": 242,
+      "label_on_map": "太和殿",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 243,
+      "map_id": 5,
+      "place_id": 243,
+      "label_on_map": "保和殿",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 244,
+      "map_id": 5,
+      "place_id": 244,
+      "label_on_map": "乾清宫",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 245,
+      "map_id": 5,
+      "place_id": 245,
+      "label_on_map": "东华门",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 246,
+      "map_id": 5,
+      "place_id": 246,
+      "label_on_map": "西华门",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 247,
+      "map_id": 5,
+      "place_id": 247,
+      "label_on_map": "太庙",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 248,
+      "map_id": 5,
+      "place_id": 248,
+      "label_on_map": "社稷坛",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 249,
+      "map_id": 5,
+      "place_id": 249,
+      "label_on_map": "景山",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 250,
+      "map_id": 5,
+      "place_id": 250,
+      "label_on_map": "北海",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 251,
+      "map_id": 5,
+      "place_id": 251,
+      "label_on_map": "中海",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 252,
+      "map_id": 5,
+      "place_id": 252,
+      "label_on_map": "南海",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 253,
+      "map_id": 5,
+      "place_id": 253,
+      "label_on_map": "什刹海",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 254,
+      "map_id": 5,
+      "place_id": 254,
+      "label_on_map": "后海",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 255,
+      "map_id": 5,
+      "place_id": 255,
+      "label_on_map": "积水潭",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 256,
+      "map_id": 5,
+      "place_id": 256,
+      "label_on_map": "鼓楼",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 257,
+      "map_id": 5,
+      "place_id": 257,
+      "label_on_map": "钟楼",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 258,
+      "map_id": 5,
+      "place_id": 258,
+      "label_on_map": "正阳门",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 259,
+      "map_id": 5,
+      "place_id": 259,
+      "label_on_map": "崇文门",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 260,
+      "map_id": 5,
+      "place_id": 260,
+      "label_on_map": "宣武门",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 261,
+      "map_id": 5,
+      "place_id": 261,
+      "label_on_map": "东直门",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 262,
+      "map_id": 5,
+      "place_id": 262,
+      "label_on_map": "西直门",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 263,
+      "map_id": 5,
+      "place_id": 263,
+      "label_on_map": "朝阳门",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 264,
+      "map_id": 5,
+      "place_id": 264,
+      "label_on_map": "阜成门",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 265,
+      "map_id": 5,
+      "place_id": 265,
+      "label_on_map": "德胜门",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 266,
+      "map_id": 5,
+      "place_id": 266,
+      "label_on_map": "安定门",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 267,
+      "map_id": 5,
+      "place_id": 267,
+      "label_on_map": "东便门",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 268,
+      "map_id": 5,
+      "place_id": 268,
+      "label_on_map": "西便门",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 269,
+      "map_id": 5,
+      "place_id": 269,
+      "label_on_map": "西单牌楼",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 270,
+      "map_id": 5,
+      "place_id": 270,
+      "label_on_map": "西四牌楼",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 271,
+      "map_id": 5,
+      "place_id": 271,
+      "label_on_map": "东单牌楼",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 272,
+      "map_id": 5,
+      "place_id": 272,
+      "label_on_map": "东四牌楼",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 273,
+      "map_id": 5,
+      "place_id": 273,
+      "label_on_map": "鼓楼大街",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 274,
+      "map_id": 5,
+      "place_id": 274,
+      "label_on_map": "地安门外大街",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 275,
+      "map_id": 5,
+      "place_id": 275,
+      "label_on_map": "北新桥",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 276,
+      "map_id": 5,
+      "place_id": 276,
+      "label_on_map": "甘石桥",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 277,
+      "map_id": 5,
+      "place_id": 277,
+      "label_on_map": "银锭桥",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 278,
+      "map_id": 5,
+      "place_id": 278,
+      "label_on_map": "护国寺",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 279,
+      "map_id": 5,
+      "place_id": 279,
+      "label_on_map": "隆福寺",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 280,
+      "map_id": 5,
+      "place_id": 280,
+      "label_on_map": "白塔寺",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 281,
+      "map_id": 5,
+      "place_id": 281,
+      "label_on_map": "都城隍庙",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 282,
+      "map_id": 5,
+      "place_id": 282,
+      "label_on_map": "顺天府",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 283,
+      "map_id": 5,
+      "place_id": 283,
+      "label_on_map": "国子监",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 284,
+      "map_id": 5,
+      "place_id": 284,
+      "label_on_map": "贡院",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 285,
+      "map_id": 5,
+      "place_id": 285,
+      "label_on_map": "都察院",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 286,
+      "map_id": 5,
+      "place_id": 286,
+      "label_on_map": "翰林院",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 287,
+      "map_id": 5,
+      "place_id": 287,
+      "label_on_map": "西什库",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 288,
+      "map_id": 5,
+      "place_id": 288,
+      "label_on_map": "象房",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 289,
+      "map_id": 5,
+      "place_id": 289,
+      "label_on_map": "沙滩",
+      "sheet": null,
+      "note": "",
+      "source_id": 5
+    },
+    {
+      "id": 290,
+      "map_id": 5,
+      "place_id": 290,
+      "label_on_map": "天桥",
+      "sheet": null,
+      "note": "原图核对补录",
+      "source_id": 5
+    },
+    {
+      "id": 291,
+      "map_id": 1,
+      "place_id": 291,
+      "label_on_map": "将军庙",
+      "sheet": null,
+      "note": "原图核对补录",
+      "source_id": 1
+    }
+  ],
+  "place_type": [
+    {
+      "code": "GATE",
+      "name_zh": "城门",
+      "category": "城建"
+    },
+    {
+      "code": "WALL",
+      "name_zh": "城垣",
+      "category": "城建"
+    },
+    {
+      "code": "STREET",
+      "name_zh": "街道",
+      "category": "城建"
+    },
+    {
+      "code": "LANE",
+      "name_zh": "巷陌",
+      "category": "城建"
+    },
+    {
+      "code": "PAILOU",
+      "name_zh": "牌楼",
+      "category": "城建"
+    },
+    {
+      "code": "EMBANKMENT",
+      "name_zh": "堤岸",
+      "category": "城建"
+    },
+    {
+      "code": "DISTRICT",
+      "name_zh": "区域",
+      "category": "区域"
+    },
+    {
+      "code": "AREA",
+      "name_zh": "地方",
+      "category": "区域"
+    },
+    {
+      "code": "VILLAGE",
+      "name_zh": "村落",
+      "category": "区域"
+    },
+    {
+      "code": "SITE",
+      "name_zh": "场地",
+      "category": "区域"
+    },
+    {
+      "code": "PALACE",
+      "name_zh": "宫殿",
+      "category": "建筑"
+    },
+    {
+      "code": "OFFICE",
+      "name_zh": "官署",
+      "category": "建筑"
+    },
+    {
+      "code": "GOV",
+      "name_zh": "政府机关",
+      "category": "建筑"
+    },
+    {
+      "code": "MILITARY",
+      "name_zh": "军事",
+      "category": "建筑"
+    },
+    {
+      "code": "TOWER",
+      "name_zh": "楼阁",
+      "category": "建筑"
+    },
+    {
+      "code": "GARDEN",
+      "name_zh": "园林",
+      "category": "建筑"
+    },
+    {
+      "code": "PARK",
+      "name_zh": "公园",
+      "category": "建筑"
+    },
+    {
+      "code": "MARKET",
+      "name_zh": "市场",
+      "category": "建筑"
+    },
+    {
+      "code": "HOTEL",
+      "name_zh": "酒店",
+      "category": "建筑"
+    },
+    {
+      "code": "SCHOOL",
+      "name_zh": "学校",
+      "category": "建筑"
+    },
+    {
+      "code": "HOSPITAL",
+      "name_zh": "医院",
+      "category": "建筑"
+    },
+    {
+      "code": "BANK",
+      "name_zh": "银行",
+      "category": "建筑"
+    },
+    {
+      "code": "CEMETERY",
+      "name_zh": "坟场",
+      "category": "建筑"
+    },
+    {
+      "code": "RELIC",
+      "name_zh": "遗址",
+      "category": "建筑"
+    },
+    {
+      "code": "BUILDING",
+      "name_zh": "建筑",
+      "category": "建筑"
+    },
+    {
+      "code": "TEMPLE",
+      "name_zh": "寺庙",
+      "category": "宗教"
+    },
+    {
+      "code": "CHURCH",
+      "name_zh": "教堂",
+      "category": "宗教"
+    },
+    {
+      "code": "ALTAR",
+      "name_zh": "坛",
+      "category": "宗教"
+    },
+    {
+      "code": "MOUNTAIN",
+      "name_zh": "山冈",
+      "category": "自然"
+    },
+    {
+      "code": "VALLEY",
+      "name_zh": "谷峡",
+      "category": "自然"
+    },
+    {
+      "code": "CAVE",
+      "name_zh": "洞",
+      "category": "自然"
+    },
+    {
+      "code": "CAPE",
+      "name_zh": "角",
+      "category": "自然"
+    },
+    {
+      "code": "PENINSULA",
+      "name_zh": "半岛",
+      "category": "自然"
+    },
+    {
+      "code": "ISLAND",
+      "name_zh": "岛屿",
+      "category": "自然"
+    },
+    {
+      "code": "LIGHTHOUSE",
+      "name_zh": "灯塔",
+      "category": "自然"
+    },
+    {
+      "code": "LAKE",
+      "name_zh": "湖池",
+      "category": "水系"
+    },
+    {
+      "code": "POND",
+      "name_zh": "潭",
+      "category": "水系"
+    },
+    {
+      "code": "RESERVOIR",
+      "name_zh": "水塘",
+      "category": "水系"
+    },
+    {
+      "code": "RIVER",
+      "name_zh": "河",
+      "category": "水系"
+    },
+    {
+      "code": "BAY",
+      "name_zh": "海湾",
+      "category": "水系"
+    },
+    {
+      "code": "HARBOUR",
+      "name_zh": "港湾",
+      "category": "水系"
+    },
+    {
+      "code": "BRIDGE",
+      "name_zh": "桥梁",
+      "category": "交通"
+    },
+    {
+      "code": "TUNNEL",
+      "name_zh": "隧道",
+      "category": "交通"
+    },
+    {
+      "code": "DOCK",
+      "name_zh": "船坞",
+      "category": "交通"
+    },
+    {
+      "code": "WHARF",
+      "name_zh": "码头",
+      "category": "交通"
+    }
+  ],
+  "profile": [
+    {
+      "place_id": 238,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "明永乐十八年（1420）建成，初名承天门；清顺治八年（1651）重建后改称天安门，是明清皇城正南门。",
+      "source_id": 6
+    },
+    {
+      "place_id": 258,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "内城正南门，明代改称正阳门，俗称前门；1900年城楼被焚，1906年重建，是老北京最高大的城门。",
+      "source_id": 6
+    },
+    {
+      "place_id": 247,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "明清皇帝祭祀祖先的宗庙；1924年后一度改作公园，1950年改称劳动人民文化宫。",
+      "source_id": 6
+    },
+    {
+      "place_id": 248,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "明清祭祀土地神与五谷神之所；1914年辟为中央公园，1928年为纪念孙中山改名中山公园。",
+      "source_id": 6
+    },
+    {
+      "place_id": 249,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "明初在紫禁城北堆土筑山、堆煤，俗称煤山；清代改称景山，为皇家御苑。相传明崇祯帝自缢于此。",
+      "source_id": 6
+    },
+    {
+      "place_id": 250,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "辽、金、元、明、清五代的皇家园林，1925年辟为公园，是中国现存最古老的皇家园林之一。",
+      "source_id": 6
+    },
+    {
+      "place_id": 253,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "由前海、后海、西海组成，元代是漕运码头，沿岸多王府、寺庙。",
+      "source_id": 6
+    },
+    {
+      "place_id": 256,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "元代始建的都城报时中心，鼓楼击鼓、钟楼鸣钟，明清沿用。",
+      "source_id": 6
+    },
+    {
+      "place_id": 257,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "与鼓楼相对，为元明清都城司时之所，现为全国重点文物保护单位。",
+      "source_id": 6
+    },
+    {
+      "place_id": 280,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "即妙应寺，元代由尼泊尔工匠阿尼哥主持建塔，白塔是北京最早的藏式佛塔。",
+      "source_id": 6
+    },
+    {
+      "place_id": 283,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "元、明、清三代国家最高学府，与孔庙相邻；今为孔庙和国子监博物馆。",
+      "source_id": 6
+    },
+    {
+      "place_id": 287,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "原为明代皇城内的十座库房；清末在此建天主教堂，俗称北堂。",
+      "source_id": 6
+    },
+    {
+      "place_id": 7,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "古称桑泊、后湖，六朝时为皇家园林湖泊，是南京城内最大的湖泊。",
+      "source_id": 6
+    },
+    {
+      "place_id": 25,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "1892年由传教士创办，是南京最早的西医院之一。",
+      "source_id": 6
+    },
+    {
+      "place_id": 26,
+      "rename_year": "1952",
+      "rename_reason": "院系调整，主体并入南京大学",
+      "blurb": "1910年由汇文书院等合并创办；1952年院系调整后主体并入南京大学。",
+      "source_id": 6
+    },
+    {
+      "place_id": 27,
+      "rename_year": "1951",
+      "rename_reason": "并入金陵大学",
+      "blurb": "1915年创办，是中国第一所女子大学；1951年并入金陵大学，校园即今南京师范大学随园。",
+      "source_id": 6
+    },
+    {
+      "place_id": 34,
+      "rename_year": "1948",
+      "rename_reason": "总统府改制",
+      "blurb": "1927年国民政府定都南京；此处旧址（总统府）今为中国近代史遗址博物馆。",
+      "source_id": 6
+    },
+    {
+      "place_id": 161,
+      "rename_year": "1966",
+      "rename_reason": "文革改名",
+      "blurb": "广州老城南北中轴，清代称双门底，1920年扩建为永汉路，1966年改名北京路。",
+      "source_id": 6
+    },
+    {
+      "place_id": 156,
+      "rename_year": null,
+      "rename_reason": "纪念孙中山",
+      "blurb": "清代惠爱街，1920年代扩建为惠爱路；后为纪念孙中山改称中山路（今中山三至六路）。",
+      "source_id": 6
+    },
+    {
+      "place_id": 157,
+      "rename_year": null,
+      "rename_reason": "纪念孙中山",
+      "blurb": "原惠爱东路，后为纪念孙中山改称中山路。",
+      "source_id": 6
+    },
+    {
+      "place_id": 158,
+      "rename_year": null,
+      "rename_reason": "纪念孙中山",
+      "blurb": "原惠爱西路，后为纪念孙中山改称中山路。",
+      "source_id": 6
+    },
+    {
+      "place_id": 144,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "因山上有观音阁得名，越秀山之名更早，今统称越秀山。",
+      "source_id": 6
+    },
+    {
+      "place_id": 145,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "即镇海楼，明洪武年间建于越秀山上，楼高五层，俗称五层楼。",
+      "source_id": 6
+    },
+    {
+      "place_id": 143,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "为纪念孙中山而建，1929年动工、1931年落成，是广州的标志性建筑。",
+      "source_id": 6
+    },
+    {
+      "place_id": 139,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "1933年建成通车，是广州市区第一座跨越珠江的大桥。",
+      "source_id": 6
+    },
+    {
+      "place_id": 153,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "即陈氏书院，建于清光绪年间，是广东现存规模最大的宗祠建筑。",
+      "source_id": 6
+    },
+    {
+      "place_id": 181,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "石室圣心大教堂，1863—1888年建成，全用花岗岩砌筑，故称石室。",
+      "source_id": 6
+    },
+    {
+      "place_id": 132,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "鸦片战争后沦为英、法租界，岛上多欧式建筑，今为历史文化街区。",
+      "source_id": 6
+    },
+    {
+      "place_id": 131,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "珠江广州段水面开阔处，相传因有白鹅出没而得名。",
+      "source_id": 6
+    },
+    {
+      "place_id": 65,
+      "rename_year": "1890s",
+      "rename_reason": "城市扩张，渐称中环、上环",
+      "blurb": "1841年英占香港后在此建城，以维多利亚女王命名；今为中环、上环一带。",
+      "source_id": 6
+    },
+    {
+      "place_id": 97,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "香港岛最高峰（552米），又称扯旗山、维多利亚峰。",
+      "source_id": 6
+    },
+    {
+      "place_id": 74,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "因海湾形似筲箕而得名，19世纪已是渔村。",
+      "source_id": 6
+    },
+    {
+      "place_id": 78,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "港岛南区地名，清代属新安县，英占后为重要聚落。",
+      "source_id": 6
+    },
+    {
+      "place_id": 220,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "即圣保禄教堂遗址（Ruínas de São Paulo）；1835年大火后仅存教堂前壁。",
+      "source_id": 6
+    },
+    {
+      "place_id": 207,
+      "rename_year": "2002",
+      "rename_reason": "市政机构改组",
+      "blurb": "即 Leal Senado，澳门市政机构，今为市政署；其前地是澳门中心。",
+      "source_id": 6
+    },
+    {
+      "place_id": 234,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "因妈祖庙（妈阁庙）得名；葡文 Macau 之名即源于此。",
+      "source_id": 6
+    },
+    {
+      "place_id": 189,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "面向西江、可供内河船只停泊的港口。",
+      "source_id": 6
+    },
+    {
+      "place_id": 190,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "面向南海、供海船停泊的港口。",
+      "source_id": 6
+    },
+    {
+      "place_id": 1,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "明初南京京城十三门之一，位于城西北，今存地名。",
+      "source_id": 6
+    },
+    {
+      "place_id": 2,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "明初城门之一，因门外曾为牧马草场得名。",
+      "source_id": 6
+    },
+    {
+      "place_id": 3,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "明初城门之一，因近清凉山得名。",
+      "source_id": 6
+    },
+    {
+      "place_id": 4,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "明代石城门，俗称汉西门，明初京城十三门之一。",
+      "source_id": 6
+    },
+    {
+      "place_id": 5,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "明初城门，以明太祖年号“洪武”得名。",
+      "source_id": 6
+    },
+    {
+      "place_id": 9,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "南京城西名山，古称石头山，山上有清凉寺、扫叶楼。",
+      "source_id": 6
+    },
+    {
+      "place_id": 10,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "南京城北山冈，因形似五台山得名。",
+      "source_id": 6
+    },
+    {
+      "place_id": 14,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "在鸡笼山东麓，明代在此设钦天台观星，后称北极阁。",
+      "source_id": 6
+    },
+    {
+      "place_id": 17,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "清代文人袁枚的园林，相传原为曹雪芹家族园林旧址。",
+      "source_id": 6
+    },
+    {
+      "place_id": 18,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "始建于唐，位于清凉山上，为南京名刹。",
+      "source_id": 6
+    },
+    {
+      "place_id": 19,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "南京古刹，位于城西，明代香火已盛。",
+      "source_id": 6
+    },
+    {
+      "place_id": 20,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "南京古寺，因寺内大佛得名。",
+      "source_id": 6
+    },
+    {
+      "place_id": 39,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "明代南京报时建筑，鼓楼与钟楼相邻，今存鼓楼。",
+      "source_id": 6
+    },
+    {
+      "place_id": 40,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "南京明代钟楼遗存，内悬洪武年间大钟。",
+      "source_id": 6
+    },
+    {
+      "place_id": 22,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "清凉山上一座楼阁，清初画家龚贤曾居此。",
+      "source_id": 6
+    },
+    {
+      "place_id": 30,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "国民政府时期外交部所在地。",
+      "source_id": 6
+    },
+    {
+      "place_id": 31,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "国民政府时期交通部所在地。",
+      "source_id": 6
+    },
+    {
+      "place_id": 32,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "国民政府时期财政部所在地。",
+      "source_id": 6
+    },
+    {
+      "place_id": 33,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "国民政府五院之一——司法院所在地。",
+      "source_id": 6
+    },
+    {
+      "place_id": 35,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "中国国民党中央党部所在地。",
+      "source_id": 6
+    },
+    {
+      "place_id": 28,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "1888年由汇文书院创办，是南京最早的中学之一。",
+      "source_id": 6
+    },
+    {
+      "place_id": 42,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "日本驻南京领事馆。",
+      "source_id": 6
+    },
+    {
+      "place_id": 130,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "广州的母亲河，因江中原有海珠石得名。",
+      "source_id": 6
+    },
+    {
+      "place_id": 149,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "广州最古老的佛寺之一，始建于东晋，禅宗六祖慧能曾在此剃度。",
+      "source_id": 6
+    },
+    {
+      "place_id": 150,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "广州名刹，因宋代苏轼题“六榕”得名，寺内有花塔。",
+      "source_id": 6
+    },
+    {
+      "place_id": 151,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "广州名刹，相传为禅宗初祖达摩西来登岸之处。",
+      "source_id": 6
+    },
+    {
+      "place_id": 152,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "广州古寺，始建于南汉。",
+      "source_id": 6
+    },
+    {
+      "place_id": 154,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "中国最早的清真寺之一，寺内光塔相传建于唐代。",
+      "source_id": 6
+    },
+    {
+      "place_id": 136,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "广州城西的商业与住宅区，多骑楼、大屋。",
+      "source_id": 6
+    },
+    {
+      "place_id": 135,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "珠江南岸地区，今海珠区一带。",
+      "source_id": 6
+    },
+    {
+      "place_id": 137,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "广州城东的住宅区，近代多华侨别墅。",
+      "source_id": 6
+    },
+    {
+      "place_id": 146,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "广州城北名山，又称观音山，山上有五层楼（镇海楼）。",
+      "source_id": 6
+    },
+    {
+      "place_id": 147,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "广州最早的公园之一，今人民公园。",
+      "source_id": 6
+    },
+    {
+      "place_id": 177,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "广州老城北墙正门。",
+      "source_id": 6
+    },
+    {
+      "place_id": 178,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "广州老城北墙东侧城门。",
+      "source_id": 6
+    },
+    {
+      "place_id": 148,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "广州市政府所在地。",
+      "source_id": 6
+    },
+    {
+      "place_id": 175,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "广州西关的河涌水乡，以荔枝得名。",
+      "source_id": 6
+    },
+    {
+      "place_id": 176,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "广州西关古村，以“泮塘五秀”等水生作物闻名。",
+      "source_id": 6
+    },
+    {
+      "place_id": 104,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "港岛与九龙之间的海港，以维多利亚女王命名，是世界著名的天然良港。",
+      "source_id": 6
+    },
+    {
+      "place_id": 105,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "香港开埠后建成的第一条主要道路，以维多利亚女王命名。",
+      "source_id": 6
+    },
+    {
+      "place_id": 66,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "与港岛隔海相望的半岛，1860年割让给英国。",
+      "source_id": 6
+    },
+    {
+      "place_id": 67,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "九龙半岛上的城寨，即清代九龙寨城所在。",
+      "source_id": 6
+    },
+    {
+      "place_id": 68,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "九龙北部地名，旧称芒角。",
+      "source_id": 6
+    },
+    {
+      "place_id": 69,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "九龙南端地名，位于维多利亚港北岸。",
+      "source_id": 6
+    },
+    {
+      "place_id": 72,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "港岛北岸地名，开埠早期属下环一带。",
+      "source_id": 6
+    },
+    {
+      "place_id": 73,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "港岛北岸地名，因海湾形似铜锣得名。",
+      "source_id": 6
+    },
+    {
+      "place_id": 77,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "港岛南区地名，英文 Aberdeen，原为传统渔村。",
+      "source_id": 6
+    },
+    {
+      "place_id": 84,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "港岛南区著名海滩。",
+      "source_id": 6
+    },
+    {
+      "place_id": 83,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "港岛南区海滩，毗邻浅水湾。",
+      "source_id": 6
+    },
+    {
+      "place_id": 95,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "港岛西南的岛屿，因形似鸭舌得名。",
+      "source_id": 6
+    },
+    {
+      "place_id": 93,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "港岛西北的小岛，岛上设有灯塔。",
+      "source_id": 6
+    },
+    {
+      "place_id": 75,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "港岛东地名，英文 Quarry Bay，因早年在此采石得名。",
+      "source_id": 6
+    },
+    {
+      "place_id": 79,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "港岛西地名，有香港最早的水塘之一——薄扶林水塘。",
+      "source_id": 6
+    },
+    {
+      "place_id": 126,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "即今礼宾府，香港总督官邸。",
+      "source_id": 6
+    },
+    {
+      "place_id": 124,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "跑马地，香港赛马会马场。",
+      "source_id": 6
+    },
+    {
+      "place_id": 100,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "港岛东部的高峰。",
+      "source_id": 6
+    },
+    {
+      "place_id": 80,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "港岛南区谷地，建有大潭水塘。",
+      "source_id": 6
+    },
+    {
+      "place_id": 197,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "澳门城中心的军事炮台，建于17世纪，今澳门博物馆所在。",
+      "source_id": 6
+    },
+    {
+      "place_id": 200,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "澳门半岛最高点，山上有炮台、灯塔与圣母雪地殿。",
+      "source_id": 6
+    },
+    {
+      "place_id": 199,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "建于1865年，是中国海岸第一座现代灯塔。",
+      "source_id": 6
+    },
+    {
+      "place_id": 198,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "东望洋山上的炮台，与灯塔、小堂并存。",
+      "source_id": 6
+    },
+    {
+      "place_id": 210,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "原为葡萄牙富商的花园，因曾养白鸽得名，今白鸽巢公园。",
+      "source_id": 6
+    },
+    {
+      "place_id": 203,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "澳门三大古教堂之一，供奉圣老楞佐。",
+      "source_id": 6
+    },
+    {
+      "place_id": 206,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "澳门培养神职人员的修道院，建于18世纪。",
+      "source_id": 6
+    },
+    {
+      "place_id": 202,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "天主教澳门教区主教的驻所。",
+      "source_id": 6
+    },
+    {
+      "place_id": 223,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "澳门半岛最重要的大道，正式名为亚美打利庇卢大马路。",
+      "source_id": 6
+    },
+    {
+      "place_id": 224,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "澳门半岛北部区域，因曾安置荷兰战俘得名。",
+      "source_id": 6
+    },
+    {
+      "place_id": 225,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "澳门半岛的主要街道之一。",
+      "source_id": 6
+    },
+    {
+      "place_id": 221,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "因街上的玫瑰堂（板樟堂）得名。",
+      "source_id": 6
+    },
+    {
+      "place_id": 222,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "澳门三大古教堂之一，俗称花王堂。",
+      "source_id": 6
+    },
+    {
+      "place_id": 191,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "澳门半岛南面的海湾，后填海成南湾大马路。",
+      "source_id": 6
+    },
+    {
+      "place_id": 208,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "1902年在澳门设立的葡萄牙银行，长期发行澳门币。",
+      "source_id": 6
+    },
+    {
+      "place_id": 209,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "澳门的邮政与电信机构，总部大楼在新马路。",
+      "source_id": 6
+    },
+    {
+      "place_id": 235,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "澳门三大古教堂之一。",
+      "source_id": 6
+    },
+    {
+      "place_id": 236,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "即主教座堂，澳门天主教区的主教堂。",
+      "source_id": 6
+    },
+    {
+      "place_id": 233,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "澳门半岛西北的小岛，后与半岛相连。",
+      "source_id": 6
+    },
+    {
+      "place_id": 240,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "紫禁城正门，因居中向阳、位当子午得名。",
+      "source_id": 6
+    },
+    {
+      "place_id": 241,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "紫禁城前朝的正门。",
+      "source_id": 6
+    },
+    {
+      "place_id": 242,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "俗称金銮殿，明清皇帝举行大典之所，是紫禁城最高大的建筑。",
+      "source_id": 6
+    },
+    {
+      "place_id": 243,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "紫禁城三大殿之一，清代殿试之地。",
+      "source_id": 6
+    },
+    {
+      "place_id": 244,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "紫禁城后三宫之首，明清皇帝的寝宫。",
+      "source_id": 6
+    },
+    {
+      "place_id": 245,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "紫禁城东门。",
+      "source_id": 6
+    },
+    {
+      "place_id": 246,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "紫禁城西门。",
+      "source_id": 6
+    },
+    {
+      "place_id": 239,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "天安门与午门之间的皇城城门。",
+      "source_id": 6
+    },
+    {
+      "place_id": 251,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "太液池水面之一，与北海、南海合称三海。",
+      "source_id": 6
+    },
+    {
+      "place_id": 252,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "中南海的一部分，清代为皇家园林。",
+      "source_id": 6
+    },
+    {
+      "place_id": 254,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "什刹海的一部分，元代通惠河故道。",
+      "source_id": 6
+    },
+    {
+      "place_id": 255,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "什刹海的西海，元代曾是漕运的终点码头。",
+      "source_id": 6
+    },
+    {
+      "place_id": 259,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "内城南墙东门，明代改称崇文门，俗称哈德门。",
+      "source_id": 6
+    },
+    {
+      "place_id": 260,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "内城南墙西门，又称顺承门。",
+      "source_id": 6
+    },
+    {
+      "place_id": 261,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "内城东墙北门。",
+      "source_id": 6
+    },
+    {
+      "place_id": 262,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "内城西墙北门，清代是玉泉山水进京的通道。",
+      "source_id": 6
+    },
+    {
+      "place_id": 263,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "内城东墙南门，旧时为漕粮入京之门。",
+      "source_id": 6
+    },
+    {
+      "place_id": 264,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "内城西墙南门，旧时为煤炭入京之门。",
+      "source_id": 6
+    },
+    {
+      "place_id": 265,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "内城北墙西门，明清出兵征战多由此门。",
+      "source_id": 6
+    },
+    {
+      "place_id": 266,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "内城北墙东门。",
+      "source_id": 6
+    },
+    {
+      "place_id": 269,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "北京西城的著名牌楼，今西单商圈。",
+      "source_id": 6
+    },
+    {
+      "place_id": 270,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "北京西城的著名牌楼，今西四。",
+      "source_id": 6
+    },
+    {
+      "place_id": 271,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "北京东城的著名牌楼，今东单。",
+      "source_id": 6
+    },
+    {
+      "place_id": 272,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "北京东城的著名牌楼，今东四。",
+      "source_id": 6
+    },
+    {
+      "place_id": 274,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "北京中轴线上的主要街道。",
+      "source_id": 6
+    },
+    {
+      "place_id": 273,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "北京中轴线上的主要街道。",
+      "source_id": 6
+    },
+    {
+      "place_id": 275,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "北京东城的地名与桥。",
+      "source_id": 6
+    },
+    {
+      "place_id": 277,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "什刹海上一座石桥，“燕京小八景”之一的所在地。",
+      "source_id": 6
+    },
+    {
+      "place_id": 278,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "北京著名寺庙，旧时庙会极盛。",
+      "source_id": 6
+    },
+    {
+      "place_id": 279,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "北京著名寺庙，旧时庙会极盛。",
+      "source_id": 6
+    },
+    {
+      "place_id": 281,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "明清祭祀都城隍的庙宇。",
+      "source_id": 6
+    },
+    {
+      "place_id": 282,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "明清北京的地方行政机关。",
+      "source_id": 6
+    },
+    {
+      "place_id": 284,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "明清科举会试的考场，旧址在今建国门内。",
+      "source_id": 6
+    },
+    {
+      "place_id": 285,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "明清最高监察机关。",
+      "source_id": 6
+    },
+    {
+      "place_id": 286,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "明清培养、储备人才的机构。",
+      "source_id": 6
+    },
+    {
+      "place_id": 288,
+      "rename_year": null,
+      "rename_reason": null,
+      "blurb": "明清饲养大象的地方，故有“象房桥”之名。",
+      "source_id": 6
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "_readme": "city -> modern base map (for code/city_map.py). image is under the project root; bounds = the geographic box the image covers.",
+  "香港": {
+    "image": "sources/raw/hk_location_map.svg",
+    "minlat": 22.1200, "maxlat": 22.5706,
+    "minlon": 113.8222, "maxlon": 114.4522,
+    "width": 1298, "height": 1016,
+    "attribution": "Base map: Maximilian Dorrbecker (Chumwa), Wikimedia Commons, CC BY-SA 3.0"
+  }
+}
