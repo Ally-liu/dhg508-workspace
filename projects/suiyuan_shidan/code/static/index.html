@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What's in my kitchen? · 我的食材，可以做什么？</title>
+<style>
+  :root{
+    --lemon:#F9E076; --jade:#7FB069; --slate:#444444;
+    --paper:#fdf9ec; --card:#fffdf5; --ink:#2b2b2b; --soft:#6f6a5b;
+    --line:#e4dcbf; --lemon-deep:#f3d64e; --jade-deep:#5f9149;
+    --serif:"Songti SC","Noto Serif SC","Source Han Serif SC",Georgia,serif;
+    --sans:"Avenir Next","PingFang SC","Helvetica Neue",system-ui,sans-serif;
+    --en:"Avenir Next","Helvetica Neue","Futura",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 var(--sans)}
+  .wrap{max-width:980px;margin:0 auto;padding:44px 28px 64px}
+
+  /* header band in lemon */
+  .band{background:var(--lemon);border-radius:26px;padding:30px 34px 26px;position:relative;overflow:hidden}
+  .band .kicker{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#7a6a20}
+  .band h1{margin:6px 0 0;line-height:1}
+  .band h1 .en{display:block;font-family:var(--en);font-weight:800;font-size:58px;letter-spacing:-1px;color:var(--slate)}
+  .band h1 .zh{display:block;font-family:var(--serif);font-size:19px;color:#6b5c1c;margin-top:8px;letter-spacing:.02em}
+  .band .lede{margin:16px 0 0;color:#5f5320;max-width:40em;font-size:15.5px}
+  .band .badge{position:absolute;right:26px;top:26px;background:#fff;border:1.5px solid var(--slate);
+       border-radius:999px;font-size:12px;color:var(--slate);padding:5px 12px;letter-spacing:.06em}
+
+  /* stats strip in jade */
+  .stats{margin-top:14px;background:var(--jade);color:#fff;border-radius:18px;padding:14px 22px;font-size:14px;
+       display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+  .stats b{font-family:var(--en);font-weight:800;font-size:19px}
+
+  /* ask */
+  .ask{margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px}
+  .entries{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .entry{border:1px solid var(--line);border-radius:16px;padding:12px 14px;background:#fffef8}
+  .entry.food{background:#eef5e8;border-color:#cfe0c2}
+  .elabel{font-size:13px;font-weight:700;color:var(--slate);margin-bottom:8px}
+  .entry.food .elabel{color:var(--jade-deep)}
+  .field{display:flex;gap:10px}
+  input[type=text]{flex:1;font:17px var(--sans);padding:15px 18px;border:1px solid var(--line);
+       border-radius:14px;background:#fffef8;color:var(--ink);min-height:52px}
+  input:focus{outline:2px solid var(--jade);outline-offset:1px}
+  button{appearance:none;border:0;border-radius:14px;background:var(--slate);color:var(--lemon);font:700 16px var(--en);
+       letter-spacing:.02em;padding:0 28px;cursor:pointer;min-height:52px}
+  button:hover{background:#000}
+  button:disabled{opacity:.5;cursor:default}
+  .chips{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+  .chip{border:1px solid var(--line);background:#fffdf5;border-radius:999px;padding:7px 14px;font-size:14px;
+       color:var(--soft);cursor:pointer}
+  .chip:hover{border-color:var(--jade);color:var(--jade-deep)}
+  .chip.sec{border-color:#dfe9d8;background:#f3f8ef}
+  .hint{margin-top:12px;font-size:13px;color:var(--soft)}
+
+  /* guide */
+  .guide{margin-top:16px}
+  .ghead{font-size:13.5px;color:var(--slate);font-weight:700}
+  .ghead span{font-weight:400;color:var(--soft)}
+  .grow{display:flex;flex-direction:column;gap:6px;margin-top:12px}
+  .glabel{align-self:flex-start;font-size:12px;color:var(--jade-deep);background:#eef5e8;border-radius:8px;
+       padding:4px 10px}
+  .entry.food .glabel{background:#fff;border:1px solid #cfe0c2}
+  .grow .chips{margin-top:0}
+  .books{margin-top:10px;font-size:13.5px;color:#6b5c1c;background:#fdf3c9;border-radius:12px;padding:10px 16px}
+  .books b{color:var(--slate)}
+
+  /* result */
+  .out{margin-top:24px;display:none;animation:rise .45s ease-out}
+  @keyframes rise{from{opacity:0;transform:translateY(12px)}}
+  .parsed{font-size:13px;color:var(--jade-deep);background:#eef5e8;border-radius:12px;padding:10px 14px}
+  .parsed code{font-family:ui-monospace,Consolas,monospace}
+  .answer{font-family:var(--serif);font-size:21px;line-height:1.6;margin:18px 0 6px}
+  .none{color:var(--jade-deep);font-family:var(--serif);font-size:22px}
+  .warnbox{margin:10px 0 4px;font-size:13px;line-height:1.6;color:#8a5a12;background:#f6ead2;
+       border:1px solid #e6cf9e;border-radius:10px;padding:9px 13px}
+  .warnbox b{color:#8a5a12}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;position:relative}
+  .card h3{font-family:var(--serif);font-size:24px;margin:0 0 2px}
+  .tag{display:inline-block;font-size:12px;letter-spacing:.06em;color:var(--jade-deep);background:#eef5e8;
+       border-radius:999px;padding:2px 10px;margin-bottom:10px}
+  .nature{display:inline-block;font-size:12px;border-radius:999px;padding:2px 10px;margin:0 6px 10px 0;color:#fff;font-weight:600}
+  .nature.cold{background:#4a7fb5}.nature.cool{background:#6ba3c9}.nature.neutral{background:#8a8f99}
+  .nature.warm{background:#d98c4a}.nature.hot{background:#c0503a}.nature.none{background:#b9b3a0}
+  .home{display:inline-block;font-size:11px;border-radius:999px;padding:2px 9px;margin:0 0 10px 6px;
+       background:#fff;color:#5f9149;border:1px solid #cfe0c2}
+  .flavor{font-size:13px;color:#6b645a;margin:-4px 0 8px}
+  .id{position:absolute;top:16px;right:18px;font-family:ui-monospace,Consolas,monospace;font-size:12px;color:#a2933a}
+  .orig{font-family:var(--serif);font-size:16px;line-height:1.75;color:#3a352b;margin:8px 0 10px}
+  .gloss{font-size:14px;color:#4a4638;background:#fbf7e6;border-left:3px solid var(--lemon);border-radius:6px;
+       padding:8px 12px;margin:0 0 10px}
+  .gloss b{color:var(--jade-deep)}
+  .ings{font-size:13px;color:var(--soft)}
+  .ings b{color:var(--jade-deep)}
+  footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--soft);
+       display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--jade);margin-right:6px}
+  .dot.rules{background:#c9a227}
+  @media(max-width:640px){
+    .wrap{padding:24px 16px 48px}
+    .band{padding:22px 20px}
+    .band h1 .en{font-size:36px}
+    .band .badge{display:none}
+    .cards{grid-template-columns:1fr} .entries{grid-template-columns:1fr} .field{flex-direction:column} button{min-height:50px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="band">
+    <span class="badge">八部古食书 · 简体</span>
+    <div class="kicker">Eat like the ancients · 古人的吃法与食物宜性</div>
+    <h1>
+      <span class="en">Eat like the ancients.</span>
+      <span class="zh">像古人一样吃：这些食材，古人怎么做、什么性？</span>
+    </h1>
+    <p class="lede">报上你手边的食材，看看古人怎么吃；也可以问某样东西的性味宜忌，怎么正确吃。</p>
+  </div>
+
+  <div class="stats" id="meta">载入中…</div>
+  <div class="books" id="books">收录八部古食书 · 载入中…</div>
+
+  <section class="ask">
+    <div class="entries">
+      <div class="entry">
+        <div class="elabel">① 我有什么 · 看古人怎么做</div>
+        <div class="field">
+          <input type="text" id="q" placeholder="例如：我有鸡蛋和虾米，能做什么？" autocomplete="off">
+          <button id="go">掌勺</button>
+        </div>
+        <div class="grow"><span class="glabel">有食材做什么</span><div class="chips" id="g1"></div></div>
+        <div class="grow"><span class="glabel">查某道菜</span><div class="chips" id="g2"></div></div>
+        <div class="grow"><span class="glabel">看某个类目</span><div class="chips" id="g3"></div></div>
+      </div>
+      <div class="entry food">
+        <div class="elabel">② 这食材什么性 · 怎么正确吃</div>
+        <div class="field">
+          <input type="text" id="qf" placeholder="例如：蟹 / 猪肉 / 酒 / 茶" autocomplete="off">
+          <button id="gof">查性味</button>
+        </div>
+        <div class="grow"><span class="glabel">性味 · 宜忌</span><div class="chips" id="g4"></div></div>
+        <div class="grow"><span class="glabel">按季节 · 体质</span><div class="chips" id="g5"></div></div>
+      </div>
+    </div>
+    <div class="hint">问题会先被拆成一次数据库查询，答案只依据库里查到的行。食材标注为机器初标、今译与宜忌为编者补充，最终以原文为准；食疗属古籍记载，非医疗建议。</div>
+  </section>
+
+  <section class="out" id="out">
+    <div class="parsed" id="parsed"></div>
+    <div class="answer" id="answer"></div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <footer>
+    <span id="mode"><span class="dot"></span>…</span>
+    <span>网页 → server.py → DeepSeek → suiyuan.db</span>
+  </footer>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => (s||'').replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const NOTFOUND = '本库未载。';
+
+function chip(text, cls){ return `<span class="chip ${cls||''}">${esc(text)}</span>`; }
+
+fetch('/api/meta').then(r=>r.json()).then(m=>{
+  const c = m.counts;
+  $('meta').innerHTML = `库中 <b>${c.section}</b> 个类目 · <b>${c.recipe}</b> 条目 · `
+    + `<b>${c.ingredient}</b> 种食材 · <b>${c.recipe_ingredient}</b> 条菜–料关系`;
+
+  // 收录的书
+  const books = {};
+  (m.sections||[]).forEach(s => books[s.book] = (books[s.book]||0)+1);
+  $('books').innerHTML = '收录八部古食书：' + Object.keys(books).map(b =>
+      `<b>《${esc(b)}》</b>`).join('、')
+    + `，共 ${c.recipe} 条，均可引原文。`;
+
+  // 左右两栏各自的示例（示例都取自库中真实存在、能命中的家常菜/食材）
+  $('g1').innerHTML = ['我有鸡蛋和虾米，能做什么？','有豆腐能做什么菜？','有白菜和猪肉能做什么？','萝卜能做什么？']
+    .map(t=>chip(t)).join('');
+  $('g2').innerHTML = ['炒肉丝怎么做？','煮粥怎么做？','馒头怎么做？','面筋怎么做？'].map(t=>chip(t)).join('');
+  $('g3').innerHTML = (m.sections||[]).slice(0,10).map(s=>chip('列 '+s.name,'sec')).join('');
+  $('g4').innerHTML = ['蟹的性味宜忌？','酒有什么宜忌？','猪肉是什么性？','豆腐是什么性？'].map(t=>chip(t)).join('');
+  $('g5').innerHTML = ['夏天该吃什么？','冬天宜吃什么？','祛湿吃什么？','酒后有什么忌？','脾胃虚弱吃什么？'].map(t=>chip(t)).join('');
+
+  document.querySelectorAll('#g1 .chip, #g2 .chip, #g3 .chip').forEach(c2=>c2.onclick=()=>{ $('q').value=c2.textContent; ask(); });
+  document.querySelectorAll('#g4 .chip').forEach(c2=>c2.onclick=()=>{ $('qf').value=c2.textContent; askFood(); });
+  document.querySelectorAll('#g5 .chip').forEach(c2=>c2.onclick=()=>{ $('qf').value=c2.textContent; askWellness(); });
+  $('mode').innerHTML = (m.has_key
+    ? '<span class="dot"></span>model: ' + m.model + '（真调用）'
+    : '<span class="dot rules"></span>未设 DEEPSEEK_API_KEY：规则模式仍可演示');
+});
+
+$('go').onclick = () => ask();
+$('q').addEventListener('keydown', e => { if(e.key==='Enter') ask(); });
+$('gof').onclick = () => askFood();
+$('qf').addEventListener('keydown', e => { if(e.key==='Enter') askFood(); });
+
+async function run(q, force, btn, label){
+  if(!q) return;
+  btn.disabled = true; const old = btn.textContent; btn.textContent = '…';
+  try{
+    const res = await fetch('/api/ask', {method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(force ? {q, force} : {q})});
+    render(await res.json());
+    $('out').style.display = 'block';
+    $('out').scrollIntoView({behavior:'smooth', block:'start'});
+  }catch(e){ $('mode').innerHTML='<span class="dot rules"></span>请求出错'; }
+  btn.disabled = false; btn.textContent = old;
+}
+function ask(){ run($('q').value.trim(), null, $('go'), '掌勺'); }
+function askFood(){ run($('qf').value.trim(), 'food', $('gof'), '查性味'); }
+function askWellness(){ run($('qf').value.trim(), 'wellness', $('gof'), '查性味'); }
+
+function natureClass(n){
+  if(!n) return '';
+  if(n.indexOf('寒')>=0) return 'cold';
+  if(n.indexOf('凉')>=0) return 'cool';
+  if(n==='平') return 'neutral';
+  if(n.indexOf('温')>=0) return 'warm';
+  if(n.indexOf('热')>=0) return 'hot';
+  return 'none';
+}
+
+function render(d){
+  const p = d.parsed || {};
+  let say = '读懂为：' + p.intent;
+  if(p.ingredients && p.ingredients.length) say += ' · 食材 ' + p.ingredients.join('、');
+  if(p.dish) say += ' · 菜名「' + esc(p.dish) + '」';
+  if(p.food) say += ' · 食材「' + esc(p.food) + '」';
+  if(p.kw) say += ' · 检索「' + esc(p.kw) + '」';
+  if(p.section) say += ' · 类目「' + esc(p.section) + '」';
+  $('parsed').innerHTML = `<code>${esc(say)}</code>`;
+
+  const none = d.answer === NOTFOUND || (d.rows||[]).length === 0;
+  $('answer').innerHTML = none
+    ? `<span class="none">${NOTFOUND}</span>`
+    : esc(d.answer) + (d.disclaimer ? `<div class="warnbox"><b>温馨提示</b>：${esc(d.disclaimer)}</div>` : '');
+
+  $('cards').innerHTML = (d.rows||[]).map(r=>{
+    const isFood = !!(r.nature || r.flavor || r.food_category);
+    const nat = r.nature ? `<span class="nature ${natureClass(r.nature)}">${esc(r.nature)}</span>` : '';
+    const flav = r.flavor && r.flavor!=='无' ? `<span class="flavor">味：${esc(r.flavor)}</span>` : '';
+    const home = (r.home_style===1) ? '<span class="home">家常</span>' : '';
+    const glossLabel = isFood ? '宜忌（编者补充）' : '今译（编者补充）';
+    return `
+    <div class="card">
+      <span class="id">[id ${r.id}]</span>
+      <h3>${esc(r.title)}</h3>
+      <span class="tag">${esc(r.book)} · ${esc(r.section)}</span>${nat}${home}
+      ${flav}
+      ${r.gloss ? `<div class="gloss"><b>${glossLabel}</b>：${esc(r.gloss)}</div>` : ''}
+      <div class="orig">${esc(r.text)}</div>
+      <div class="ings"><b>食材（初标）</b>：${esc(r.ings || '（无）')}</div>
+    </div>`;
+  }).join('');
+}
+</script>
+</body>
+</html>

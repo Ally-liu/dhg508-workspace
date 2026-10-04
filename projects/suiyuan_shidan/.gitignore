@@ -1,0 +1,16 @@
+# 本项目的忽略规则（在仓库根 .gitignore 之外补充）
+
+# 密钥绝不进 Git —— API key 只放环境变量 DEEPSEEK_API_KEY
+.env
+.env.*
+!.env.example
+
+# 生成的数据库由脚本重建；允许提交这个小的可复现库
+artifacts/**
+!artifacts/
+!artifacts/README.md
+!artifacts/suiyuan.db
+
+# Python 噪声
+__pycache__/
+*.py[cod]
