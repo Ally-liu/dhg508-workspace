@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title>光绪之死</title>
+<meta name="filetype" content="0">
+<meta name="publishedtype" content="1">
+<meta name="pagetype" content="1">
+<meta name="catalogs" content="128719">
+<meta name="contentid" content="5250705">
+<meta name="publishdate" content="2009-02-23">
+<meta name="author" content="Administrator">
+<meta name="source" content="《文汇报》2008年11月2日">
+<script type="text/javascript" src="../../../images/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="../../../images/mobile_v2021.js"></script>
+
+<link class="stylefile" rel="stylesheet" type="text/css" href="../../../images/idangerous.swiper.css">
+<link rel="stylesheet" type="text/css" href="../../../images/slick.min.css">
+<link class="stylefile" rel="stylesheet" type="text/css" href="../../../images/jds_base_pc.css" />
+<link class="stylefile" rel="stylesheet" type="text/css" href="../../../images/jds_pc_v2021.css">
+
+<link class="mobileStyle" rel="stylesheet" type="text/css" href="../../../images/jds_swiper.min_v2020.css">
+<link class="mobileStyle" rel="stylesheet" type="text/css" href="../../../images/jds_base_mobile.css" />
+<link class="mobileStyle" rel="stylesheet" type="text/css" href="../../../images/jds_mobile_v2021.css">
+
+<script type="text/javascript" src="../../../images/cat.touchjs.js"></script>
+<script type="text/javascript" src="../../../images/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="../../../images/idangerous.swiper.min.js"></script>
+<script type="text/javascript" src="../../../images/slick.min.js"></script>
+<script type="text/javascript" src="../../../images/jds_swiper.min_v2020.js"></script>
+<script type="text/javascript">
+    var isPC = IsPC(); //获取是否为PC端
+    if (isPC) {
+        //如果是PC端加载PC的js和css
+        $(".mobileStyle").remove();
+        dynamicLoadJs("../../../images/jds_base_pc.js");
+        dynamicLoadJs("../../../images/jds_pc_v2021.js");
+    } else {
+        //如果是移动端加载移动端的js和css
+        $(".stylefile").remove();
+        dynamicLoadJs("../../../images/jds_base_mobile.js");
+        dynamicLoadJs("../../../images/jds_mobile_v2021.js");
+    }
+</script>
+</head>
+<body>
+<!-- header start -->
+<div class="header">
+    <div class="containerMar80 headerMidBox">
+        <div class="container1400 headerMid clear">
+            <a href="/"><img src="/images/logo.png" class="logo" /></a>
+            <div class="headerMidSearch clear">
+                <input type="text" name="SearchKeyword" id="SearchKeyword" onkeyup="test()" placeholder="请输入搜索关键词" class="headerSearchInput" />
+                <div class="headerSearchSelect">
+                    <p id="selectname" class="headersearchSelectCheck" style="margin-left:5px;">标题</p>
+                    <div name="SearchType" id="SearchType" class="headerSearchOption">
+                        <p  value="2">标题</p>
+                        <p  value="4">作者</p>
+                        <p  value="4">关键词</p>
+                        <p   value="8">日期</p>
+                    </div>
+                </div>
+                <a href="#"  onclick="toSearch()" class="headerSearchSubmit">搜索</a>
+                <img src="/images/mobile_navBtn.png" class="pcNone mobile_navBtn" />
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+                    function toSearch() {
+                        var key = document.getElementById('SearchKeyword').value;
+                        var type = document.getElementById('selectname').innerHTML;
+                        var searchscope="";
+                        if(type=="标题"){
+                            searchscope = "DocTitle";
+                        }else if(type=="作者"){
+                            searchscope = "DocAuthor";
+                        }else if(type=="日期"){
+                            searchscope = "DocRelTime";
+                        }else if(type=="关键词"){
+                            searchscope = "";
+                        }
+                         key=key.replace(/[\-\_\,\!\|\~\`\(\)\#\$\%\^\&\*\{\}\:\;\"\L\<\>\?]/g, '');
+                         key=key.replace('select', '');
+
+                        if (key.length == '') { alert('请输入正确的关键词'); return; }
+                        window.open('/was5/web/search?channelid=237147&searchword=' + encodeURIComponent(key)+ '&page=1&catetype=search&searchscope='+searchscope, '_blank');
+                    }
+            </script>
+            <script>
+            function test(){
+                document.getElementById("SearchKeyword").value=''+document.getElementById("textfield").value.replace(/@/g,'').replace(/!/g,'').replace(/$/g,'').replace(/#/g,'').replace(/%/g,'').replace(/^/g,'').replace(/|/g,'').replace(/&/g,'').replace(/</g,'').replace(/>/g,'');
+                debugger;
+            }
+            </script>
+    <div class="mobileNavBox pcNone">
+        <ul class="mobileNav">
+            <li class="mobileNavLi">
+                <a href="/" class="mobileNavLi_a arrNone">首页</a>
+                <ul class="mobile_submenu"></ul>
+            </li>
+            <li class="mobileNavLi">
+                <a href="http://jds.cssn.cn/zzll/" class="mobileNavLi_a arrNone">时政·理论</a>
+                <ul class="mobile_submenu"></ul>
+            </li>
+            <li class="mobileNavLi">
+                <a href="http://jds.cssn.cn/bsgk/" class="mobileNavLi_a">本所概况</a>
+                <ul class="mobile_submenu">
+                    <li><a href="/bsgk/bsjj/" ignoreapd="true">本所简介</a></li>
+                    <li><a href="/bsgk/#ld" ignoreapd="true">所领导</a></li>
+                    <li><a href="/bsgk/zzjg/" ignoreapd="true">组织机构</a></li>
+                    <li><a href="/bsgk/xsst/" ignoreapd="true">学术社团</a></li>
+                    <li><a href="/bsgk/yjzx/" ignoreapd="true">研究中心</a></li>
+                    <li><a href="/bsgk/jdsx/" ignoreapd="true">近代史系</a></li>
+                    <li><a href="/bsgk/bshldz/" ignoreapd="true">博士后流动站</a></li>
+                    <li><a href="/bsgk/xswyh/" ignoreapd="true">学术委员会</a></li>
+                    <li><a href="/bsgk/zcpswyh/" ignoreapd="true">职称评审委员会</a></li>
+                    <li><a href="/bsgk/xwpdwyh/" ignoreapd="true">学位评定委员会</a></li>
+                    <li></li>
+                </ul>
+            </li>
+            <li class="mobileNavLi">
+                <a href="http://jds.cssn.cn/zmxz/" class="mobileNavLi_a arrNone">著名学者</a>
+                <ul class="mobile_submenu"></ul>
+            </li>
+            <li class="mobileNavLi">
+                <a href="http://jds.cssn.cn/xscg/" class="mobileNavLi_a">学术成果</a>
+                <ul class="mobile_submenu">
+                    
+                    <li><a href="http://jds.cssn.cn/xscg/xslw/">学术论文</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/xscg/xszz/">学术著作</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/xscg/llwz/">理论文章</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/xscg/ybwz/">文章集萃</a></li>
+                    
+                    <li></li>
+                </ul>
+            </li>
+            <li class="mobileNavLi">
+                <a href="http://jds.cssn.cn/xsqk/" class="mobileNavLi_a">学术期刊</a>
+                <ul class="mobile_submenu">
+                    
+                    <li><a href="http://jds.cssn.cn/xsqk/jdsyj/">近代史研究</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/xsqk/krzzyj/">抗日战争研究</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/xsqk/zgjdsywk/">中国近代史英文刊</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/xsqk/jdszl/">近代史资料</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/xsqk/twlsyj/">台湾历史研究</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/xsqk/gwzgjdsyj/">国外中国近代史研究</a></li>
+                    
+                    <li></li>
+                </ul>
+            </li>
+            <li class="mobileNavLi">
+                <a href="http://jds.cssn.cn/mkszyysxyj/" class="mobileNavLi_a arrNone">马克思主义与史学研究</a>
+                <ul class="mobile_submenu"></ul>
+            </li>
+            <li class="mobileNavLi">
+                <a href="http://jds.cssn.cn/ztlm/" class="mobileNavLi_a">专题栏目</a>
+                <ul class="mobile_submenu">
+                    
+                    <li><a href="http://jds.cssn.cn/ztlm/zhpxbwygzs/">张海鹏学部委员工作室</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/ztlm/hzjxzgzs/">侯中军学者工作室</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/ztlm/qndsh/">青年读书会</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/ztlm/flsyjq/">法律史研究群</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/ztlm/xwsyjq/">新闻史研究群</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/ztlm/">更多专题</a></li>
+                </ul>
+            </li>
+            <li class="mobileNavLi">
+                <a href="http://jds.cssn.cn/tzgg/" class="mobileNavLi_a arrNone">通知公告</a>
+                <ul class="mobile_submenu"></ul>
+            </li>
+        </ul>
+    </div>
+    <div class="containerMar80 headerNavBox mobileNone">
+        <ul class="container1400 headerNav clear">
+            <li class="headerNavLi">
+                <a href="/">首页</a>
+            </li>
+            <li class="headerNavLi">
+                <a href="http://jds.cssn.cn/zzll/">时政·理论</a>
+            </li>
+            <li class="headerNavLi">
+                <a href="http://jds.cssn.cn/bsgk/">本所概况</a>
+                <ul class="submenu">
+                    <li><a href="/bsgk/bsjj/" ignoreapd="true">本所简介</a></li>
+                    <li><a href="/bsgk/#ld" ignoreapd="true">所领导</a></li>
+                    <li><a href="/bsgk/zzjg/" ignoreapd="true">组织机构</a></li>
+                    <li><a href="/bsgk/xsst/" ignoreapd="true">学术社团</a></li>
+                    <li><a href="/bsgk/yjzx/" ignoreapd="true">研究中心</a></li>
+                    <li><a href="/bsgk/jdsx/" ignoreapd="true">近代史系</a></li>
+                    <li><a href="/bsgk/bshldz/" ignoreapd="true">博士后流动站</a></li>
+                    <li><a href="/bsgk/xswyh/" ignoreapd="true">学术委员会</a></li>
+                    <li><a href="/bsgk/zcpswyh/" ignoreapd="true">职称评审委员会</a></li>
+                    <li><a href="/bsgk/xwpdwyh/" ignoreapd="true">学位评定委员会</a></li>
+                    <li></li>
+                </ul>
+            </li>
+            <li class="headerNavLi">
+                <a href="http://jds.cssn.cn/zmxz/">著名学者</a>
+            </li>
+            <li class="headerNavLi">
+                <a href="http://jds.cssn.cn/xscg/">学术成果</a>
+                <ul class="submenu">
+                    
+                    <li><a href="http://jds.cssn.cn/xscg/xslw/">学术论文</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/xscg/xszz/">学术著作</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/xscg/llwz/">理论文章</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/xscg/ybwz/">文章集萃</a></li>
+                    
+                    <li></li>
+                </ul>
+            </li>
+            <li class="headerNavLi">
+                <a href="http://jds.cssn.cn/xsqk/">学术期刊</a>
+                <ul class="submenu">
+                    
+                    <li><a href="http://jds.cssn.cn/xsqk/jdsyj/">近代史研究</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/xsqk/krzzyj/">抗日战争研究</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/xsqk/zgjdsywk/">中国近代史英文刊</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/xsqk/jdszl/">近代史资料</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/xsqk/twlsyj/">台湾历史研究</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/xsqk/gwzgjdsyj/">国外中国近代史研究</a></li>
+                    
+                    <li></li>
+                </ul>
+            </li>
+            <li class="headerNavLi">
+                <a href="http://jds.cssn.cn/mkszyysxyj/">马克思主义与史学研究</a>
+            </li>
+            <li class="headerNavLi">
+                <a href="http://jds.cssn.cn/ztlm/">专题栏目</a>
+                <ul class="submenu">
+                    
+                    <li><a href="http://jds.cssn.cn/ztlm/zhpxbwygzs/">张海鹏学部委员工作室</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/ztlm/hzjxzgzs/">侯中军学者工作室</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/ztlm/qndsh/">青年读书会</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/ztlm/flsyjq/">法律史研究群</a></li>
+                    
+                    <li><a href="http://jds.cssn.cn/ztlm/xwsyjq/">新闻史研究群</a></li>
+                    
+                    <li class="learnMore"><a href="http://jds.cssn.cn/ztlm/">更多专题</a></li>
+                </ul>
+            </li>
+            <li class="headerNavLi">
+                <a href="http://jds.cssn.cn/tzgg/">通知公告</a>
+            </li>
+        </ul>
+    </div>
+    <div class="containerMar80 headerBanner">
+        <img class="slick-item" src="/images/banner.jpg" />
+    </div>
+<!--
+    <div class="containerMar80 headerBanner">
+        <div class="slideshow">
+            <div class="slider">
+                <div class="item">
+                    <img class="slick-item" src="/images/banner.jpg" />
+                </div>
+                <div class="item">
+                    <img class="slick-item" src="/images/banner.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+</div>
+<script>
+$(function(){
+    if(navigator.userAgent.indexOf("MSIE 9.0")>0)
+    {
+        $('.headerSearchInput').removeAttr('placeholder');
+        $('.headerSearchInput').val('请输入搜索关键词');
+        $('.headerSearchInput').css('color','#737575');
+        $('.headerSearchInput').focus(function(){
+            $(this).val('')
+        })
+        $('.headerSearchInput').blur(function(){
+            $(this).val('请输入搜索关键词')
+        })
+    } 
+})
+</script>
+<!-- header end -->
+<!-- content start -->
+<div class="containerMar80 lowerContentBox">
+    <div class="container1400 lowerContentCrumbs">
+        <span>您现在的位置：</span><a href="../../../" target="_self" title="首页" class="CurrChnlCls">首页</a>&nbsp;>&nbsp;<a href="../../" target="_self" title="学术成果" class="CurrChnlCls">学术成果</a>&nbsp;>&nbsp;<a href="../" target="_self" title="学术论文" class="CurrChnlCls">学术论文</a>
+    </div>
+    <div class="lowerContentBgImg">
+        <div class="container1400 lowerContent">
+            <div class="detailsArticleBox">
+                <h2 class="lowerContentArticleTitle">光绪之死</h2>
+                <div class="lowerContentArticleInf detailsArticleInf mobileNone">
+                    <span>作者：戴逸</span>
+                    <span>来源：《文汇报》2008年11月2日</span>
+                    <span>发布时间：2009-02-23</span>
+                    <span class="ArticleFontChange">
+                        <span>字体：</span>
+                        <i class="font_big">大</i>
+                        <i class="font_middle on">中</i>
+                        <i class="font_small">小</i>
+                    </span>
+                    <span class="ArticlePrinter pointer" onclick="window.print()">
+                        <img src="../../../images/printerIcon.png" />
+                        <span>打印</span>
+                    </span>
+                </div>
+                <div class="lowerContentArticleInf pcNone">
+                    <span>作者：戴逸</span>
+                    <span>来源：《文汇报》2008年11月2日</span>
+                </div>
+                <div class="lowerContentArticleOperation pcNone">
+                    <span>发布时间：2009-02-23</span>
+                    <span class="ArticlePrinter pointer" onclick="window.print()">
+                        <img src="../../../images/printerIcon.png" />
+                        <span>打印</span>
+                    </span>
+                </div>
+                <div class="ArticleDetails">
+                    <p><br />
+慈禧惟恐自己先死，光绪复出掌权，尽翻旧案，故而在全国求医问药多次，大造光绪病重的舆论，希望光绪因体弱多病而先死，在人间悄悄地消失。但事与愿违，偏偏自己先罹重病，势将不起，故临终前令亲信下手毒死光绪。从科学检测结果与史料记载来看，这应是事实的真相。</p>
+<p>&nbsp;</p>
+<p align="center">一</p>
+<p align="center">&nbsp;</p>
+<p>在距今一百年前的1908年（光绪三十四年），名义上是清朝皇帝，实际上却被囚禁在瀛台的光绪帝和统治中国近半个世纪之久的慈禧太后几乎同时死去。皇帝死于光绪三十四年十月二十一日酉时（下午五至七时），太后死于十月二十二日未时（下午一至三时），相距不到二十小时。这正当八国联军攻入北京后的第八年，中国备受帝国主义的欺凌侮辱，国势阽危，民生凋敝，国将不国。光绪和慈禧同时死亡，老百姓深感震惊、诧异、惶惑，有识之士担心中国这艘千孔百疮的破舟会不会在惊涛骇浪中沉没？其命运如何？光绪和慈禧在政治上势不两立，矛盾尖锐，一个是38岁的壮年，一个是74岁的老人，两人同时死亡，这难道是偶然的巧合？其中是否有不可告人的阴谋？会不会是慈禧太后临死之前恐怕光绪皇帝复出掌权、全翻历史的成案，故而谋杀了光绪？一天阴霾，疑云纷起。逃亡到海外的保皇党人为光绪吊丧，大肆声讨慈禧太后与袁世凯，指责他们是谋害光绪的主犯，舆论讨伐，沸沸扬扬。但他们远在海外，并不清楚光绪是怎么死的，仅在两人的死亡时间上质疑，拿不出确凿的证据。国内人众也狐疑满腹，流言纷纷，清廷严加查禁，&ldquo;奉旨著民政部、步军统领、各督抚悬赏购缉造言煽乱匪徒&rdquo;。（许宝蘅《巢云簃日记》）。宫廷事秘，&ldquo;斧声烛影&rdquo;，谁也不明真相，也不敢公开议论。胡思敬回忆当时的情形说：&ldquo;德宗（光绪）先孝钦（慈禧）一日崩，天下事未有如是之巧。外间纷传李莲英与孝钦有密谋，予询问内廷人员，皆畏罪不敢言。&rdquo;（《国闻备乘》）</p>
+<p><br />
+<br />
+其实，在皇帝、太后死亡之前四年，即光绪三十年，早已有人预言到光绪先死。清朝外务部右侍郎伍廷芳早在1904年就对日本公使内田康哉透露光绪皇帝必定会死在慈禧太后之前。&ldquo;内田康哉问伍廷芳：当皇太后驾崩后皇上会如何？伍言道：亦如世间传闻，诚为清国忧心之事，万望无生此变。伍话中之意，皇太后驾崩诚为皇上身上祸起之时。今围绕皇太后之宫廷大臣，及监官等俱知太后驾崩即其终之时。于太后驾崩时，当会虑及自身安全而谋害皇上。此时，万望能以我守备兵救出皇帝。&rdquo;（孔祥吉、村田雄二郎《罕为人知的中日结盟及其他&middot;绪论》）</p>
+<p><br />
+<br />
+其实，慈禧死前必定会谋杀光绪，许多官员太监对此心知肚明，但不敢说出。国内较早指出这一弑君阴谋的是长期陪侍光绪皇帝的翰林院侍读学士、起居注官恽毓鼎。他的工作是记录光绪的起居言行。在清朝灭亡以前，即宣统三年四月他已写成《崇陵传信录》，这是光绪帝的一本传记。其中说：</p>
+<p><br />
+<br />
+&ldquo;（光绪三十四年）十月初十日，上率百僚，晨贺太后万寿，起居注官应侍班，先集于来薰风门外，上步行自南海来，入德昌门，门罅未阖，侍班官窥见上正扶奄肩，以两足起落作势舒筋骨，为拜跪计。须臾忽奉懿旨&lsquo;皇帝卧病在床，免率百官行礼，辍侍班。&rsquo;上闻之大恸。时太后病泄泻数日矣，有谮上者谓帝闻太后病，有喜色。太后怒曰：&lsquo;我不能先尔死。&rsquo;&rdquo;（《崇陵传信录》）</p>
+<p><br />
+<br />
+这是恽毓鼎在光绪死前十一天亲历的记载，所记慈禧的话和伍廷芳告知日本公使的话完全符合。十月初十日是慈禧的生日，光绪率领百官前往慈禧处探病与请安，从南海步行到德昌门，恽毓鼎随从侍班，皇帝扶着太监的肩头，作身体起落的活动，以舒筋骨，可见身体尚健康正常，但太后不愿与皇帝见面，传谕竟说：光绪已有病卧床，不必再见面了。光绪听了大概很吃惊，话中包含杀机，是不祥之兆。这是武昌起义前半年多的记载。到了民国二年正月十七日，此时清朝已亡，言路已开，无所禁忌，恽毓鼎在《日记》中说道：&ldquo;清之亡，虽为隆裕（即光绪的皇后，称隆裕太后。辛亥革命推翻清朝，批准发布退位诏书的是隆裕太后），而害先帝，立幼主，授载沣以重器，其祸实归于孝钦也。&rdquo;（恽毓鼎《澄斋日记》二，632页）恽毓鼎直接指出了&ldquo;害先帝&rdquo;的是慈禧太后。民国以后，《崇陵传信录》传播甚广，慈禧谋害光绪之说得到佐证。越到后来，记事者日多，传闻更甚。如《方家园杂咏纪事》中说：&ldquo;吾闻南斋翰林谭组庵，内伶教师田际云皆言，大变之前二日，尚见皇上步游水滨，意志活泼，证以他友所闻，亦大概如此。&rdquo;尚书陆润庠曾为光绪请脉，对人说：&ldquo;皇上本无病，即有病，亦肝郁耳！意稍顺当自愈，药何力焉。&rdquo;（《国闻备乘》）许多曾给光绪看过病的医生虽然都认为光绪身体虚弱，常年生病吃药，但死前一段时间病情未见加重，身体尚属正常，并未突发急性致死的病症。其中名医屈桂庭说光绪死前三天&ldquo;在床上乱滚&rdquo;，&ldquo;向我大叫肚子痛得了不得&rdquo;，且&ldquo;面黑，舌焦黄&rdquo;，&ldquo;此系与前病绝少关系&rdquo;（《诊治光绪帝秘记》）。晚清内务府大臣增崇的儿子回忆，他幼年时适逢光绪之丧，他父亲接到光绪死的消息，跟叔叔们说：&ldquo;就是不对，前天，天子受次席总管内务大臣继禄所带的大夫请脉，没听说有什么事。&rdquo;&ldquo;前天继禄请脉后说&lsquo;带大夫的时候，上头还在外屋站着呢，可怎么这么快呢？&rsquo;一位叔父说&lsquo;这简直可怕啦！&rsquo;另一位叔父说&lsquo;这里头有什么事儿罢！&rsquo;我父亲叹了一口气，又摇摇头说：&lsquo;这话咱们可说不清啦！&rsquo;&rdquo;（耆存者《关于光绪之死》，文史资料选辑总122期）光绪死后，穿戴入殓，一反常规，都由宫内太监一手包办，未让内务府插手。&ldquo;光绪身故后，便是销声匿迹地移入宫中，甚至入殓之际究竟是什么样，也无人能知其详，就连在内务府供职的我的父亲、叔父们都讳莫如深，避而不谈。&rdquo;（同上）</p>
+<p><br />
+<br />
+还有曾经陪侍慈禧太后、在宫中生活多年的德龄在《瀛台泣血记》中写道：&ldquo;万恶的李莲英眼看太后的寿命已经不久，自己的靠山快要发生问题了，便暗自着急起来，他想与其待光绪掌了权来和自己算账，不如还让自己先下手为好。经过几度的筹思，他的毒计便决定了。&rdquo;据德龄所述，光绪之死，就是在慈禧同意下李莲英下毒所致。德龄对慈禧很有好感，书中很多处赞扬慈禧。但德龄还是说：&ldquo;我竭力袒护老佛爷，可是对于她之经常虐待光绪，以及她谋害光绪性命的事，我却无法替她找出丝毫藉口。&rdquo;</p>
+<p><br />
+<br />
+新中国成立以后，溥仪从战犯变成了平民，写了一本《我的前半生》，其中说：&ldquo;我还听见一个叫李长安的老太监说起光绪之死的疑案。照他说，光绪在死的前一天还是好好的，只是因为用了一剂药就坏了。后来才知道这剂药是袁世凯使人送来的。&rdquo;</p>
+<p><br />
+<br />
+这许多人所说虽然在细节上有不同和矛盾之处，但都猜测或肯定光绪是被毒害致死的。凶手是谁？多数说是慈禧，也有人说是袁世凯或李莲英。提供证言的有长期陪侍光绪的起居注官恽毓鼎，有给光绪治病的医生，有内务府大臣的儿子，有光绪继承人宣统，有陪侍慈禧太后的德龄，还有早就预言了光绪之死的晚清高官伍廷芳。众口一词，都认为光绪被害而死，因此距今30年之前，历史学界和社会上大多数人都相信此说。</p>
+<p>&nbsp;</p>
+<p align="center">二</p>
+<p align="center">&nbsp;</p>
+<p>20世纪80年代以后，事情发生了变化。清史研究更加重视清宫档案，档案数量汗牛充栋，涉及各个方面，其中有光绪病史的记录，积存甚多，保存相当完整。于是历史学家、档案学家、医学专家共同合作，仔细收集和研究光绪的脉案和药方，探索其一生的健康情况，得出了和上述截然相反的结论。认为光绪一生身体虚弱，百病丛生，久治不愈，尤其光绪三十四年之后，病情加重。他的去世属于正常死亡，并非慈禧等人谋杀，&ldquo;光绪之死，既无中毒或伤害性的迹象，也没有突然性早亡的迹象，应该是属于正常的病亡。&rdquo;（《揭开光绪帝猝死之谜》）</p>
+<p><br />
+<br />
+专家们在详细研究分析了光绪的脉案之后，说光绪幼年即身体虚弱，大婚之前稍感风寒，必头疼体瘦，年仅十五六岁已弱不禁风，二十七八岁患耳鸣脑响，渐次加重，又长期遗精。平日因慈禧虐待，生活清苦。戊戌以后长期软禁，食不果腹，衣不暖身，御前所列菜肴虽多，但大多腐臭，不能进口，有时令御膳房添换一菜肴，必先奏知西太后，太后常常以俭德责之，光绪竟不敢言。瀛台涵元殿光绪居所年久失修，四处透风，隆冬天气并无炉火，寒冷已极。侍候光绪的老太监王商去和内务府大臣立山商量，立山也同情皇帝处境，偷偷整修了涵元殿，糊好了涵元殿的窗户纸。不料慈禧闻知此事，怒责立山，&ldquo;看来你越来越能干了，会走好运了，明儿我派你去打扫瀛台&rdquo;，吓得立山连掴自己耳光，连称&ldquo;奴才该死&rdquo;。义和团起时，大概以为立山会与光绪、外国人连通一起，慈禧竟把立山处死。</p>
+<p><br />
+<br />
+这些虐待光绪的情形很多。专家们认为，慈禧的虐待使得光绪心情不舒畅，病体更加重，以致死亡。专家们称：&ldquo;详考清宫医案，用现代医学的语言来说，光绪是受肺结核、肝脏、心脏、风湿等慢性病长期折磨，致使身体的免疫力严重缺失，酿成了多系统的疾病，最终造成心肺功能衰竭，合并急性感染而死亡。&rdquo;（冯伯祥：《清宫档案揭秘光绪之死》）也有的专家说：&ldquo;光绪之死与慈禧之死，其间并无必然之联系。光绪帝之死按脉案记录之病理、病状分析，属于正常的疾病死亡。没有发现突发性的意外病变之可能。所谓他是被慈禧所毒害而死的议论，至少，在目前来说，尚没有可靠的史料作依据。&hellip;&hellip;他母子二人的接连死去&hellip;&hellip;其实这不过是当时一种偶然的巧合，并没有什么值得可疑之处。&rdquo;</p>
+<p><br />
+<br />
+另一位专家说：&ldquo;从光绪帝临死前的脉案及其亲书的《病原》来分析，其死因属于虚劳之病日久，五脏俱病，六腑皆损，阴阳两虚，气血双亏，终以阳散阴涸，出现阴阳离决而死。&rdquo;（李秉新《光绪猝死一案》）</p>
+<p><br />
+<br />
+1938年，易县的崇陵（光绪陵墓）被盗掘，尸体遗物暴露在外。1980年清理并重新封闭了崇陵，曾将光绪的遗骨作过简单检测，当时没有先进的检测仪器，并没有发现有外伤的痕迹，亦无中毒表现。此次检测过程较简单，故只能以脉案作分析，光绪之死属于正常死亡，遂成定论。崇陵重新封闭时，将光绪的若干头发、遗骨与衣服保存在西陵文物管理处的库房内。</p>
+<p><br />
+<br />
+社会上虽有人提出了不同意见，但并没有更强有力的新证据。如《启功口述历史》中说：慈禧太后病痢，他的曾祖父（启功为清朝宗室，其曾祖父溥良为晚清礼部尚书）在太后住所外侍疾，&ldquo;就在宣布西太后临死前，我曾祖父看见一个太监端着一个盖碗从乐寿堂出来，出于职责，就问这个太监端的是什么？太监答道：&lsquo;是老佛爷赏给万岁爷的塌喇。&rsquo;塌喇在满语中是酸奶的意思。当时光绪被软禁在中南海的瀛台，之前也从没有听说过他有什么急症大病，隆裕皇后也始终在慈禧这边忙活。但送后不久就由隆裕皇后的太监小德张（张兰德）向太医院正堂宣布光绪皇帝驾崩了。&rdquo;但由于对光绪的脉案进行了详细研究，大多数人相信光绪是正常死亡，所以启功先生这段证言未引起学术界和社会的重视。</p>
+<p>&nbsp;</p>
+<p align="center">三</p>
+<p align="center">&nbsp;</p>
+<p>进入21世纪，光绪之死的谜案又被提上日程，由中央电视台清史纪录片摄制组、清西陵文物管理处、中国原子能科学院反应堆工程研究设计所和北京市公安局法医检验鉴定中心四个单位共同合作，组成&ldquo;清光绪帝死因&rdquo;专题研究课题组，运用最先进的技术，采用最精密的仪器，对光绪遗体的头发、遗骨、衣服以及墓内外环境进行反复的检验和缜密的分析研究。该研究工作极为复杂艰难，研究时间长达五年之久。</p>
+<p><br />
+<br />
+由于崇陵已重新封闭，不可再开棺检验，且年代已久、检材不足，因此研究工作困难巨大。但课题组运用侦查破案的思维方式，根据信息的产生、传递、处理、还原、应用等原理，充分利用&ldquo;中子活化&rdquo;&ldquo;X射线荧光分析&rdquo;&ldquo;原子荧光光度&rdquo;&ldquo;液相色谱/原子吸收联用&rdquo;等一系列现代专业技术手段，通过开展综合分析、模拟实验、双向推理、多维论证等多项工作，对西陵保存的光绪头发、衣服、遗骨进行检测和研究，最终破解了光绪帝死亡之谜。</p>
+<p><br />
+<br />
+在研究分析中，为准确检测和推断光绪帝死时体内微量元素的情况，研究人员将光绪帝的头发清洗晾干，再剪切成1厘米长的若干截段分别测试，结果发现，光绪帝的两缕头发截段中含有高浓度的元素砷（As）,其最高含砷量为2404毫克/克，远高于正常人头发的含砷量1-10毫克/克，且各截段含量差异很大。砷在自然界分布很广，多以硫化物和氧化物形式存在，主要有雄黄（二硫化二砷）、雌黄（三硫化二砷）、砒霜（三氧化二砷）等，其中砒霜（三氧化二砷）是剧毒的砷化合物。</p>
+<p><br />
+<br />
+为验证光绪帝的头发砷含量是否确属异常，研究人员分别提取了隆裕皇后、一清代草料官及当代人的头发样本分别进行同时代、同环境、同性别发砷测试，结果证实，光绪帝的几处头发截段中最高砷含量不仅远远高于当代人样本，也分别是隆裕皇后的261倍和清代草料官的132倍。为验证光绪帝头发中的异常砷含量是否因长期服用中药雄黄等而导致慢性砷化物中毒所造成，研究人员又将其与当代慢性砷化物中毒的人发砷进行了对比实验，结果显示，光绪帝的头发上最高含砷量是慢性中毒患者最高含量的66倍，且砷分布曲线与慢性砷化物中毒者的砷分布曲线完全不同。由此证实：光绪帝头发中的高含量砷既属异常现象，又非自身服药引起慢性砷化物中毒而成。</p>
+<p><br />
+<br />
+那么光绪帝的头发的高含量砷究竟从何而来呢？为弄清这一问题，研究人员首先进行了光绪棺椁内外等环境取样与砷元素含量检测，检验结果：光绪帝头发中的最高砷含量是其棺椁内帷幔碎屑等物品最高砷含量的83倍，是墓内外环境样品包括棺椁盖上土最高砷含量的97倍，环境样品中的砷含量远低于光绪帝头发上的砷含量。由此，环境污染的可能被排除。接着，研究者又进行了含砷物质浸泡模拟实验，结果发现，外界的砷化合物不经过自身机体代谢，也可以吸附、渗透到头发内。由此推测，光绪帝头发中的高含量砷是由光绪身体内含有高浓度砷的物质沾染所形成。随着研究工作的逐步拓展与推进，在排除了周围环境物质的沾染后，各种研究数据把光绪帝头发上的大量砷元素的唯一来源，集中指向了光绪帝的腐败的尸体。</p>
+<p><br />
+<br />
+光绪尸体是否是沾染其头发的砷的唯一来源？如果是，那高浓度砷化物是什么？这些高浓度砷主要存驻于尸体何处？其化合物种类和总量是多少？是否能致其死亡？为搞清这些问题，研究人员决定扩大检测分析范围并依照法医工作规范取样检验。首先，对光绪头发上沾染的残渣物进行了重新检测，检测结果是残渣物的砷含量高于头发。由此，进一步证明了含高浓度砷的残渣物是头发高含量砷的来源；其次，对提取的光绪帝的遗骨进行了表面附着物的刮取与检测，结果表明，其中两块遗骨（一块肩胛骨和一块脊骨）表面沾染了大量的砷，说明这些砷确实来源于腐败尸体；随后，对光绪帝的随葬衣物进行了全面系统的砷的分布的检验。光绪帝的送检衣物共有五件，其中四件上衣（或外衣），一条裤子。由于年代已久，五件衣物除龙袍保存状态尚为良好外，其余三件内衣均已严重腐烂。根据尸体腐败对穿着衣物侵蚀由内向外会逐步减轻的一般规律，研究人员依次推定出四件上衣由内到外的穿着顺序。随后依照物质吸附和信息转换还原原理，对接近光绪帝尸体特殊部位的衣物分别取样，进行了砷的分布的检验。</p>
+<p><br />
+<br />
+检测数据结果表明：从同一件内衣看，每件衣物的胃区部位、系带和领肩部位的含砷量都高于其它部位：从穿着层次看，里层衣物的含砷量大大高于外层；从尸体的特殊部位看，衣物掉落下来的残渣（胃肠内容物）的砷含量极高。这说明，大量的砷化合物曾存留于光绪帝尸体的胃腹内，并在尸体腐败过程中由里向外侵蚀衣物，由此造成胃腹部位衣物的高含砷量。</p>
+<p><br />
+<br />
+随着研究工作的推进，大量砷化物曾在光绪帝体内驻存已被实验所证实，但具体是何种砷化物以及其总量是多少还尚不明确。砷化物不同种类具有不同的毒性。因此，研究人员又对光绪帝发中高含量砷的砷种态（即砷价态或形态）进行了分析，采用液相色谱/原子吸收光谱联用分析法研究不同种态砷的比例关系，结合进行动物小鼠模拟实验，以判定可能导致光绪帝中毒死亡的砷化合物种类。同时，通过衣物、头发、附着残渣等对光绪帝尸体中的砷化合物总量进行了仔细测算。</p>
+<p><br />
+<br />
+实验结果表明：光绪帝摄入的砷化物是剧毒的三氧化二砷即砒霜，而其腐败尸体仅沾染在部分衣物和头发上的砒霜总量就已高达约201.5毫克。根据相关研究，人口服砒霜（三氧化二砷）60-200毫克就会中毒死亡。光绪帝摄入体内的砒霜总量明显大于致死量。至此，光绪帝死因终于破解，即：光绪帝系砒霜中毒死亡。其胃腹部衣物上的砷是其含毒尸体腐败后直接侵蚀遗留所致，而其构衣领部位及头发上的大量砷，则由其腐败尸体溢流侵蚀所致。</p>
+<p><br />
+<br />
+这次检测和研究的详情、方法、数据和结论由钟里满等十三位专家写成《清光绪帝死因研究工作报告》，结论是：&ldquo;光绪帝系砒霜中毒死亡。&rdquo;此研究工作报告近日将公开发布。研究过程表明，这项工作走出了一条超常规之路，是运用现代科学技术和侦查思维解决历史问题的成功尝试，是自然科学研究与社会科学研究并肩合作的范例。研究结果也会对我国史学界和全社会发生重大影响。一百年前光绪和慈禧的死亡，预示了长达二千多年的中国专制帝制的崩塌。三年之后，武昌起义，孙中山领导的民主革命胜利，建立了共和国，清王朝终于被推翻。光绪帝被毒害致死，百年之后得以确证，尘埃落定，真相大白。</p>
+<p style="text-align: center; "><br />
+<br />
+四</p>
+<p><br />
+<br />
+本课题的主题是光绪是否被毒死，已得到答复。至于主要凶手是谁？尚可研究讨论。以当时的条件、环境而论，如果没有慈禧太后的主使、授意，谁也不敢、不能下手杀害光绪。慈禧蓄意谋杀光绪已非一日，早在戊戌变法后，就已酝酿废立与弑杀阴谋。光绪二十四年八月初十日，太后再出训政后四天，即以光绪名义发布谕旨称：&ldquo;朕躬自四月以来，屡有不适，调治日久，尚无大效。京外如有精通医理之人，即著内外臣工切实保荐候旨，其现在外省者，即日驰送来京，毋稍延迟。&rdquo;（《德宗实录》卷436）其实从四月以来，光绪正精神振作，意气风发，雷厉风行地进行百日维新，每天颁发许多诏谕，怎么会&ldquo;屡有不适，调治日久，尚无大效&rdquo;？这分明是假话，即使偶有小病，北京有太医院，何以立即要通告全国，征请全国名医为光绪治病。这不过是慈禧怀着废立与弑杀的心肠，在全国制造光绪病重的假象，以便有朝一日实现她的目的。慈禧玩弄的把戏当时许多人已洞若观火，因而有上海绅商经元善等1200人联名发电，&ldquo;请保护圣躬&rdquo;。全国各地和海外华侨也纷纷反对。外国公使也关心光绪的安全，强硬要求由法国医生入宫为光绪看病。两江总督刘坤一说&ldquo;君臣之分已定，中外之口难防&rdquo;。社会上激烈的反对声浪阻止了慈禧阴谋的实施。</p>
+<p><br />
+<br />
+从官方档案众多的脉案、药方看，光绪确实体弱多病，但并非因病而死。对这些脉案、药方，也要谨慎从事，考察它是什么环境条件下形成的。</p>
+<p><br />
+<br />
+如江苏名医陈莲舫被征召入京，为光绪治病，&ldquo;叩头毕，跪于下，太后与皇帝对座，中置一矮几，皇帝面苍白不华，有倦容，头似发热，喉间有疮，形容瘦弱，&hellip;&hellip;故事，医官不得问病，太后乃代述病状，皇帝时时颔首，或说一二字以证实之。殿廷之上，惟闻太后语音，陈则以目视地，不敢仰首。闻太后命诊脉，陈则举手切帝脉，身仍跪地上，据言实茫然未知脉象，虚以手按之而已。诊毕，太后又缕述病情，言帝舌苔若何，口中喉中生疮如何，但既不能亲视，则亦姑妄听之而已。&rdquo;（许指严《十叶野闻》）</p>
+<p><br />
+<br />
+原来所谓看病如此而已！所谓&ldquo;脉案&rdquo;是依照慈禧所说记录在案，这样的&ldquo;脉案&rdquo;怎能确证光绪的真实病况？</p>
+<p><br />
+<br />
+不久，陈莲舫因如此诊治，承担极大风险，向太监行贿，告老称病逃回了家乡。</p>
+<p><br />
+<br />
+其他医生亦有类似回忆。内务府总管大臣增崇是带领众多医生入宫看病的官员，据他的儿子回忆：</p>
+<p><br />
+<br />
+&ldquo;从当时的情况看，无论太医或外省保荐的医士，给光绪请脉，都得依慈禧的脸色行事。凡干不长的，多半是违背了慈禧心意；干长的则是切合了慈禧的&lsquo;需要&rsquo;了。至于世人所能见到的光绪的脉案、处方究竟如何，不待言说。对于这些事，我父亲（指增崇）、叔父们心中有数。我听得多了，也有些明白。&rdquo;（耆存者《关于光绪之死》，文史资料选辑总122期）</p>
+<p><br />
+<br />
+还有当时著名诗人陈衍也说：&ldquo;冬，西后与德宗先后一日崩殂。初，德宗久病未愈，征医各省，处方有效则后怒。&rdquo;（《凌霄一士随笔》）</p>
+<p><br />
+<br />
+总之，慈禧惟恐自己先死，光绪复出掌权，尽翻旧案，故而在全国求医问药多次，大造光绪病重的舆论，希望光绪因体弱多病而先死，在人间悄悄地消失。但事与愿违，偏偏自己先罹重病，势将不起，故临终前令亲信下手毒死光绪。从检测结果与史料记载来看，这应是事实的真相。</p>
+<p><br />
+&nbsp;</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- content end -->
+<!-- footer start -->
+<div class="containerMar80 footerBg">
+    <div class="footerTop">
+        <div class="container1400 footerTopList">
+            
+            <a href="http://hrczh.cass.cn/" target="_blank">中国历史研究网</a>
+            
+            <a href="http://www.cssn.cn/" target="_blank">中国社会科学网</a>
+            
+            <a href="http://www.lib.cass.org.cn/" target="_blank">中国社会科学院图书馆</a>
+            
+            <a href="https://www.ucass.edu.cn/" target="_blank">中国社会科学院大学</a>
+            
+            <a href="http://www.nssd.cn/" target="_blank">国家哲学社会科学学术期刊数据库</a>
+            
+            <a href="http://www.modernhistory.org.cn/index.htm" target="_blank">抗日战争与近代中日关系数据库</a>
+            
+            <a href="http://guoqing.china.com.cn/" target="_blank">中国国情—中国网</a>
+            
+            <a href="http://www.hist.pku.edu.cn" target="_blank">北京大学历史学系</a>
+            
+            <a href="http://cqkzhf.swu.edu.cn" target="_blank">重庆中国抗战大后方研究中心</a>
+            
+            <a href="http://www.historychina.net/" target="_blank">中华文史网</a>
+            
+            <a href="http://mhdb.mh.sinica.edu.tw/" target="_blank">近代史数位资料库</a>
+            
+        </div>
+    </div>
+    <div class="container1400 footerBot">
+        <div class="footerBotLink">
+            <a href="http://jds.cssn.cn/lxwm/" target="_blank">联系我们</a>
+            <span>|</span>
+            <a href="http://jds.cssn.cn/wzdt/" target="_blank">网站地图</a>
+        </div>
+        <p class="footerCopy">中国社会科学院近代史研究所 版权所有 京 ICP 备 05055195 号</p>
+    </div>
+</div>
+<script>
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    window.shareData = {
+        "timeLineLink": "http://jds.cssn.cn/newzxdt/202101/t20210128_5295941.shtml",   
+        "sendFriendLink": "http://jds.cssn.cn/newzxdt/202101/t20210128_5295941.shtml",
+        "weiboLink": "http://jds.cssn.cn/newzxdt/202101/t20210128_5295941.shtml",
+        "tTitle": "中国社会科学院近代史研究所",
+        "tContent": "中国社会科学院中国社会科学院中国社会科学院中国社会科学院",
+        "fTitle": "中国社会科学院近代史研究所",
+        "fContent": "中国社会科学院中国社会科学院中国社会科学院中国社会科学院",
+        "wContent": "中国社会科学院中国社会科学院中国社会科学院中国社会科学院"
+    };
+
+// 发送给好友
+WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+    WeixinJSBridge.invoke('sendAppMessage', {
+    "img_url": "http://jds.cssn.cn/newzxdt/202101/W020210128488012308819.png",
+    "img_width": "401",
+    "img_height": "275",
+    "link": window.shareData.sendFriendLink,
+    "desc": window.shareData.fContent,
+    "title": window.shareData.fTitle
+    }, function (res) {
+    _report('send_msg', res.err_msg);
+    })
+});
+
+// 分享到朋友圈
+WeixinJSBridge.on('menu:share:timeline', function (argv) {
+    WeixinJSBridge.invoke('shareTimeline', {
+    "img_url": "http://jds.cssn.cn/newzxdt/202101/W020210128488012308819.png",
+    "img_width": "401",
+    "img_height": "275",
+    "link": window.shareData.timeLineLink,
+    "desc": window.shareData.tContent,
+    "title": window.shareData.tTitle
+    }, function (res) {
+    _report('timeline', res.err_msg);
+    });
+});
+}, false)
+</script>
+<!-- footer end -->
+<script type="text/javascript">
+    $(function(){
+        //去掉空格的
+        var htm=$(".ArticleDetails").html();
+        htm=htm.replace(/&nbsp;/ig, "");
+        htm=htm.replace(/　　/ig, "");
+        htm=htm.replace(/div/ig, "p");
+        htm=htm.replace(/<\/div>/g, "</div><p>");
+        htm=htm.replace(/<br>/g, "</p ><p>");
+        htm='<p>'+htm+'</p >';
+        $(".ArticleDetails").html(htm);
+
+        $(".ArticleDetails").find("p").removeAttr("class");
+        $(".ArticleDetails").find("span").removeAttr("style");
+        $(".ArticleDetails").find("font").removeAttr("style");
+        $(".ArticleDetails").find("font").removeAttr("face");
+        $(".ArticleDetails").find("font").removeAttr("size");
+        $(".ArticleDetails").find("i").removeAttr("style");
+        $(".ArticleDetails").find("em").removeAttr("style");
+        $(".ArticleDetails").find("div").removeAttr("style");
+        $(".ArticleDetails").find("a").removeAttr("style");
+        $(".ArticleDetails").find("div").removeAttr("class");
+        $(".ArticleDetails").find("td").removeAttr("width");
+        $(".ArticleDetails").find("td").removeAttr("style");
+        $(".ArticleDetails table").attr("align","center");
+    })
+    setTimeout(function(){
+        $("table").each(function(i){
+            var borderL = $(this).find("td").css("border-left");
+            var borderR = $(this).find("td").css("border-right");
+            var borderT = $(this).find("td").css("border-top");
+            var borderB = $(this).find("td").css("border-bottom");
+            if(borderL.indexOf("0px")>-1&&borderR.indexOf("0px")>-1&&borderT.indexOf("0px")>-1&&borderB.indexOf("0px")>-1){
+                $(this).css({"border-left":"1px solid #333","border-top":"1px solid #333"})
+                $(this).find("td").css({"border-right":"1px solid #333","border-bottom":"1px solid #333"})
+            }
+        });
+    },100)
+</script>
+</body>
+</html>
