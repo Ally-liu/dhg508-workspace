@@ -153,6 +153,19 @@ class H(BaseHTTPRequestHandler):
                     self._send({"mode": "rules(fallback)", "reply": f"模型调用失败（{type(e).__name__}），退回规则库：\n" + reply})
                     return
             self._send({"mode": "rules", "reply": rule_interrogation(enriched, pairs, ev_by_id)})
+        elif self.path == "/api/annotate":
+            items = payload.get("items") or []
+            if not isinstance(items, list) or not items:
+                self._send({"err": "empty items"}, 400)
+                return
+            with sqlite3.connect(DB) as c:
+                c.executemany(
+                    "INSERT INTO annotation (rumor, stance) VALUES (?, ?)",
+                    [(str(x.get("rumor"))[:40], str(x.get("stance"))[:8]) for x in items],
+                )
+            with sqlite3.connect(DB) as c:
+                agg = c.execute("SELECT rumor, stance, COUNT(*) n FROM annotation GROUP BY rumor, stance").fetchall()
+            self._send({"ok": True, "agg": [list(a) for a in agg]})
         elif self.path == "/api/verdict":
             choice = payload.get("choice")
             if choice not in CHOICES:

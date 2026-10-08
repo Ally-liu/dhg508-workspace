@@ -40,6 +40,13 @@ CREATE TABLE IF NOT EXISTS verdict (
     reason   TEXT,                 -- 可空：体验者一句话理由
     created  TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS annotation (
+    id      INTEGER PRIMARY KEY AUTOINCREMENT,
+    rumor   TEXT NOT NULL,         -- 传闻名（如"遗诏诛袁"）
+    stance  TEXT NOT NULL,         -- 信 / 不信 / 说不准
+    created TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
 """
 
 
