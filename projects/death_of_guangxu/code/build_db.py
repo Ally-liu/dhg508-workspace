@@ -33,6 +33,13 @@ CREATE TABLE IF NOT EXISTS contradiction (
     member    TEXT NOT NULL REFERENCES evidence(id),
     topic     TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS verdict (
+    id       INTEGER PRIMARY KEY AUTOINCREMENT,
+    choice   TEXT NOT NULL,        -- 四假说之一 / "证据不足"
+    reason   TEXT,                 -- 可空：体验者一句话理由
+    created  TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
 """
 
 

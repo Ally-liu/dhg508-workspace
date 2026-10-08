@@ -38,6 +38,13 @@
   德宗实录定稿本**（与恽日记同馆），录入台账。skill 包 `skills/annalist/`
   四文件落成（索引/answering/maintain/principles + 10 题 rubric）。
   M1 抽查债移交用户（V01/T01/E04 三行）。下一步：M4 server + 三幕页。
+- 【M4 冒烟】`code/server.py`（stdlib，无框架）+ `code/static/index.html`
+  三幕页上线：/api/timeline（55 行全量给前端）、/api/ask（真 DeepSeek）、
+  /api/verdict（入 verdict 表）。真调用冒烟一次成功：in 5161 / out 224
+  tokens（约半分钱），回复结构合规——只引行 [id]、L3 标"仅转述"、两种
+  假说并陈、结尾仍以问题收束。成本防线：全量行每次请求复用、max_tokens
+  420、所有调用日志进 artifacts/ask_log.jsonl、无 key 自动退规则模式
+  （页眉公示当前模式）。待改：前端细节与 demo 剧本（M6）。
 - 环境问题顺手修了一半：系统只有 uv 管的 Python 3.12（无 pip），已建
   临时 venv 用于 PDF 抽取——正式代码开工前应把项目 Python 环境定下来。
 - 【第一轮侦察记录】拿全了《崇陵传信录》全文与戴逸《光绪之死》（清史研究

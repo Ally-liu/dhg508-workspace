@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>光绪之死 · 证据审讯室</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--paper:#f5efe2;--ink:#3a3226;--red:#8c3b2e;--gray:#a99f8c}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,"Noto Serif SC",serif;background:var(--paper);color:var(--ink)}
+header{padding:2rem 1rem 0;text-align:center}
+h1{font-weight:600;letter-spacing:.3em;margin:0}
+.sub{color:var(--red);margin-top:.4rem;font-size:.9rem;letter-spacing:.15em}
+.wrap{max-width:960px;margin:0 auto;padding:1rem}
+.acts{display:flex;gap:.6rem;justify-content:center;margin:1.2rem 0}
+.acts button{font-family:inherit;background:none;border:1px solid var(--gray);padding:.45rem 1.1rem;cursor:pointer;letter-spacing:.2em}
+.acts button.on{background:var(--ink);color:var(--paper)}
+.act{display:none}.act.on{display:block}
+.card{border:1px solid var(--gray);background:#fbf7ec;margin:.5rem 0;padding:.7rem .9rem}
+.badge{font-size:.68rem;border:1px solid var(--gray);padding:0 .35rem;margin-right:.4rem;letter-spacing:.1em}
+.badge.L3{color:var(--red)} .badge.private{color:#5a6b4d} .badge.official{color:var(--red)}
+.badge.science{color:#3d5a80}.badge.foreign{color:#6a4a7c}
+.ev-text{font-size:.92rem;line-height:1.7;margin:.35rem 0}
+.meta{color:var(--gray);font-size:.72rem}
+.pair{background:#f2e4dd;border-left:3px solid var(--red)}
+input[type=text],textarea{font-family:inherit;width:100%;border:1px solid var(--gray);background:#fbf7ec;padding:.5rem;margin:.3rem 0}
+button.go{background:var(--red);color:#fff;border:none;padding:.55rem 1.4rem;letter-spacing:.25em;cursor:pointer;font-family:inherit}
+.sel{vertical-align:middle;margin:0 .2rem}
+#reply{white-space:pre-wrap;border:1px dashed var(--gray);padding:.8rem;background:#fbf7ec;min-height:4rem}
+.bar{background:#433988;color:#e7e3ff;padding:.2rem .5rem;display:inline-block;font-size:.8rem}
+#dist td{padding:.15rem .8rem;border-bottom:1px solid var(--gray)}
+footer{color:var(--gray);text-align:center;padding:1.5rem;font-size:.75rem}
+</style>
+</head>
+<body>
+<header><h1>光緒之死</h1><div class="sub">1908·11·14 — 21 小时后，慈禧亦崩</div>
+<div style="margin-top:.5rem"><span id="mode" class="bar">…</span></div></header>
+<div class="wrap">
+<div class="acts">
+<button data-a="1" class="on">一 读证</button><button data-a="2">二 推演</button><button data-a="3">三 判决</button>
+</div>
+
+<section id="act1" class="act on"><h3>瀛台最后两旬（证据卡 · 互相矛盾者同台）</h3><div id="pairs"></div><div id="cards"></div></section>
+
+<section id="act2" class="act">
+<h3>你的复原：最后三日</h3>
+<p class="meta">给六件事编号（1=最早，6=最晚），再写下你作为“审讯官”的理由。</p>
+<div id="pick"></div>
+<textarea id="claim" rows="4" placeholder="例如：我认为袁世凯嫌疑最大，因为他送过药……"></textarea>
+<button class="go" onclick="ask()">呈堂 · 请求质证</button>
+<div id="reply" style="margin-top:.8rem"></div>
+</section>
+
+<section id="act3" class="act">
+<h3>判决</h3>
+<p>库内的四说与一项“证据不足”。你的票将入库，与所有人一起留在页面上——悬案没有终点，但可以有众议。</p>
+<select id="choice"></select>
+<input type="text" id="reason" placeholder="一句话理由（可空，将公开展示）">
+<button class="go" onclick="vote()">投  票</button>
+<div id="dist" style="margin-top:1rem"></div>
+</section>
+</div>
+<footer>所有回答均指证据行 [id] 与来源等级 · 报告只证明死因，不定凶手 · <span id="footmode"></span></footer>
+<script>
+const ORDER_TARGETS=["E03","E04","G04","E07","E09","T02"];
+let DATA=null;
+function req(m,u,b){return fetch(u,{method:m,headers:{"Content-Type":"application/json"},body:b?JSON.stringify(b):undefined}).then(r=>r.json())}
+function badge(e){return `<span class="badge ${e.tier}">${e.tier}</span><span class="badge ${e.stance}">${e.stance}</span>`}
+fetch("/api/timeline").then(r=>r.json()).then(d=>{
+  DATA=d;const byId={};d.rows.forEach(r=>byId[r.id]=r);
+  document.getElementById("mode").textContent=d.mode==="deepseek"?"真模型 · DeepSeek 交叉讯问":"规则模式 · 固定题库";
+  document.getElementById("footmode").textContent=d.mode==="deepseek"?"":"（无 API key）";
+  const P=d.pairs;let ph="";
+  for(const k in P){if(k>0)ph+=`<div class="card pair"><b>矛盾对 #${k}</b>：${P[k].topic}<br>`+
+    P[k].members.map(m=>byId[m]?`▸ <b>[${m}]</b> ${byId[m].text.slice(0,60)}…`:"").join("<br>")+"</div>";}
+  document.getElementById("pairs").innerHTML=ph;
+  document.getElementById("cards").innerHTML=d.rows.map(r=>
+    `<div class="card"><div>${badge(r)}<span class="meta">${r.date_orig||""} · <span title="${r.id}">${r.id}</span> · ${d.sources[r.source_id]?d.sources[r.source_id].title.slice(0,26):""}</span></div><div class="ev-text">${r.text.length>110?r.text.slice(0,110)+"…":r.text}</div></div>`).join("");
+  document.getElementById("pick").innerHTML=ORDER_TARGETS.map((id,i)=>
+    `<div class="card"><b>[${id}]</b> ${byId[id]?byId[id].text.slice(0,44)+"…":""}<br><span class="meta">编号：</span>`+
+    [1,2,3,4,5,6].map(n=>`<label class="sel"><input type="radio" name="o${i}" value="${n}">${n}</label>`).join("")+"</div>").join("");
+  document.getElementById("choice").innerHTML=[
+    "慈禧授意","袁世凯进药","李莲英近侍","久病自然亡","库内证据不足"].map(c=>`<option>${c}</option>`).join("");
+  vote0();
+});
+function ask(){
+  const claim=document.getElementById("claim").value.trim();
+  const order=[];ORDER_TARGETS.forEach((id,i)=>{const e=document.querySelector(`input[name=o${i}]:checked`);if(e)order.push(id)});
+  if(!claim){alert("先写下你的理由");return}
+  document.getElementById("reply").textContent="史官正在核对证据行……";
+  req("POST","/api/ask",{claim,order}).then(r=>{document.getElementById("reply").innerHTML=
+    `<b>${r.mode}</b>\n\n${r.reply}`+(r.tokens?`\n\n<span class="meta">tokens: in ${r.tokens.prompt_tokens||"?"} / out ${r.tokens.completion_tokens||"?"}</span>`:"")})
+}
+function vote(){const choice=document.getElementById("choice").value,reason=document.getElementById("reason").value.trim();
+  req("POST","/api/verdict",{choice,reason}).then(drawDist)}
+function vote0(){req("GET","/api/verdicts").then(drawDist)}
+function drawDist(d){document.getElementById("dist").innerHTML=
+  `<p class="meta">已有 ${d.total} 票（存于本地 verdict 表）</p><table>${d.dist.map(x=>
+  `<tr><td>${x[0]}</td><td>${"■".repeat(Math.max(1,Math.round(20*x[1]/Math.max(1,d.total))))} ${x[1]}</td></tr>`).join("")}</table>`}
+document.querySelectorAll(".acts button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".acts button").forEach(x=>x.classList.remove("on"));b.classList.add("on");
+  document.querySelectorAll(".act").forEach(a=>a.classList.remove("on"));document.getElementById("act"+b.dataset.a).classList.add("on")});
+</script>
+</body></html>
