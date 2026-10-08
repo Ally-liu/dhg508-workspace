@@ -28,7 +28,7 @@ map_place(map_id, place_id)                      (某地名出现在某张图上
 ## 关键理解
 
 - **"现代名 → 古名"**：用输入的现代名去匹配 `place.modern_name`
-  **或** `place.name_zh`（古今同名）。**现在 289 个地名都填了 `modern_name`**：
+  **或** `place.name_zh`（古今同名）。**现在 291 个地名都填了 `modern_name`**：
   - 改名过的：`modern_name` = 今名，`modern_flag = 1`（**对照，非原件**）。
   - 未改名的：`modern_name` = 本身，`modern_flag = 0`。
 - **"古名 → 位置"**：有两层——"在哪张图"（`map_place` → `map`）和"**今天在哪**"
