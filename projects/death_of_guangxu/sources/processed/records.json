@@ -17,7 +17,8 @@
     {"id": "S9", "title": "载沣日记（摄政王日记）", "origin": "经网络转载文转引；刊本待核", "tier": "L3", "note": "二十、二十一日两则；升 L2 需找中华书局整理本"},
     {"id": "S10", "title": "《清室外记》（濮兰德等？作者待核）", "origin": "经网络转载文转引", "tier": "L3", "note": "李莲英'藏于心中'段"},
     {"id": "S11", "title": "《纽约时报》1908-11-16 电文", "origin": "经网络转载文转引；原文见 NYT 档案（待取）", "tier": "L3", "note": "外国舆论层"},
-    {"id": "S12", "title": "《泰晤士报》驻京电（1908-11）", "origin": "经网络转载文转引；Times Digital Archive 待取", "tier": "L3", "note": "同上"}
+    {"id": "S12", "title": "《泰晤士报》驻京电（1908-11）", "origin": "经网络转载文转引；Times Digital Archive 待取", "tier": "L3", "note": "同上"},
+    {"id": "S13", "title": "徐珂《清稗类钞·疾病类》（1916 商务印书馆，公版）", "origin": "zh.wikisource.org /067 全文（已存 sources/raw/）", "tier": "L2", "note": "'德宗多病'条：寇连材语"}
   ],
   "rows": [
     {"id": "E01", "source": "S1", "date_orig": "光绪三十四年秋", "date_iso": "1908", "kind": "quote_event", "tier": "L2", "stance": "private", "text": "戊申秋，突傳聖躬不豫，徵京外名醫雜治之。請脈時，上以雙手仰置御案，默不出一言，別紙書病狀陳案間。或有所問，輒大怒，或指為虛損則尤怒。入診者僉云六脈平和無病也。", "note": "与官方脉案'脏腑俱虚、病势渐进'构成直接矛盾（矛盾对#1a）"},
@@ -68,13 +69,20 @@
     {"id": "U06", "source": "S11", "date_orig": "1908-11-16", "date_iso": "1908-11-16", "kind": "quote_state", "tier": "L3", "stance": "foreign", "text": "《纽约时报》：'一如西方报纸在当时报道的那样，慈禧太后和光绪皇帝先后死亡，令人们疑窦丛生。'", "note": "外国报纸反应层；NYT 档案原文待取"},
     {"id": "U07", "source": "S12", "date_orig": "1908-11", "date_iso": "1908-11", "kind": "quote_state", "tier": "L3", "stance": "foreign", "text": "《泰晤士报》驻京电：'大清国光绪皇帝陛下刚刚于周六去世，他们两人死亡的时间离得如此之近，不由使人疑虑。人们怀疑这件事情的背后可能是谋杀。'", "note": "同上；注意其死亡日期表述"},
     {"id": "U08", "source": "S5", "date_orig": "民国初", "date_iso": null, "kind": "quote_state", "tier": "L3", "stance": "private", "text": "据光绪帝的御医透露，皇帝生前的确身体并不非常健康……却也无病重之迹象。", "note": "民国后御医的模糊证词；出处待核"},
-    {"id": "U09", "source": "S2", "date_orig": "1980年", "date_iso": "1980", "kind": "finding", "tier": "L2", "stance": "science", "text": "1980 年清理崇陵：曾将光绪遗骨作过简单检测，未发现外伤及中毒迹象；当时没有先进检测仪器。", "note": "被 2008 结果推翻的 1980 结论——科学证据本身的演化史，适作导览卡"}
+    {"id": "U09", "source": "S2", "date_orig": "1980年", "date_iso": "1980", "kind": "finding", "tier": "L2", "stance": "science", "text": "1980 年清理崇陵：曾将光绪遗骨作过简单检测，未发现外伤及中毒迹象；当时没有先进检测仪器。", "note": "被 2008 结果推翻的 1980 结论——科学证据本身的演化史，适作导览卡"},
+    {"id": "V01", "source": "S1", "date_orig": "总评光绪一朝", "date_iso": null, "kind": "quote_state", "tier": "L2", "stance": "private", "text": "體氣健實，三十四年無疾病，未嘗一日輟朝，郊廟大祀必親臨，大風雪，無幾微怠容，步穩而速。扈從諸臣，常疾趨追隨。", "note": "恽录对皇帝生前体质的总评——与'1800余次脉案久病'的官方病史直接构成总纲级矛盾（新增矛盾对#6 与 D09 对撞）"},
+    {"id": "V02", "source": "S1", "date_orig": "戊戌后幽居时期", "date_iso": "1898-1908", "kind": "quote_event", "tier": "L2", "stance": "private", "text": "遷上於南海瀛臺，三面皆水，隆冬冰堅結，傳聞上常攜小閹踏冰出，為門者所阻，於是有傳匠鑿冰之舉。……閱數行擲去，長嘆曰：「朕並不如漢獻帝也！」", "note": "监禁条件与心理状态；雾面/氛围行，兼作交互开场素材"},
+    {"id": "V03", "source": "S6", "date_orig": "光绪三十四年十月（遗诏发布后）", "date_iso": "1908-11", "kind": "quote_event", "tier": "L2", "stance": "private", "text": "隆裕奉德宗遺詔，命誅世凱，監國與張之洞力解之，遲遲未決……而世凱款段出都門矣。", "note": "若真有'诛袁遗诏'，则支持光绪生前对袁恨深＋死有遗命——重而行之的传闻，但出处同为胡思敬"},
+    {"id": "V04", "source": "S6", "date_orig": "光绪二十五年九月", "date_iso": "1899-10", "kind": "quote_event", "tier": "L2", "stance": "private", "text": "兵部侍郎英年善堪輿術……英年駭曰：「是氣尚旺，再世為帝者，當仍在王家。」……後德宗薨，今上仍由醇邸入承大統，英年之言果驗。", "note": "宫廷自身的风水/天命话语：'再世为帝在王家'→伐树→果然再由醇邸承统——朝局的神秘主义信息环境，交互可作'当时人如何理解死亡'层"},
+    {"id": "V05", "source": "S13", "date_orig": "同治末至光绪初", "date_iso": null, "kind": "quote_state", "tier": "L2", "stance": "private", "text": "內監寇連材深悉帝多病之原因，嘗曰：「人當幼時，無不有父母以親愛之……獨皇上無敢愛之……名分上可親愛皇上者，惟西太后一人，然西太后又絕不以上為念，此帝所以多病也。」", "note": "寇连材（后因言政被诛的太监）对'幼帝多病'病理归因——与陈莲舫段互补：病源是政治性的"},
+    {"id": "V06", "source": "S6", "date_orig": "同治至光绪年间", "date_iso": null, "kind": "quote_state", "tier": "L2", "stance": "private", "text": "聞德宗亦係天閹，疑莫能明。或宮人因其無子而誣之，未可據為實錄也。", "note": "宫闱传闻例——注意作者自己补了一句怀疑；教学用'传闻如何自我降级'例证"}
   ],
   "contradict_pairs": [
     {"pair": 1, "members": ["E01", "E03", "D04"], "against": ["D09"], "topic": "病况证据：官方脉案 vs 亲见者'无恙/平和'"},
     {"pair": 2, "members": ["E07"], "against": [], "topic": "驾崩公布时间与实际死亡时间不一致性；日本电文待补（S_search）"},
     {"pair": 3, "members": ["D04"], "against": ["D09"], "topic": "临终症象：中毒样急腹症 vs 慢性sqrt虚脉"},
     {"pair": 4, "members": ["D06", "E09"], "against": [], "topic": "宫内传食无经：塌喇盖碗+濒死无人侍侧"},
-    {"pair": 5, "members": ["D11", "D12"], "against": [], "topic": "二手转述自身单位矛盾"}
+    {"pair": 5, "members": ["D11", "D12"], "against": [], "topic": "二手转述自身单位矛盾"},
+    {"pair": 6, "members": ["T02", "E09"], "against": ["D09"], "topic": "死亡当刻的官方时序（稳步大渐至酉刻崩）vs 亲历者的仓促（发现延迟、遗诏后置、草殓）"}
   ]
 }
