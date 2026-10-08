@@ -28,12 +28,11 @@ DHG508 期末作业。原不发期末 brief 时以 Week 1–5 练习积累的全
 ## 状态
 
 - [x] 项目 scaffold
-- [ ] 设计文档 v1
-- [ ] 证据开采第一批：30+ 条带 source 的证据行，二次文献核对
-- [ ] schema 定稿（events / evidence / hypotheses / verdicts 等）
+- [x] 设计文档 v1（含 plan.md 里程碑）
+- [x] 证据开采：55 行 / 13 源 / 6 组矛盾对（`sources/processed/records.json`）
+- [x] schema v0 与 `code/build_db.py`（`artifacts/guangxu.db`，FK 通过）
+- [x] skill：`skills/annalist/`（索引 + answering/maintain/principles + 题库）
 - [ ] 三幕交互手绘稿与文案
-- [ ] build_db.py 与 records.json
-- [ ] skill（索引 + answering/maintain/principles）
 - [ ] server + 页面（真 DeepSeek 交叉讯问）
 - [ ] 视觉：档案原件视觉化 + 瀛台静帧（Blender 预渲染，可选）
-- [ ] 检验题集与改进日志
+- [ ] 题库跑分与 improvement-log
