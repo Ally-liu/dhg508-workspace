@@ -2,280 +2,378 @@
 <html lang="zh">
 <head>
 <meta charset="utf-8">
-<title>光绪之死 · 一场问案的展览</title>
+<title>光绪之死 · 一场百年悬案的解密</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
 :root{--paper:#f6f0e1;--ink:#3a3226;--red:#8c3b2e;--gray:#a99f8c;--line:#d8cfba}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Georgia,"Noto Serif SC",serif;background:var(--paper);color:var(--ink)}
-header{padding:3rem 1rem 1rem;text-align:center}
-h1{font-weight:600;letter-spacing:.3em;margin:0;font-size:2rem}
-.sub{color:var(--red);margin-top:.4rem}
-.bar{background:#433988;color:#e7e3ff;padding:.2rem .5rem;display:inline-block;font-size:.8rem}
-.rail{position:fixed;right:.6rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.35rem;z-index:5}
-.rail a{width:2rem;height:2rem;border:1px solid var(--gray);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--ink);text-decoration:none;background:#fbf7ec}
-.rail a.on{background:var(--ink);color:var(--paper)}
-.wrap{max-width:720px;margin:0 auto;padding:0 1rem}
-.ch{padding:2.2rem 0 1.2rem;border-bottom:1px solid var(--line)}
-.ch h2{font-size:1.05rem;letter-spacing:.4em;color:var(--red);margin:.2rem 0 .6rem}
-.story{font-size:.98rem;line-height:2.05}
-.story p{margin:.55rem 0}
-.ref{color:var(--gray);font-size:.72em;vertical-align:super;cursor:pointer}
-.ref:hover{color:var(--red)}
-.cards{margin:.8rem 0}
-details.card, .card{border:1px solid var(--line);background:#fbf7ec;padding:.55rem .8rem;margin:.45rem 0;font-size:.86rem}
-details.card summary{cursor:pointer;color:var(--ink)}
-.badge{font-size:.68rem;border:1px solid var(--gray);padding:0 .35rem;margin-right:.35rem}
+body{margin:0;font-family:Georgia,"Noto Serif SC",serif;background:var(--paper);color:var(--ink);overflow:hidden}
+.deck{position:relative;height:100vh}
+.slide{position:absolute;inset:0;padding:2.2rem 1.5rem 5rem;opacity:0;pointer-events:none;transform:translateY(16px);transition:opacity .45s,transform .45s;overflow-y:auto}
+.slide.on{opacity:1;pointer-events:auto;transform:none}
+h1{font-weight:600;letter-spacing:.3em;margin:0;font-size:2.2rem;text-align:center}
+.sub{color:var(--red);margin-top:.5rem;text-align:center}
+.wrap{max-width:760px;margin:1.2rem auto 0}
+.ch h2{font-size:1.06rem;letter-spacing:.4em;color:var(--red);margin:.2rem 0 .8rem}
+.story{font-size:.97rem;line-height:2.05}
+.story p{margin:.6rem 0}
+sup.ref{color:var(--gray);font-size:.62em;cursor:pointer;padding:0 .15rem;user-select:none}
+sup.ref:hover{color:var(--red)}
+.card{border:1px solid var(--line);background:#fbf7ec;padding:.55rem .8rem;margin:.45rem 0;font-size:.86rem}
+.badge{font-size:.68rem;border:1px solid var(--gray);padding:0 .35rem;margin-right:.35rem;white-space:nowrap}
 .badge.L3{color:var(--red)}.badge.private{color:#5a6b4d}.badge.official{color:var(--red)}
 .badge.science{color:#3d5a80}.badge.foreign{color:#6a4a7c}.badge.academic{color:#4a4a6a}
 .ev-text{line-height:1.85;margin-top:.4rem}
-.meta{color:var(--gray);font-size:.72rem}
-.opt{display:block;border:1px solid var(--gray);background:#fbf7ec;padding:.5rem .8rem;margin:.4rem 0;cursor:pointer;font-family:inherit;font-size:.9rem;width:100%;text-align:left}
+.meta{color:var(--gray);font-size:.74rem}
+.bar{background:#433988;color:#e7e3ff;padding:.2rem .5rem;display:inline-block;font-size:.8rem}
+.opt{display:block;border:1px solid var(--gray);background:#fbf7ec;padding:.5rem .8rem;margin:.45rem 0;cursor:pointer;font-family:inherit;font-size:.92rem;width:100%;text-align:left}
 .opt:hover{border-color:var(--red)}
-.sortable .item{border:1px solid var(--line);background:#fbf7ec;padding:.5rem .7rem;margin:.4rem 0;display:flex;gap:.6rem;align-items:center;cursor:grab}
-.item .idx{font-size:.7rem;color:var(--gray);width:1.2rem}
-.item .arrows button{margin-left:.15rem;padding:.05rem .45rem}
-button.go{background:var(--red);color:#fff;border:none;padding:.55rem 1.4rem;letter-spacing:.25em;cursor:pointer;font-family:inherit}
-.rumor{border:1px solid var(--line);background:#fbf7ec;padding:.6rem .8rem;margin:.5rem 0}
-.rumor .seg{margin-top:.4rem}
-.rumor label{margin-right:.6rem;font-size:.85rem}
+.opt.picked{border-color:var(--red);background:#f2e4dd}
+button.go{background:var(--red);color:#fff;border:none;padding:.55rem 1.5rem;letter-spacing:.25em;cursor:pointer;font-family:inherit;font-size:.95rem}
+button.go.dim{background:#6b6152}
+.cols{display:flex;gap:1rem;align-items:flex-start}
+.pool,.slots{flex:1}
+.pool{min-height:3rem}
+.slots{border:1px dashed var(--gray);padding:.5rem;min-height:17rem}
+.slot{border:1px solid var(--line);background:#f2ecdc;padding:.4rem .6rem;margin:.4rem 0;min-height:3rem;display:flex;align-items:center;gap:.55rem;font-size:.86rem}
+.slot .no{color:var(--red);font-weight:700;width:1.4rem}
+.holder{color:var(--gray);font-size:.8rem}
+.item{border:1px solid var(--line);background:#fbf7ec;padding:.45rem .6rem;margin:.4rem 0;display:block;cursor:grab;font-size:.86rem}
+.item.dragging{opacity:.5}
+.t{display:block;font-size:.92rem}.g{display:block;color:var(--gray);font-size:.78rem}
+input[type=text],select{font-family:inherit;width:100%;border:1px solid var(--gray);background:#fbf7ec;padding:.5rem;margin:.35rem 0}
+.hypo{border:1px solid var(--line);background:#fbf7ec;padding:.7rem .9rem;margin:.6rem 0}
+.hypo h4{margin:.1rem 0 .4rem;letter-spacing:.15em}
+.hypo .meta{line-height:1.7}
 #reply{white-space:pre-wrap;border:1px dashed var(--gray);background:#fbf7ec;padding:.8rem;min-height:3rem;margin-top:.6rem}
-.big{font-size:2.6rem;color:var(--red);font-weight:700}
-.datagrid td{padding:.3rem .9rem;border-bottom:1px solid var(--line);font-size:.9rem}
-footer{color:var(--gray);text-align:center;padding:2rem;font-size:.75rem}
-.final{padding-bottom:3rem}
+.big{font-size:2.7rem;color:var(--red);font-weight:700}
+#srcpanel{position:fixed;inset:auto 0 0 0;max-height:46%;overflow:auto;background:#fbf7ec;border-top:2px solid var(--red);box-shadow:0 -6px 18px rgba(0,0,0,.22);z-index:20;display:none;padding:1rem 1.4rem}
+#scanbox{border:1px solid var(--gray);background:repeating-linear-gradient(-3deg,#efe7d3,#efe7d3 7px,#e9dfc7 8px);height:14rem;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:.85rem;letter-spacing:.2em}
+.hl{background:#ffe9a8;padding:0 .2rem}
+nav{position:fixed;bottom:0;left:0;right:0;background:#e9e0cb;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:.55rem 1rem;z-index:15}
+.dots{display:flex;gap:.32rem}
+.dots a{width:.78rem;height:.78rem;border:1px solid var(--gray);border-radius:50%}
+.dots a.on{background:var(--ink)}
+kbd{border:1px solid var(--gray);padding:0 .3rem;font-size:.72rem}
+table.datagrid{border-collapse:collapse;width:100%}
+table.datagrid td{padding:.3rem 0;border-bottom:1px solid var(--line);font-size:.9rem}
 </style>
 </head>
 <body>
-<header><h1>光绪之死</h1><div class="sub">一场问案的展览 · 1908 → 2008</div>
-<div style="margin-top:.6rem"><span id="mode" class="bar">…</span></div></header>
-<nav class="rail" id="rail"></nav>
+<div class="deck" id="deck">
 
+<section class="slide on" data-h="门">
 <div class="wrap">
-
-<section class="ch" id="c0">
-<h2>展前 · 导入</h2>
-<div class="story">
+<h1>光绪之死</h1>
+<div class="sub">一九〇八 → 二〇〇八 · 一场百年悬案的解密</div>
+<div style="text-align:center;margin-top:.6rem"><span id="mode" class="bar">…</span></div>
+<div class="story" style="margin-top:1.2rem">
 <p><b>一九〇八年十一月十四日，傍晚。</b>北京，中南海，瀛台。</p>
-<p>三十八岁的皇帝，死在了这座囚了他十年的孤岛上。[E13]
-二十一小时后，统治中国近半个世纪的慈禧太后，也死了。[E13]
-一个盛年，一个老年；一个先死，一个后崩。
-巧合，还是安排？这个问题，中国人问了整整一百年。</p>
-<p>直到 2008 年，一组现代科学的答案才落下：他死于砒霜。[D10]
-可投毒的人，报告没有说。[D10]</p>
-<p>——所以这不是一个"破案"的展览。这里陈列的，是<b>问案的方法</b>：
-七章的记载、相互矛盾的证人们、被证明的事实，和始终缺席的凶手。</p>
-<p class="meta">你的体验：每章先读"发生的事"，再看那件事留下的证据；每章一个小问题要你表态（选项为主，错了会被讯问，不会被扣分）；最后一章，你的一票将与所有来过的人放在一起。</p>
-<p class="meta">三条馆规：① 引文照录原件（界面简体，引文繁体——档案不改写）；② 每句话可点开查出处，"仅见转述"的证词会标出；③ 史官只摆证据，不定案。</p>
-<details class="card" open><summary>人物与背景</summary><div class="ev-text">
-· <b>光绪帝 载湉</b>：4 岁登基，在位 34 年，1898 年起囚于瀛台。<br>
-· <b>慈禧太后</b>：实际掌权者，他的伯母兼姨母。<br>
-· <b>恽毓鼎</b>：起居注官，随侍十九年，本展览最重要的见证人。[S1]<br>
-· <b>袁世凯 · 李莲英</b>：两个被指向的"嫌疑人"。[S51]<br>
-· <b>史官</b>：你的导览人，只依据"证据库"说话（55 行、13 源、6 组矛盾）。
+<p>三十八岁的皇帝，死在这座囚了他十年的孤岛上。
+不到一天后，统治中国近半个世纪的慈禧太后，也死了。<sup class="ref" data-id="E13">[E13]</sup>
+一个盛年，一个老年；一个先死，一个后崩——巧合，还是安排？</p>
+<p>二〇〇八年，现代科学给出结论：他死于砒霜。<sup class="ref" data-id="D10">[D10]</sup>
+但投毒的人是谁，报告没有说。<sup class="ref" data-id="D10">[D10]</sup></p>
+<p>所以这不是一个"找出凶手"的游戏——是<b>学一遍问案的方法</b>：
+面对互相矛盾的证人、查得到的原件，和始终缺席的凶手。</p>
+<p class="meta">一路上：每页先读"发生的事"，再看它留下的证据；每一页有个小问题请你表态——答错会被质询，不会被扣分；最后一页，你的一票将与其他所有人放在一起。</p>
+<details class="card"><summary>他们是谁（进场点名）</summary><div class="ev-text">
+· <b>光绪帝 载湉</b>：4 岁登基，在位 34 年，1898 年起被囚于瀛台。<br>
+· <b>慈禧太后</b>：实际掌权人，他的伯母兼姨母。<br>
+· <b>恽毓鼎</b>：起居注官，随侍皇帝十九年，最重要的见证人。<sup class="ref" data-id="S1">[S1]</sup><br>
+· <b>袁世凯 · 李莲英</b>：被指名的两位"嫌疑人"。<sup class="ref" data-id="S51">[S51]</sup><br>
+· <b>史官</b>（她）：你的导览人，只依"证据库"说话，只摆证据、不下断语。
 </div></details>
-<div style="text-align:center;margin-top:1rem"><button class="go" onclick="go('c1')">进 入 展 览</button></div>
+<div style="text-align:center;margin-top:1.1rem"><button class="go" onclick="next()">开 始</button></div>
+</div>
 </div>
 </section>
 
-<section class="ch" id="c1">
-<h2>序 · 瀛台</h2>
+<section class="slide" data-h="序">
+<div class="wrap">
+<h2 style="letter-spacing:.4em;color:var(--red);text-align:center">序 · 瀛台</h2>
 <div class="story">
-<p>京城西，南海之中一座孤岛，三面是水。皇帝住在岛上，已经十年。</p>
-<p>隆冬湖面结冰，他曾带一个小太监踏冰而出——被拦了回去，随后传出凿冰的命令。[V02]
-他翻过太监屋里的一本《三国演义》，掷下，长叹：<b>"朕並不如漢獻帝也！"</b>[V02]</p>
-<p>老太监寇连材说：皇帝自幼无人敢爱，此所以多病。[V05]
-而恽毓鼎笔下："體氣健實，三十四年無疾病"，大祀必亲临，大風雪也步穩而速。[V01]</p>
-<p><b>一个囚徒，两种画像。</b>记住这两种画像，下章它们会开始互相撕咬。</p>
-<p class="meta" style="text-align:right">下一章 · 光绪三十四年十月初十，慈禧的生日</p>
-</div><div class="cards" data-evs="V02,V05,V01"></div>
+<p>京城西面，南海中一座孤岛，三面环水。皇帝住在岛上，已经十年。</p>
+<p>隆冬湖面结了冰，他带着一个小太监踏冰走出——被拦了回去，随后传出凿冰的命令。<sup class="ref" data-id="V02">[V02]</sup>
+某天，他翻过太监屋里的一本《三国演义》，掷下，长叹：<b>"朕並不如漢獻帝也！"</b><sup class="ref" data-id="V02">[V02]</sup></p>
+<p>老太监寇连材说：皇帝自幼无人敢爱，所以多病。<sup class="ref" data-id="V05">[V05]</sup>
+可起居注官恽毓鼎笔下是另一副样子：<b>"體氣健實，三十四年無疾病"</b>——大祀必亲临，大風雪里也步穩而速。<sup class="ref" data-id="V01">[V01]</sup></p>
+<p><b>一个囚徒，两副面孔。</b>记住这两句话——三日之后，它们会当面相撞。</p>
+</div>
+<div id="k1cards"></div>
+<p class="meta" style="text-align:right">下一页 · 十月初十，慈禧的生日</p>
+</div>
 </section>
 
-<section class="ch" id="c2">
-<h2>壹 · 万寿</h2>
+<section class="slide" data-h="壹">
+<div class="wrap">
+<h2 style="letter-spacing:.4em;color:var(--red);text-align:center">壹 · 万寿</h2>
 <div class="story">
-<p>十月初十，皇帝步行入德昌门，扶着太监的肩，两脚起落——在练跪拜，怕跪拜时起不来失仪。[E03]
-太后懿旨传到：<b>皇帝臥病在床，免率百官行禮。</b>[E03] 恽毓鼎记：上闻之大恸。[E03]</p>
-<p>太后已病泄数日。有人进言：皇帝听说太后病重，<b>面有喜色</b>。
-她说：<b>"我不能先爾死！"</b>[E04]
-四年前，日本公使内田康哉已从伍廷芳口中听到过一模一样的预测。[D01]</p>
-<p>——可"喜色"，是谁看到的？</p>
-</div><div class="cards" data-evs="E03,E04,D01"></div>
-<div id="q1">
-<button class="opt" data-v="不信">A · 监视者的诬告——这词打听过皇帝私情的人嘴里最多</button>
-<button class="opt" data-v="信">B · 实情——光绪真的流露了，且被一路呈报上去</button>
+<p>十月初十，皇帝步行入德昌门，扶着太监的肩，两脚起落——在练跪拜，怕跪拜时起不来失仪。<sup class="ref" data-id="E03">[E03]</sup>
+太后懿旨传到：<b>皇帝臥病在床，免率百官行禮。</b><sup class="ref" data-id="E03">[E03]</sup> 恽毓鼎记：上闻之大恸。<sup class="ref" data-id="E03">[E03]</sup></p>
+<p>太后已病泄多日。有人进言：皇帝听闻太后病重，<b>面有喜色</b>。
+太后说：<b>"我不能先爾死！"</b><sup class="ref" data-id="E04">[E04]</sup>
+四年前，日本公使内田康哉已从伍廷芳口中听到一模一样的预测。<sup class="ref" data-id="D01">[D01]</sup></p>
+<p>——可"喜色"，是谁看见的？</p>
+</div>
+<div id="k2cards"></div>
+<button class="opt q1opt" data-v="不信">A · 监视者的诬告</button>
+<button class="opt q1opt" data-v="信">B · 实情</button>
 <p class="meta" id="q1r"></p>
+<p class="meta" style="text-align:right">下一页 · 三天后，禁门的卫兵多了</p>
 </div>
-<p class="meta" style="text-align:right">下一章 · 三天后，禁门的卫兵多了</p>
 </section>
 
-<section class="ch" id="c3">
-<h2>贰 · 十九</h2>
+<section class="slide" data-h="贰">
+<div class="wrap">
+<h2 style="letter-spacing:.4em;color:var(--red);text-align:center">贰 · 十九（排时间）</h2>
 <div class="story">
-<p>三天后，禁门增兵卫，出入稽查。[E07]
-太监们成群出东华门剃头——国丧期不得理发，他们在抢在发布之前。[E07]
-剃头的说：<b>"驾崩矣。"</b>[E07]</p>
-<p>而官面记载（此条仅见转述）：十九日，仍有皇帝向太后请安的记录。[X01]
-南斋翰林与梨园名伶都说：死前二日，还见皇上步游水滨，意志活泼。[X02]</p>
-<p><b>宫内与国史，两个时间在分岔。</b>下面六张事件卡，按你的理解排出顺序——</p>
+<p>三天后，禁门增兵卫，出入稽查。<sup class="ref" data-id="E07">[E07]</sup>
+太监们成群出东华门剃头——国丧不得理发，他们抢在发丧之前。剃头的说：<b>"驾崩矣。"</b><sup class="ref" data-id="E07">[E07]</sup></p>
+<p>官面记载（仅见转述）：十九日，仍有皇帝向太后请安。<sup class="ref" data-id="X01">[X01]</sup>
+翰林与名伶则说：死前两日，还见皇上步游水滨。<sup class="ref" data-id="X02">[X02]</sup></p>
+<p><b>宫内与国史，两个时间在分岔。</b>把左边六件史实拖到右边，排出你认为的顺序——</p>
 </div>
-<div id="sorter" class="sortable"></div>
-<p class="meta">拖动卡片换序；或点 ↑↓ 微调。排完到下一章呈堂。</p>
-<p class="meta" style="text-align:right">下一章 · 二十一日，皇帝死了</p>
+<div class="cols">
+<div style="flex:1"><p class="meta">史实卡片（拖走后右栏放）</p><div id="pool"></div></div>
+<div style="flex:1"><p class="meta">你的排序（1→6）</p><div id="slots"></div></div>
+</div>
+<p class="meta">括号里是白话翻译；不确定就按直觉——下一页史官会跟你对证。</p>
+<p class="meta" style="text-align:right">下一页 · 二十一日，皇帝死了</p>
+</div>
 </section>
 
-<section class="ch" id="c4">
-<h2>叁 · 廿一</h2>
+<section class="slide" data-h="叁">
+<div class="wrap">
+<h2 style="letter-spacing:.4em;color:var(--red);text-align:center">叁 · 廿一</h2>
 <div class="story">
-<p>官方时序：大渐——酉刻崩于瀛台。[D09]
-恽毓鼎的版本更仓促：皇后去时，<b>"不知何時氣絕"</b>——发现已多时。[E09]
-载沣日记（仅见转述）则把"大渐"提前到了二十日。[T02]</p>
-<p>草殓、仪注被拒、遗诏后传——死亡当夜，细节各自成形，又互不相认。[E10][E11][E12][E09]</p>
-<p><b>现在轮到你。</b>把你上一章的排序与你的理由说给史官听——
-它只依库内证据行逐条质问你。</p>
-</div><div class="cards" data-evs="E09,E10,E11,E12,T02"></div>
-<input type="text" id="claim" placeholder="例如：我认为草殓最可疑，因为……（可空，但讯问需要靶子）">
-<button class="go" onclick="ask()">呈堂 · 请求质证</button>
+<p>官方时序：大渐——酉刻崩于瀛台。<sup class="ref" data-id="D09">[D09]</sup>
+恽毓鼎的版本更仓促：皇后赶到时，<b>"不知何時氣絕"</b>——人已没了多时。<sup class="ref" data-id="E09">[E09]</sup>
+载沣日记（仅见转述）则把"大渐"提前到二十日。<sup class="ref" data-id="T02">[T02]</sup></p>
+<p>同一夜：草殁入库、礼仪官被拒之门外、遗诏而后传。<sup class="ref" data-id="E10">[E10]</sup><sup class="ref" data-id="E11">[E11]</sup><sup class="ref" data-id="E12">[E12]</sup></p>
+<p class="meta">怎么玩：把你的怀疑写成一句话（可空），点"呈堂"——她会依库内证据行质问你：<b>你凭什么这样排？哪一行被你漏了？</b></p>
+</div>
+<div id="k4cards"></div>
+<input type="text" id="claim" placeholder="例如：我认为草殓最可疑，因为……（可空）">
+<button class="go" onclick="ask()">呈堂 · 向史官对证</button>
 <div id="reply"></div>
-<p class="meta" style="text-align:right">下一章 · 死讯如何传遍京城</p>
+<p class="meta" style="text-align:right">下一页 · 死讯传开之后</p>
+</div>
 </section>
 
-<section class="ch" id="c5">
-<h2>肆 · 身后</h2>
+<section class="slide" data-h="肆">
+<div class="wrap">
+<h2 style="letter-spacing:.4em;color:var(--red);text-align:center">肆 · 身后</h2>
 <div class="story">
-<p>遗诏未下，民间先周知：全城剃发，鼓声竟夜。[G06]
-遗诏里有杀袁世凯的命令——有人说；[V03]
-朝廷在悬赏缉拿"造言煽乱匪徒"。[U05]
-外报电文说两人死得太近，使人疑虑；宫内传出李蓮英与太后密谋。[U07][G01]</p>
-<p>每一条都有出处，每一条也都有立场。你给它们贴签：</p>
-</div><div class="cards" data-evs="G06,V03,U05,U07,G01"></div>
+<p>遗诏未下，民间先知道：全城剃发，鼓声竟夜。<sup class="ref" data-id="G06">[G06]</sup>
+朝廷悬赏缉拿"造言煽乱匪徒"。<sup class="ref" data-id="U05">[U05]</sup></p>
+<p>三条传闻在同一夜里成形。每一条都有出处，每一条也都有立场——你给它们各贴一签：</p>
+</div>
 <div id="rumors"></div>
-<p class="meta" style="text-align:right">下一章 · 一百年后，头发开口了</p>
+<button class="go" onclick="annot()">贴签落实</button>
+<p class="meta" id="annr"></p>
+<p class="meta" style="text-align:right">下一页 · 四个说法，当场对质</p>
+</div>
 </section>
 
-<section class="ch" id="c6">
-<h2>伍 · 百年</h2>
+<section class="slide" data-h="五">
+<div class="wrap">
+<h2 style="letter-spacing:.4em;color:var(--red);text-align:center">五 · 对质</h2>
 <div class="story">
-<p>1980 年，崇陵被清理，简单检测的结论：未发现外伤及中毒迹象。[U09]
-<em>那年，检验科学正在换代。</em></p>
-<p>2008 年，历经五年的再检验：两缕头发被剪成一厘米截段，逐一测砷。[D10]
-最高值——</p>
+<p><b>为什么会有四种说法？</b>因为每个说法，都是从某几行证据里长出来的——
+而每条又都具有致命破绽。四张卡，左右两栏，先看依据与破绽，再去当裁判。</p>
+<div class="hypo"><h4>① 久病自然亡</h4>
+<div class="meta">依据：脉案连续恶化 [D09] · 1980 年首次检验未见外伤与中毒 [U09] · 档案派定评 [D03]<br>
+破绽：恽毓鼎总评"三十四年无疾病" [V01] · 陆润庠说"皇上本无病" [G03] · "入診者僉云六脈平和無病" [E01]</div></div>
+<div class="hypo"><h4>② 慈禧授意</h4>
+<div class="meta">依据："我不能先爾死" [E04] · 伍廷芳 1904 年对日使的预言 [D01] · 死亡时间紧邻 [E13]<br>
+破绽：无一处文书实证 · 2008 报告只限死因、不指凶手 [D10]</div></div>
+<div class="hypo"><h4>③ 袁世凯进药</h4>
+<div class="meta">依据：溥仪转述老太监——"一剂药就坏了" [T04] · 遗诏诛袁的传闻 [V03]<br>
+破绽：御用进药有试毒之制 [S51] · 猜想与"塌喇"之间，库内没有桥梁行 [D06]</div></div>
+<div class="hypo"><h4>④ 李莲英近侍</h4>
+<div class="meta">依据：《瀛台泣血記》的"毒计" [T05] · 《清室外记》"藏于李輩心中" [T03]<br>
+破绽：不合其素常行迹 [S51] · 德龄书文学性强（恒标"仅见转述"）[T05]</div></div>
+<p><b>你的裁判：哪一条破绽最致命？</b></p>
+<button class="opt q6opt" data-v="破绽：若脉案皆伪，官方整条证据链都要重估——重量级">① 病史或有假</button>
+<button class="opt q6opt" data-v="破绽：缺一手文书——悬案的第二重门，也最难撬">② 无一处文书实证</button>
+<button class="opt q6opt" data-v="破绽：制度挡路——试毒定制让外药极难入身高层">③ 试毒定制挡路</button>
+<button class="opt q6opt" data-v="破绽：来源薄——两本都是回忆文学，孤证且晚出">④ 来源薄弱</button>
+<p class="meta" id="q6r"></p>
+</div>
+<p class="meta" style="text-align:right">下一页 · 百年之后，头发开口</p>
+</div>
+</section>
+
+<section class="slide" data-h="六">
+<div class="wrap">
+<h2 style="letter-spacing:.4em;color:var(--red);text-align:center">六 · 百年</h2>
+<div class="story">
+<p>1980 年清理崇陵，简检结论："未发现外伤及中毒迹象"。<sup class="ref" data-id="U09">[U09]</sup>
+<em>那时的检验科学，还在另一代。</em></p>
+<p>2008 年：两缕头发剪成一厘米截段逐一测砷，历时五年。<sup class="ref" data-id="D10">[D10]</sup>——最高值：</p>
 <div><span class="big" id="asnum">0</span><span style="color:var(--red)"> 微克/克</span></div>
-<p>是隆裕皇后的 <b>261 倍</b>，慢性中毒病人的 <b>66 倍</b>。[D11]
-结论只有一句：<b>"光绪帝系砒霜中毒死亡。"</b>[D10]
-报告不回答凶手是谁。[D10]</p>
-<p class="meta">顺带一提：两篇二手转述里，这个数字一处写"毫克"，一处写"微克"——连转述也会打架，所以馆规第一条才是那个第一条。[D12]</p>
-</div><div class="cards" data-evs="U09,D10,D11,D12"></div>
-<p class="meta" style="text-align:right">终章 · 剩下的一票</p>
+<p>是隆裕皇后的 <b>261 倍</b>、慢性中毒者的 <b>66 倍</b>。<sup class="ref" data-id="D11">[D11]</sup>
+结论一句：<b>"光绪帝系砒霜中毒死亡。"</b><sup class="ref" data-id="D10">[D10]</sup> 凶手——报告不答。<sup class="ref" data-id="D10">[D10]</sup></p>
+<p class="meta">顺带：两篇二手转述里，这个数字一处写"毫克"、一处写"微克"——连转述都会打架，所以"照录原件"才是头一条规矩。<sup class="ref" data-id="D12">[D12]</sup></p>
+</div>
+<div id="k7cards"></div>
+<p class="meta"><b>小问（可点可不点）：</b>目前已证明了"毒"这件事——那"谁下的手"，你押什么？</p>
+<button class="opt q7opt">要靠新的史料被发现</button>
+<button class="opt q7opt">要靠法医技术在往前走（比如更细的时序毒理）</button>
+<button class="opt q7opt">要靠像你一样，一个一个来逼问的人</button>
+<p class="meta" id="q7r"></p>
+<p class="meta" style="text-align:right">终页 · 剩下的一票</p>
+</div>
 </section>
 
-<section class="ch final" id="c7">
-<h2>终 · 留白</h2>
+<section class="slide" data-h="终">
+<div class="wrap">
+<h2 style="letter-spacing:.4em;color:var(--red);text-align:center">终 · 留白</h2>
 <div class="story">
-<p>病死说、慈禧说、袁世凯说、李莲英说——各有理由，各有破绽，各有立场。[S51]
-真相对谁有利，当年的人就信什么。[U04]
-2008 年之后唯一被证明的：那不是善终。[D10]</p>
-<p><b>四说各有人心，库内证据到 [D10] 为止——剩下的一票，是你的。</b></p>
+<p>对质你看过了：四说各有人心，库内证据到 [D10] 为止。<sup class="ref" data-id="D10">[D10]</sup>
+2008 年后唯一被证明的：那不是善终。</p>
+<p><b>落你的票：</b>支持主流四说之一——或者，你有新的想法。</p>
 </div>
 <select id="choice"></select>
-<input type="text" id="reason" placeholder="一句话理由（可空，将公开展示）">
-<button class="go" onclick="vote()">投  票</button>
-<div id="dist" style="margin-top:1rem"></div>
-<div style="margin-top:1.4rem"><details class="card"><summary>自主翻阅 · 全库 55 行证据（评委通道）</summary>
+<div id="newidea" style="display:none">
+<input type="text" id="newtext" placeholder="把你的新想法写成一句话（它会作为公开的一票橱出）">
+</div>
+<input type="text" id="reason" placeholder="一句话理由（可空，公开展示）">
+<button class="go" onclick="vote()">入 案 卷</button>
+<div id="dist" style="margin-top:.9rem"></div>
+<div style="margin-top:1.2rem"><details class="card"><summary>自由审阅 · 全库 55 行证据</summary>
 <div id="allrows"></div></details></div>
+</div>
 </section>
+
 </div>
 
-<footer>所有回答均指证据行 [id] 与来源等级 · 报告只证明死因，不定凶手 · <span id="footmode"></span></footer>
+<nav>
+<button class="go dim" onclick="prev()">‹ 上一页　<kbd>←</kbd></button>
+<div class="dots" id="dots"></div>
+<button class="go" onclick="next()">下一页　<kbd>→</kbd> ›</button>
+</nav>
+<div id="srcpanel"></div>
+<div style="position:fixed;bottom:0;left:0;right:0;transform:translateY(100%)"></div>
 
 <script>
 const ORDER=["E03","E07","E08","E09","E11","G07"];
-const RUMORS=[["V03","遗诏诛袁"],["G01","李蓮英文孝欽密谋"],["U07","外报疑谋杀"]];
-const CHOICES=["慈禧授意","袁世凯进药","李莲英近侍","久病自然亡","库内证据不足"];
-let BYID={},SRCS={};
-const $=q=>document.querySelector(q);
+const GLOSS={E03:"万寿贺寿被拒（懿旨：帝臥病免礼）",E07:"太监提前剃发扬言崩",E08:"传旨授载沣摄政",E09:"皇后探视才见已崩",E11:"李莲英促畀草殓",G07:"张之洞定策立溥仪"};
+const RUMORS=[["V03","遗诏有诛袁之命"],["G01","李莲英与太后有密谋"],["U07","外报：死者相距太近使人生疑"]];
+const CHOICES=["慈禧授意","袁世凯进药","李莲英近侍","久病自然亡","我有新想法"];
+let BYID={},SRCS={},cur=0;const SLIDES=[...document.querySelectorAll(".slide")],N=SLIDES.length;
+const $=q=>document.querySelector(q),$$=q=>[...document.querySelectorAll(q)];
 function req(m,u,b){return fetch(u,{method:m,headers:{"Content-Type":"application/json"},body:b?JSON.stringify(b):undefined}).then(r=>r.json())}
 function badge(e){const st={private:"私记",official:"官方",press:"报刊",science:"科学",foreign:"外国",academic:"学术"};const ti={L1:"一手原件",L2:"可靠出版",L3:"仅见转述"};
-return `<span class="badge ${e.tier}">${ti[e.tier]||e.tier}</span><span class="badge ${e.stance}">${st[e.stance]||e.stance}</span>`}
-function cardHTML(e){return `<${"details"} class="card"><summary>${badge(e)} <span class="meta">${e.date_orig||""} · ${e.id}</span></summary><div class="ev-text">${e.text}</div><div class="meta">${SRCS[e.source_id]?SRCS[e.source_id].title:""}${SRCS[e.source_id]?" · "+SRCS[e.source_id].note||"":""}</div></${"details"}>`}
-document.querySelectorAll(".ref").forEach(el=>el.onclick=()=>openEv(el.textContent));
-function openEv(id){const e=BYID[id]||BYID[id.replace("[","").replace("]","")];if(!e)return;window.evShow(e)}
+return `<span class="badge ${e.tier}" title="${e.tier}">${ti[e.tier]||e.tier}</span> <span class="badge ${e.stance}" title="${e.stance}">${st[e.stance]||e.stance}</span>`}
+function cardHTML(e){return `<div class="card"><div>${badge(e)}<span class="meta"> ${e.date_orig||""} · [${e.id}]</span></div><div class="ev-text">${e.text}</div><div class="meta" style="margin-top:.3rem">来源：${SRCS[e.source_id]?SRCS[e.source_id].title+(SRCS[e.source_id].note?" — "+SRCS[e.source_id].note:""):""}</div></div>`}
+function fill(ids,box){box.innerHTML=ids.map(id=>BYID[id]?cardHTML(BYID[id]):"").join("")}
+// slides
+function show(i){cur=Math.max(0,Math.min(N-1,i));SLIDES.forEach((s,j)=>s.classList.toggle("on",j===cur));
+  $$("#dots a").forEach((d,j)=>d.classList.toggle("on",j===cur));}
+function next(){show(cur+1)}function prev(){show(cur-1)}
+document.addEventListener("keydown",e=>{if(window.__typing)return;if(e.key==="ArrowRight")next();if(e.key==="ArrowLeft")prev()});
+["input","select","textarea"].forEach(t=>document.addEventListener("focusin",e=>{if(e.target.matches(t))window.__typing=true}));
+document.addEventListener("focusout",()=>window.__typing=false);
+$("#dots").innerHTML=[...Array(N)].map((_,i)=>`<a href="#" onclick="show(${i});return false"></a>`).join("");
+// refs → srcpanel with scan image
+document.addEventListener("click",ev=>{const t=ev.target.closest("sup.ref");if(t){openSrc(t.dataset.id);ev.stopPropagation()}});
+function openSrc(id){const e=BYID[id]||BYID[id.replace("[","").replace("]","")];if(!e)return;const P=$("#srcpanel");
+  P.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center"><b>[${e.id}]</b>${badge(e)}<span class="meta">点击面板任意处收起</span></div>
+  <div id="scanbox" style="margin-top:.6rem">史料扫描件 · 待征集（sources/raw/scans/${e.id}.jpg）</div>
+  <div class="ev-text" style="margin-top:.6rem">对应行：<span class="hl">${e.text}</span></div>
+  <div class="meta" style="margin-top:.4rem">来源：${SRCS[e.source_id]?SRCS[e.source_id].title+(SRCS[e.source_id].note?" — "+SRCS[e.source_id].note:""):""}</div>`;
+  P.style.display="block"}
+$("#srcpanel").addEventListener("click",function(){this.style.display="none"});
+// data load
 fetch("/api/timeline").then(r=>r.json()).then(d=>{
   BYID={};d.rows.forEach(r=>BYID[r.id]=r);SRCS=d.sources;
-  document.getElementById("mode").textContent=d.mode==="deepseek"?"真模型 · DeepSeek 交叉讯问":"规则模式 · 固定题库";
-  document.getElementById("footmode").textContent=d.mode==="deepseek"?"":"（无 API key）";
-  document.querySelectorAll(".cards").forEach(box=>{
-    box.innerHTML=(box.dataset.evs||"").split(",").map(id=>BYID[id.trim()]?cardHTML(BYID[id.trim()]):"").join("");
-  });
-  buildSorter(d.pairs);buildRumors();
-  document.getElementById("choice").innerHTML=CHOICES.map(c=>`<option>${c}</option>`).join("");
-  document.getElementById("allrows").innerHTML=d.rows.map(r=>cardHTML(r)).join("");
-  rail();countUp();
+  $("#mode").textContent=d.mode==="deepseek"?"史官在线 · 真模型质询":"离线模式 · 固定题库";
+  $("#footmode").textContent=d.mode==="deepseek"?"":"（无 API key）";
+  fill("V02,V05,V01".split(","),$("#k1cards"));
+  fill("E03,E04,D01".split(","),$("#k2cards"));
+  fill("E09,E10,E11,E12,T02".split(","),$("#k4cards"));
+  fill("U09,D10,D11,D12".split(","),$("#k7cards"));
+  $("#allrows").innerHTML=d.rows.map(cardHTML).join("");
+  buildSorter();buildRumors();
+  $("#choice").innerHTML=CHOICES.map(c=>`<option>${c}</option>`).join("");
+  verdicts();
 });
-function go(id){document.getElementById(id).scrollIntoView({block:"start"})}
-// rail
-function rail(){const ids=[...document.querySelectorAll(".ch")];const r=$("#rail");
-  r.innerHTML=ids.map((s,i)=>{const t=s.querySelector("h2").textContent[0];return `<a href="#${s.id}">${i===0?"门":t}</a>`}).join("");
-  window.addEventListener("scroll",()=>{let cur=0;ids.forEach((s,i)=>{if(s.getBoundingClientRect().top<200)cur=i});
-    [...r.children].forEach((a,i)=>a.classList.toggle("on",i===cur))})}
-// 壹
-$("#q1")&&document.querySelectorAll("#q1 .opt").forEach(b=>b.onclick=()=>{
-  document.querySelectorAll("#q1 .opt").forEach(x=>x.style.borderColor="var(--gray)");b.style.borderColor="var(--red)";
-  $("#q1r").textContent=b.dataset.v==="不信"?"你的判断：诬告。注意——无论选哪个，喜色的两个字都仍是转述链，原件从未浮现。":"你的判断：实情。那传话的太监链条会是最短的行凶通道——但库内没有拉那道门的行。";
-  req("POST","/api/annotate",{items:[{rumor:"喜色之谗",stance:b.dataset.v}]});});
-// 贰 sortable
-function buildSorter(){const s=$("#sorter");
-  s.innerHTML=ORDER.map(id=>`<div class="item" draggable="true" data-id="${id}"><span class="idx">·</span>${BYID[id]?BYID[id].text.slice(0,34)+"…":id}<span class="arrows"><button data-d="-1">↑</button><button data-d="1">↓</button></span></div>`).join("");
-  let drag=null;
-  s.querySelectorAll(".item").forEach(it=>{
-    it.addEventListener("dragstart",()=>drag=it);it.addEventListener("dragover",ev=>ev.preventDefault());
-    it.addEventListener("drop",ev=>{ev.preventDefault();if(drag&&drag!==it){s.insertBefore(drag,it);renum()}})});
-  s.addEventListener("click",ev=>{const b=ev.target.closest("button");if(!b)return;
-    const it=b.closest(".item"),dir=+b.dataset.d;
-    (dir<0?it.previousElementSibling:it.nextElementSibling)&&s.insertBefore(it,dir<0?it.previousElementSibling:it.nextElementSibling.nextElementSibling);renum()});
-  renum();
-}
-
-// 肆 rumors
-function buildRumors(){const box=$("#rumors");
-  box.innerHTML=RUMORS.map(([id,name])=>{
-    const e=BYID[id];return `<div class="rumor"><b>${name}</b> ${e?`<span class="meta">[id] ${badge(e)}</span>`:""}<div class="ev-text">${e?e.text.slice(0,70)+"…":""}</div><div class="meta">该传闻：本页读者的立场 ○○○</div></div>`;}).join("")+
-  RUMORS.map(([id,name])=>`<div style="margin:.3rem 0"><b>${name}</b>：
-    <label><input type="radio" name="r_${id}" value="信" form="formR">信</label>
-    <label><input type="radio" name="r_${id}" value="不信" form="formR">不信</label>
-    <label><input type="radio" name="r_${id}" value="说不准" form="formR">说不准</label>
-  </div>`).join("")+
-  `<button class="go" onclick="annot()">贴签 · 入展墙</button><div id="annr" class="meta" style="margin-top:.4rem"></div>`;
-  document.body.insertAdjacentHTML("beforeend",`<form id="formR" style="display:none"></form>`);}
-function annot(){const items=RUMORS.map(([id,name])=>{const el=document.querySelector(`input[name=r_${id}]:checked`);
-  return {rumor:name,stance:el?el.value:"说不准"}});
-  req("POST","/api/annotate",{items}).then(r=>{$("#annr").textContent="已入库。回头的人越多，这里的分布越像一面公众印象的镜子。"})}
-// 伍 count-up
-function countUp(){const el=$("#asnum");if(!el)return;const obs=new IntersectionObserver(es=>{es.forEach(x=>{if(x.isIntersecting){let n=0;const t=setInterval(()=>{n+=40;if(n>=2404){n=2404;clearInterval(t)}el.textContent=n},30);obs.disconnect()}})},{threshold:.4});
-  obs.observe(el)}
-// 终
-function vote(){const choice=$("#choice").value,reason=$("#reason").value.trim();
-  req("POST","/api/verdict",{choice,reason}).then(drawDist)}
-function drawDist(d){if(!d)return;$("#dist").innerHTML=
-  `<p class="meta">已有 ${d.total} 票（存于 verdict 表）</p><table class="datagrid" style="width:100%">${(d.dist||[]).map(x=>
-  `<tr><td style="width:9rem">${x[0]}</td><td>${"■".repeat(Math.max(1,Math.round(20*x[1]/Math.max(1,d.total))))} ${x[1]}</td></tr>`).join("")}</table>`}
-vote0();function vote0(){$("#dist").textContent="投票箱打开中……";req("GET","/api/verdicts").then(r=>{if(!r.total){$("#dist").innerHTML='<p class="meta">投票箱还是空的——第一个投票的人，是你。</p>'}else drawDist(r)})}
-// ref click → open card inline
-window.evShow=function(e){const panel=document.createElement("div");panel.className="card";panel.innerHTML=
-  `<b>[${e.id}]</b> ${e.date_orig||""}<div class="ev-text">${e.text}</div><div class="meta">${SRCS[e.source_id]?(SRCS[e.source_id].title+" · "+(SRCS[e.source_id].note||"")):""}</div>`;
-  document.body.firstElementChild;const old=document.getElementById("refpanel");if(old)old.remove();
-  panel.id="refpanel";panel.style.position="fixed";panel.style.bottom="0";panel.style.left="0";panel.style.right="0";
-  panel.style.maxHeight="45%";panel.style.overflow="auto";panel.style.zIndex="9";panel.style.boxShadow="0 -4px 14px rgba(0,0,0,.18)";
-  document.body.appendChild(panel)};
-document.body.addEventListener("click",ev=>{if(ev.target.id==="refpanel"){ev.target.remove()}});
+// 壹 choice
+$$(".q1opt").forEach(b=>b.onclick=()=>{
+  $$(".q1opt").forEach(x=>x.classList.remove("picked"));b.classList.add("picked");
+  $("#q1r").textContent=b.dataset.v==="不信"
+    ?"你选「诬告」。注意：无论哪边，这两个字都还是转述链上的字，原件从未浮面。"
+    :"你选「实情」。那么传话的太监，就是最后一程见过皇帝的人——记住这条线，终页它会回来。";
+  req("POST","/api/annotate",{items:[{rumor:"喜色之谗",stance:b.dataset.v}]})});
+// 贰 sort: pool -> slots
+function ITEM_HTML(id){const e=BYID[id];
+  return `<div class="item" draggable="true" data-id="${id}">
+  <div><span class="t"><b style="font-size:.78em">[${id}]</b> ${e?e.text.slice(0,24)+"…":""}</span><span class="g">${GLOSS[id]}</span></div></div>`}
+function SLOT_HTML(i){return `<div class="slot" data-i="${i+1}"><span class="no">${i+1}</span><span class="holder">（把一张卡拖到这里）</span></div>`}
+function buildSorter(){
+  $("#pool").innerHTML=[...ORDER].sort(()=>Math.random()-.5).map(id=>ITEM_HTML(id)).join("");
+  $("#slots").innerHTML=ORDER.map((_,i)=>SLOT_HTML(i)).join("");
+  bindItems();
+  $$("#pool, .slot").forEach(z=>{
+    z.addEventListener("dragover",ev=>{ev.preventDefault()});
+    z.addEventListener("drop",ev=>{ev.preventDefault();const it=window.__drag;if(!it)return;
+      const from=it.closest(".slot");
+      if(z.className==="pool"||z.id==="pool"){from&&restore(from);poolAppend(it)}
+      else if(z.id==="slots"){window.__back=null;/*落空，还原 */}
+      else{
+        const holder=z.querySelector(".holder")||z.querySelector(".item");
+        if(holder&&holder.className==="holder"){holder.replaceWith(it)}else{const other=z.querySelector(".item");other&&poolAppend(other);z.appendChild(it)}
+        from&&restore(from)}
+      window.__drag=null;renum()});
+  });
+  function restore(slot){const ph=document.createElement("span");ph.className="holder";ph.textContent="（把一张卡拖到这里）";slot.appendChild(ph)}
+  function poolAppend(it){it.remove();const pool=$("#pool");pool.appendChild(it);bindItem(it)}
+  function bindItems(){$$(".item").forEach(bindItem)}
+  function bindItem(it){it.ondragstart=()=>{window.__drag=it;setTimeout(()=>it.classList.add("dragging"),0)};
+    it.ondragend=()=>it.classList.remove("dragging")}
+  renum()}
+function renum(){$$(".slot").forEach((s,i)=>s.querySelector(".no").textContent=i+1)}
 // 叁 ask
 function ask(){const claim=$("#claim").value.trim();
-  const order=[...document.querySelectorAll(".item")].map(x=>x.dataset.id);
-  $("#reply").textContent="史官正在核对证据行……";
-  req("POST","/api/ask",{claim,order}).then(r=>{$("#reply").innerHTML=`<b>${r.mode}</b>
-${r.reply}`+(r.tokens?`
-
-<span class="meta">tokens: in ${r.tokens.prompt_tokens||"?"} / out ${r.tokens.completion_tokens||"?"}</span>`:"")})}
+  const order=$$(".slot").map(s=>s.querySelector(".item")?s.querySelector(".item").dataset.id:null).filter(Boolean);
+  $("#reply").textContent="史官在核对证据行……";
+  req("POST","/api/ask",{claim,order}).then(r=>{
+    $("#reply").innerHTML=`<b>${r.mode}</b>\n`+r.reply.replace(/\[([A-Z]\d+)\]/g,'<sup class="ref" data-id="$1">[$1]</sup>')+(r.tokens?`<span class="meta" style="display:block;margin-top:.5rem">tokens in ${r.tokens.prompt_tokens||"?"} / out ${r.tokens.completion_tokens||"?"}</span>`:"")})}
+// 肆 stickers
+function buildRumors(){const box=$("#rumors");
+  box.innerHTML=RUMORS.map(([id,name])=>{const e=BYID[id];
+    return `<div class="rumor"><b>${name}</b> <sup class="ref" data-id="${id}">[${id}]</sup> ${e?badge(e):""}
+      <div class="ev-text">${e?e.text.slice(0,66)+"…":""}</div>
+      <div style="margin-top:.35rem">签：
+      <label><input type="radio" name="${id}" value="信">信</label>
+      <label><input type="radio" name="${id}" value="不信">不信</label>
+      <label><input type="radio" name="${id}" value="说不准">说不准</label></div></div>`}).join("")}
+function annot(){const items=RUMORS.map(([id,name])=>{const el=document.querySelector(`input[name="${id}"]:checked`);
+    return {rumor:name,stance:el?el.value:"说不准"}});
+  req("POST","/api/annotate",{items}).then(r=>{
+    $("#annr").textContent="已入库。走过此页的人越多，这面镜子越像公众印象的实照。"})}
+// 五 adjudicator
+$$(".q6opt").forEach(b=>b.onclick=()=>{
+  $$(".q6opt").forEach(x=>x.classList.remove("picked"));b.classList.add("picked");
+  $("#q6r").textContent="你的裁判："+b.textContent+"——"+b.dataset.v+"。（只陪你走到终页，不上传）"});
+// 六 small q
+$$(".q7opt").forEach(b=>b.onclick=()=>{
+  $$(".q7opt").forEach(x=>x.classList.remove("picked"));b.classList.add("picked");
+  $("#q7r").textContent="三层都开着门——这也是悬案教给我们的事：一个证据空了一个世纪，接住它的只能是委员会。"});
+// 终
+function verdicts(){req("GET","/api/verdicts").then(r=>{if(!r.total){$("#dist").innerHTML='<p class="meta">案卷现在空着——最先投进的这一票，将由你写入。</p>'}else drawDist(r)})}
+function drawDist(d){if(!d)return;$("#dist").innerHTML=`<p class="meta">案卷已收 ${d.total} 票</p><table class="datagrid">${(d.dist||[]).map(x=>
+  `<tr><td style="width:10rem">${x[0]}</td><td>${"■".repeat(Math.max(1,Math.round(20*x[1]/Math.max(1,d.total))))} ${x[1]}</td></tr>`).join("")}</table>`}
+function vote(){const sel=$("#choice").value;
+  const reason=sel==="我有新想法"?(($("#newtext").value.trim()||"（未填）")):$("#reason").value.trim();
+  if(sel==="我有新想法"&&!$("#newtext").value.trim()){alert("新想法那一格里写一句再投");return}
+  req("POST","/api/verdict",{choice:sel,reason}).then(drawDist)}
+$("#choice").addEventListener("change",e=>{$("#newidea").style.display=e.target.value==="我有新想法"?"block":"none"});
+// count-up
+const io=new IntersectionObserver(es=>{es.forEach(x=>{if(x.isIntersecting){let n=0;const t=setInterval(()=>{n+=40;if(n>=2404){n=2404;clearInterval(t)}$("#asnum").textContent=n},30);io.disconnect()}})},{threshold:.4});
+io.observe($("#asnum"));
+show(0);
 </script>
 </body></html>

@@ -20,7 +20,7 @@ try:
 except Exception:
     KEY = None
 
-CHOICES = ["慈禧授意", "袁世凯进药", "李莲英近侍", "久病自然亡", "库内证据不足"]
+CHOICES = ["慈禧授意", "袁世凯进药", "李莲英近侍", "久病自然亡", "我有新想法"]
 
 
 def rows_all():
