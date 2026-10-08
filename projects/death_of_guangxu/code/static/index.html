@@ -33,8 +33,8 @@ footer{color:var(--gray);text-align:center;padding:1.5rem;font-size:.75rem}
 </style>
 </head>
 <body>
-<header><h1>光緒之死</h1><div class="sub">1908·11·14 — 21 小时后，慈禧亦崩</div>
-<div style="margin-top:.5rem"><span id="mode" class="bar">…</span></div></header>
+<header><h1>光绪之死</h1><div class="sub">1908·11·14 — 21 小时后，慈禧亦崩</div>
+<div style="margin-top:.5rem"><span id="mode" class="bar">…</span><span class="meta" style="margin-left:.6rem">界面为简体；证据引文一律照录原件繁体（档案直引，不转写）</span></div></header>
 <div class="wrap">
 <div class="acts">
 <button data-a="1" class="on">一 读证</button><button data-a="2">二 推演</button><button data-a="3">三 判决</button>
@@ -65,7 +65,8 @@ footer{color:var(--gray);text-align:center;padding:1.5rem;font-size:.75rem}
 const ORDER_TARGETS=["E03","E04","G04","E07","E09","T02"];
 let DATA=null;
 function req(m,u,b){return fetch(u,{method:m,headers:{"Content-Type":"application/json"},body:b?JSON.stringify(b):undefined}).then(r=>r.json())}
-function badge(e){return `<span class="badge ${e.tier}">${e.tier}</span><span class="badge ${e.stance}">${e.stance}</span>`}
+function badge(e){const st={private:"私记",official:"官方",press:"报刊",science:"科学",foreign:"外国",academic:"学术","press+science":"报道+科学"};const ti={L1:"一手原件",L2:"可靠出版",L3:"仅见转述"};
+return `<span class="badge ${e.tier}" title="${ti[e.tier]||e.tier}">${ti[e.tier]||e.tier}</span><span class="badge ${e.stance}" title="${e.stance}">${st[e.stance]||e.stance}</span>`}
 fetch("/api/timeline").then(r=>r.json()).then(d=>{
   DATA=d;const byId={};d.rows.forEach(r=>byId[r.id]=r);
   document.getElementById("mode").textContent=d.mode==="deepseek"?"真模型 · DeepSeek 交叉讯问":"规则模式 · 固定题库";
