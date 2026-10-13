@@ -74,8 +74,9 @@ table.datagrid td{padding:.3rem 0;border-bottom:1px solid var(--line);font-size:
 一个盛年，一个老年；一个先死，一个后崩——巧合，还是安排？</p>
 <p>二〇〇八年，现代科学给出结论：他死于砒霜。<sup class="ref" data-id="D10">[D10]</sup>
 但投毒的人是谁，报告没有说。<sup class="ref" data-id="D10">[D10]</sup></p>
-<p>所以这不是一个"找出凶手"的游戏——是<b>学一遍问案的方法</b>：
-面对互相矛盾的证人、查得到的原件，和始终缺席的凶手。</p>
+<p>所以，这里不放"凶手揭晓"的字幕。走到头你也拿不到那个名字——
+你能带走的，是在一堆互相咬不上的记载里，<b>自己把顺序排清楚的本事</b>：
+谁亲眼见了，谁隔着墙听，谁转手抄过三道。</p>
 <p class="meta">一路上：每页先读"发生的事"，再看它留下的证据；每一页有个小问题请你表态——答错会被质询，不会被扣分；最后一页，你的一票将与其他所有人放在一起。</p>
 <details class="card"><summary>他们是谁（进场点名）</summary><div class="ev-text">
 · <b>光绪帝 载湉</b>：4 岁登基，在位 34 年，1898 年起被囚于瀛台。<br>
@@ -255,9 +256,13 @@ table.datagrid td{padding:.3rem 0;border-bottom:1px solid var(--line);font-size:
 <button class="go" onclick="next()">下一页　<kbd>→</kbd> ›</button>
 </nav>
 <div id="srcpanel"></div>
-<div style="position:fixed;bottom:0;left:0;right:0;transform:translateY(100%)"></div>
+<div style="position:fixed;bottom:2.9rem;left:0;right:0;text-align:center;color:var(--gray);font-size:.72rem"
+ >所有表达均落行 [id]、点击角标可见来源 · 数据只证死因，不定凶手 · <span id="footmode"></span> · 插图若标"AI 制图"则为演绎，非史料</div>
+<div id="errbar" style="position:fixed;top:0;left:0;right:0;display:none;background:#7a1f1f;color:#fff;font-size:.75rem;padding:.35rem 1rem;z-index:30"></div>
 
 <script>
+window.addEventListener("error",e=>{const b=document.getElementById("errbar");b.style.display="block";b.textContent="JS error: "+e.message+" @"+e.lineno});
+window.addEventListener("unhandledrejection",e=>{const b=document.getElementById("errbar");b.style.display="block";b.textContent="网络/脚本错误："+(e.reason&&e.reason.message||e.reason)});
 const ORDER=["E03","E07","E08","E09","E11","G07"];
 const GLOSS={E03:"万寿贺寿被拒（懿旨：帝臥病免礼）",E07:"太监提前剃发扬言崩",E08:"传旨授载沣摄政",E09:"皇后探视才见已崩",E11:"李莲英促畀草殓",G07:"张之洞定策立溥仪"};
 const RUMORS=[["V03","遗诏有诛袁之命"],["G01","李莲英与太后有密谋"],["U07","外报：死者相距太近使人生疑"]];
@@ -286,20 +291,25 @@ function openSrc(id){const e=BYID[id]||BYID[id.replace("[","").replace("]","")];
   <div class="meta" style="margin-top:.4rem">来源：${SRCS[e.source_id]?SRCS[e.source_id].title+(SRCS[e.source_id].note?" — "+SRCS[e.source_id].note:""):""}</div>`;
   P.style.display="block"}
 $("#srcpanel").addEventListener("click",function(){this.style.display="none"});
-// data load
+// data load（拆分：选项/投票先就绪，不依赖 fetch）
+$("#choice").innerHTML=CHOICES.map(c=>`<option>${c}</option>`).join("");
+$("#choice").addEventListener("change",e=>{$("#newidea").style.display=e.target.value==="我有新想法"?"block":"none"});
+function offlineNotice(msg){const m=$("#mode");m.textContent="离线模式 · 无法连接证据库（server 没在跑？）";m.style.background="#7a1f1f";
+  if(!BYID.__warned){BYID.__warned=true}else if(msg){}
+  $("#pool").innerHTML='<p class="meta">XT：'+(msg||"未连接")+'</p>'}
 fetch("/api/timeline").then(r=>r.json()).then(d=>{
   BYID={};d.rows.forEach(r=>BYID[r.id]=r);SRCS=d.sources;
   $("#mode").textContent=d.mode==="deepseek"?"史官在线 · 真模型质询":"离线模式 · 固定题库";
-  $("#footmode").textContent=d.mode==="deepseek"?"":"（无 API key）";
+  const fm=document.getElementById("footmode");if(fm)fm.textContent=d.mode==="deepseek"?"":"（无 API key）";
   fill("V02,V05,V01".split(","),$("#k1cards"));
   fill("E03,E04,D01".split(","),$("#k2cards"));
   fill("E09,E10,E11,E12,T02".split(","),$("#k4cards"));
   fill("U09,D10,D11,D12".split(","),$("#k7cards"));
   $("#allrows").innerHTML=d.rows.map(cardHTML).join("");
-  buildSorter();buildRumors();
-  $("#choice").innerHTML=CHOICES.map(c=>`<option>${c}</option>`).join("");
-  verdicts();
-});
+  buildSorter();buildRumors();verdicts();
+}).catch(err=>{$("#mode").textContent="离线 · 证据库未连接";$("#mode").style.background="#7a1f1f";
+  const fm=document.getElementById("footmode");if(fm)fm.textContent="（server 没在跑？运行 py code/server.py）";
+  buildSorter();verdicts_safe()});
 // 壹 choice
 $$(".q1opt").forEach(b=>b.onclick=()=>{
   $$(".q1opt").forEach(x=>x.classList.remove("picked"));b.classList.add("picked");
@@ -363,7 +373,8 @@ $$(".q7opt").forEach(b=>b.onclick=()=>{
   $$(".q7opt").forEach(x=>x.classList.remove("picked"));b.classList.add("picked");
   $("#q7r").textContent="三层都开着门——这也是悬案教给我们的事：一个证据空了一个世纪，接住它的只能是委员会。"});
 // 终
-function verdicts(){req("GET","/api/verdicts").then(r=>{if(!r.total){$("#dist").innerHTML='<p class="meta">案卷现在空着——最先投进的这一票，将由你写入。</p>'}else drawDist(r)})}
+function verdicts_safe(){req("GET","/api/verdicts").then(r=>{if(!r.total){$("#dist").innerHTML='<p class="meta">案卷现在空着——最先投进的这一票，将由你写入。</p>'}else drawDist(r)}).catch(()=>{$("#dist").innerHTML='<p class="meta">（服务未连接，投票暂不可用）</p>'})}
+function verdicts(){verdicts_safe()}
 function drawDist(d){if(!d)return;$("#dist").innerHTML=`<p class="meta">案卷已收 ${d.total} 票</p><table class="datagrid">${(d.dist||[]).map(x=>
   `<tr><td style="width:10rem">${x[0]}</td><td>${"■".repeat(Math.max(1,Math.round(20*x[1]/Math.max(1,d.total))))} ${x[1]}</td></tr>`).join("")}</table>`}
 function vote(){const sel=$("#choice").value;
