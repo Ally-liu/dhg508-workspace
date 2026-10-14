@@ -57,7 +57,7 @@ def rule_interrogation(claim, pairs, ev_by_id):
     return "\n".join(parts)
 
 
-def deepseek_interrogation(claim, ev_rows, pairs):
+def deepseek_interrogation(claim, ev_rows, pairs, scene=""):
     ctx = {
         "sources_tiers": "L1原件/L2可靠出版/L3仅转述；官方/私记/报刊/科学/外国/学术",
         "evidence": [{"id": r["id"], "d": r.get("date_iso"), "stance": r["stance"],
@@ -73,7 +73,7 @@ def deepseek_interrogation(claim, ev_rows, pairs):
         "model": "deepseek-chat",
         "messages": [
             {"role": "system", "content": sysmsg + "\n证据JSON：" + json.dumps(ctx, ensure_ascii=False)},
-            {"role": "user", "content": f"体验者的推测与理由：\n{claim}\n\n请交叉讯问。"},
+            {"role": "user", "content": f"场景与在场NPC：\n{scene}\n\n体验者的来访者发言/理由：\n{claim}\n\n请以在场NPC身份对稿（有 [id] 一处不落一次问号）。"},
         ],
         "max_tokens": 420,
         "temperature": 0.6,
@@ -145,7 +145,7 @@ class H(BaseHTTPRequestHandler):
             enriched = claim + ("\n用户给出的排序：" + "；".join(det) if det else "")
             if KEY:
                 try:
-                    reply, usage = deepseek_interrogation(enriched, rows, pairs)
+                    reply, usage = deepseek_interrogation(enriched, rows, pairs, payload.get("scene") or "")
                     self._send({"mode": "deepseek", "reply": reply, "tokens": usage})
                     return
                 except Exception as e:
