@@ -60,3 +60,13 @@
   填空（server 选项表同步）；伍章补小问互动。JS v3 自查修补。
 - 注意：build_db 每次重建会清空 verdict/annotation——demo 前需改增量迁移，
   否则观众票会被洗掉。
+
+- 【M5 v4 game build】《廿一来信》七幕全实现：玩家=1913 驻京记者，史先生
+  =掌档 NPC（资料房"先生"）；含两张隐藏卡（E04 由表态解锁、D06 需主动
+  问饮食——均在文案里写明触发条件）、隔世匣明框跳帧（1913 与 2008 分离）、
+  click-to-place 排序、三贴签、四说对质、五案发稿（server CHOICES 同步
+  "我有新想法"、scene 注入 /api/ask）。自检：esprima 语法 OK、selector
+  id 核对 NONE missing、/game 200、真实 ask（scene 注入）5196/194 tokens。
+  上轮"一杆写"的教训落实：函数级替换 + 补丁脚本进 opencode temp，不污染
+  repo。
+- 老页保留 /ppt（/index.html 同义），/ 即游戏版。

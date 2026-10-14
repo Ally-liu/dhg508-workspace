@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>廿一来信 · 光绪之死解密</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--paper:#f6f0e1;--ink:#3a3226;--red:#8c3b2e;--gray:#a99f8c;--line:#d8cfba}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,"Noto Serif SC",serif;background:var(--paper);color:var(--ink);transition:filter .6s}
+body.dim{filter:brightness(.55) sepia(.25);transition:filter .9s}
+h1{font-size:1.9rem;letter-spacing:.25em;margin:.2rem 0}
+h2{letter-spacing:.4em;color:var(--red);text-align:center;font-size:1.02rem;margin:.2rem 0 .9rem}
+.wrap{max-width:760px;margin:0 auto;padding:2rem 1.2rem 4.6rem}
+.ink{font-size:.95rem;line-height:2.02}
+.ink p{margin:.5rem 0}
+.who{color:var(--red);font-weight:600;letter-spacing:.15em}
+.card{border:1px solid var(--line);background:#fbf7ec;padding:.55rem .8rem;margin:.45rem 0;font-size:.85rem}
+.badge{font-size:.66rem;border:1px solid var(--gray);padding:0 .3rem;margin-right:.3rem;white-space:nowrap}
+.badge.L3{color:var(--red)}.badge.private{color:#5a6b4d}.badge.official{color:var(--red)}
+.badge.science{color:#3d5a80}.badge.foreign{color:#6a4a7c}.badge.academic{color:#4a4a6a}
+.ev-text{line-height:1.8;margin-top:.3rem}
+.meta{color:var(--gray);font-size:.73rem}
+sup.ref{color:var(--gray);font-size:.62em;cursor:pointer}
+sup.ref:hover{color:var(--red)}
+.bar{background:#433988;color:#e7e3ff;padding:.2rem .5rem;display:inline-block;font-size:.78rem}
+button.go{background:var(--red);color:#fff;border:none;padding:.55rem 1.5rem;letter-spacing:.25em;cursor:pointer;font-family:inherit;font-size:.93rem}
+button.go.dim{background:#6b6152}
+button.opt{display:block;border:1px solid var(--gray);background:#fbf7ec;padding:.5rem .8rem;margin:.4rem 0;cursor:pointer;font-family:inherit;font-size:.9rem;width:100%;text-align:left}
+button.opt:hover{border-color:var(--red)}
+button.opt.picked{border-color:var(--red);background:#f2e4dd}
+input[type=text]{font-family:inherit;width:100%;border:1px solid var(--gray);background:#fbf7ec;padding:.5rem;margin:.35rem 0}
+.pool{display:flex;flex-wrap:wrap;gap:.45rem}
+.item{border:1px solid var(--line);background:#fbf7ec;padding:.4rem .55rem;cursor:pointer;font-size:.83rem}
+.slot{border:1px solid var(--line);background:#f2ecdc;padding:.32rem .5rem;margin:.3rem 0;min-height:2.8rem;display:flex;gap:.5rem;align-items:center;font-size:.83rem}
+.no{color:var(--red);font-weight:700;width:1.25rem}
+#reply{white-space:pre-wrap;border:1px dashed var(--gray);background:#fbf7ec;padding:.8rem;margin-top:.5rem;display:none}
+.big{font-size:2.5rem;color:var(--red);font-weight:700}
+.hidden-card{display:none;border:2px solid var(--red);background:#fdf6d8;padding:.7rem .8rem;margin:.55rem 0}
+.hc-name{color:var(--red);font-weight:700;letter-spacing:.2em}
+.rumor label{margin-right:.7rem;font-size:.87rem}
+.hypo{border:1px solid var(--line);background:#fbf7ec;padding:.6rem .8rem;margin:.5rem 0}
+.hypo h4{margin:.1rem 0 .35rem;letter-spacing:.2em;font-size:.92rem}
+.hypo .meta{line-height:1.75}
+table{border-collapse:collapse;width:100%}
+td{padding:.28rem 0;border-bottom:1px solid var(--line);font-size:.88rem}
+#srcpanel{position:fixed;inset:auto 0 0 0;max-height:44%;overflow:auto;background:#fbf7ec;border-top:2px solid var(--red);box-shadow:0 -6px 18px rgba(0,0,0,.22);z-index:20;display:none;padding:1rem 1.3rem}
+#scanbox{border:1px solid var(--gray);background:repeating-linear-gradient(-3deg,#efe7d3,#efe7d3 7px,#e9dfc7 8px);height:11rem;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:.82rem;letter-spacing:.2em}
+.hl{background:#ffe9a8;padding:0 .2rem}
+.actsbar{position:fixed;bottom:0;left:0;right:0;background:#e9e0cb;border-top:1px solid var(--line);display:flex;justify-content:center;gap:.4rem;padding:.5rem}
+.actsbar span{width:.7rem;height:.7rem;border:1px solid var(--gray);border-radius:50%}
+.actsbar span.on{background:var(--ink)}
+#errbar{position:fixed;top:0;left:0;right:0;display:none;background:#7a1f1f;color:#fff;font-size:.74rem;padding:.35rem 1rem;z-index:30}
+</style>
+</head>
+<body>
+<div id="errbar"></div>
+<div class="wrap" id="app"></div>
+<div id="srcpanel"></div>
+<div class="actsbar" id="actsbar"></div>
+
+<script>
+window.addEventListener("error",function(e){var b=document.getElementById("errbar");b.style.display="block";b.textContent="JS: "+e.message+" @line "+e.lineno});
+window.addEventListener("unhandledrejection",function(e){var b=document.getElementById("errbar");b.style.display="block";b.textContent="网络/脚本错："+((e.reason&&e.reason.message)||e.reason)});
+
+var ORDER=["E03","E07","E08","E09","E11","G07"];
+var GLOSS={E03:"万寿贺寿被拒（懿旨免礼）",E07:"太监提前剃头、扬言驾崩",E08:"传旨授载沣摄政",E09:"皇后探视才见已崩",E11:"李莲英令草草入殓",G07:"定策立溥仪（次日公布）"};
+var NPC={yun:"恽毓鼎",du:"杜钟骏",neiwu:"内务府旧人",taij:"老太监",wai:"外报同行",shi:"史先生"};
+var CHOICES=["慈禧授意","袁世凯进药","李莲英近侍","久病自然亡","我有新想法"];
+var RUMORS=[["V03","遗诏有诛袁之命"],["G01","李莲英与太后有密谋"],["U07","外报：死者相距太近使人生疑"]];
+var BYID={},SRCS={},STATE=null;
+var $=function(q){return document.querySelector(q)};
+var $$=function(q){return Array.prototype.slice.call(document.querySelectorAll(q))};
+function link(s){return String(s).replace(/\[([A-Z]\d+)\]/g,'<sup class="ref" data-id="$1">[$1]</sup>')}
+function req(m,u,b){return fetch(u,{method:m,headers:{"Content-Type":"application/json"},body:b?JSON.stringify(b):undefined}).then(function(r){return r.json()})}
+function save(){localStorage.setItem("ky21",JSON.stringify(STATE))}
+function load(){try{STATE=JSON.parse(localStorage.getItem("ky21"))}catch(e){STATE=null}
+ if(!STATE||STATE.v!=="3")STATE={v:"3",act:0,order:[],picked1:null,picked_attn:{},extra:{},hidden_visit:{}};
+ return STATE}
+function say(name,text){return '<p><span class="who">'+NPC[name]+'：</span>'+link(text)+'</p>'}
+function badge(e){var st={private:"私记",official:"官方",press:"报刊",science:"科学",foreign:"外国",academic:"学术"},ti={L1:"一手原件",L2:"可靠出版",L3:"仅见转述"};
+ return '<span class="badge '+(e.tier||"L2")+'">'+(ti[e.tier]||e.tier)+'</span> <span class="badge '+(e.stance||"private")+'">'+(st[e.stance]||e.stance)+'</span>'}
+function cardHTML(id,open){var e=BYID[id];if(!e)return"";
+ return '<details class="card"'+(open?" open":"")+'><summary>'+badge(e)+' <span class="meta">[id] '+(e.date_orig||"")+'</span></summary><div class="ev-text">'+e.text+'</div><div class="meta">来源：'+(SRCS[e.source_id]?SRCS[e.source_id].title+(SRCS[e.source_id].note?" · "+SRCS[e.source_id].note:""):"")+'</div></details>'}
+function srcinfo(e){return SRCS[e.source_id]?SRCS[e.source_id].title+(SRCS[e.source_id].note?" · "+SRCS[e.source_id].note:""):""}
+function openSrc(id){var e=BYID[id];if(!e)return;var P=$("#srcpanel");
+ P.innerHTML='<div><b>['+e.id+']</b> '+badge(e)+' <span class="meta">（点击面板收起）</span></div>'+
+ '<div id="scanbox" style="margin-top:.5rem">史料扫描件 · 待征集（sources/raw/scans/'+e.id+'.jpg）</div>'+
+ '<div class="ev-text" style="margin-top:.6rem"><span class="hl">'+e.text+'</span></div>'+
+ '<div class="meta" style="margin-top:.4rem">来源：'+srcinfo(e)+'</div>';
+ P.style.display="block"}
+
+var SCENES=[null,null,null,null,null,null];
+
+SCENES[0]=function(){
+ $("#app").innerHTML=
+ '<h1>廿一来信</h1><div style="text-align:center;margin:.4rem 0 1.1rem"><span id="mode" class="bar">…</span></div>'+
+ '<div class="ink">'+
+ '<p>癸丑年冬，北京。崇陵成，奉安在即——各报馆都派人往西陵去，做最后一次"清宫旧闻"。</p>'+
+ '<p>你是《申报》新到任的驻京记者，上头只给一句话：<b>大人物之外，得有人。</b></p>'+
+ say("shi","今早收工时打门缝里塞进来的。没署名，没邮戳——你看看。")+
+ '<p>信纸上一行小楷：<b>"廿一小时。两宫同日。问档房，见信便见。"</b></p>'+
+ '<p>你نش知道：往上翻，是光绪的崩逝，相隔慈禧只一天——十几年过去，到底还没个公认的说法。<sup class="ref" data-id="E13">[E13]</sup></p>'+
+ '<p class="meta">你的目标：用一条采访线把"廿一小时"写明白——稿子里每个字都得有出处；没有出处的，就照实写"档房未见，存讯"</p>'+
+ '<div style="text-align:center;margin-top:1rem"><button class="go" onclick="show(1)">接 信</button></div></div>'};
+
+SCENES[1]=function(){
+ var c1=cardHTML("E04",true);
+ $("#app").innerHTML=
+ '<h2>第一问 · 喜色</h2><div class="ink">'+
+ '<p>档房。史先生把当夜的三页抄件放在灯下。</p>'+
+ say("shi","十月初十，皇帝入德昌门，是在练跪拜——两脚起落，扶着太监的肩。"+'<sup class="ref" data-id="E03">[E03]</sup>')+
+ say("shi","随后懿旨到：皇帝臥病在床，免率百官行禮。" +'<sup class="ref" data-id="E03">[E03]</sup>')+
+ '<div class="card"><div>'+badge(BYID["E04"]||{tier:"L2",stance:"private"})+'<div class="ev-text">'+(BYID["E04"]?BYID["E04"].text:"（库里这行未加载）")+'</div><div class="meta">来源：'+(BYID["E04"]?srcinfo(BYID["E04"]):"")+'</div></div></div>'+
+ say("yun","那三个字——闻者云云。臣不敢移以直笔。")+
+ '<p><b>采访本第一笔</b>（决定你信哪张嘴）：</p>'+
+ '<button class="opt q1opt" data-v="诬告">诬告——监军的嘴里造出来的话</button>'+
+ '<button class="opt q1opt" data-v="实情">实情——那传话的太监是最后一程见过皇帝的人</button>'+
+ '<p class="meta" id="r1"></p>'+
+ '<div id="hc1"></div>'+
+ '<div style="margin-top:.6rem"><button class="go" onclick="show(2)">采访准入 · 下一站</button></div></div>';
+ $$(".q1opt").forEach(function(b){b.onclick=function(){
+   $$(".q1opt").forEach(function(x){x.classList.remove("picked")});b.classList.add("picked");
+   STATE.picked1=b.dataset.v;save();
+   $("#r1").textContent=(b.dataset.v==="诬告"
+     ?"你选「诬告」。可无论哪边，这三个字都还是转述链上的字，原件未见。"
+     :"你选「实情」。那么传话的太监，是最后一程见到皇帝的人——记住这条线。");
+   $("#hc1").innerHTML='<div class="hidden-card" style="display:block"><span class="hc-name">获得卡 · 恽毓鼎松口</span>'+
+     '<div class="ev-text">'+link("「我不能先爾死！」——原话见")+'<sup class="ref" data-id="E04">[E04]</sup>；四年之前，外使内田康哉已先听闻此荐读。<sup class="ref" data-id="D01">[D01]</sup></div></div>'}})};
+
+SCENES[2]=function(){
+ $("#app").innerHTML=
+ '<h2>第一幕 · 排那张夜（点选）</h2><div class="ink">'+
+ say("shi","你们自己人也没说齐：有说天不亮就出事了的，有说傍晚才咽气的。把这些事排成你认的顺序，我拿卷宗来对你。")+
+ '<p class="meta">怎么玩：点左栏一张卡 → 它填入右栏下一个空位；点右栏已排好的卡 → 撤回左栏。下面 [id] 页面括号是白话。</p>'+
+ '<div style="display:flex;gap:1.1rem;align-items:flex-start">'+
+ '<div style="flex:1"><p class="meta">待排卡片</p><div id="pool" class="pool"></div></div>'+
+ '<div style="flex:1"><p class="meta">你的顺序</p><div id="slots"></div></div></div>'+
+ '<input type="text" id="claim" placeholder="那夜你最怀疑的一件事，一句话（可空）">'+
+ '<button class="go" onclick="ask()">呈堂 · 请史先生对稿</button><div id="reply"></div>'+
+ '<div id="ask ctx" style="display:none"></div>'+
+ '<p style="margin-top:.8rem"><button class="go" onclick="show(3)">据众证 · 下一站</button></p></div>';
+ buildSorter()};
+
+SCENES[3]=function(){
+ $("#app").innerHTML=
+ '<h2>第二幕 · 街面三件 + 四证对质</h2><div class="ink">'+
+ say("taij","后来我摆摊教经络，人问起十月初九十九那些夜……" +'<sup class="ref" data-id="E07">[E07]</sup> 老佛爷身边的"塌喇"盖碗，外头说法多了。')+
+ say("wai","《泰晤士报》把两人死得太近写进电文了；NYT 说令人疑窦丛生——" +'<sup class="ref" data-id="U07">[U07]</sup> <sup class="ref" data-id="U06">[U06]</sup>')+
+ say("du","医行里说：进过一剂「利剂」，从此泄泻不止——" +'<sup class="ref" data-id="G04">[G04]</sup> 此话不敢再往上递。')+
+ '<p class="meta">三条传闻，各贴一签（你的态度将上墙）：</p><div id="rumors"></div>'+
+ '<button class="go" onclick="annot()">贴签落实</button><p class="meta" id="annr"></p>'+
+ '<h2 style="margin-top:1rem">对质 · 四说</h2>'+
+ '<div class="hypo"><h4>① 久病自然亡</h4><div class="meta">依据：脉案连续恶化 <sup class="ref" data-id="D09">[D09]</sup> · 1980 首检无外伤中毒 <sup class="ref" data-id="U09">[U09]</sup>（隔世证 · 见后）<br>破绽：恽毓鼎总评"三十四年无疾病" <sup class="ref" data-id="V01">[V01]</sup> · 陆润庠"本无病" <sup class="ref" data-id="G03">[G03]</sup> · 入诊者称六脉平和 <sup class="ref" data-id="E01">[E01]</sup></div></div>'+
+ '<div class="hypo"><h4>② 慈禧授意</h4><div class="meta">依据："我不能先爾死" <sup class="ref" data-id="E04">[E04]</sup> · 伍廷芳外使预言 <sup class="ref" data-id="D01">[D01]</sup><br>破绽：无一处文书实证 <sup class="ref" data-id="D10">[D10]</sup>（隔世证 · 见后）</div></div>'+
+ '<div class="hypo"><h4>③ 袁世凯进药</h4><div class="meta">依据：老太监"一剂药就坏了" <sup class="ref" data-id="T04">[T04]</sup> · 遗诏诛袁传闻 <sup class="ref" data-id="V03">[V03]</sup><br>破绽：御药有试毒定制 <sup class="ref" data-id="S51">[S51]</sup> · 无"塌喇"到"袁药"的桥梁 <sup class="ref" data-id="D06">[D06]</sup></div></div>'+
+ '<div class="hypo"><h4>④ 李莲英近侍</h4><div class="meta">依据："瀛台毒计" [T05] · "藏于李辈" [T03]<br>破绽：素行不符 <sup class="ref" data-id="S51">[S51]</sup> · 回忆文学性，恒为"仅见转述" <sup class="ref" data-id="T05">[T05]</sup></div></div>'+
+ '<p><b>四证质辩</b>——你最买谁的眼色？</p>'+
+ '<button class="opt qqopt">①脉案全部可信，各方口述存以怀疑</button>'+
+ '<button class="opt qqopt">②恽毓鼎亲历，但"此言臣不敢出"——他自己也怕</button>'+
+ '<button class="opt qqopt">③外报的悬疑，第一位起哄</button>'+
+ '<button class="opt qqopt">④库里证据到哪儿说得动，我的稿就到哪儿</button>'+
+ '<p class="meta" id="qr"></p>'+
+ '<div style="margin-top:.6rem"><button class="go" onclick="show(4)">史先生跟你说起一口黑匣子</button></div></div>';
+ buildRumors()};
+
+SCENES[4]=function(){
+ document.body.className="dim";
+ var self=this;
+ setTimeout(function(){
+  document.body.className="";
+  $("#app").innerHTML=
+  '<h2>隔世匣（跳帧）</h2><div class="ink">'+
+  say("shi","这个底下压着几页——不是你们这一世界的东西。2008、1980，都是后来的年号。念之前，先把 1913 摘掉。")+
+  '<div class="card">'+badge(BYID["U09"]||{tier:"L2",stance:"science"})+'<div class="ev-text">'+(BYID["U09"]?BYID["U09"].text:"1980年清理崇陵，未发现外伤及中毒迹象")+'</div></div>'+
+  '<div class="card">'+badge(BYID["D10"]||{tier:"L2",stance:"science"})+'<div class="ev-text">光绪两缕头发，剪段测砷——最高值 <b><span class="big" id="asnum">0</span> 微克/克</b>（2008），结论："系砒霜中毒死亡"。'+(BYID["D10"]?"":"")+'报告不指凶手。</div><div class="meta">来源：'+(BYID["D10"]?srcinfo(BYID["D10"]):"")+'</div></div>'+
+  '<div class="card">'+badge(BYID["D12"]||{tier:"L2",stance:"science"})+'<div class="ev-text">两篇转述一篇"毫克"一篇"微克"——转述也会打架，照录原件才是头一条规矩。</div></div>'+
+  '<p><b>边界题</b>：报告证明了"毒"、没证明"谁"——你的稿子要怎么写这一段？（写一句，对稿）</p>'+
+  '<input type="text" id="claim" placeholder="例如：1908年的凶手问题在2008年依然无解——但不行：报告到底证明到哪儿为止？">'+
+  '<button class="go" onclick="askC()">对稿 · 史先生逐字校</button><div id="reply"></div>'+
+  '<div style="margin-top:.8rem"><button class="go" onclick="show(5)">发 板 · 终稿</button></div></div>';
+  countUp("asnum");},900)};
+
+SCENES[5]=function(){
+ $("#app").innerHTML=
+ '<h2>发稿 · 案卷</h2><div class="ink">'+
+ say("shi","报馆的版面上，你的稿子只能有四行——落哪一个？(掺潮流的话也可以是你的)"+
+ '<div class="ev-text">'+link("四说各有依据与破绽；2008 报告只证明死因。")+'</div>')+
+ '<select id="choice"></select>'+
+ '<div id="newidea" style="display:none"><input type="text" id="newtext" placeholder="写你的新想法（作为公开一票）"></div>'+
+ '<input type="text" id="reason" placeholder="一句话理由（可空，公开陈列）">'+
+ '<button class="go" onclick="vote()">入 卷</button><div id="dist" style="margin-top:.8rem"></div>'+
+ '<p class="meta" id="coda"></p>'+
+ '<div style="margin-top:1rem"><details class="card"><summary>自由审阅 · 全库证据</summary><div id="allrows"></div></details></div></div>';
+ $("#choice").innerHTML=CHOICES.map(function(c){return '<option>'+c+'</option>'}).join("");
+ $("#choice").onchange=function(){$("#newidea").style.display=this.value==="我有新想法"?"block":"none"};
+ $("#allrows").innerHTML=Object.keys(BYID).map(function(id){return cardHTML(id)}).join("");
+ verdicts()};
+
+function show(i){STATE.act=i;save();paintActs();(SCENES[i]||SCENES[0])();window.scrollTo(0,0)}
+function paintActs(){$("#actsbar").innerHTML=[0,1,2,3,4,5].map(function(i){return '<span class="'+(STATE.act>=i?"on":"")+'"></span>'}).join("")}
+
+function countUp(elId){var el=document.getElementById(elId);if(!el)return;
+ var ob=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){var n=0;
+  var t=setInterval(function(){n+=40;if(n>=2404){n=2404;clearInterval(t)}el.textContent=n},30);ob.disconnect()}})},{threshold:.4});
+ ob.observe(el)}
+
+function buildSorter(){
+ var shuffled=ORDER.map(function(x){return x});
+ for(var i=shuffled.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=shuffled[i];shuffled[i]=shuffled[j];shuffled[j]=t}
+ $("#pool").innerHTML=shuffled.map(function(id){return itemHTML(id)}).join("");
+ $("#slots").innerHTML=ORDER.map(function(_,i){return slotHTML(i+1)}).join("");
+ STATE.order=[];save();
+ bindAll()}
+function itemHTML(id){var e=BYID[id];
+ return '<div class="item" data-id="'+id+'"><span><b style="font-size:.8em">['+id+']</b> '+
+  (e?e.text.slice(0,24)+"…":"")+'</span><span class="meta" style="display:block">'+GLOSS[id]+'</span></div>'}
+function slotHTML(i){return '<div class="slot" data-i="'+i+'"><span class="no">'+i+'</span><span class="holder">（点击左卡填入）</span></div>'}
+function bindAll(){
+ $$("#pool .item").forEach(function(it){it.onclick=function(){place(it)}});
+ $$("#slots .slot").forEach(function(s){s.onclick=function(){unplace(s)}})}
+function place(it){var slots=$$("slot".indexOf?"#slots .slot":"");
+ for(var k=0;k<slots.length;k++){var s=slots[k];
+  if(!s.querySelector(".item")){STATE.order[k]=it.dataset.id;break}}
+ if(STATE.order[k]===undefined)return;
+ var holderEl=s.querySelector(".holder");if(holderEl)holderEl.remove();
+ if(s.querySelector(".item"))return;
+ it.remove();s.appendChild(it);save()}
+function unplace(s){var it=s.querySelector(".item");if(!it)return;STATE.order[parseInt(s.dataset.i)-1]=null;
+ var pool=$("#pool");pool.appendChild(it);save();bindAll()}
+function curOrder(){return $$(".slot").map(function(s){var x=s.querySelector(".item");return x?x.dataset.id:null}).filter(Boolean)}
+
+function ask(){var claim=document.querySelector("#claim").value.trim();
+ document.querySelector("#reply").style.display="block";
+ document.querySelector("#reply").textContent="史先生卷宗核对中……";
+ var scene="游戏场景（1913年冬，报馆资料房）：史先生（掌档人，只依卷宗）在场。年代纪律：1913年后史料不可引用。玩家排序："+curOrder().join("→");
+ req("POST","/api/ask",{claim:claim,order:curOrder(),scene:scene}).then(function(r){
+ document.querySelector("#reply").innerHTML="<b>"+r.mode+"</b>"+link(r.reply)+(r.tokens?'<span class="meta">tokens in '+(r.tokens.prompt_tokens||"?")+" / out "+(r.tokens.completion_tokens||"?")+"</span>":"")})}
+
+
+function askC(){var claim=$("#claim").value.trim();
+ $("#reply").style.display="block";$("#reply").textContent="隔世匣口径校准中……";
+ req("POST","/api/ask",{claim:claim,order:[],scene:"隔世匣场景：仅依 2008 报告边界。若玩家越界界定，请指明哪些行未被证明。"}).then(function(r){
+ $("#reply").innerHTML="<b>"+r.mode+"</b>"+link(r.reply)})}
+
+
+function buildRumors(){var box=$("#rumors");
+ box.innerHTML=RUMORS.map(function(r){var id=r[0],name=r[1];var e=BYID[id];
+  return '<div class="rumor card"><b>'+name+'</b> <sup class="ref" data-id="'+id+'">['+id+']</sup> '+(e?badge(e):"")+
+  '<div class="ev-text">'+(e?e.text.slice(0,64)+"…":"")+'</div>'+
+  '<div style="margin-top:.3rem"><label><input type="radio" name="r_'+id+'" value="信">信</label>'+
+  '<label><input type="radio" name="r_'+id+'" value="不信">不信</label>'+
+  '<label><input type="radio" name="r_'+id+'" value="说不准">说不准</label></div></div>'}).join("")}
+function annot(){var items=RUMORS.map(function(r){var el=document.querySelector('input[name="r_'+r[0]+'"]:checked');
+ return {rumor:r[1],stance:el?el.value:"说不准"}});
+ req("POST","/api/annotate",{items:items}).then(function(){$("#annr").textContent="已上墙。下一个来的人，会看到你这一签。"})}
+
+function verdicts(){req("GET","/api/verdicts").then(function(r){
+ if(!r.total){$("#dist").innerHTML='<p class="meta">案卷空着——你的这票就是第一行。</p>'}else drawDist(r)}).catch(function(){$("#dist").innerHTML='<p class="meta">（服务未连接，投票暂不可用）</p>'})}
+function drawDist(d){if(!d)return;$("#dist").innerHTML='<p class="meta">案卷已收 '+d.total+' 票</p><table>'+((d.dist||[]).map(function(x){
+ return '<tr><td style="width:10rem">'+x[0]+'</td><td>'+"■".repeat(Math.max(1,Math.round(20*x[1]/Math.max(1,d.total))))+' '+x[1]+'</td></tr>'}).join(""))+'</table>'}
+function vote(){var sel=$("#choice").value;
+ var reason=sel==="我有新想法"?($("#newtext").value.trim()||"（未填）"):$("#reason").value.trim();
+ if(sel==="我有新想法"&&!$("#newtext").value.trim()){alert("新想法要填一行再投");return}
+ req("POST","/api/verdict",{choice:sel,reason:reason}).then(drawDist);
+ var coda={ "慈禧授意":"你的号外也算一页：廿一小时仍未定案，vasion仍在出刊。", "袁世凯进药":"你的号外也上了版：卷宗合上，匿名信的另一端没有回音。", "李莲英近侍":"你签发了：史先生把今天的采访本合上，灯还亮着。", "久病自然亡":"你的结论写：不是每一桩死都要有凶手——但廿一小时的沉默，仍要想说。", "我有新想法":"你的新想法已入卷，(编者按语随后来稿的人一起到)。"}[sel]||"";
+ $("#coda").textContent=coda+" （这一票，会出现在下一位玩家的案卷上。）"}
+
+function boot(){load();
+ document.addEventListener("click",function(ev){var t=ev.target.closest?ev.target.closest("sup.ref"):null;if(t)openSrc(t.dataset.id)});
+ $("#srcpanel").addEventListener("click",function(){this.style.display="none"});
+ req("GET","/api/timeline").then(function(d){BYID={};d.rows.forEach(function(r){BYID[r.id]=r});SRCS=d.sources;
+  var m=$("#mode");if(m)m.textContent=d.mode==="deepseek"?"史先生在线 · 真模型对稿":"史先生暂离（离线对稿）";
+ }).catch(function(){var m=$("#mode");if(m)m.textContent="史先生暂离（无法连接证据库）"});
+ show(STATE.act||0)}
+window.addEventListener("load",boot);
+</script>
+</body>
+</html>
