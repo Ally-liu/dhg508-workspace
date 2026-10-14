@@ -112,7 +112,9 @@ class H(BaseHTTPRequestHandler):
         self.wfile.write(data)
 
     def do_GET(self):
-        if self.path in ("/", "/index.html"):
+        if self.path == "/":
+            page = (STATIC / "game.html").read_bytes()
+        elif self.path in ("/index.html", "/ppt"):
             page = (STATIC / "index.html").read_bytes()
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
