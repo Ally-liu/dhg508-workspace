@@ -191,14 +191,18 @@ SCENES[5]=function(){
  '<input type="text" id="reason" placeholder="一句话理由（可空，公开陈列）">'+
  '<button class="go" onclick="vote()">入 卷</button><div id="dist" style="margin-top:.8rem"></div>'+
  '<p class="meta" id="coda"></p>'+
- '<div style="margin-top:1rem"><details class="card"><summary>自由审阅 · 全库证据</summary><div id="allrows"></div></details></div></div>';
+ '<div style="margin-top:1rem"><details class="card"><summary>自由审阅 · 全库证据</summary><div id="allrows"></div></details></div>'+
+ '<div style="text-align:center;margin-top:1.2rem">'+
+ '<button class="go dim" onclick="show(4)">重看隔世匣</button>&nbsp;'+
+ '<button class="go dim" onclick="restart()">案捲归零 · 重玩</button></div></div>';
  $("#choice").innerHTML=CHOICES.map(function(c){return '<option>'+c+'</option>'}).join("");
  $("#choice").onchange=function(){$("#newidea").style.display=this.value==="我有新想法"?"block":"none"};
  $("#allrows").innerHTML=Object.keys(BYID).map(function(id){return cardHTML(id)}).join("");
  verdicts()};
 
 function show(i){STATE.act=i;save();paintActs();(SCENES[i]||SCENES[0])();window.scrollTo(0,0)}
-function paintActs(){$("#actsbar").innerHTML=[0,1,2,3,4,5].map(function(i){return '<span class="'+(STATE.act>=i?"on":"")+'"></span>'}).join("")}
+function paintActs(){var dots=[0,1,2,3,4,5].map(function(i){return '<span class="'+(STATE.act>=i?"on":"")+'"></span>'}).join("");
+ $("#actsbar").innerHTML=(STATE.act>0?'<button class="go dim" style="padding:.15rem .7rem;font-size:.8rem;margin-right:.6rem" onclick="show('+(STATE.act-1)+')">‹ 回上一页</button>':"")+dots}
 
 function countUp(elId){var el=document.getElementById(elId);if(!el)return;
  var ob=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){var n=0;
@@ -266,6 +270,7 @@ function vote(){var sel=$("#choice").value;
  var coda={ "慈禧授意":"你的号外也算一页：廿一小时仍未定案，vasion仍在出刊。", "袁世凯进药":"你的号外也上了版：卷宗合上，匿名信的另一端没有回音。", "李莲英近侍":"你签发了：史先生把今天的采访本合上，灯还亮着。", "久病自然亡":"你的结论写：不是每一桩死都要有凶手——但廿一小时的沉默，仍要想说。", "我有新想法":"你的新想法已入卷，(编者按语随后来稿的人一起到)。"}[sel]||"";
  $("#coda").textContent=coda+" （这一票，会出现在下一位玩家的案卷上。）"}
 
+function restart(){localStorage.removeItem("ky21");STATE=null;load();document.body.className="";show(0)}
 function boot(){load();
  document.addEventListener("click",function(ev){var t=ev.target.closest?ev.target.closest("sup.ref"):null;if(t)openSrc(t.dataset.id)});
  $("#srcpanel").addEventListener("click",function(){this.style.display="none"});
