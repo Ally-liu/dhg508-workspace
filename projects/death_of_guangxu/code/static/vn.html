@@ -41,9 +41,9 @@ button.go{background:var(--red);color:#fff;border:none;padding:.55rem 1.5rem;let
 <body>
 <div id="stage">
 <div id="bg"></div><div id="paperfx"></div><div id="art"></div>
-<div id="topbar"><span id="mode" class="bar">…</span><span style="color:var(--gray);font-size:.7rem">音乐待配音源（先静音）</span></div>
+<div id="topbar"><span id="mode" class="bar">…</span><span id="dbg" style="color:var(--ink);font-size:.7rem;border:1px solid var(--gray);padding:.1rem .4rem;background:#fbf7ec">0/0</span><span style="color:var(--gray);font-size:.7rem">音乐待配音源（先静音）</span></div>
 <div id="opts"></div>
-<div id="dialog" onclick="adv()"><div id="who"></div><div id="txt"></div><span class="meta" style="position:absolute;right:.9rem;bottom:.45rem">▸ 点按或 回车 继续</span></div>
+<div id="dialog"><div id="who"></div><div id="txt"></div><span class="meta" style="position:absolute;right:.9rem;bottom:.45rem">▸ 点按或 回车 继续</span></div>
 </div>
 <div id="srcpanel"></div>
 <div id="errbar"></div>
@@ -177,7 +177,7 @@ function boot(){try{STATE=JSON.parse(localStorage.getItem("vn21"))}catch(e){STAT
  req("GET","/api/timeline").then(function(d){BYID={};d.rows.forEach(function(r){BYID[r.id]=r});SRCS=d.sources;
   $("#mode").textContent=d.mode==="deepseek"?"史先生在线 · 真模型对稿":"史先生暂离 · 离线";
   show()}).catch(function(){$("#mode").textContent="无法连接证据库（server 没在跑？）"})}
-window.addEventListener("load",boot);
+document.addEventListener("click",function(ev){var d=document.getElementById("dbg");STATE.clicks=(STATE.clicks||0)+1;d.textContent=nid+'/'+STATE.clicks;var t=ev.target.closest?ev.target.closest("sup.ref"):null;if(t){openSrc(t.dataset.id);return}var insideDlg=ev.target.closest?ev.target.closest("#dialog"):null;if(insideDlg){adv();ev.stopPropagation();return}});document.addEventListener("keydown",function(ev){if(ev.key==="Enter"||ev.key===" "||ev.key==="ArrowRight"){adv();ev.preventDefault()}});var _show=show;show=function(){_show();var d=document.getElementById("dbg");if(d)d.textContent=nid+"/"+(STATE.clicks||0)};window.addEventListener("load",boot);
 </script>
 </body>
 </html>
