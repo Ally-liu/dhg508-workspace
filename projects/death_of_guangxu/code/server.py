@@ -117,8 +117,8 @@ class H(BaseHTTPRequestHandler):
             page = (STATIC / "game.html").read_bytes()
         elif self.path in ("/index.html", "/ppt"):
             page = (STATIC / "index.html").read_bytes()
-        elif self.path in ("/game", "/game.html"):
-            page = (STATIC / "game.html").read_bytes()
+        elif self.path in ("/game", "/game.html", "/vn", "/vn.html"):
+            page = (STATIC / "vn.html").read_bytes()
         if page is not None:
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")

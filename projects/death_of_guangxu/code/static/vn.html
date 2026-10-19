@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>廿一来信 · 视觉小说版</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--paper:#f6f0e1;--ink:#3a3226;--red:#8c3b2e;--gray:#a99f8c;--line:#d8cfba}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,"Noto Serif SC",serif;background:#1c1913;color:var(--ink);overflow:hidden}
+#stage{position:relative;height:100vh;background:var(--paper)}
+#bg{position:absolute;inset:0;transition:opacity .8s}
+#art{position:absolute;bottom:0;left:0;right:0;height:62%;display:flex;justify-content:center;align-items:flex-end;gap:0;pointer-events:none}
+#art svg{height:88%;opacity:0;transition:opacity .6s;filter:drop-shadow(0 0 12px rgba(0,0,0,.25))}
+#art svg.on{opacity:.92}
+#paperfx{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 30%,rgba(255,240,200,.10),rgba(60,40,10,.28))}
+#dialog{position:absolute;left:4%;right:4%;bottom:2.2rem;background:rgba(251,247,236,.96);border:1px solid var(--line);border-left:5px solid var(--red);padding:1rem 1.3rem;min-height:9.5rem;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,.3)}
+#who{color:var(--red);letter-spacing:.25em;font-weight:600;margin-bottom:.35rem}
+#txt{font-size:.98rem;line-height:1.95;min-height:4.6rem}
+#txt .ev-text{display:block;margin-top:.6rem;font-size:.86rem}
+#txt .meta{display:block;margin-top:.35rem}
+sup.ref{color:var(--gray);font-size:.62em;cursor:pointer}
+sup.ref:hover{color:var(--red)}
+.badge{font-size:.66rem;border:1px solid var(--gray);padding:0 .3rem;margin-right:.3rem;white-space:nowrap}
+.badge.L3{color:var(--red)}.badge.private{color:#5a6b4d}.badge.official{color:var(--red)}
+.badge.science{color:#3d5a80}.badge.foreign{color:#6a4a7c}.badge.academic{color:#4a4a6a}
+#opts{position:absolute;right:4%;bottom:13.5rem;width:300px;display:none;z-index:5}
+button.opt{display:block;border:1px solid var(--gray);background:rgba(251,247,236,.97);padding:.55rem .8rem;margin:.4rem 0;cursor:pointer;font-family:inherit;font-size:.92rem;width:100%;text-align:left}
+button.opt:hover{border-color:var(--red)}
+button.go{background:var(--red);color:#fff;border:none;padding:.55rem 1.5rem;letter-spacing:.25em;cursor:pointer;font-family:inherit}
+#topbar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:.5rem 1rem;z-index:6}
+.bar{background:#433988;color:#e7e3ff;padding:.2rem .5rem;display:inline-block;font-size:.78rem}
+.meta{color:var(--gray);font-size:.74rem}
+#snd{cursor:pointer;background:none;border:1px solid var(--gray);color:var(--ink);font-family:inherit;padding:.15rem .5rem}
+#srcpanel{position:fixed;inset:auto 0 0 0;max-height:44%;overflow:auto;background:#fbf7ec;border-top:2px solid var(--red);box-shadow:0 -6px 18px rgba(0,0,0,.35);z-index:25;display:none;padding:1rem 1.3rem}
+#scanbox{border:1px solid var(--gray);background:repeating-linear-gradient(-3deg,#efe7d3,#efe7d3 7px,#e9dfc7 8px);height:11rem;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:.8rem;letter-spacing:.2em}
+.hl{background:#ffe9a8;padding:0 .2rem}
+#errbar{position:fixed;top:0;left:0;right:0;display:none;background:#7a1f1f;color:#fff;font-size:.74rem;padding:.3rem 1rem;z-index:40}
+</style>
+</head>
+<body>
+<div id="stage">
+<div id="bg"></div><div id="paperfx"></div><div id="art"></div>
+<div id="topbar"><span id="mode" class="bar">…</span><button id="snd" onclick="toggleSnd()">♪ 关</button></div>
+<div id="opts"></div>
+<div id="dialog" onclick="adv()"><div id="who"></div><div id="txt"></div></div>
+</div>
+<div id="srcpanel"></div>
+<div id="errbar"></div>
+<script>
+window.addEventListener("error",function(e){var b=document.getElementById("errbar");b.style.display="block";b.textContent="JS: "+e.message+" @line "+e.lineno});
+var $=function(q){return document.querySelector(q)};
+function req(m,u,b){return fetch(u,{method:m,headers:{"Content-Type":"application/json"},body:b?JSON.stringify(b):undefined}).then(function(r){return r.json()})}
+var BYID={},SRCS={},STATE,nid=0,pi=0,BGM=null;
+function link(s){return String(s).replace(/\[([A-Z]\d+)\]/g,'<sup class="ref" data-id="$1">[$1]</sup>')}
+function badge(e){var st={private:"私记",official:"官方",press:"报刊",science:"科学",foreign:"外国",academic:"学术"},ti={L1:"一手原件",L2:"可靠出版",L3:"仅见转述"};
+ return '<span class="badge '+(e.tier||"L2")+'">'+(ti[e.tier]||e.tier)+'</span> <span class="badge '+(e.stance||"private")+'">'+(st[e.stance]||e.stance)+'</span>'}
+function cardHTML(id){var e=BYID[id];if(!e)return"";return '<details class="card" open><summary>'+badge(e)+' [id] '+(e.date_orig||"")+'</summary><div class="ev-text">'+e.text+'</div><div class="meta">来源：'+(SRCS[e.source_id]?SRCS[e.source_id].title:"")+'</div></details>'}
+function openSrc(id){var e=BYID[id];if(!e)return;var P=$("#srcpanel");
+ P.innerHTML='<div><b>['+e.id+']</b> '+badge(e)+'</div><div id="scanbox" style="margin-top:.5rem">史料扫描件 · 待征集</div><div class="ev-text" style="margin-top:.6rem"><span class="hl">'+e.text+'</span></div><div class="meta" style="margin-top:.4rem">来源：'+(SRCS[e.source_id]?SRCS[e.source_id].title:"")+'</div>';
+ P.style.display="block"}
+$("#srcpanel").addEventListener("click",function(){this.style.display="none"});
+document.addEventListener("click",function(ev){var t=ev.target.closest?ev.target.closest("sup.ref"):null;if(t)openSrc(t.dataset.id)});
+// BGM: procedural 更漏
+var AC=null,on=true;
+function tick(){if(!on||!AC)return;var o=AC.createOscillator(),g=AC.createGain();o.type="sine";o.frequency.value=880;
+ g.gain.setValueAtTime(.12,AC.currentTime);g.gain.exponentialRampToValueAtTime(.0001,AC.currentTime+.18);
+ o.connect(g);g.connect(AC.destination);o.start();o.stop(AC.currentTime+.2)}
+function toggleSnd(){on=!on;$("#snd").textContent=on?"♪ 关":"♪ 开"}
+function startAudio(){try{AC=new (window.AudioContext||window.webkitAudioContext)();setInterval(tick,1600)}catch(e){}}
+document.addEventListener("click",function once(){startAudio();document.removeEventListener("click",once)});
+// silhouettes
+function sil(kind,flip){var p="M50 34 a15 16 0 1 1 0.1 0 M20 118 C22 84 40 74 50 74 C60 74 78 84 80 118 Z";
+ var hat="",x=flip?'transform="translate(100,0) scale(-1,1)"':"";
+ if(kind==="yun")hat='<path d="M36 30 Q50 20 64 30 L64 26 Q50 16 36 26 Z" fill="#2a251d"/>';
+ if(kind==="du")hat='<path d="M34 28 Q50 16 66 28 L66 33 L34 33 Z" fill="#2a251d"/>';
+ if(kind==="taij")hat='<path d="M38 28 L62 28 L62 22 Q50 14 38 22 Z" fill="#2a251d"/><circle cx="50" cy="17" r="3" fill="#8c3b2e"/>';
+ if(kind==="wai")hat='<path d="M32 28 Q50 12 68 28 L68 33 L32 33 Z" fill="#2a251d"/>';
+ if(kind==="shi")hat='<path d="M35 30 Q50 18 65 30 L65 40 Q57 34 50 34 Q43 34 35 40 Z" fill="#2a251d"/>';
+ if(kind==="ji")hat='<path d="M36 30 Q50 22 64 30 L64 34 L36 34 Z" fill="#2a251d"/>';
+ return '<svg viewBox="0 0 100 120" '+x+'><g fill="#211d17"><path d="'+p+'"/>'+hat+'</g></svg>'}
+// STORY nodes: who in {narr,yun,du,neiwu,taij,wai,shi,me}
+var STORY=[
+ {bg:"office",art:["shi"],who:"shi",t:"癸丑年冬，奉安在即。今早收工，门缝里塞进来这个——没署名，没邮戳。"},
+ {who:"me",t:"信纸上一行小楷：廿一小时。两宫同日。问档房，见信便见。"},
+ {who:"narr",t:"你是《申报》新到任的驻京记者。上头只给一句话：大人物之外，得有人。[E13]"},
+ {who:"shi",t:"你要写光绪，就得先认人。来，档案房里的第一课。",cards:["P1"]},
+ {bg:"yingtai",art:["ji"],who:"narr",t:"南海中一座孤岛，三面环水。皇帝住在这里，十年了。隆冬冰封，他带小太监踏冰而出——被拦，随后凿冰。[V02]"},
+ {who:"narr",t:"太监寇连材说：皇帝自幼无人敢爱，所以多病。[V05] 可恽毓鼎笔下：體氣健實，三十四年無疾病，大風雪里步穩而速。[V01]"},
+ {who:"me",t:"一个囚徒，两副面孔。（这两句话，三天后会当面相撞。）"},
+ {bg:"shou",art:["yun"],who:"yun",t:"十月初十，上率百官贺萬壽，扶着太监的肩练跪拜——忽然懿旨：皇帝臥病在床，免率百官行禮。上闻之大恸。[E03]"},
+ {who:"yun",t:"太后病泄数日。有谮者谓帝闻太后病，有喜色。太后怒曰：我不能先爾死！[E04]"},
+ {who:"narr",t:"四年前，日本公使内田康哉已从伍廷芳口中听过一模一样的预测。[D01]"},
+ {q:"喜色",who:"me",t:"——“喜色”，是谁看见的？你信哪边？",
+  opts:[["诬告","你选「诬告」。这两个字仍是转述链上的字——原件从未浮面。"],["实情","你选「实情」。传话的太监，是最后一程见过皇帝的人——这条线，终章它会回来。"]],cards:["E03","E04","D01"]},
+ {bg:"street",art:["taij"],who:"taij",t:"三天后，禁门增兵卫。太监们成群出东华门剃头，抢在发丧之前——剃头的说：驾崩矣。[E07]"},
+ {who:"narr",t:"官面记载（仅见转述）：十九日，仍有皇帝向太后请安。[X01] 也有人说：死前两日还见皇上步游水滨。[X02]"},
+ {q:"sort"},
+ {bg:"hanyuan",art:["yun","shi"],who:"narr",t:"廿一日傍晚，官方时序：大渐——酉刻崩于瀛台。[D09] 恽毓鼎的版本更仓促：皇后赶到时，不知何時氣絕——人已没了多时。[E09] 载沣日记（仅见转述）把“大渐”提前到二十日。[T02]"},
+ {who:"shi",t:"当夜：草殓入库、礼仪官被拒门外、遗诏后传。[E10][E11][E12] 你写稿前——把怀疑说给我，我拿卷宗逐行对你。",ask:true},
+ {bg:"street2",art:["taij","wai"],who:"narr",t:"遗诏未下，民间先周知：全城剃发，鼓声竟夜。[G06] 朝廷悬赏缉拿造言煽乱匪徒。[U05]"},
+ {who:"wai",t:"《泰晤士报》电文：两人死得太近，不由使人疑虑；NYT 说疑窦丛生。[U07][U06] 京里传的是李莲英与太后的密谋。[G01]"},
+ {q:"stick"},
+ {who:"narr",t:"四个说法，是从不同的证据行里长出来的——所以会当场对质。"},
+ {q:"hypo"},
+ {bg:"dark",art:[],who:"shi",t:"（她从柜顶取下一只黑匣）这些不是你们世界的东西——2008、1980，都是后来的年号。念之前，把 1913 摘掉。"},
+ {who:"narr",t:"1980 年清理崇陵：未发现外伤及中毒迹象。[U09] 那时的检验科学，还在另一代。"},
+ {who:"narr",t:"2008 年：两缕头发剪成一厘米截段逐一测砷，五年检验。[D10] 最高值 2404 微克/克——隆裕的 261 倍，慢性中毒者的 66 倍。[D11] 结论一句：光绪帝系砒霜中毒死亡。凶手——报告不答。[D10] 两篇转述里“毫克/微克”还打过架。[D12]"},
+ {q:"edge"},
+ {bg:"office",art:["shi"],who:"shi",t:"版面只能有四行。你的稿子，落哪一个？（这一票将与其他所有人放在一起）",final:true}
+];
+// choices data
+var QOPTS={
+ "喜色":[["诬告","这两个字仍是转述链上的字——原件从未浮面。"],["实情","传话的太监，是最后一程见过皇帝的人——这条线终章会回来。"]],
+ "stick":[["遗诏诛袁","采信"],["李莲英密谋","存疑"],["外报疑谋杀","信"]],
+ "hypo":[["① 病史有假——脉案全链存疑",""],["② 缺一手文书——最难撬的门",""],["③ 试毒定制挡路——通道不通",""],["④ 来源薄——回忆文学孤证",""]],
+ "edge":[["押：新史料会出现",""],["押：法医技术继续走",""],["押：靠一个个逼问的人",""]]
+};
+function show(){var n=STORY[nid];if(!n){$("#who").textContent="";$("#txt").textContent="";return}
+ $("#bg").style.background=n.bg==="office"?"linear-gradient(#3a3226,#6b5b3e 60%,#8a744d)":
+  n.bg==="yingtai"?"linear-gradient(#243447,#3d5a80 55%,#7d93a8)":
+  n.bg==="shou"?"linear-gradient(#4a3b2c,#8a744d)":
+  n.bg==="street"?"linear-gradient(#2e2a26,#5a5044 60%,#8a7c68)":
+  n.bg==="street2"?"linear-gradient(#2e2a26,#4a4238 55%,#6e6050)":
+  n.bg==="hanyuan"?"linear-gradient(#1f2a30,#3a4a50 60%,#5d6e72)":"#17140f";
+ $("#art").innerHTML=(n.art||[]).map(function(k){return sil(k,k==="wai")}).join("");
+ requestAnimationFrame(function(){$$("#art svg").forEach(function(s,i){setTimeout(function(){s.classList.add("on")},i*220)})});
+ $("#who").textContent=n.who?(NPCW[n.who]||""):"";
+ $("#opts").style.display="none";
+ var body=link(n.t);
+ if(n.cards)body+=n.cards.map(function(id){return cardHTML(id)}).join("");
+ if(n.final)body+='<div style="margin-top:.8rem"><select id="choice" style="width:100%">'+CHOICES.map(function(c){return "<option>"+c+"</option>"}).join("")+'</select><div id="newidea" style="display:none"><input type="text" id="newtext" placeholder="写你的新想法（作为公开一票）"></div><input type="text" id="reason" placeholder="一句话理由（可空，公开展示）"><button class="go" onclick="vote()">入 案 卷</button><div id="dist"></div><details class="card" style="margin-top:.7rem"><summary>自由审阅 · 全库证据</summary><div id="allrows"></div></details></div>';
+ if(n.ask)body+='<input type="text" id="claim" placeholder="把你的怀疑写一句（可空）" style="width:100%;margin-top:.6rem"><button class="go" onclick="ask()">呈堂 · 请她对稿</button><div id="reply" style="white-space:pre-wrap;border:1px dashed var(--gray);background:#fbf7ec;padding:.8rem;margin-top:.5rem;display:none"></div>';
+ $("#txt").innerHTML=body;
+ if(n.q)showOpts(n.q);
+ if(n.final){verdicts();$("#choice").onchange=function(){$("#newidea").style.display=this.value==="我有新想法"?"block":"none"};
+  $("#allrows").innerHTML=Object.keys(BYID).map(cardHTML).join("")}
+}
+function adv(){var n=STORY[nid];if(!n)return;
+ if(n.q){var first=$("#opts button");if(first)first.click();return}
+ if(n.ask&&!$("#reply").textContent){$("#claim")&&$("#claim").focus();return}
+ nid++;pi=0;show()}
+function showOpts(q){var box=$("#opts");var opts=QOPTS[q]||[];
+ box.innerHTML=opts.map(function(o,i){return '<button class="opt" data-i="'+i+'">'+o[0]+"</button>"}).join("");
+ box.style.display="block";
+ $$("#opts .opt").forEach(function(b,i){b.onclick=function(ev){ev.stopPropagation();
+  STATE.attn[STATE.attn.length]=q+":"+i;save();
+  if(q==="stick"){req("POST","/api/annotate",{items:[{rumor:RUM[i],stance:o0(i)}]});}
+  if(q==="hypo"){$("#opts").style.display="none";$("#txt").innerHTML=link("你的裁判已记入采访本——"+(o0(i))+"。"+ "带着它去见最后的证人。");return}
+  $("#opts").style.display="none";$("#txt").innerHTML=link(opts[i][1]);
+  setTimeout(function(){nid++;pi=0;show()},1800);
+ }})}
+var RUM={"遗诏诛袁":"遗诏诛袁","李莲英密谋":"李莲英密谋","外报疑谋杀":"外报疑谋杀"};
+function o0(i){return ["信","不信","说不准"][i%3]}
+function nextNode(){}
+var CHOICES=["慈禧授意","袁世凯进药","李莲英近侍","久病自然亡","我有新想法"];
+function ask(){var claim=$("#claim").value.trim();
+ $("#reply").style.display="block";$("#reply").textContent="史先生卷宗核对中……";
+ req("POST","/api/ask",{claim:claim,order:[],scene:"视觉小说·第二幕场景（1913年冬）：史先生在场，1913 年后史料不可引用。"}).then(function(r){
+ $("#reply").innerHTML="<b>"+r.mode+"</b> "+link(r.reply)})}
+
+function verdicts(){req("GET","/api/verdicts").then(function(r){
+ if(!r.total){$("#dist").innerHTML='<p class="meta">案卷空着——你的这票是第一行。</p>'}else drawDist(r)}).catch(function(){$("#dist").innerHTML='<p class="meta">（服务未连接，投票暂不可用）</p>'})}
+function drawDist(d){if(!d)return;$("#dist").innerHTML='<p class="meta">案卷已收 '+d.total+' 票</p><table>'+(d.dist||[]).map(function(x){
+ return '<tr><td style="width:10rem">'+x[0]+'</td><td>'+"■".repeat(Math.max(1,Math.round(20*x[1]/Math.max(1,d.total))))+' '+x[1]+'</td></tr>'}).join("")+'</table>'}
+function vote(){var sel=$("#choice").value;var reason=sel==="我有新想法"?($("#newtext").value.trim()||"（未填）"):$("#reason").value.trim();
+ req("POST","/api/verdict",{choice:sel,reason:reason}).then(drawDist);
+ $("#txt").innerHTML=link("稿子见报，卷宗合上——卷子后面，时代还在出版。你的这一票已入案卷。")}
+var NPCW={narr:"",me:"我（驻京记者）",yun:"恽毓鼎",du:"杜钟骏",neiwu:"内务府旧人",taij:"老太监",wai:"外报同行",shi:"史先生"};
+function boot(){try{STATE=JSON.parse(localStorage.getItem("vn21"))}catch(e){STATE=null}
+ if(!STATE||STATE.v!=="1")STATE={v:"1",attn:[]};
+ req("GET","/api/timeline").then(function(d){BYID={};d.rows.forEach(function(r){BYID[r.id]=r});SRCS=d.sources;
+  $("#mode").textContent=d.mode==="deepseek"?"史先生在线 · 真模型对稿":"史先生暂离 · 离线";
+  show()}).catch(function(){$("#mode").textContent="无法连接证据库（server 没在跑？）"})}
+window.addEventListener("load",boot);
+</script>
+</body>
+</html>
