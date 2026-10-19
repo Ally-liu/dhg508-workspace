@@ -114,7 +114,7 @@ class H(BaseHTTPRequestHandler):
     def do_GET(self):
         page = None
         if self.path == "/":
-            page = (STATIC / "game.html").read_bytes()
+            page = (STATIC / "vn.html").read_bytes()
         elif self.path in ("/index.html", "/ppt"):
             page = (STATIC / "index.html").read_bytes()
         elif self.path in ("/game", "/game.html", "/vn", "/vn.html"):
