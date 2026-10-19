@@ -50,6 +50,7 @@ button.go{background:var(--red);color:#fff;border:none;padding:.55rem 1.5rem;let
 <script>
 window.addEventListener("error",function(e){var b=document.getElementById("errbar");b.style.display="block";b.textContent="JS: "+e.message+" @line "+e.lineno});
 var $=function(q){return document.querySelector(q)};
+var $$=function(q){return Array.prototype.slice.call(document.querySelectorAll(q))};
 function req(m,u,b){return fetch(u,{method:m,headers:{"Content-Type":"application/json"},body:b?JSON.stringify(b):undefined}).then(function(r){return r.json()})}
 var BYID={},SRCS={},STATE,nid=0,pi=0,BGM=null;
 function link(s){return String(s).replace(/\[([A-Z]\d+)\]/g,'<sup class="ref" data-id="$1">[$1]</sup>')}
