@@ -72,3 +72,10 @@
 - 老页保留 /ppt（/index.html 同义），/ 即游戏版。
 
 - 【VN 反馈轮】修：adv 死锁加仪器（try/catch 强写 errbar、final 节点不推进、q 节点展开选项而非自动点击）；stick 节点改为一次记者姿态表态（真入库）；音效从 880Hz 电子滴改为随机水滴+暖底哼鸣（默认静音待开户）；对话框加「▸ 继续」提示。语法三检 OK。
+
+- 【真图进游戏】Wikimedia Commons API 抓 8 张公版/可署名照片入 sources/raw/art/
+  （manifest 带许可与出处）：慈禧乘舟真照、1900 北京街景×2、崇陵石牌楼×2、
+  瀛台岛亭影、中海卫星图等。server 加 /art/ 路由；vn 的 bgSetter 优先真照片
+  （street/yingtai 两幕已换），cardHTML 支持 P 类照片卡（P1=慈禧，带"公版"边
+  注）。双引擎 playwright 断言（直调函数级验证）。素材债从"零"转为"部分回收"：
+  寿宴/报馆仍待 AI 图或更好扫描件。
