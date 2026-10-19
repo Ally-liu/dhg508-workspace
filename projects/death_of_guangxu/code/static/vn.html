@@ -41,9 +41,9 @@ button.go{background:var(--red);color:#fff;border:none;padding:.55rem 1.5rem;let
 <body>
 <div id="stage">
 <div id="bg"></div><div id="paperfx"></div><div id="art"></div>
-<div id="topbar"><span id="mode" class="bar">…</span><button id="snd" onclick="toggleSnd()">♪ 关</button></div>
+<div id="topbar"><span id="mode" class="bar">…</span><button id="snd" onclick="toggleSnd(event)">♪ 静</button></div>
 <div id="opts"></div>
-<div id="dialog" onclick="adv()"><div id="who"></div><div id="txt"></div></div>
+<div id="dialog" onclick="adv()"><div id="who"></div><div id="txt"></div><span class="meta" style="position:absolute;right:.9rem;bottom:.45rem">▸ 点按或 回车 继续</span></div>
 </div>
 <div id="srcpanel"></div>
 <div id="errbar"></div>
@@ -63,13 +63,18 @@ function openSrc(id){var e=BYID[id];if(!e)return;var P=$("#srcpanel");
 $("#srcpanel").addEventListener("click",function(){this.style.display="none"});
 document.addEventListener("click",function(ev){var t=ev.target.closest?ev.target.closest("sup.ref"):null;if(t)openSrc(t.dataset.id)});
 // BGM: procedural 更漏
-var AC=null,on=true;
-function tick(){if(!on||!AC)return;var o=AC.createOscillator(),g=AC.createGain();o.type="sine";o.frequency.value=880;
- g.gain.setValueAtTime(.12,AC.currentTime);g.gain.exponentialRampToValueAtTime(.0001,AC.currentTime+.18);
- o.connect(g);g.connect(AC.destination);o.start();o.stop(AC.currentTime+.2)}
-function toggleSnd(){on=!on;$("#snd").textContent=on?"♪ 关":"♪ 开"}
-function startAudio(){try{AC=new (window.AudioContext||window.webkitAudioContext)();setInterval(tick,1600)}catch(e){}}
-document.addEventListener("click",function once(){startAudio();document.removeEventListener("click",once)});
+var AC=null,on=false;
+function drip(){if(!on||!AC)return;var o=AC.createOscillator(),g=AC.createGain();
+ o.type="sine";o.frequency.setValueAtTime(1200+Math.random()*400,AC.currentTime);
+ o.frequency.exponentialRampToValueAtTime(500,AC.currentTime+.14);
+ g.gain.setValueAtTime(.05,AC.currentTime);g.gain.exponentialRampToValueAtTime(.0001,AC.currentTime+.16);
+ o.connect(g);g.connect(AC.destination);o.start();o.stop(AC.currentTime+.2);
+ setTimeout(drip,2200+Math.random()*2800)}
+function pad(){if(!on||!AC)return;var o=AC.createOscillator(),g=AC.createGain();
+ o.type="triangle";o.frequency.value=108;g.gain.value=.012;
+ o.connect(g);g.connect(AC.destination);o.start()}
+function toggleSnd(){if(!AC){try{AC=new(window.AudioContext||window.webkitAudioContext)()}catch(e){return}}on=!on;if(on){pad();drip()}$("#snd").textContent=on?"♪ 开":"♪ 静"}
+
 // silhouettes
 function sil(kind,flip){var p="M50 34 a15 16 0 1 1 0.1 0 M20 118 C22 84 40 74 50 74 C60 74 78 84 80 118 Z";
  var hat="",x=flip?'transform="translate(100,0) scale(-1,1)"':"";
@@ -113,7 +118,7 @@ var STORY=[
 // choices data
 var QOPTS={
  "喜色":[["诬告","这两个字仍是转述链上的字——原件从未浮面。"],["实情","传话的太监，是最后一程见过皇帝的人——这条线终章会回来。"]],
- "stick":[["遗诏诛袁","采信"],["李莲英密谋","存疑"],["外报疑谋杀","信"]],
+ "stick":[["都在夸大其词——报馆常识","街面上的人需要故事，我们需要核实。"],["宁信其有——留一版悬疑","读者要这个，但请把 L3 的章给我挂上。"],["档房未见，存讯","三闻并列，出处照录——这是我学的第一课。"]],
  "hypo":[["① 病史有假——脉案全链存疑",""],["② 缺一手文书——最难撬的门",""],["③ 试毒定制挡路——通道不通",""],["④ 来源薄——回忆文学孤证",""]],
  "edge":[["押：新史料会出现",""],["押：法医技术继续走",""],["押：靠一个个逼问的人",""]]
 };
@@ -137,22 +142,21 @@ function show(){var n=STORY[nid];if(!n){$("#who").textContent="";$("#txt").textC
  if(n.final){verdicts();$("#choice").onchange=function(){$("#newidea").style.display=this.value==="我有新想法"?"block":"none"};
   $("#allrows").innerHTML=Object.keys(BYID).map(cardHTML).join("")}
 }
-function adv(){var n=STORY[nid];if(!n)return;
- if(n.q){var first=$("#opts button");if(first)first.click();return}
- if(n.ask&&!$("#reply").textContent){$("#claim")&&$("#claim").focus();return}
- nid++;pi=0;show()}
+function adv(){try{var n=STORY[nid];if(!n){$("#txt").innerHTML=link("（本局到发稿为止。回到 /ppt 或刷新重玩。）");return}
+ if(n.final){return}
+ if(n.q){$("#opts").style.display="block";return}
+ if(n.ask){var r=document.getElementById("reply");if(r&&r.textContent&&r.textContent.length>1){nid++;show();return}$("#claim")&&$("#claim").focus();return}
+ nid++;pi=0;show()}catch(e){var b=document.getElementById("errbar");b.style.display="block";b.textContent="adv: "+e.message+" @"+e.lineNumber}}
 function showOpts(q){var box=$("#opts");var opts=QOPTS[q]||[];
  box.innerHTML=opts.map(function(o,i){return '<button class="opt" data-i="'+i+'">'+o[0]+"</button>"}).join("");
  box.style.display="block";
  $$("#opts .opt").forEach(function(b,i){b.onclick=function(ev){ev.stopPropagation();
   STATE.attn[STATE.attn.length]=q+":"+i;save();
-  if(q==="stick"){req("POST","/api/annotate",{items:[{rumor:RUM[i],stance:o0(i)}]});}
-  if(q==="hypo"){$("#opts").style.display="none";$("#txt").innerHTML=link("你的裁判已记入采访本——"+(o0(i))+"。"+ "带着它去见最后的证人。");return}
+  if(q==="stick"){req("POST","/api/annotate",{items:[{rumor:"街面三闻",stance:opts[i][0]}]});}
+  if(q==="hypo"){$("#opts").style.display="none";$("#txt").innerHTML=link("你的裁判已记入采访本——"+opts[i][0]+"。带着它去见最后的证人。");return}
   $("#opts").style.display="none";$("#txt").innerHTML=link(opts[i][1]);
   setTimeout(function(){nid++;pi=0;show()},1800);
  }})}
-var RUM={"遗诏诛袁":"遗诏诛袁","李莲英密谋":"李莲英密谋","外报疑谋杀":"外报疑谋杀"};
-function o0(i){return ["信","不信","说不准"][i%3]}
 function nextNode(){}
 var CHOICES=["慈禧授意","袁世凯进药","李莲英近侍","久病自然亡","我有新想法"];
 function ask(){var claim=$("#claim").value.trim();
