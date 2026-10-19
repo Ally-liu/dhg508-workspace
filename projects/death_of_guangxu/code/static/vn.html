@@ -108,13 +108,15 @@ function bgSVG(kind){
   s+='<rect x="586" y="130" width="28" height="300" fill="#241a10"/><path d="M600 118 l16 26 h-32 Z" fill="#c97b2e" opacity=".8"/>';
   s+=vign();
  } else {
-  s+='<defs>'+grain("nz")+'</defs><rect width="1200" height="800" fill="#33291f"/>';
-  s+='<rect y="600" width="1200" height="200" fill="#241c14"/>';
-  s+='<rect x="90" y="140" width="330" height="460" fill="#6b5738"/>';
-  s+='<path d="M110 190 h290 M110 260 h290 M110 330 h290 M110 400 h290" stroke="#4a4038" stroke-width="5"/>';
-  s+='<rect x="130" y="200" width="60" height="42" fill="#8a744d"/><rect x="230" y="270" width="90" height="50" fill="#8a744d"/><rect x="150" y="340" width="110" height="52" fill="#8a744d"/><rect x="130" y="410" width="70" height="46" fill="#8a744d"/>';
-  s+='<rect x="780" y="330" width="300" height="270" fill="#453724"/><path d="M780 330 h300 l-24-40 h-252 Z" fill="#33281a"/>';
-  s+='<rect x="880" y="130" width="40" height="200" fill="#241c14"/><ellipse cx="900" cy="120" rx="60" ry="40" fill="#c9a13e" opacity=".4"/><circle cx="900" cy="120" r="14" fill="#e8c878"/>';
+  s+='<defs>'+grain('nz')+'</defs><rect width="1200" height="800" fill="#33291f"/>';
+  s+='<rect y="130" width="1200" height="16" fill="#211a12"/>';
+  s+='<rect x="90" y="146" width="330" height="414" fill="#5f4c30"/>';
+  s+='<path d="M110 200 h290 M110 280 h290 M110 360 h290 M110 440 h290 M110 520 h290" stroke="#433a2c" stroke-width="4"/>';
+  s+='<rect x="128" y="208" width="90" height="56" fill="#7a6741"/><rect x="150" y="288" width="120" height="58" fill="#72603c"/><rect x="128" y="366" width="70" height="60" fill="#7a6741"/><rect x="240" y="366" width="140" height="68" fill="#8a744d"/><rect x="128" y="446" width="170" height="70" fill="#85714a"/><rect x="330" y="208" width="60" height="56" fill="#85714a"/>';
+  s+='<rect x="700" y="470" width="380" height="90" fill="#3e3120"/><rect x="700" y="470" width="380" height="12" fill="#55432c"/><rect x="720" y="560" width="16" height="60" fill="#31251a"/><rect x="1044" y="560" width="16" height="60" fill="#31251a"/>';
+  s+='<rect x="770" y="440" width="40" height="34" fill="#2b2118"/><rect x="880" y="448" width="70" height="24" rx="6" fill="#efe2c2"/><path d="M884 448 h62" stroke="#8c3b2e" stroke-width="3"/>';
+  s+='<rect x="640" y="146" width="14" height="128" fill="#241c12"/><path d="M647 274 l-26 54 h52 Z" fill="#3a2c1c"/><ellipse cx="647" cy="340" rx="38" ry="22" fill="#c9a13e" opacity=".32"/><circle cx="647" cy="336" r="9" fill="#e8c878"/>';
+  s+='<rect x="1010" y="420" width="130" height="140" fill="#4a3c28"/><path d="M1010 420 h130 l-18-36 h-94 Z" fill="#33281a"/>';
   s+=vign();
  }
  return s+'</svg>';
