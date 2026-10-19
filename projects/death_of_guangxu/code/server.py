@@ -118,6 +118,20 @@ class H(BaseHTTPRequestHandler):
             page = (STATIC / "vn.html").read_bytes()
         elif self.path in ("/index.html", "/ppt"):
             page = (STATIC / "index.html").read_bytes()
+        elif self.path.startswith("/art/"):
+            fn = self.path[5:]
+            fp = ROOT / "sources" / "raw" / "art" / fn
+            if fn and fp.exists() and ".." not in fn:
+                data = fp.read_bytes()
+                self.send_response(200)
+                self.send_header("Content-Type", "image/jpeg")
+                self.send_header("Cache-Control", "no-store")
+                self.send_header("Content-Length", str(len(data)))
+                self.end_headers()
+                self.wfile.write(data)
+                return
+            self._send({"err": "no such art"}, 404)
+            return
         elif self.path in ("/game", "/game.html", "/vn", "/vn.html"):
             page = (STATIC / "vn.html").read_bytes()
         if page is not None:

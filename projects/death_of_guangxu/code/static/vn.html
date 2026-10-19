@@ -56,6 +56,16 @@ function save(){try{localStorage.setItem("vn21",JSON.stringify(STATE))}catch(e){
 function load(){try{STATE=JSON.parse(localStorage.getItem("vn21"))}catch(e){STATE=null}
  if(!STATE||STATE.v!=="1")STATE={v:"1",attn:[],clicks:0}
  return STATE}
+var PHOTO={street:'beijing1900_0.jpg', yingtai:'yingtai_1.jpg', legacy:{cixi:'cixi_1.jpg', city:'beijing1900_1.jpg', tomb:'chongling_0.jpg'}};
+function photoCard(caption, key){var f='PHOTO' in window?null:0;var p=window.PHOTO;var fn=p.legacy[key];
+ return '<div class=\"card\"><img src=\"/art/'+fn+'\" style=\"width:100%;max-height:230px;object-fit:cover;filter:sepia(.35)\"/>'+
+ '<div class=\"meta\">公版照片（Wikimedia Commons，'+caption+'）· 非演绎素材</div></div>'}
+function bgSetter(kind){var p=window.PHOTO;var el=document.getElementById('bg');
+ if(kind==='street'||kind==='street2'){el.innerHTML='<img src=\"/art/'+p.street+'\" style=\"width:100%;height:100%;object-fit:cover;filter:sepia(.55) brightness(.82)\"/>';
+  var fx=document.createElement('div');fx.style.cssText='position:absolute;inset:0;background:radial-gradient(ellipse at 50% 42%,rgba(0,0,0,0) 55%,rgba(8,4,0,.66))';el.appendChild(fx);return}
+ if(kind==='yingtai'){el.innerHTML='<img src=\"/art/'+p.yingtai+'\" style=\"width:100%;height:100%;object-fit:cover;filter:blur(1.5px) brightness(.5) sepia(.2)\"/>';
+  var fx=document.createElement('div');fx.style.cssText='position:absolute;inset:0;background:linear-gradient(rgba(14,24,34,.85),rgba(21,34,46,.4) 55%,rgba(0,0,0,.35))';el.appendChild(fx);return}
+ el.innerHTML=bgSVG(kind||'office')}
 function bgSVG(kind){
  var s='<svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%">';
  function grain(id){return '<filter id="'+id+'"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.08"/></feComponentTransfer></filter>'}
@@ -127,7 +137,9 @@ var BYID={},SRCS={},STATE,nid=0,pi=0,BGM=null;
 function link(s){return String(s).replace(/\[([A-Z]\d+)\]/g,'<sup class="ref" data-id="$1">[$1]</sup>')}
 function badge(e){var st={private:"私记",official:"官方",press:"报刊",science:"科学",foreign:"外国",academic:"学术"},ti={L1:"一手原件",L2:"可靠出版",L3:"仅见转述"};
  return '<span class="badge '+(e.tier||"L2")+'">'+(ti[e.tier]||e.tier)+'</span> <span class="badge '+(e.stance||"private")+'">'+(st[e.stance]||e.stance)+'</span>'}
-function cardHTML(id){var e=BYID[id];if(!e)return"";return '<details class="card" open><summary>'+badge(e)+' [id] '+(e.date_orig||"")+'</summary><div class="ev-text">'+e.text+'</div><div class="meta">来源：'+(SRCS[e.source_id]?SRCS[e.source_id].title:"")+'</div></details>'}
+function cardHTML(id){if(id==='P1'){return photoCard('慈禧太后乘舟于中海，1903 前后','cixi')}
+if(id==='P2'){return photoCard('瀛台/岛亭旧影','tomb')}
+var e=BYID[id];if(!e)return"";return '<details class="card" open><summary>'+badge(e)+' [id] '+(e.date_orig||"")+'</summary><div class="ev-text">'+e.text+'</div><div class="meta">来源：'+(SRCS[e.source_id]?SRCS[e.source_id].title:"")+'</div></details>'}
 function openSrc(id){var e=BYID[id];if(!e)return;var P=$("#srcpanel");
  P.innerHTML='<div><b>['+e.id+']</b> '+badge(e)+'</div><div id="scanbox" style="margin-top:.5rem">史料扫描件 · 待征集</div><div class="ev-text" style="margin-top:.6rem"><span class="hl">'+e.text+'</span></div><div class="meta" style="margin-top:.4rem">来源：'+(SRCS[e.source_id]?SRCS[e.source_id].title:"")+'</div>';
  P.style.display="block"}
@@ -194,7 +206,7 @@ var QOPTS={
  "edge":[["押：新史料会出现",""],["押：法医技术继续走",""],["押：靠一个个逼问的人",""]]
 };
 function show(){var n=STORY[nid];if(!n){$("#who").textContent="";$("#txt").textContent="";return}
- $("#bg").innerHTML=bgSVG(n.bg||"office");
+ bgSetter(n.bg);
  $("#art").innerHTML=(n.art||[]).map(function(k){return sil(k,k==="wai")}).join("");
  requestAnimationFrame(function(){$$("#art svg").forEach(function(s,i){setTimeout(function(){s.classList.add("on")},i*220)})});
  $("#who").textContent=n.who?(NPCW[n.who]||""):"";
