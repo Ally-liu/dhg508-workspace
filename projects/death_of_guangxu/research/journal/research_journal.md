@@ -79,3 +79,15 @@
   （street/yingtai 两幕已换），cardHTML 支持 P 类照片卡（P1=慈禧，带"公版"边
   注）。双引擎 playwright 断言（直调函数级验证）。素材债从"零"转为"部分回收"：
   寿宴/报馆仍待 AI 图或更好扫描件。
+
+- 【转折·新主体】用户决定期末主体改为"合成大西瓜·文物版"（合成·中华），
+  记者游戏(VN)冻结为备胎不删。设计纪律保留：11 级文物按**时代推进**排链
+  （地层学隐喻：合成=时间累积），每级=一行数据库行（name/era/fact/uncertain/img），
+  合成弹出带 uncertain 注的文物卡；素材全部走 Commons 征集管线（含错误拦截：
+  曾抓到"活骆驼"照片当唐三彩，已删重抓并补内容过滤）。
+- 交付：sources/processed/relia.json（11 行）→ code/build_relia_db.py →
+  artifacts/relia.db；code/static/merge.html（自研圆物理引擎：重力/推挤/
+  摩擦/合并判定/投放冷却/越线终局/结算屏，左栏 11 徽点亮机制）；server
+  加 /merge 与 /api/relia。回归：playwright 直调 __t 钩子两端投放→合并，
+  双引擎零 pageerror，真实图片 naturalWidth=960。调试学：口头复现不可靠
+  （该用仪器），大文件必须函数级替换（写全文件四坏两坏皆同因）。

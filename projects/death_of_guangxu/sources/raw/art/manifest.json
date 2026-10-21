@@ -54,5 +54,104 @@
   "license": "Public domain",
   "artist": "Alfons von Mumm",
   "source": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Aufgang_zum_Inselpalast.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+ },
+ {
+  "file": "relia01.jpg",
+  "tier": 1,
+  "title": "File:Anthropomorphic figure on a Majiayao culture painted pottery jar (3200-2000 BCE) National Museum of China.jpg",
+  "license": "CC BY 3.0",
+  "artist": "Anagoria",
+  "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Anthropomorphic_figure_on_a_Majiayao_culture_painted_pottery_jar_%283200-2000_BCE%29_National_Museum_of_China.jpg/960px-Anthropomorphic_figure_on_a_Majiayao_culture_painted_pottery_jar_%283200-2000_BCE%29_National_Museum_of_China.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "query": "Majiayao culture painted pottery jar"
+ },
+ {
+  "file": "relia02.jpg",
+  "tier": 2,
+  "title": "File:Ningxia Museum Shang dynasty ox scapula oracle bone.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:BabelStone\" title=\"User:BabelStone\">BabelStone</a>",
+  "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Ningxia_Museum_Shang_dynasty_ox_scapula_oracle_bone.jpg/960px-Ningxia_Museum_Shang_dynasty_ox_scapula_oracle_bone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "query": "oracle bone Shang dynasty inscription"
+ },
+ {
+  "file": "relia04.jpg",
+  "tier": 4,
+  "title": "File:20230208 Chime bells of Marquis Yi of Zeng.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Windmemories\" title=\"User:Windmemories\">Windmemories</a>",
+  "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/20230208_Chime_bells_of_Marquis_Yi_of_Zeng.jpg/960px-20230208_Chime_bells_of_Marquis_Yi_of_Zeng.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "query": "Bells of Marquis Yi of Zeng chime bells"
+ },
+ {
+  "file": "relia06.jpg",
+  "tier": 6,
+  "title": "File:ChangXingongdeng.jpg",
+  "license": "CC BY 1.0",
+  "artist": "User <a href=\"https://zh.wikipedia.org/wiki/User:Refrain\" class=\"extiw\" title=\"zh:User:Refrain\">Refr",
+  "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/ChangXingongdeng.jpg/960px-ChangXingongdeng.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "query": "Changxin palace lamp Han dynasty bronze gilt"
+ },
+ {
+  "file": "relia08.jpg",
+  "tier": 8,
+  "title": "File:20251026 Porcelain Brush Washer, Ru Ware.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Windmemories\" title=\"User:Windmemories\">Windmemories</a>",
+  "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/20251026_Porcelain_Brush_Washer%2C_Ru_Ware.jpg/960px-20251026_Porcelain_Brush_Washer%2C_Ru_Ware.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "query": "Ru ware brush washer Song dynasty"
+ },
+ {
+  "file": "relia09.jpg",
+  "tier": 9,
+  "title": "File:DISH, Blue and white porcelain with peony scroll design.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:%E6%8E%AC%E8%8C%B6\" title=\"User:掬茶\">掬茶</a>",
+  "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/DISH%2C_Blue_and_white_porcelain_with_peony_scroll_design.jpg/960px-DISH%2C_Blue_and_white_porcelain_with_peony_scroll_design.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "query": "Yuan dynasty blue and white porcelain dish"
+ },
+ {
+  "file": "relia10.jpg",
+  "tier": 10,
+  "title": "File:Porcelain chicken cup in doucai painted enamels.tif",
+  "license": "CC BY 4.0",
+  "artist": "<div class=\"fn value\">\n<table cellpadding=\"0\" cellspacing=\"0\"><tbody><tr><td><a href=\"https://www.wi",
+  "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Porcelain_chicken_cup_in_doucai_painted_enamels.tif/lossless-page1-960px-Porcelain_chicken_cup_in_doucai_painted_enamels.tif.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "query": "Chenghua chicken cup Ming porcelain"
+ },
+ {
+  "file": "relia03.jpg",
+  "tier": 3,
+  "title": "File:He Zun.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:%E5%B9%BD%E7%81%B5%E5%B7%B4%E5%B0%BC&amp;act",
+  "source": "https://upload.wikimedia.org/wikipedia/commons/d/d0/He_Zun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "query": "He zun"
+ },
+ {
+  "file": "relia05.jpg",
+  "tier": 5,
+  "title": "File:Qin Terracotta Army, Pit 1 03.jpg",
+  "license": "CC0",
+  "artist": "Gary Lee Todd, Ph.D.",
+  "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Qin_Terracotta_Army%2C_Pit_1_03.jpg/960px-Qin_Terracotta_Army%2C_Pit_1_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "query": "terracotta army pit 1"
+ },
+ {
+  "file": "relia11.png",
+  "tier": 11,
+  "title": "File:金甌永固杯.png",
+  "license": "CC BY 4.0",
+  "artist": "<div class=\"fn value\">\n<table cellpadding=\"0\" cellspacing=\"0\"><tbody><tr><td><a href=\"https://www.wi",
+  "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/%E9%87%91%E7%94%8C%E6%B0%B8%E5%9B%BA%E6%9D%AF.png/960px-%E9%87%91%E7%94%8C%E6%B0%B8%E5%9B%BA%E6%9D%AF.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "query": "金瓯永固"
+ },
+ {
+  "file": "relia07.jpg",
+  "tier": 7,
+  "title": "File:20251026 Sancai-glazed Pottery Musician on Camelback.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Windmemories\" title=\"User:Windmemories\">Windmemories</a>",
+  "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/20251026_Sancai-glazed_Pottery_Musician_on_Camelback.jpg/960px-20251026_Sancai-glazed_Pottery_Musician_on_Camelback.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "query": "sancai camel载乐俑"
  }
 ]

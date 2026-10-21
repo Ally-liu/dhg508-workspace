@@ -132,6 +132,14 @@ class H(BaseHTTPRequestHandler):
                 return
             self._send({"err": "no such art"}, 404)
             return
+        elif self.path == "/api/relia":
+            dbp = ROOT / "artifacts" / "relia.db"
+            with sqlite3.connect(dbp) as c:
+                c.row_factory = sqlite3.Row
+                rows = [dict(r) for r in c.execute("SELECT * FROM relic_tier ORDER BY tier")]
+            self._send({"rows": rows})
+        elif self.path in ("/merge", "/merge.html"):
+            page = (STATIC / "merge.html").read_bytes()
         elif self.path in ("/game", "/game.html", "/vn", "/vn.html"):
             page = (STATIC / "vn.html").read_bytes()
         if page is not None:

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>合成·中华 — 文物堆</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,"Noto Serif SC",serif;background:#2b241a;display:flex;justify-content:center;align-items:flex-start;min-height:100vh}
+#wrap{display:flex;gap:1rem;padding:1rem}
+#left{width:212px}
+h1{color:#e8dcc0;font-size:1.15rem;letter-spacing:.26em;margin:.2rem 0 1rem;text-align:center}
+.stat{color:#cfc3a4;font-size:.84rem;text-align:center;margin:.4rem 0}
+#score{font-size:1.7rem;color:#e8c878}
+#next{background:#3a3021;border:1px solid #5a5038;border-radius:8px;height:76px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#next img{width:58px;height:58px;border-radius:50%;object-fit:cover}
+#chart{display:grid;grid-template-columns:repeat(6,30px);justify-content:center;gap:3px;margin-top:.5rem}
+#chart img{width:30px;height:30px;border-radius:50%;object-fit:cover;background:#3a3021;opacity:.38}
+#chart img.got{opacity:1;outline:2px solid #e8c878}
+#game{position:relative;background:#241d12;border:2px solid #5a5038;border-radius:10px}
+canvas{display:block;border-radius:8px;cursor:crosshair}
+#hint{color:#8a7c68;font-size:.72rem;text-align:center;margin-top:.5rem;line-height:1.6}
+#popup{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);width:88%;background:rgba(251,247,236,.97);border:1px solid #c9a13e;border-radius:8px;padding:.6rem .85rem;font-size:.8rem;display:none;box-shadow:0 6px 18px rgba(0,0,0,.5);z-index:4}
+#popup .m{color:#8a7c68;font-size:.68rem;margin-top:.25rem}
+#over{position:absolute;inset:0;background:rgba(12,8,4,.85);display:none;color:#e8dcc0;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:6}
+#over button{background:#8c3b2e;color:#fff;border:none;padding:.6rem 1.6rem;font-family:inherit;letter-spacing:.3em;cursor:pointer;margin-top:1rem}
+#errbar{position:fixed;top:0;left:0;display:none;background:#7a1f1f;color:#fff;font-size:.75rem;padding:.3rem 1rem;z-index:99}
+</style>
+</head>
+<body>
+<div id="errbar"></div>
+<div id="wrap">
+<div id="left">
+<h1>合 成 · 中 华</h1>
+<div class="stat">分数<div id="score">0</div></div>
+<div class="stat">下一件</div>
+<div id="next"></div>
+<div id="chart"></div>
+<div class="stat" style="font-size:.7rem;color:#8a7c68">陶罐 → 甲骨 → 何尊 → 编钟 → 兵马俑<br>宫灯 → 三彩 → 汝窑 → 青花 → 鸡缸杯 → 金瓯永固</div>
+<div id="hint">点碗里任何一列投放<br>两个同级文物相撞 → 合成下一个时代的它<br>堆过红线即终局</div>
+</div>
+<div id="game">
+<canvas id="cv" width="420" height="640"></canvas>
+<div id="popup"></div>
+<div id="over"><div style="font-size:1.15rem;letter-spacing:.3em">碗 盈 则 止</div><div id="ovmsg" style="margin-top:.6rem;font-size:.9rem;color:#cfc3a4"></div><button onclick="resetGame()">再 合 一 千 年</button></div>
+</div>
+</div>
+<script>
+window.addEventListener("error",function(e){
+ var eb=document.getElementById("errbar");
+ eb.style.display="block";
+ eb.textContent="JS: "+e.message+" @line "+e.lineno});
+
+var CV=document.getElementById("cv"),CX=CV.getContext("2d");
+var W=CV.width,H=CV.height;
+var GRAV=1500,REST=0.16,TOP=110,WALL=2;
+var RADIOS=[0];
+(function(){for(var t=1;t<=11;t++)RADIOS.push(21+t*3.9)})();
+var PTS=[0,2,4,7,11,16,24,34,46,60,80,110];
+var TIERS=[],IMGS={};
+var tokens=[],SCORE=0,MAXT=1,GOT={},OVER=false,COOL=0,OVER_T=0,nextT=2,mouseX=W/2,BUILT=false;
+
+function loadRel(){
+ return fetch("/api/relia").then(function(r){return r.json()}).then(function(d){
+  TIERS=d.rows;
+ }).catch(function(){
+  TIERS=[{tier:1,name:"彩陶罐",era:"新石器",fact:"",uncertain:"",img:"relia01.jpg"},
+         {tier:2,name:"甲骨",era:"商",fact:"",uncertain:"",img:"relia02.jpg"},
+         {tier:3,name:"何尊",era:"西周",fact:"",uncertain:"",img:"relia03.jpg"},
+         {tier:4,name:"编钟",era:"战国",fact:"",uncertain:"",img:"relia04.jpg"},
+         {tier:5,name:"兵马俑",era:"秦",fact:"",uncertain:"",img:"relia05.jpg"},
+         {tier:6,name:"宫灯",era:"汉",fact:"",uncertain:"",img:"relia06.jpg"},
+         {tier:7,name:"三彩驼",era:"唐",fact:"",uncertain:"",img:"relia07.jpg"},
+         {tier:8,name:"汝窑",era:"宋",fact:"",uncertain:"",img:"relia08.jpg"},
+         {tier:9,name:"青花",era:"元",fact:"",uncertain:"",img:"relia09.jpg"},
+         {tier:10,name:"鸡缸杯",era:"明",fact:"",uncertain:"",img:"relia10.jpg"},
+         {tier:11,name:"金瓯永固",era:"清",fact:"",uncertain:"",img:"relia11.png"}]})
+}
+function preload(){
+ var pend=11;
+ for(var t=1;t<=11;t++){(function(t){
+  var im=new Image();
+  im.onload=im.onerror=function(){pend--;};
+  im.src="/art/"+(TIERS[t-1]?TIERS[t-1].img:("relia"+("0"+t).slice(-2)+".jpg"));
+  IMGS[t]=im})(t)}
+ var wait=setInterval(function(){if(pend<=0){clearInterval(wait);BUILT=true;drawNext();requestAnimationFrame(loop)}},60)
+}
+
+function clampX(tier,x){var r=RADIOS[tier];return Math.max(r+2,Math.min(W-r-2,x))}
+function mkToken(tier,x,y){return{tier:tier,r:RADIOS[tier],x:clampX(tier,x),y:y,vx:0,vy:0}}
+
+function dropToken(x,forceTier){
+ if(OVER||COOL>0)return false;
+ var t=forceTier||nextT;
+ tokens.push(mkToken(t,x,-24));
+ COOL=0.30;
+ nextT=1+Math.floor(Math.random()*3);
+ drawNext();
+ return true}
+function drawNext(){
+ var el=document.getElementById("next");
+ if(TIERS.length&&IMGS[nextT]){
+  el.innerHTML="<img src='/art/"+TIERS[nextT-1].img+"'>"}
+ else{el.textContent="…"}}
+
+function step(dt){
+ COOL=Math.max(0,COOL-dt);
+ var i,j,a,b,dx,dy,d,touch,nx,ny,ov,m1,m2,tot,rvx,rvy,vn,imp;
+ for(i=0;i<tokens.length;i++){
+  a=tokens[i];
+  a.vy+=GRAV*dt;
+  a.vx*=0.995;a.vy=Math.min(a.vy,1600);
+  a.x+=a.vx*dt;a.y+=a.vy*dt;
+  if(a.y+a.r>H-2){a.y=H-2-a.r;if(a.vy>0)a.vy=-a.vy*REST;if(Math.abs(a.vy)<26)a.vy=0}
+  if(a.x-a.r<WALL){a.x=WALL+a.r;a.vx=Math.abs(a.vx)*0.5}
+  if(a.x+a.r>W-WALL){a.x=W-WALL-a.r;a.vx=-Math.abs(a.vx)*0.5}
+ }
+ var merged=true;
+ while(merged){
+  merged=false;
+  outer:
+  for(i=0;i<tokens.length;i++){
+   for(j=i+1;j<tokens.length;j++){
+    a=tokens[i];b=tokens[j];
+    dx=b.x-a.x;dy=b.y-a.y;
+    d=Math.hypot(dx,dy)||0.001;
+    touch=a.r+b.r;
+    if(a.tier===b.tier&&a.tier<11&&d<touch*0.98){
+     doMerge(i,j);merged=true;break outer}
+    if(d<touch){
+     nx=dx/d;ny=dy/d;ov=touch-d;
+     m1=a.r*a.r;m2=b.r*b.r;tot=m1+m2;
+     a.x-=nx*ov*(m2/tot);a.y-=ny*ov*(m2/tot);
+     b.x+=nx*ov*(m1/tot);b.y+=ny*ov*(m1/tot);
+     rvx=b.vx-a.vx;rvy=b.vy-a.vy;vn=rvx*nx+rvy*ny;
+     if(vn<0){
+      imp=-vn*REST*0.85;
+      a.vx-=nx*imp*(m2/tot);a.vy-=ny*imp*(m2/tot);
+      b.vx+=nx*imp*(m1/tot);b.vy+=ny*imp*(m1/tot)}
+    }
+   }
+  }
+ }
+ var flagged=false;
+ for(i=0;i<tokens.length;i++){
+  a=tokens[i];
+  if(a.y-a.r<TOP&&Math.abs(a.vy)<40){flagged=true;break}
+ }
+ if(flagged){OVER_T+=dt;if(OVER_T>1.1){OVER=true;endGame()}}
+ else{OVER_T=0}
+}
+
+function doMerge(i,j){
+ var a=tokens[i],b=tokens[j],nt=a.tier+1;
+ var mx=clampX(nt,(a.x+b.x)/2),my=Math.min(a.y,b.y);
+ tokens.splice(j,1);
+ var ai=tokens.indexOf(a);
+ if(ai>-1)tokens.splice(ai,1);
+ tokens.push(mkToken(nt,mx,my));
+ SCORE+=(PTS[a.tier]||5);
+ MAXT=Math.max(MAXT,nt);GOT[nt]=true;
+ document.getElementById("score").textContent=SCORE;
+ refreshChart();showFact(nt)}
+
+function showFact(nt){
+ var t=TIERS[nt-1];
+ if(!t)return;
+ var p=document.getElementById("popup");
+ p.innerHTML="<b>"+t.name+"</b> · "+t.era+"<br>"+(t.fact||"")+
+  "<div class='m'>"+(t.uncertain||"数据源：sources/processed/relia.json（许可记录见 sources/raw/art/manifest.json）")+"</div>";
+ p.style.display="block";
+ clearTimeout(p.__timer);
+ p.__timer=setTimeout(function(){p.style.display="none"},3400)}
+
+function endGame(){
+ document.getElementById("ovmsg").textContent="最高合到 "+(TIERS[MAXT-1]?TIERS[MAXT-1].name:"T"+MAXT)+" · 分数 "+SCORE;
+ document.getElementById("over").style.display="flex"}
+function resetGame(){
+ tokens=[];SCORE=0;MAXT=1;GOT={};OVER=false;OVER_T=0;
+ document.getElementById("over").style.display="none";
+ document.getElementById("score").textContent=0;refreshChart()}
+
+function refreshChart(){
+ for(var t=1;t<=11;t++){var el=document.getElementById("ch"+t);if(el)el.className=MAXT>=t?"got":""}}
+
+function draw(){
+ CX.clearRect(0,0,W,H);
+ CX.fillStyle="#241d12";CX.fillRect(0,0,W,H);
+ CX.strokeStyle="#5a5038";CX.lineWidth=4;
+ CX.beginPath();CX.moveTo(WALL,0);CX.lineTo(WALL,H);CX.lineTo(W-WALL,H);CX.lineTo(W-WALL,0);CX.stroke();
+ CX.strokeStyle="rgba(140,59,46,.55)";CX.setLineDash([9,7]);
+ CX.beginPath();CX.moveTo(0,TOP);CX.lineTo(W,TOP);CX.stroke();CX.setLineDash([]);
+ var i,a,im,info;
+ for(i=0;i<tokens.length;i++){
+  a=tokens[i];
+  CX.save();
+  CX.beginPath();CX.arc(a.x,a.y,a.r,0,6.284);CX.clip();
+  im=IMGS[a.tier];
+  if(im&&im.complete)CX.drawImage(im,a.x-a.r,a.y-a.r,a.r*2,a.r*2);
+  else{CX.fillStyle="#6b5b3e";CX.fill()}
+  CX.restore();
+  CX.beginPath();CX.arc(a.x,a.y,a.r,0,6.284);
+  CX.strokeStyle=a.tier>=11?"#e8c878":(a.tier>=8?"#c9a13e":"#8a7c68");
+  CX.lineWidth=2.5;CX.stroke();
+  info=TIERS[a.tier-1];
+  if(info){
+   CX.fillStyle="rgba(10,7,4,.62)";CX.fillRect(a.x-a.r,a.y+a.r-20,a.r*2,17);
+   CX.fillStyle="#efe2c2";CX.font="10px serif";CX.textAlign="center";
+   CX.fillText(info.name,a.x,a.y+a.r-8)}}
+ if(COOL>0&&!OVER){
+  CX.globalAlpha=.4;
+  CX.beginPath();CX.arc(mouseX,28,RADIOS[nextT],0,6.284);CX.stroke();
+  CX.globalAlpha=1}}
+
+function loop(ts){
+ window.__last=window.__last||ts;
+ var dt=Math.min(0.033,(ts-window.__last)/1000);
+ window.__last=ts;
+ if(!OVER)step(dt);
+ draw();
+ requestAnimationFrame(loop)}
+
+CV.addEventListener("mousemove",function(e){var r=CV.getBoundingClientRect();mouseX=(e.clientX-r.left)*(W/r.width)});
+CV.addEventListener("click",function(e){var r=CV.getBoundingClientRect();dropToken((e.clientX-r.left)*(W/r.width),null)});
+CV.addEventListener("touchstart",function(e){var r=CV.getBoundingClientRect();dropToken((e.touches[0].clientX-r.left)*(W/r.width),null);e.preventDefault()});
+
+function buildChart(){
+ var ch=document.getElementById("chart"),h="";
+ for(var t=1;t<=11;t++)h+="<img id='ch"+t+"' title='"+(TIERS[t-1]?TIERS[t-1].name:"")+"' src='/art/"+TIERS[t-1].img+"'>";
+ ch.innerHTML=h}
+function boot(){
+ loadRel().then(function(){
+  buildChart();
+  preload();
+  drawNext();
+ })}
+window.addEventListener("load",boot);
+window.__t={state:function(){return{tokens:tokens.length,score:SCORE,max:MAXT,over:OVER,next:nextT}},drop:dropToken,reset:resetGame};
+</script>
+</body></html>

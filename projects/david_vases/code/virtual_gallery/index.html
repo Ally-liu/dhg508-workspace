@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>虚拟展厅 · 大维德花瓶</title>
+<style>
+  :root { --ink:#2b2b2b; --paper:#f3efe6; --gold:#b79459; }
+  * { box-sizing: border-box; }
+  html, body { margin:0; height:100%; overflow:hidden; background:#111; font-family:"Noto Serif TC","Songti TC","SimSun",serif; }
+  #app { position:fixed; inset:0; }
+  canvas { display:block; }
+
+  /* 顶部标题条 */
+  #titlebar {
+    position:fixed; top:0; left:0; right:0; padding:14px 22px;
+    background:linear-gradient(#000c,#0000); color:#eee; pointer-events:none; z-index:5;
+  }
+  #titlebar h1 { margin:0; font-size:20px; letter-spacing:.08em; font-weight:600; }
+  #titlebar p { margin:4px 0 0; font-size:12.5px; color:#c9c2b4; letter-spacing:.04em; }
+
+  /* 右侧解说面板 */
+  #panel {
+    position:fixed; top:64px; right:16px; width:340px; max-height:calc(100% - 96px);
+    overflow:auto; background:rgba(245,241,232,.96); color:var(--ink);
+    border:1px solid #d8cfbc; border-radius:6px; padding:18px 20px; z-index:6;
+    box-shadow:0 8px 30px #0008; font-size:13.5px; line-height:1.7;
+    transition:transform .25s ease, opacity .25s ease;
+  }
+  #panel.hidden { transform:translateX(110%); opacity:0; }
+  #panel h2 { font-size:15px; margin:0 0 2px; color:#7a2f2f; letter-spacing:.06em; }
+  #panel .sub { font-size:11.5px; color:#8a8378; margin-bottom:10px; }
+  #panel h3 { font-size:12.5px; margin:14px 0 4px; color:#7a2f2f; border-top:1px solid #e2d9c8; padding-top:10px; }
+  #panel ul { margin:4px 0 0; padding-left:1.1em; }
+  #panel li { margin:2px 0; }
+  #panel .insc { font-size:12.5px; background:#efe8da; border-left:3px solid var(--gold); padding:8px 10px; margin:6px 0; }
+  #panel .src { font-size:11px; color:#8a8378; }
+
+  /* 底部操作提示 */
+  #hint {
+    position:fixed; bottom:0; left:0; right:0; padding:10px 22px; z-index:5;
+    background:linear-gradient(#0000,#000c); color:#d8d2c6; font-size:12px; letter-spacing:.03em;
+  }
+  #hint b { color:#fff; font-weight:600; }
+
+  #loading {
+    position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+    color:#d8d2c6; font-size:14px; z-index:20; background:#111; text-align:center; padding:24px;
+  }
+  #loading small { display:block; color:#8a8378; margin-top:8px; font-size:12px; }
+  code { background:#2a2a2a; color:#e6c98a; padding:1px 5px; border-radius:3px; }
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<div id="titlebar">
+  <h1>大維德花瓶 · 虛擬展廳</h1>
+  <p>元至正十一年青花雲龍紋象耳瓶 ｜ 1351 ｜ 景德鎮 ｜ 大英博物館 PDF B.613 / B.614</p>
+</div>
+
+<aside id="panel">
+  <h2>這是一件什麼樣的器物</h2>
+  <div class="sub">Yuan dynasty blue-and-white altar vase, dated 1351</div>
+  <p>一對廟供大瓶，因頸部有紀年銘文，成為<span style="color:#7a2f2f">已知最早帶紀年款的青花瓷</span>，
+  據此把青花瓷的成熟年代從明代上推到元代。</p>
+
+  <h3>器形</h3>
+  <ul>
+    <li>仿商周青銅器造型：盤口、長束頸、鼓腹、外撇圈足</li>
+    <li>頸側一對<b>象首耳</b>；原以瓷環懸於象鼻下（今僅存磨痕）</li>
+    <li>高約 63.8 cm，最大徑約 19.6 cm，重 7.7 kg</li>
+  </ul>
+
+  <h3>頸部銘文</h3>
+  <div class="insc">
+    信州路玉山縣順城鄉德教里荊塘社，奉聖弟子張文進，喜捨香爐花瓶一付，
+    祈保合家清吉、子女平安。至正十一年四月良辰謹記。星源祖殿胡淨一元帥打供。
+  </div>
+  <div class="sub">大意：玉山縣張文進，於至正十一年（1351）向星源道觀進奉香爐一件、花瓶一對，祈求闔家平安。</div>
+
+  <h3>九條裝飾帶（自上而下）</h3>
+  <ul>
+    <li>纏枝扁菊（口沿）</li>
+    <li>蕉葉（頸上部）</li>
+    <li>飛鳳靈芝（下頸）</li>
+    <li>纏枝蓮</li>
+    <li><b>四爪雲龍</b>（腹主體）</li>
+    <li>海濤紋（兩層）</li>
+    <li>纏枝牡丹</li>
+    <li>覆蓮雜寶（足部）</li>
+  </ul>
+
+  <h3>為何重要</h3>
+  <p>銘文證明景德鎮在 1351 年已能燒造成熟青花；入選 BBC《100 件文物看世界史》。</p>
+
+  <h3>來源</h3>
+  <p class="src">
+    The British Museum, PDF,B.613 / PDF,B.614.<br>
+    https://www.britishmuseum.org/collection/object/A_PDF-B-613<br>
+    模型：image-to-3D 生成，據本項目 A 圖（有據生成圖）。
+  </p>
+</aside>
+
+<div id="hint">
+  <b>拖動</b>環視 · <b>滾輪</b>縮放 · <b>右鍵拖動</b>平移 · <b>空格</b>自動旋轉 · <b>L</b>解說面板
+</div>
+
+<div id="loading">正在載入展廳與模型…<small>模型約 6MB / 15 萬面，載入很快。需用本機伺服器開啟，模型位於 <code>artifacts/hunyuan_lite.glb</code>。</small></div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+// ===== 可调参数 =====
+const MODEL_URL = '/artifacts/hunyuan_lite.glb';
+const TARGET_HEIGHT = 2.0;     // 模型缩放到的目标高度（世界单位）
+const PEDESTAL_TOP = 0.55;     // 展台顶面高度
+const AUTO_ROTATE = true;
+
+// ===== 基础三件套 =====
+const app = document.getElementById('app');
+const renderer = new THREE.WebGLRenderer({ antialias:true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+app.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x14161a);
+
+const camera = new THREE.PerspectiveCamera(45, innerWidth/innerHeight, 0.05, 200);
+camera.position.set(3.4, 2.6, 4.6);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.set(0, PEDESTAL_TOP + TARGET_HEIGHT*0.5, 0);
+controls.enableDamping = true;
+controls.dampingFactor = 0.06;
+controls.minDistance = 2.0;
+controls.maxDistance = 12;
+controls.maxPolarAngle = Math.PI/2 + 0.28;
+controls.autoRotate = AUTO_ROTATE;
+controls.autoRotateSpeed = 0.9;
+
+// ===== 环境光照（展柜氛围） =====
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+
+scene.add(new THREE.HemisphereLight(0xffffff, 0x2a2620, 0.55));
+
+const key = new THREE.SpotLight(0xfff2dc, 90, 30, Math.PI/7, 0.5, 1.6);
+key.position.set(3.2, 7.0, 3.6);
+key.target.position.set(0, PEDESTAL_TOP + TARGET_HEIGHT*0.55, 0);
+key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048);
+key.shadow.bias = -0.0008;
+key.shadow.normalBias = 0.02;
+scene.add(key, key.target);
+
+const fill = new THREE.PointLight(0xbcd2ff, 18, 18, 2);
+fill.position.set(-3.5, 3.0, -2.0);
+scene.add(fill);
+
+// ===== 展厅空间 =====
+const room = new THREE.Group(); scene.add(room);
+
+const floorMat = new THREE.MeshStandardMaterial({ color:0x2b2b2f, roughness:0.92, metalness:0.0 });
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(60,60), floorMat);
+floor.rotation.x = -Math.PI/2; floor.receiveShadow = true; room.add(floor);
+
+const wallMat = new THREE.MeshStandardMaterial({ color:0x30333a, roughness:1.0, side:THREE.DoubleSide });
+const ROOM = 12, WALL_H = 10;
+function addWall(w, h, x, y, z, ry) {
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), wallMat);
+  m.position.set(x, y, z);
+  m.rotation.y = ry;
+  m.receiveShadow = true;
+  room.add(m);
+}
+addWall(ROOM * 2, WALL_H, 0, WALL_H / 2, -ROOM, 0);
+addWall(ROOM * 2, WALL_H, 0, WALL_H / 2, ROOM, Math.PI);
+addWall(ROOM * 2, WALL_H, -ROOM, WALL_H / 2, 0, Math.PI / 2);
+addWall(ROOM * 2, WALL_H, ROOM, WALL_H / 2, 0, -Math.PI / 2);
+const ceiling = new THREE.Mesh(new THREE.PlaneGeometry(ROOM * 2, ROOM * 2), wallMat);
+ceiling.position.y = WALL_H;
+ceiling.rotation.x = Math.PI / 2;
+room.add(ceiling);
+
+// 一圈踢脚/环形灯带，增强空间感
+const ring = new THREE.Mesh(
+  new THREE.TorusGeometry(5.2, 0.03, 12, 120),
+  new THREE.MeshStandardMaterial({ color:0x6b5a3a, emissive:0x3a2f18, emissiveIntensity:1.2, roughness:0.6 })
+);
+ring.rotation.x = Math.PI/2; ring.position.y = PEDESTAL_TOP + 2.6; room.add(ring);
+
+// ===== 展台 + 玻璃展柜 =====
+const pedestal = new THREE.Group();
+pedestal.position.set(0,0,0);
+scene.add(pedestal);
+
+const woodMat = new THREE.MeshStandardMaterial({ color:0x4a3527, roughness:0.45, metalness:0.05 });
+const base = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 1.02, 0.16, 64), woodMat.clone());
+base.position.y = 0.08; base.castShadow = base.receiveShadow = true; pedestal.add(base);
+
+const col = new THREE.Mesh(new THREE.CylinderGeometry(0.62, 0.72, PEDESTAL_TOP-0.16, 64), woodMat.clone());
+col.position.y = (PEDESTAL_TOP-0.16)/2 + 0.16; col.castShadow = col.receiveShadow = true; pedestal.add(col);
+
+const top = new THREE.Mesh(new THREE.CylinderGeometry(0.74, 0.68, 0.06, 64), woodMat.clone());
+top.position.y = PEDESTAL_TOP - 0.03; top.castShadow = top.receiveShadow = true; pedestal.add(top);
+
+// 玻璃罩
+const glassMat = new THREE.MeshPhysicalMaterial({
+  color:0xcfe4f2, metalness:0, roughness:0.05,
+  transparent:true, opacity:0.10, side:THREE.DoubleSide,
+  depthWrite:false, clearcoat:1.0, clearcoatRoughness:0.05, envMapIntensity:1.0
+});
+const glass = new THREE.Mesh(
+  new THREE.CylinderGeometry(0.78, 0.78, TARGET_HEIGHT + 0.85, 64, 1, true),
+  glassMat
+);
+glass.position.y = PEDESTAL_TOP + (TARGET_HEIGHT + 0.85)/2;
+glass.renderOrder = 2;
+scene.add(glass);
+
+// 玻璃顶盖
+const glassTop = new THREE.Mesh(
+  new THREE.CircleGeometry(0.78, 64),
+  glassMat
+);
+glassTop.rotation.x = -Math.PI/2;
+glassTop.position.y = PEDESTAL_TOP + (TARGET_HEIGHT + 0.85);
+scene.add(glassTop);
+
+// ===== 载入模型 =====
+const gltfLoader = new GLTFLoader();
+const draco = new DRACOLoader();
+draco.setDecoderPath('https://unpkg.com/three@0.160.0/examples/jsm/libs/draco/');
+gltfLoader.setDRACOLoader(draco);
+
+const loadingEl = document.getElementById('loading');
+let model = null;
+
+gltfLoader.load(MODEL_URL, (gltf) => {
+  model = gltf.scene;
+
+  // 归一化：居中、缩放到目标高度、底部落在展台顶面
+  const box = new THREE.Box3().setFromObject(model);
+  const size = new THREE.Vector3(); box.getSize(size);
+  const center = new THREE.Vector3(); box.getCenter(center);
+  const s = TARGET_HEIGHT / Math.max(size.y, 1e-4);
+  model.scale.setScalar(s);
+  model.position.sub(center.multiplyScalar(s));
+  model.position.y += TARGET_HEIGHT/2 + PEDESTAL_TOP;
+
+  model.traverse(o => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; } });
+
+  const pivot = new THREE.Group();
+  pivot.add(model);
+  scene.add(pivot);
+
+  loadingEl.style.display = 'none';
+}, (ev) => {
+  if (ev.total) loadingEl.firstChild.textContent = `正在載入模型… ${Math.round(ev.loaded/ev.total*100)}%`;
+}, (err) => {
+  console.error(err);
+  // 占位物：模型缺失时也能预览展厅
+  const ph = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.5, 0.62, TARGET_HEIGHT, 48),
+    new THREE.MeshStandardMaterial({ color:0xdfe6ee, roughness:0.25 })
+  );
+  ph.position.y = PEDESTAL_TOP + TARGET_HEIGHT/2;
+  ph.castShadow = true; scene.add(ph);
+  loadingEl.style.display = 'flex';
+  loadingEl.innerHTML = '模型載入失敗：<code>' + MODEL_URL + '</code><small>' +
+    (err && err.message ? err.message : '請確認伺服器根目錄為專案根，且 artifacts/hunyuan.glb 存在。') + '</small>';
+});
+
+// ===== 交互 =====
+addEventListener('keydown', (e) => {
+  if (e.code === 'Space') { e.preventDefault(); controls.autoRotate = !controls.autoRotate; }
+  if (e.key === 'l' || e.key === 'L') document.getElementById('panel').classList.toggle('hidden');
+});
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+function tick() {
+  controls.update();
+  renderer.render(scene, camera);
+  requestAnimationFrame(tick);
+}
+tick();
+</script>
+</body>
+</html>

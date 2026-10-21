@@ -25,3 +25,10 @@ unclear (Week 1, challenge 3).
   and `*.db`. The database is only ~32 KB, but the source scans are ~10 MB.
   Where is the line for "large"? (Working decision: commit the small database;
   keep the scans out and record their provenance instead.)
+- Week 7: 圆明园大水法的"毁前"形态，哪一份资料是最可靠的一手依据？——（已答）最可靠是
+  伊兰泰《西洋楼铜版画》第 14/15/16 幅（1786，毁前线描图版）；老照片（Ohlmer 约1873）
+  是 1860 年后废墟，只能作体量/石材辅助，不能当毁前证据。已记入 source-manifest。
+- Week 7: image-to-3D 服务（Tripo 等）按什么计费、免费额度够不够做？
+  用前先查价并留收据。
+- Week 7（大维德花瓶）：象首耳内**已佚的瓷环**只有磨痕证据，复原属推测。如何在答案里
+  把它标注为"合理推测"而不是当作确定事实？
